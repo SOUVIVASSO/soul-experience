@@ -7,7 +7,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%8C%85%3C/text%3E%3C/svg%3E">
 <title>Grão de Aventura</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Pinyon+Script&display=swap');
 
   :root{
     --bg:#F8F6FC;
@@ -517,6 +517,31 @@
   .part-card h3{font-size:17px;font-weight:700;color:var(--ink);}
   .part-card p{margin-top:8px;font-size:13.5px;color:var(--ink-dim);line-height:1.55;}
 
+  /* ---------- COORDENACAO ---------- */
+  .coord-logos{margin-top:32px;display:flex;flex-wrap:wrap;gap:16px;}
+  .coord-logo-card{
+    background:var(--bg-alt);border:1px solid var(--line);border-radius:18px;
+    padding:20px 32px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    min-width:200px;
+  }
+  .carmen-mark{font-family:'Pinyon Script',cursive;font-size:36px;color:var(--ink);line-height:1;}
+  .carmen-sub{font-size:10.5px;letter-spacing:.18em;color:var(--ink-dim);font-weight:700;margin-top:8px;}
+  .benefit-highlight{
+    margin-top:28px;
+    display:flex;gap:18px;align-items:flex-start;
+    background:linear-gradient(135deg, rgba(124,92,252,.12), rgba(240,107,192,.12));
+    border:1px solid var(--violet);
+    border-radius:20px;
+    padding:26px 28px;
+  }
+  .benefit-icon{
+    width:46px;height:46px;border-radius:12px;flex-shrink:0;
+    background:var(--violet);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .benefit-title{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:18px;color:var(--ink);}
+  .benefit-text{margin-top:6px;font-size:14px;color:var(--ink-dim);line-height:1.55;max-width:640px;}
+
   /* ---------- LOCAL (placeholder, TBD) ---------- */
   .local-card{
     background:var(--bg-alt);
@@ -580,6 +605,8 @@
   .price-list .row{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--ink-dim);}
   .price-list .row svg{flex-shrink:0;margin-top:2px;color:var(--violet);}
   .price-list .row.on{color:var(--ink);}
+  .price-list .row.highlight{color:var(--violet);font-weight:700;}
+  .price-list .row.highlight svg{color:var(--gold);}
   .vacancy{margin-top:22px;}
   .vacancy-top{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-dim);margin-bottom:6px;font-weight:600;}
   .vacancy-track{height:6px;border-radius:4px;background:var(--panel-lav);overflow:hidden;}
@@ -1031,6 +1058,35 @@
   </div>
 </section>
 
+<!-- ================= COORDENACAO ================= -->
+<section id="coordenacao" style="background:var(--panel-blue);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Direção e coordenação</span>
+      <h2 class="section-title">Coordenação por Carmen Prado</h2>
+      <p class="lede">Carmen Prado é diretora de eventos há anos em Fortaleza e atualmente lidera os eventos da Academia Bodytech, uma das academias mais respeitadas da cidade. É ela quem coordena o Soul Experience de ponta a ponta, e é através dela que toda a estrutura de bem-estar e atividade física do evento é oferecida pela Bodytech.</p>
+    </div>
+    <div class="coord-logos">
+      <div class="coord-logo-card">
+        <span class="carmen-mark">Carmen Prado</span>
+        <span class="carmen-sub">EVENTOS E PRODUÇÕES</span>
+      </div>
+      <div class="coord-logo-card">
+        <img src="assets/bodytech-logo.svg" alt="Bodytech" style="height:42px;width:auto;">
+      </div>
+    </div>
+    <div class="benefit-highlight">
+      <div class="benefit-icon">
+        <svg width="22" height="22" viewBox="0 0 20 20" fill="none"><path d="M10 2l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L2.8 7.2l5-.7L10 2z" fill="currentColor"/></svg>
+      </div>
+      <div>
+        <div class="benefit-title">2 dias de ativação na Academia Bodytech</div>
+        <div class="benefit-text">Todo patrocinador do Soul Experience, do plano Apoio ao Assinante, ganha 2 dias para ativar a própria marca dentro da Academia Bodytech: um espaço de alto padrão e visibilidade que normalmente tem um custo elevado para qualquer marca.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= PATROCINIO ================= -->
 <section id="patrocinio">
   <div class="wrap">
@@ -1046,6 +1102,7 @@
         <div class="tier-name">Apoio</div>
         <div class="price">R$ 1.500 <small>+ kit</small></div>
         <div class="price-list">
+          <div class="row on highlight"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.4 2.9 3.2.5-2.3 2.2.5 3.2L7 8.3 4.2 9.8l.5-3.2L2.4 4.4l3.2-.5L7 1z" fill="currentColor"/></svg>2 dias de ativação na Academia Bodytech</div>
           <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Destaque nas mídias digitais</div>
           <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Presença no backdrop do evento</div>
           <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Participação no Welcome Kit</div>
@@ -1063,6 +1120,7 @@
         <div class="tier-name">Master</div>
         <div class="price">R$ 3.000 <small>+ kit</small></div>
         <div class="price-list">
+          <div class="row on highlight"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.4 2.9 3.2.5-2.3 2.2.5 3.2L7 8.3 4.2 9.8l.5-3.2L2.4 4.4l3.2-.5L7 1z" fill="currentColor"/></svg>2 dias de ativação na Academia Bodytech</div>
           <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Tudo do Apoio</div>
           <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Espaço para ativação e interação presencial*</div>
           <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Divulgação durante a campanha</div>
@@ -1083,6 +1141,7 @@
         <div class="tier-name">Assinante</div>
         <div class="price">R$ 5.000</div>
         <div class="price-list">
+          <div class="row on highlight"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.4 2.9 3.2.5-2.3 2.2.5 3.2L7 8.3 4.2 9.8l.5-3.2L2.4 4.4l3.2-.5L7 1z" fill="currentColor"/></svg>2 dias de ativação na Academia Bodytech</div>
           <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Tudo do Master, exceto ingressos</div>
           <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>5 ingressos de cortesia ao todo</div>
           <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Naming e conceito da edição integrado à marca</div>

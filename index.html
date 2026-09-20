@@ -162,26 +162,18 @@
   }
   .mobile-menu{
     display:none;
-    position:fixed;inset:0;
-    z-index:600;
-    background:var(--bg);
-    padding: calc(90px + env(safe-area-inset-top,0px)) 28px 40px;
     flex-direction:column;
-    gap:6px;
+    padding:4px 24px 16px;
+    gap:0;
+    border-top:1px solid rgba(255,255,255,.08);
   }
   .mobile-menu.open{display:flex;}
   .mobile-menu a{
-    font-family:'Unbounded',sans-serif;
-    font-size:24px;font-weight:700;
-    padding:14px 0;
-    border-bottom:1px solid var(--line);
-    color:var(--ink);
-  }
-  .mobile-close{
-    position:absolute;top:calc(20px + env(safe-area-inset-top,0px));right:24px;
-    width:40px;height:40px;border-radius:50%;
-    border:1px solid var(--line-strong);background:none;color:var(--ink);
-    display:flex;align-items:center;justify-content:center;cursor:pointer;
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:15px;font-weight:600;
+    padding:13px 2px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    color:#D9C7B4;
   }
 
   /* ---------- HERO ---------- */
@@ -448,8 +440,8 @@
     display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;
   }
   @media (max-width:700px){
-    .video-modal{padding:0;}
-    .video-modal-frame{width:100vw;border-radius:0;}
+    .video-modal{padding:0;align-items:stretch;}
+    .video-modal-frame{width:100vw;height:100vh;aspect-ratio:auto;border-radius:0;}
   }
   .photo-lightbox-close{
     position:absolute;top:22px;right:26px;
@@ -499,7 +491,8 @@
   .perola .eyebrow{color:#F3D9B4;}
   .perola .eyebrow::before{background:#F3D9B4;}
   .perola .lede{color:rgba(250,240,225,.78);}
-  .perola .perola-sponsor span{color:rgba(250,240,225,.6);}
+  .perola .perola-sponsor > span{color:rgba(250,240,225,.6);}
+  .perola .perola-sponsor-brand b{color:#F3D9B4;}
   .perola .btn-ghost{border-color:rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.08);}
   .perola .btn-ghost:hover{border-color:#fff;}
   .perola-gallery{margin-top:36px;}
@@ -508,9 +501,11 @@
   .video-tile{aspect-ratio:16/9;max-height:340px;}
   .video-tile iframe{width:100%;height:100%;display:block;border:0;}
   .perola-logo{height:96px;width:auto;margin-top:18px;}
-  .perola-sponsor{margin-top:20px;display:flex;align-items:center;gap:12px;}
-  .perola-sponsor span{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-dim);}
-  .perola-sponsor img{height:34px;width:auto;}
+  .perola-sponsor{margin-top:20px;display:flex;align-items:center;flex-wrap:wrap;gap:12px;}
+  .perola-sponsor > span{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-dim);}
+  .perola-sponsor-brand{display:flex;align-items:center;gap:10px;}
+  .perola-sponsor-brand img{height:34px;width:auto;}
+  .perola-sponsor-brand b{font-family:'Unbounded',sans-serif;font-weight:600;font-size:15px;}
   .pg-thumbs{
     margin-top:14px;
     display:flex;flex-wrap:wrap;gap:12px;
@@ -525,7 +520,10 @@
   .pg-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;}
   .pg-item:hover img{transform:scale(1.08);}
   .pg-item:hover{box-shadow:0 16px 34px rgba(30,15,5,.28);}
-  @media (max-width:560px){.pg-item{width:106px;height:106px;}}
+  @media (max-width:640px){
+    .pg-thumbs,.pg-thumbs-more.open{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+    .pg-item{width:100%;height:auto;aspect-ratio:1;}
+  }
   .perola-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;}
   .video-tile{position:relative;display:block;}
   .video-tile .play-btn{
@@ -579,6 +577,7 @@
     font-family:'Unbounded',sans-serif;font-weight:700;font-size:18px;
   }
   .influ-row{margin-top:32px;}
+  .influ-row + .influ-row{margin-top:14px;}
   .influ-row .marquee-track{gap:16px;}
   .influ-row .marquee-track a{width:auto;height:auto;display:flex;}
   .influ-row.right .marquee-track{animation-duration:40s;}
@@ -977,15 +976,7 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:900px){
-    .nav-inner{flex-wrap:wrap;row-gap:10px;}
-    .nav-links{
-      display:flex;order:3;width:100%;
-      overflow-x:auto;-webkit-overflow-scrolling:touch;
-      gap:20px;padding-bottom:2px;
-      -ms-overflow-style:none;scrollbar-width:none;
-    }
-    .nav-links::-webkit-scrollbar{display:none;}
-    .nav-links a{font-size:13px;flex-shrink:0;}
+    .nav-links{display:none;}
     .nav-cta{display:none;}
     .burger{display:flex;}
     .about-grid,.campanha-grid,.publico-grid{grid-template-columns:1fr;gap:40px;}
@@ -998,7 +989,12 @@
     .timeline::before{left:6px;top:0;bottom:0;right:auto;width:1px;height:100%;}
     .tl-item{padding-top:0;padding-left:26px;}
     .tl-item .dot{top:4px;left:0;}
-    .part-grid{grid-template-columns:1fr;}
+    .part-grid{grid-template-columns:repeat(3,1fr);gap:10px;}
+    .part-card{padding:14px 10px;}
+    .part-card .icon{width:32px;height:32px;border-radius:9px;margin-bottom:10px;}
+    .part-card .icon svg{width:15px;height:15px;}
+    .part-card h3{font-size:12.5px;line-height:1.25;}
+    .part-card p{display:none;}
     .pricing{grid-template-columns:1fr;}
     .dimension-row{flex-direction:column;align-items:flex-start;gap:4px;}
     .dimension-row .tag{text-align:left;}
@@ -1033,25 +1029,21 @@
     </nav>
     <div class="nav-right">
       <a class="nav-cta" href="#patrocinio">Quero patrocinar</a>
-      <button class="burger" id="burgerBtn" aria-label="Abrir menu">
+      <button class="burger" id="burgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4h16M1 9h16M1 14h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </button>
     </div>
   </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#sobre">Sobre</a>
+    <a href="#evento">Evento</a>
+    <a href="#perola">1ª edição</a>
+    <a href="#cronograma">Cronograma</a>
+    <a href="#influenciadores">Influenciadores</a>
+    <a href="#patrocinio">Patrocínio</a>
+    <a href="#interesse">Quero patrocinar</a>
+  </div>
 </header>
-</div>
-
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileCloseBtn" aria-label="Fechar menu">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-  </button>
-  <a href="#sobre">Sobre</a>
-  <a href="#evento">Evento</a>
-  <a href="#perola">1ª edição</a>
-  <a href="#cronograma">Cronograma</a>
-  <a href="#influenciadores">Influenciadores</a>
-  <a href="#patrocinio">Patrocínio</a>
-  <a href="#interesse">Quero patrocinar</a>
 </div>
 
 <!-- ================= HERO ================= -->
@@ -1197,7 +1189,10 @@
       <p class="lede">A edição Pérola Tropical nasceu da fusão entre a delicadeza da pérola e a força do trópico: assim como a pérola surge do mar, lenta, preciosa e única, essa edição celebrou a beleza que emerge do cuidado, da transformação e do que há de mais genuíno em cada mulher. Uma noite ao pôr do sol, à beira-mar de Fortaleza, no Sunrise Beach Club, em 21 de agosto de 2026, reunindo 100 convidados presenciais e impactando mais de 80 mil pessoas com uma audiência qualificada de Wellness e lifestyle.</p>
       <div class="perola-sponsor">
         <span>Marca assinante da edição</span>
-        <img src="assets/iana-dias-logo.png" alt="Dra. Iana Dias">
+        <span class="perola-sponsor-brand">
+          <img src="assets/iana-dias-logo.png" alt="Dra. Iana Dias">
+          <b>Dra. Iana Dias</b>
+        </span>
       </div>
     </div>
     <div class="perola-gallery">
@@ -1223,8 +1218,8 @@
         <div class="pg-item"><img src="assets/perola/emape-patrocinador.jpg" alt="Ativação da marca Emape"></div>
         <div class="pg-item"><img src="assets/perola/equipe1.jpg" alt="Equipe Soul Experience"></div>
         <div class="pg-item"><img src="assets/perola/equipe2.jpg" alt="Equipe Soul Experience"></div>
-        <div class="pg-item"><img src="assets/perola/dj2.jpg" alt="DJ Otávio Camargo"></div>
-        <div class="pg-item"><img src="assets/perola/cerimonialista2.jpg" alt="Cerimonialista conduzindo o evento"></div>
+        <div class="pg-item"><img src="assets/perola/chery-glow-patrocinador.jpg" alt="Ativação da marca Chery Glow"></div>
+        <div class="pg-item"><img src="assets/perola/momento-fogueira.jpg" alt="Momento fogueira na praia"></div>
       </div>
     </div>
     <div class="perola-actions">
@@ -1239,7 +1234,7 @@
     <div class="section-head center">
       <span class="eyebrow">Quem serão as vozes do evento</span>
       <h2 class="section-title">Influenciadores</h2>
-      <p class="lede">10 perfis alinhados ao universo Wellness e lifestyle em Fortaleza. Toque em um perfil para ver o Instagram.</p>
+      <p class="lede">10 perfis alinhados ao universo Wellness e lifestyle em Fortaleza. Clique e veja a lista completa.</p>
     </div>
   </div>
   <div class="marquee-row influ-row right">
@@ -1352,9 +1347,6 @@
       <div class="local-photo-logo"><img src="assets/iguatemi-bosque-logo.png" alt="Iguatemi Bosque"></div>
     </div>
     <div class="benefit-highlight">
-      <div class="benefit-icon">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 18S16 12.5 16 8a6 6 0 1 0-12 0c0 4.5 6 10 6 10z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="8" r="2.3" stroke="currentColor" stroke-width="1.6"/></svg>
-      </div>
       <div>
         <div class="benefit-title">Visibilidade em um shopping de referência</div>
         <div class="benefit-text">O Iguatemi Bosque é um dos endereços mais reconhecidos de Fortaleza. Estar na área externa dele coloca sua marca em contato direto com um público qualificado, com estacionamento fácil e ótima estrutura para ativação.</div>
@@ -1368,21 +1360,18 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Direção e coordenação</span>
-      <h2 class="section-title">Coordenação por Carmen Prado</h2>
+      <h2 class="section-title">Coordenação por Carmen Prado com apoio Bodytech</h2>
       <p class="lede">Carmen Prado é diretora de eventos há anos em Fortaleza e atualmente lidera os eventos da Academia Bodytech, uma das academias mais respeitadas da cidade. É ela quem coordena o Soul Experience de ponta a ponta, e é através dela que toda a estrutura de bem-estar e atividade física do evento é oferecida pela Bodytech.</p>
     </div>
     <div class="coord-logos">
       <div class="coord-logo-card">
-        <img src="assets/carmen-prado.png" alt="Carmen Prado Eventos e Produções">
+        <img src="assets/bodytech-logo.svg" alt="Bodytech">
       </div>
       <div class="coord-logo-card">
-        <img src="assets/bodytech-logo.svg" alt="Bodytech">
+        <img src="assets/carmen-prado.png" alt="Carmen Prado Eventos e Produções" style="height:64px;">
       </div>
     </div>
     <div class="benefit-highlight">
-      <div class="benefit-icon">
-        <svg width="22" height="22" viewBox="0 0 20 20" fill="none"><path d="M10 2l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L2.8 7.2l5-.7L10 2z" fill="currentColor"/></svg>
-      </div>
       <div>
         <div class="benefit-title">Ativação na Academia Bodytech</div>
         <div class="benefit-text">Todo patrocinador do Soul Experience, do plano Apoio ao Assinante, ganha dias para ativar a própria marca dentro da Academia Bodytech (de 1 a 3, conforme o plano): um espaço de alto padrão e visibilidade que normalmente tem um custo elevado para qualquer marca.</div>
@@ -1397,7 +1386,7 @@
     <div class="section-head center">
       <span class="eyebrow">Confiança de quem já participou</span>
       <h2 class="section-title">Marcas que já passaram por aqui</h2>
-      <p class="lede">Um recorte das marcas que estiveram na 1ª edição do Soul Experience.</p>
+      <p class="lede">Um recorte das marcas que estiveram na 1ª edição do Soul Experience. Clique e veja a lista completa.</p>
     </div>
   </div>
   <div class="marquee-row right">
@@ -1715,14 +1704,18 @@
 
   var burger = document.getElementById('burgerBtn');
   var menu = document.getElementById('mobileMenu');
-  var closeBtn = document.getElementById('mobileCloseBtn');
-  function openMenu(){ menu.classList.add('open'); }
-  function closeMenu(){ menu.classList.remove('open'); }
-  if(burger) burger.addEventListener('click', openMenu);
-  if(closeBtn) closeBtn.addEventListener('click', closeMenu);
-  menu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', closeMenu);
-  });
+  if(burger && menu){
+    burger.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        menu.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click', function(e){

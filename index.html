@@ -45,6 +45,7 @@
     margin:0;
     text-wrap:balance;
     letter-spacing:-0.01em;
+    line-height:1.12;
   }
   p{margin:0;}
   a{color:inherit;text-decoration:none;}
@@ -607,9 +608,57 @@
   .benefit-title{font-family:'Unbounded',sans-serif;font-weight:700;font-size:18px;color:var(--ink);}
   .benefit-text{margin-top:6px;font-size:14px;color:var(--ink-dim);line-height:1.55;max-width:640px;}
 
-  /* ---------- LOCAL (placeholder, TBD) ---------- */
-  .local-photo{border-radius:24px;overflow:hidden;margin-top:36px;}
-  .local-photo img{width:100%;height:auto;max-height:420px;object-fit:cover;display:block;}
+  /* ---------- INSTAGRAM ---------- */
+  .insta-card{
+    margin-top:32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    background:var(--bg-alt);border:1px solid var(--line);border-radius:20px;padding:18px 22px;
+  }
+  .insta-profile{display:flex;align-items:center;gap:14px;}
+  .insta-name{font-weight:700;font-size:16px;color:var(--ink);}
+  .insta-stats{font-size:13px;color:var(--ink-dim);margin-top:3px;}
+  .insta-grid{margin-top:20px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:480px;}
+  .insta-post{position:relative;display:block;border-radius:18px;overflow:hidden;aspect-ratio:1;}
+  .insta-post img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease;}
+  .insta-post:hover img{transform:scale(1.06);}
+
+  /* ---------- MARCAS ---------- */
+  .marcas{
+    background:linear-gradient(160deg, #241811 0%, #4A2C1C 100%);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    overflow:hidden;
+    padding-block:clamp(56px,9vw,96px) clamp(48px,7vw,80px);
+  }
+  .marcas .eyebrow{color:#F3D9B4;}
+  .marcas .eyebrow::before{background:#F3D9B4;}
+  .marcas .section-title{color:#fff;}
+  .marcas .lede{color:rgba(250,240,225,.78);}
+  .marquee-row{
+    width:100%;overflow:hidden;margin-top:28px;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  }
+  .marquee-row + .marquee-row{margin-top:8px;}
+  .marquee-track{display:flex;align-items:center;gap:56px;width:max-content;}
+  .marquee-track img{height:34px;width:auto;flex-shrink:0;opacity:.9;}
+  .marquee-row.right .marquee-track{animation:marquee-right 46s linear infinite;}
+  .marquee-row.left .marquee-track{animation:marquee-left 42s linear infinite;}
+  @keyframes marquee-right{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+  @keyframes marquee-left{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion: reduce){.marquee-track{animation:none;}}
+  @media (max-width:600px){.marquee-track img{height:26px;}.marquee-track{gap:36px;}}
+
+  /* ---------- LOCAL ---------- */
+  .local-photo{border-radius:24px;overflow:hidden;margin-top:36px;position:relative;}
+  .local-photo img{width:100%;height:auto;display:block;}
+  .local-photo-logo{
+    position:absolute;left:20px;bottom:20px;
+    background:rgba(255,255,255,.95);
+    border-radius:14px;
+    padding:12px 20px;
+    box-shadow:0 10px 28px rgba(20,10,4,.28);
+  }
+  .local-photo-logo img{height:38px;width:auto;}
+  @media (max-width:600px){.local-photo-logo{left:14px;bottom:14px;padding:9px 14px;}.local-photo-logo img{height:28px;}}
 
   /* ---------- PATROCINIO ---------- */
   .pricing{
@@ -1046,6 +1095,38 @@
   </div>
 </section>
 
+<!-- ================= INSTAGRAM ================= -->
+<section id="instagram" style="background:var(--panel-lav);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Bastidores em tempo real</span>
+      <h2 class="section-title">Acompanhe no Instagram</h2>
+      <p class="lede">Fotos, bastidores e novidades do Soul Experience saem primeiro por lá.</p>
+    </div>
+    <div class="insta-card">
+      <a class="insta-profile" href="https://instagram.com/wellnessoulexp" target="_blank" rel="noopener">
+        <span class="avatar-ring"><img src="assets/instagram/profile.jpg" alt="Soul Experience no Instagram"></span>
+        <div>
+          <div class="insta-name">@wellnessoulexp</div>
+          <div class="insta-stats">163 seguidores · 75 publicações</div>
+        </div>
+      </a>
+      <a class="btn btn-primary" href="https://instagram.com/wellnessoulexp" target="_blank" rel="noopener">Seguir</a>
+    </div>
+    <div class="insta-grid">
+      <a class="insta-post" href="https://www.instagram.com/wellnessoulexp/p/DcdedtnOaC0/" target="_blank" rel="noopener">
+        <img src="assets/instagram/post1.jpg" alt="Publicação do Soul Experience no Instagram">
+      </a>
+      <a class="insta-post video-tile" href="https://www.instagram.com/wellnessoulexp/reel/DcejbfttpzT/" target="_blank" rel="noopener">
+        <img src="assets/instagram/post2.jpg" alt="Vídeo recap do Soul Experience no Instagram">
+        <span class="play-btn" style="width:48px;height:48px;">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M6 4.5v11l9-5.5-9-5.5z" fill="currentColor"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ================= INFLUENCIADORES ================= -->
 <section id="influenciadores">
   <div class="wrap">
@@ -1057,48 +1138,48 @@
     <div class="influ-grid">
       <a class="influ-card" href="https://instagram.com/nutri.victorbluhm" target="_blank" rel="noopener">
         <span class="avatar-ring"><img src="assets/team/victor-bluhm.jpg" alt="Victor Bluhm"></span>
-        <div><div class="name">Victor Bluhm</div><div class="role">Nutricionista</div><div class="handle">@nutri.victorbluhm · 154k</div></div>
+        <div><div class="name">Victor Bluhm</div><div class="role">Nutricionista</div><div class="handle">@nutri.victorbluhm</div></div>
       </a>
       <a class="influ-card" href="https://instagram.com/marinadopecem" target="_blank" rel="noopener">
         <span class="avatar-ring"><img src="assets/team/marina-pecem.jpg" alt="Marina do Pecém"></span>
-        <div><div class="name">Marina do Pecém</div><div class="role">Empresária</div><div class="handle">@marinadopecem · 9.3k</div></div>
+        <div><div class="name">Marina do Pecém</div><div class="role">Empresária</div><div class="handle">@marinadopecem · 9.4k</div></div>
       </a>
       <a class="influ-card" href="https://instagram.com/bellamacielnutri" target="_blank" rel="noopener">
         <span class="avatar-ring"><img src="assets/team/bella-maciel.jpg" alt="Bella Maciel"></span>
-        <div><div class="name">Bella Maciel</div><div class="role">Nutricionista</div><div class="handle">@bellamacielnutri · 16,2k</div></div>
+        <div><div class="name">Bella Maciel</div><div class="role">Nutricionista</div><div class="handle">@bellamacielnutri · 16k</div></div>
       </a>
       <a class="influ-card" href="https://instagram.com/carolinemotanutri" target="_blank" rel="noopener">
         <span class="avatar-ring"><img src="assets/team/caroline-mota.jpg" alt="Caroline Mota"></span>
-        <div><div class="name">Caroline Mota</div><div class="role">Nutricionista</div><div class="handle">@carolinemotanutri · 9k</div></div>
+        <div><div class="name">Caroline Mota</div><div class="role">Nutricionista</div><div class="handle">@carolinemotanutri · 9.1k</div></div>
       </a>
       <a class="influ-card" href="https://instagram.com/emersonpaivanutri" target="_blank" rel="noopener">
         <span class="avatar-ring"><img src="assets/team/emerson-paiva.jpg" alt="Emerson Paiva"></span>
-        <div><div class="name">Emerson Paiva</div><div class="role">Nutricionista</div><div class="handle">@emersonpaivanutri · 15.4k</div></div>
+        <div><div class="name">Emerson Paiva</div><div class="role">Nutricionista</div><div class="handle">@emersonpaivanutri · 16k</div></div>
       </a>
       <a class="influ-card" href="https://instagram.com/nutricamilaragao" target="_blank" rel="noopener">
         <span class="avatar-ring"><img src="assets/team/camila-aragao.jpg" alt="Camila Aragão"></span>
-        <div><div class="name">Camila Aragão</div><div class="role">Nutricionista</div><div class="handle">@nutricamilaragao · 8.4k</div></div>
+        <div><div class="name">Camila Aragão</div><div class="role">Nutricionista</div><div class="handle">@nutricamilaragao · 8.5k</div></div>
       </a>
       <a class="influ-card" href="https://instagram.com/jessikaeliasnutri" target="_blank" rel="noopener">
-        <span class="avatar-ring"><span class="avatar-placeholder">JE</span></span>
-        <div><div class="name">Jéssika Elias</div><div class="role">Nutricionista</div><div class="handle">@jessikaeliasnutri</div></div>
+        <span class="avatar-ring"><img src="assets/team/jessika-elias.jpg" alt="Jéssika Elias"></span>
+        <div><div class="name">Jéssika Elias</div><div class="role">Nutricionista</div><div class="handle">@jessikaeliasnutri · 5.8k</div></div>
       </a>
       <a class="influ-card" href="https://instagram.com/natachafraga.psi" target="_blank" rel="noopener">
-        <span class="avatar-ring"><span class="avatar-placeholder">NF</span></span>
-        <div><div class="name">Natacha Fraga</div><div class="role">Psicóloga</div><div class="handle">@natachafraga.psi</div></div>
+        <span class="avatar-ring"><img src="assets/team/natacha-fraga.jpg" alt="Natacha Fraga"></span>
+        <div><div class="name">Natacha Fraga</div><div class="role">Psicóloga</div><div class="handle">@natachafraga.psi · 8.1k</div></div>
       </a>
       <a class="influ-card" href="https://instagram.com/luanaribeirobraga" target="_blank" rel="noopener">
-        <span class="avatar-ring"><span class="avatar-placeholder">LB</span></span>
-        <div><div class="name">Luana Ribeiro Braga</div><div class="role">Lifestyle</div><div class="handle">@luanaribeirobraga</div></div>
+        <span class="avatar-ring"><img src="assets/team/luana-braga.jpg" alt="Luana Ribeiro Braga"></span>
+        <div><div class="name">Luana Ribeiro Braga</div><div class="role">Lifestyle</div><div class="handle">@luanaribeirobraga · 13k</div></div>
       </a>
       <a class="influ-card" href="https://instagram.com/germanalustosa" target="_blank" rel="noopener">
-        <span class="avatar-ring"><span class="avatar-placeholder">GL</span></span>
-        <div><div class="name">Germana Lustosa</div><div class="role">Convidada</div><div class="handle">@germanalustosa</div></div>
+        <span class="avatar-ring"><img src="assets/team/germana-lustosa.jpg" alt="Germana Lustosa"></span>
+        <div><div class="name">Germana Lustosa</div><div class="role">Convidada</div><div class="handle">@germanalustosa · 15k</div></div>
       </a>
     </div>
     <div class="reach-banner">
-      <div class="num">+240 mil</div>
-      <div class="txt">pessoas impactadas somando o alcance desses influenciadores e a cobertura digital do evento</div>
+      <div class="num">+100 mil</div>
+      <div class="txt">pessoas impactadas somando os seguidores desses influenciadores</div>
     </div>
   </div>
 </section>
@@ -1174,9 +1255,7 @@
     </div>
     <div class="local-photo">
       <img src="assets/iguatemi-bosque.jpg" alt="Área externa do Iguatemi Bosque">
-    </div>
-    <div class="coord-logos" style="margin-top:32px;">
-      <div class="coord-logo-card"><img src="assets/iguatemi-bosque-logo.png" alt="Iguatemi Bosque" style="height:56px;"></div>
+      <div class="local-photo-logo"><img src="assets/iguatemi-bosque-logo.png" alt="Iguatemi Bosque"></div>
     </div>
     <div class="benefit-highlight">
       <div class="benefit-icon">
@@ -1214,6 +1293,29 @@
         <div class="benefit-title">2 dias de ativação na Academia Bodytech</div>
         <div class="benefit-text">Todo patrocinador do Soul Experience, do plano Apoio ao Assinante, ganha 2 dias para ativar a própria marca dentro da Academia Bodytech: um espaço de alto padrão e visibilidade que normalmente tem um custo elevado para qualquer marca.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARCAS ================= -->
+<section id="marcas" class="marcas">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Confiança de quem já participou</span>
+      <h2 class="section-title">Marcas que já passaram por aqui</h2>
+      <p class="lede">Um recorte das marcas que estiveram na 1ª edição do Soul Experience.</p>
+    </div>
+  </div>
+  <div class="marquee-row right">
+    <div class="marquee-track">
+      <img src="assets/brands/cherry-glow.png" alt="Cherry Glow"><img src="assets/brands/jd-cirurgia.png" alt="JD Cirurgia Plástica"><img src="assets/brands/love-nuts.png" alt="Love Nuts"><img src="assets/brands/curc-colflex.png" alt="CURC Creatina e Colflex Whey"><img src="assets/brands/qvino.png" alt="Qvino"><img src="assets/brands/breno-diniz.png" alt="Breno Diniz Imóveis"><img src="assets/brands/saladex.png" alt="Saladex"><img src="assets/brands/shake2go.png" alt="Shake 2Go"><img src="assets/brands/jatoba.png" alt="Jatobá Estofados"><img src="assets/brands/bodytech.png" alt="Bodytech"><img src="assets/brands/moura-dubeux.png" alt="Moura Dubeux"><img src="assets/brands/naturalle-iceup.png" alt="Naturalle Iceup"><img src="assets/brands/madnutz.png" alt="MadNutz">
+      <img src="assets/brands/cherry-glow.png" alt="" aria-hidden="true"><img src="assets/brands/jd-cirurgia.png" alt="" aria-hidden="true"><img src="assets/brands/love-nuts.png" alt="" aria-hidden="true"><img src="assets/brands/curc-colflex.png" alt="" aria-hidden="true"><img src="assets/brands/qvino.png" alt="" aria-hidden="true"><img src="assets/brands/breno-diniz.png" alt="" aria-hidden="true"><img src="assets/brands/saladex.png" alt="" aria-hidden="true"><img src="assets/brands/shake2go.png" alt="" aria-hidden="true"><img src="assets/brands/jatoba.png" alt="" aria-hidden="true"><img src="assets/brands/bodytech.png" alt="" aria-hidden="true"><img src="assets/brands/moura-dubeux.png" alt="" aria-hidden="true"><img src="assets/brands/naturalle-iceup.png" alt="" aria-hidden="true"><img src="assets/brands/madnutz.png" alt="" aria-hidden="true">
+    </div>
+  </div>
+  <div class="marquee-row left">
+    <div class="marquee-track">
+      <img src="assets/brands/aquaclara.png" alt="Aquaclara"><img src="assets/brands/peso-carnes.png" alt="Pesō Carnes Especiais"><img src="assets/brands/ts-health.png" alt="TS Health Center"><img src="assets/brands/artcenic.png" alt="Artcenic Eventos"><img src="assets/brands/doterra.png" alt="doTERRA"><img src="assets/brands/subli-midia.png" alt="Subli Mídia"><img src="assets/brands/hits-producoes.png" alt="Hits Produções"><img src="assets/brands/s4-solucoes.png" alt="S4 Soluções Visuais"><img src="assets/brands/supplements.png" alt="Supplements Sports Nutrition"><img src="assets/brands/imua-ceara.png" alt="Imua Ceará Vaca"><img src="assets/brands/leloyn.png" alt="Le'Loyn"><img src="assets/brands/awe.png" alt="awe">
+      <img src="assets/brands/aquaclara.png" alt="" aria-hidden="true"><img src="assets/brands/peso-carnes.png" alt="" aria-hidden="true"><img src="assets/brands/ts-health.png" alt="" aria-hidden="true"><img src="assets/brands/artcenic.png" alt="" aria-hidden="true"><img src="assets/brands/doterra.png" alt="" aria-hidden="true"><img src="assets/brands/subli-midia.png" alt="" aria-hidden="true"><img src="assets/brands/hits-producoes.png" alt="" aria-hidden="true"><img src="assets/brands/s4-solucoes.png" alt="" aria-hidden="true"><img src="assets/brands/supplements.png" alt="" aria-hidden="true"><img src="assets/brands/imua-ceara.png" alt="" aria-hidden="true"><img src="assets/brands/leloyn.png" alt="" aria-hidden="true"><img src="assets/brands/awe.png" alt="" aria-hidden="true">
     </div>
   </div>
 </section>
@@ -1702,5 +1804,6 @@
   }
 })();
 </script>
+
 </body>
 </html>

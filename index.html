@@ -467,6 +467,12 @@
   .perola-gallery{margin-top:36px;}
   .pg-a{display:block;border-radius:18px;overflow:hidden;}
   .pg-a img{width:100%;height:100%;object-fit:cover;max-height:340px;}
+  .video-tile{aspect-ratio:16/9;max-height:340px;}
+  .video-tile iframe{width:100%;height:100%;display:block;border:0;}
+  .perola-logo{height:96px;width:auto;margin-top:18px;}
+  .perola-sponsor{margin-top:20px;display:flex;align-items:center;gap:12px;}
+  .perola-sponsor span{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-dim);}
+  .perola-sponsor img{height:34px;width:auto;}
   .pg-thumbs{
     margin-top:14px;
     display:flex;flex-wrap:wrap;gap:12px;
@@ -647,7 +653,9 @@
     mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
   }
   .marquee-row + .marquee-row{margin-top:32px;}
-  .marquee-track{display:flex;align-items:center;gap:50px;width:max-content;}
+  .marquee-track{display:flex;align-items:center;gap:50px;width:max-content;cursor:grab;user-select:none;}
+  .marquee-track.dragging{cursor:grabbing;}
+  .marquee-track img{-webkit-user-drag:none;}
   .marcas .marquee-track a{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:130px;height:52px;}
   .marcas .marquee-track img{width:100%;height:100%;object-fit:contain;opacity:.92;transition:opacity .2s;}
   .marcas .marquee-track a:hover img{opacity:1;}
@@ -1139,17 +1147,21 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Como foi a 1ª edição</span>
-      <h2 class="section-title">Pérola Tropical</h2>
-      <p class="lede">Um gostinho de como foi a primeira edição do Soul Experience, realizada em 21 de agosto no Sunrise Beach Club, em Fortaleza.</p>
+      <img class="perola-logo" src="assets/perola/perola-logo.png" alt="Pérola Tropical - 1ª edição">
+      <p class="lede">A edição Pérola Tropical nasceu da fusão entre a delicadeza da pérola e a força do trópico: assim como a pérola surge do mar, lenta, preciosa e única, essa edição celebrou a beleza que emerge do cuidado, da transformação e do que há de mais genuíno em cada mulher. Uma noite ao pôr do sol, à beira-mar de Fortaleza, no Sunrise Beach Club, em 21 de agosto de 2026, reunindo 100 convidados presenciais e impactando mais de 80 mil pessoas com uma audiência qualificada de Wellness e lifestyle.</p>
+      <div class="perola-sponsor">
+        <span>Marca assinante da edição</span>
+        <img src="assets/iana-dias-logo.png" alt="Dra. Iana Dias">
+      </div>
     </div>
     <div class="perola-gallery">
-      <a class="pg-a video-tile" href="https://drive.google.com/file/d/1feK7oPDgLCbgEW6_buLoqCzYqj4WwtHi/view" target="_blank" rel="noopener">
+      <div class="pg-a video-tile" id="perolaVideoTile">
         <img src="assets/perola/backdrop.jpg" alt="Vídeo oficial Pérola Tropical">
-        <span class="play-btn">
+        <button type="button" class="play-btn" id="perolaVideoPlay" aria-label="Assistir vídeo oficial">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 4.5v11l9-5.5-9-5.5z" fill="currentColor"/></svg>
-        </span>
+        </button>
         <span class="video-label">Vídeo oficial</span>
-      </a>
+      </div>
       <div class="pg-thumbs">
         <div class="pg-item"><img src="assets/perola/decoracao.jpg" alt="Decoração do evento"></div>
         <div class="pg-item"><img src="assets/perola/dj.jpg" alt="DJ Otávio Camargo"></div>
@@ -1186,30 +1198,30 @@
   </div>
   <div class="marquee-row influ-row right">
     <div class="marquee-track">
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener"><span class="avatar-ring sm"><img src="assets/team/victor-bluhm.jpg" alt="Victor Bluhm"></span><div><div class="name">Victor Bluhm</div><div class="handle">@victorbluhmm · 157k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener"><span class="avatar-ring sm"><img src="assets/team/marina-pecem.jpg" alt="Marina do Pecém"></span><div><div class="name">Marina do Pecém</div><div class="handle">@marinadopecem · 9.4k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener"><span class="avatar-ring sm"><img src="assets/team/bella-maciel.jpg" alt="Bella Maciel"></span><div><div class="name">Bella Maciel</div><div class="handle">@bellamacielnutri · 16k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener"><span class="avatar-ring sm"><img src="assets/team/caroline-mota.jpg" alt="Caroline Mota"></span><div><div class="name">Caroline Mota</div><div class="handle">@carolinemotanutri · 9.1k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener"><span class="avatar-ring sm"><img src="assets/team/emerson-paiva.jpg" alt="Emerson Paiva"></span><div><div class="name">Emerson Paiva</div><div class="handle">@emersonpaivanutri · 16k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/victor-bluhm.jpg" alt=""></span><div><div class="name">Victor Bluhm</div><div class="handle">@victorbluhmm · 157k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/marina-pecem.jpg" alt=""></span><div><div class="name">Marina do Pecém</div><div class="handle">@marinadopecem · 9.4k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/bella-maciel.jpg" alt=""></span><div><div class="name">Bella Maciel</div><div class="handle">@bellamacielnutri · 16k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/caroline-mota.jpg" alt=""></span><div><div class="name">Caroline Mota</div><div class="handle">@carolinemotanutri · 9.1k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/emerson-paiva.jpg" alt=""></span><div><div class="name">Emerson Paiva</div><div class="handle">@emersonpaivanutri · 16k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/victor-bluhm.jpg" alt="Victor Bluhm"></span><div><div class="name">Victor Bluhm</div><div class="handle">@victorbluhmm · 157k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/marina-pecem.jpg" alt="Marina do Pecém"></span><div><div class="name">Marina do Pecém</div><div class="handle">@marinadopecem · 9.4k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/bella-maciel.jpg" alt="Bella Maciel"></span><div><div class="name">Bella Maciel</div><div class="handle">@bellamacielnutri · 16k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/caroline-mota.jpg" alt="Caroline Mota"></span><div><div class="name">Caroline Mota</div><div class="handle">@carolinemotanutri · 9.1k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/emerson-paiva.jpg" alt="Emerson Paiva"></span><div><div class="name">Emerson Paiva</div><div class="handle">@emersonpaivanutri · 16k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/victor-bluhm.jpg" alt=""></span><div><div class="name">Victor Bluhm</div><div class="handle">@victorbluhmm · 157k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/marina-pecem.jpg" alt=""></span><div><div class="name">Marina do Pecém</div><div class="handle">@marinadopecem · 9.4k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/bella-maciel.jpg" alt=""></span><div><div class="name">Bella Maciel</div><div class="handle">@bellamacielnutri · 16k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/caroline-mota.jpg" alt=""></span><div><div class="name">Caroline Mota</div><div class="handle">@carolinemotanutri · 9.1k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/emerson-paiva.jpg" alt=""></span><div><div class="name">Emerson Paiva</div><div class="handle">@emersonpaivanutri · 16k</div></div></a>
     </div>
   </div>
   <div class="marquee-row influ-row left">
     <div class="marquee-track">
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener"><span class="avatar-ring sm"><img src="assets/team/camila-aragao.jpg" alt="Camila Aragão"></span><div><div class="name">Camila Aragão</div><div class="handle">@nutricamilaragao · 8.5k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener"><span class="avatar-ring sm"><img src="assets/team/jessika-elias.jpg" alt="Jéssika Elias"></span><div><div class="name">Jéssika Elias</div><div class="handle">@jessikaeliasnutri · 5.8k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener"><span class="avatar-ring sm"><img src="assets/team/natacha-fraga.jpg" alt="Natacha Fraga"></span><div><div class="name">Natacha Fraga</div><div class="handle">@natachafraga.psi · 8.1k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener"><span class="avatar-ring sm"><img src="assets/team/luana-braga.jpg" alt="Luana Ribeiro Braga"></span><div><div class="name">Luana Ribeiro Braga</div><div class="handle">@luanaribeirobraga · 13k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener"><span class="avatar-ring sm"><img src="assets/team/germana-lustosa.jpg" alt="Germana Lustosa"></span><div><div class="name">Germana Lustosa</div><div class="handle">@germanalustosa · 15k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/camila-aragao.jpg" alt=""></span><div><div class="name">Camila Aragão</div><div class="handle">@nutricamilaragao · 8.5k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/jessika-elias.jpg" alt=""></span><div><div class="name">Jéssika Elias</div><div class="handle">@jessikaeliasnutri · 5.8k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/natacha-fraga.jpg" alt=""></span><div><div class="name">Natacha Fraga</div><div class="handle">@natachafraga.psi · 8.1k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/luana-braga.jpg" alt=""></span><div><div class="name">Luana Ribeiro Braga</div><div class="handle">@luanaribeirobraga · 13k</div></div></a>
-      <a class="influ-chip" href="influenciadores.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/germana-lustosa.jpg" alt=""></span><div><div class="name">Germana Lustosa</div><div class="handle">@germanalustosa · 15k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/camila-aragao.jpg" alt="Camila Aragão"></span><div><div class="name">Camila Aragão</div><div class="handle">@nutricamilaragao · 8.5k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/jessika-elias.jpg" alt="Jéssika Elias"></span><div><div class="name">Jéssika Elias</div><div class="handle">@jessikaeliasnutri · 5.8k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/natacha-fraga.jpg" alt="Natacha Fraga"></span><div><div class="name">Natacha Fraga</div><div class="handle">@natachafraga.psi · 8.1k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/luana-braga.jpg" alt="Luana Ribeiro Braga"></span><div><div class="name">Luana Ribeiro Braga</div><div class="handle">@luanaribeirobraga · 13k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/germana-lustosa.jpg" alt="Germana Lustosa"></span><div><div class="name">Germana Lustosa</div><div class="handle">@germanalustosa · 15k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/camila-aragao.jpg" alt=""></span><div><div class="name">Camila Aragão</div><div class="handle">@nutricamilaragao · 8.5k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/jessika-elias.jpg" alt=""></span><div><div class="name">Jéssika Elias</div><div class="handle">@jessikaeliasnutri · 5.8k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/natacha-fraga.jpg" alt=""></span><div><div class="name">Natacha Fraga</div><div class="handle">@natachafraga.psi · 8.1k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/luana-braga.jpg" alt=""></span><div><div class="name">Luana Ribeiro Braga</div><div class="handle">@luanaribeirobraga · 13k</div></div></a>
+      <a class="influ-chip" href="influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/germana-lustosa.jpg" alt=""></span><div><div class="name">Germana Lustosa</div><div class="handle">@germanalustosa · 15k</div></div></a>
     </div>
   </div>
   <div class="wrap">
@@ -1344,14 +1356,14 @@
   </div>
   <div class="marquee-row right">
     <div class="marquee-track">
-      <a href="marcas.html" target="_blank" rel="noopener" title="Cherry Glow"><img src="assets/brands/cherry-glow.png" alt="Cherry Glow"></a><a href="marcas.html" target="_blank" rel="noopener" title="JD Cirurgia Plástica"><img src="assets/brands/jd-cirurgia.png" alt="JD Cirurgia Plástica"></a><a href="marcas.html" target="_blank" rel="noopener" title="Love Nuts"><img src="assets/brands/love-nuts.png" alt="Love Nuts"></a><a href="marcas.html" target="_blank" rel="noopener" title="CURC Creatina e Colflex Whey"><img src="assets/brands/curc-colflex.png" alt="CURC Creatina e Colflex Whey"></a><a href="marcas.html" target="_blank" rel="noopener" title="Qvino"><img src="assets/brands/qvino.png" alt="Qvino"></a><a href="marcas.html" target="_blank" rel="noopener" title="Breno Diniz Imóveis"><img src="assets/brands/breno-diniz.png" alt="Breno Diniz Imóveis"></a><a href="marcas.html" target="_blank" rel="noopener" title="Saladex"><img src="assets/brands/saladex.png" alt="Saladex"></a><a href="marcas.html" target="_blank" rel="noopener" title="Shake 2Go"><img src="assets/brands/shake2go.png" alt="Shake 2Go"></a><a href="marcas.html" target="_blank" rel="noopener" title="Jatobá Estofados"><img src="assets/brands/jatoba.png" alt="Jatobá Estofados"></a><a href="marcas.html" target="_blank" rel="noopener" title="Bodytech"><img src="assets/brands/bodytech.png" alt="Bodytech"></a><a href="marcas.html" target="_blank" rel="noopener" title="Moura Dubeux"><img src="assets/brands/moura-dubeux.png" alt="Moura Dubeux"></a><a href="marcas.html" target="_blank" rel="noopener" title="Naturalle Iceup"><img src="assets/brands/naturalle-iceup.png" alt="Naturalle Iceup"></a><a href="marcas.html" target="_blank" rel="noopener" title="MadNutz"><img src="assets/brands/madnutz.png" alt="MadNutz"></a>
-      <a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/cherry-glow.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/jd-cirurgia.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/love-nuts.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/curc-colflex.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/qvino.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/breno-diniz.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/saladex.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/shake2go.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/jatoba.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/bodytech.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/moura-dubeux.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/naturalle-iceup.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/madnutz.png" alt=""></a>
+      <a href="marcas.html" title="Cherry Glow"><img src="assets/brands/cherry-glow.png" alt="Cherry Glow"></a><a href="marcas.html" title="JD Cirurgia Plástica"><img src="assets/brands/jd-cirurgia.png" alt="JD Cirurgia Plástica"></a><a href="marcas.html" title="Love Nuts"><img src="assets/brands/love-nuts.png" alt="Love Nuts"></a><a href="marcas.html" title="CURC Creatina e Colflex Whey"><img src="assets/brands/curc-colflex.png" alt="CURC Creatina e Colflex Whey"></a><a href="marcas.html" title="Qvino"><img src="assets/brands/qvino.png" alt="Qvino"></a><a href="marcas.html" title="Breno Diniz Imóveis"><img src="assets/brands/breno-diniz.png" alt="Breno Diniz Imóveis"></a><a href="marcas.html" title="Saladex"><img src="assets/brands/saladex.png" alt="Saladex"></a><a href="marcas.html" title="Shake 2Go"><img src="assets/brands/shake2go.png" alt="Shake 2Go"></a><a href="marcas.html" title="Jatobá Estofados"><img src="assets/brands/jatoba.png" alt="Jatobá Estofados"></a><a href="marcas.html" title="Bodytech"><img src="assets/brands/bodytech.png" alt="Bodytech"></a><a href="marcas.html" title="Moura Dubeux"><img src="assets/brands/moura-dubeux.png" alt="Moura Dubeux"></a><a href="marcas.html" title="Naturalle Iceup"><img src="assets/brands/naturalle-iceup.png" alt="Naturalle Iceup"></a><a href="marcas.html" title="MadNutz"><img src="assets/brands/madnutz.png" alt="MadNutz"></a>
+      <a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/cherry-glow.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/jd-cirurgia.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/love-nuts.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/curc-colflex.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/qvino.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/breno-diniz.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/saladex.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/shake2go.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/jatoba.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/bodytech.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/moura-dubeux.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/naturalle-iceup.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/madnutz.png" alt=""></a>
     </div>
   </div>
   <div class="marquee-row left">
     <div class="marquee-track">
-      <a href="marcas.html" target="_blank" rel="noopener" title="Aquaclara"><img src="assets/brands/aquaclara.png" alt="Aquaclara"></a><a href="marcas.html" target="_blank" rel="noopener" title="Pesō Carnes Especiais"><img src="assets/brands/peso-carnes.png" alt="Pesō Carnes Especiais"></a><a href="marcas.html" target="_blank" rel="noopener" title="TS Health Center"><img src="assets/brands/ts-health.png" alt="TS Health Center"></a><a href="marcas.html" target="_blank" rel="noopener" title="Artcenic Eventos"><img src="assets/brands/artcenic.png" alt="Artcenic Eventos"></a><a href="marcas.html" target="_blank" rel="noopener" title="doTERRA"><img src="assets/brands/doterra.png" alt="doTERRA"></a><a href="marcas.html" target="_blank" rel="noopener" title="Subli Mídia"><img src="assets/brands/subli-midia.png" alt="Subli Mídia"></a><a href="marcas.html" target="_blank" rel="noopener" title="Hits Produções"><img src="assets/brands/hits-producoes.png" alt="Hits Produções"></a><a href="marcas.html" target="_blank" rel="noopener" title="S4 Soluções Visuais"><img src="assets/brands/s4-solucoes.png" alt="S4 Soluções Visuais"></a><a href="marcas.html" target="_blank" rel="noopener" title="Supplements Sports Nutrition"><img src="assets/brands/supplements.png" alt="Supplements Sports Nutrition"></a><a href="marcas.html" target="_blank" rel="noopener" title="Imua Ceará Vaca"><img src="assets/brands/imua-ceara.png" alt="Imua Ceará Vaca"></a><a href="marcas.html" target="_blank" rel="noopener" title="Le'Loyn"><img src="assets/brands/leloyn.png" alt="Le'Loyn"></a><a href="marcas.html" target="_blank" rel="noopener" title="awe"><img src="assets/brands/awe.png" alt="awe"></a>
-      <a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/aquaclara.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/peso-carnes.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/ts-health.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/artcenic.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/doterra.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/subli-midia.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/hits-producoes.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/s4-solucoes.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/supplements.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/imua-ceara.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/leloyn.png" alt=""></a><a href="marcas.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/brands/awe.png" alt=""></a>
+      <a href="marcas.html" title="Aquaclara"><img src="assets/brands/aquaclara.png" alt="Aquaclara"></a><a href="marcas.html" title="Pesō Carnes Especiais"><img src="assets/brands/peso-carnes.png" alt="Pesō Carnes Especiais"></a><a href="marcas.html" title="TS Health Center"><img src="assets/brands/ts-health.png" alt="TS Health Center"></a><a href="marcas.html" title="Artcenic Eventos"><img src="assets/brands/artcenic.png" alt="Artcenic Eventos"></a><a href="marcas.html" title="doTERRA"><img src="assets/brands/doterra.png" alt="doTERRA"></a><a href="marcas.html" title="Subli Mídia"><img src="assets/brands/subli-midia.png" alt="Subli Mídia"></a><a href="marcas.html" title="Hits Produções"><img src="assets/brands/hits-producoes.png" alt="Hits Produções"></a><a href="marcas.html" title="S4 Soluções Visuais"><img src="assets/brands/s4-solucoes.png" alt="S4 Soluções Visuais"></a><a href="marcas.html" title="Supplements Sports Nutrition"><img src="assets/brands/supplements.png" alt="Supplements Sports Nutrition"></a><a href="marcas.html" title="Imua Ceará Vaca"><img src="assets/brands/imua-ceara.png" alt="Imua Ceará Vaca"></a><a href="marcas.html" title="Le'Loyn"><img src="assets/brands/leloyn.png" alt="Le'Loyn"></a><a href="marcas.html" title="awe"><img src="assets/brands/awe.png" alt="awe"></a>
+      <a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/aquaclara.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/peso-carnes.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/ts-health.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/artcenic.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/doterra.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/subli-midia.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/hits-producoes.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/s4-solucoes.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/supplements.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/imua-ceara.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/leloyn.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/awe.png" alt=""></a>
     </div>
   </div>
 </section>
@@ -1728,6 +1740,14 @@
     if(e.key === 'Escape'){ closeLightbox(); }
   });
 
+  var perolaVideoPlay = document.getElementById('perolaVideoPlay');
+  var perolaVideoTile = document.getElementById('perolaVideoTile');
+  if(perolaVideoPlay && perolaVideoTile){
+    perolaVideoPlay.addEventListener('click', function(){
+      perolaVideoTile.innerHTML = '<iframe src="https://drive.google.com/file/d/1feK7oPDgLCbgEW6_buLoqCzYqj4WwtHi/preview" allow="autoplay" allowfullscreen></iframe>';
+    });
+  }
+
   var pgMoreBtn = document.getElementById('pgMoreBtn');
   var pgMore = document.getElementById('pgMore');
   if(pgMoreBtn && pgMore){
@@ -1736,6 +1756,72 @@
       pgMoreBtn.textContent = isOpen ? 'Ver menos fotos' : 'Ver mais fotos';
     });
   }
+
+  function getTranslateX(el){
+    var st = window.getComputedStyle(el);
+    var tr = st.transform;
+    if(!tr || tr === 'none') return 0;
+    var m = tr.match(/matrix\(([^)]+)\)/);
+    if(!m) return 0;
+    var parts = m[1].split(',').map(Number);
+    return parts[4] || 0;
+  }
+
+  document.querySelectorAll('.marquee-row').forEach(function(row){
+    var track = row.querySelector('.marquee-track');
+    if(!track) return;
+    var isRight = row.classList.contains('right');
+    var duration = parseFloat(window.getComputedStyle(track).animationDuration) || 40;
+    var dragging = false, moved = false, startX = 0, startTranslate = 0, half = 0;
+
+    function down(x){
+      dragging = true; moved = false;
+      half = track.scrollWidth / 2;
+      startTranslate = getTranslateX(track);
+      startX = x;
+      track.style.animation = 'none';
+      track.style.transform = 'translateX(' + startTranslate + 'px)';
+      track.classList.add('dragging');
+    }
+    function move(x){
+      if(!dragging) return;
+      var delta = x - startX;
+      if(Math.abs(delta) > 4) moved = true;
+      var newX = startTranslate + delta;
+      if(half > 0){
+        while(newX <= -half) newX += half;
+        while(newX > 0) newX -= half;
+      }
+      track.style.transform = 'translateX(' + newX + 'px)';
+    }
+    function up(){
+      if(!dragging) return;
+      dragging = false;
+      track.classList.remove('dragging');
+      var current = getTranslateX(track);
+      var t;
+      if(half > 0){
+        t = isRight ? duration * (current / half + 1) : duration * (-current / half);
+        t = ((t % duration) + duration) % duration;
+      } else {
+        t = 0;
+      }
+      track.style.transform = '';
+      track.style.animation = '';
+      track.style.animationDelay = '-' + t + 's';
+    }
+
+    track.addEventListener('mousedown', function(e){ down(e.clientX); e.preventDefault(); });
+    window.addEventListener('mousemove', function(e){ move(e.clientX); });
+    window.addEventListener('mouseup', up);
+    track.addEventListener('touchstart', function(e){ down(e.touches[0].clientX); }, {passive:true});
+    track.addEventListener('touchmove', function(e){ move(e.touches[0].clientX); }, {passive:true});
+    track.addEventListener('touchend', up);
+
+    track.addEventListener('click', function(e){
+      if(moved){ e.preventDefault(); e.stopPropagation(); moved = false; }
+    }, true);
+  });
 
   /* ---------- VIVI (assistente virtual, base de respostas local) ---------- */
   var chatFab = document.getElementById('chat-fab');

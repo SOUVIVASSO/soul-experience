@@ -946,7 +946,15 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:900px){
-    .nav-links{display:none;}
+    .nav-inner{flex-wrap:wrap;row-gap:10px;}
+    .nav-links{
+      display:flex;order:3;width:100%;
+      overflow-x:auto;-webkit-overflow-scrolling:touch;
+      gap:20px;padding-bottom:2px;
+      -ms-overflow-style:none;scrollbar-width:none;
+    }
+    .nav-links::-webkit-scrollbar{display:none;}
+    .nav-links a{font-size:13px;flex-shrink:0;}
     .nav-cta{display:none;}
     .burger{display:flex;}
     .about-grid,.campanha-grid,.publico-grid{grid-template-columns:1fr;gap:40px;}
@@ -1070,14 +1078,14 @@
       </div>
       <div class="dimension-list" style="min-width:280px;">
         <div class="dimension-row"><span class="name">1ª edição</span><span class="tag">Pérola Tropical · 21 de agosto</span></div>
-        <div class="dimension-row"><span class="name">2ª edição</span><span class="tag">28 de novembro de 2026</span></div>
+        <div class="dimension-row"><span class="name">2ª edição</span><span class="tag">Circuito das Estações · 28 de novembro de 2026</span></div>
       </div>
     </div>
 
     <div style="margin-top:56px;">
       <span class="eyebrow">Circuito de estações · com apoio LoveNuts</span>
-      <h3 style="font-size:clamp(22px,3vw,28px);margin-top:10px;">Cada estação, uma cor e um sabor</h3>
-      <p class="lede" style="margin-top:14px;">Estruturado como um circuito de estações, cada uma leva o nome e a cor de um mix de castanhas LoveNuts, unindo movimento, sabor e descoberta. No fechamento, todo mundo se encontra numa corrida coletiva, com premiação e dicas das nutricionistas parceiras.</p>
+      <h3 style="font-size:clamp(22px,3vw,28px);margin-top:10px;">Circuito das Estações</h3>
+      <p class="lede" style="margin-top:14px;"><strong>Cada estação, uma cor e um sabor.</strong> Estruturado como um circuito de estações, cada uma leva o nome e a cor de um mix de castanhas LoveNuts, unindo movimento, sabor e descoberta. No fechamento, todo mundo se encontra numa corrida coletiva, com premiação e dicas das nutricionistas parceiras.</p>
     </div>
 
     <div class="stations">

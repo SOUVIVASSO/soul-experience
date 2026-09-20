@@ -174,42 +174,40 @@
 
   /* ---------- HERO ---------- */
   .hero{
-    position:relative;
+    position:relative;overflow:hidden;
     padding-top:calc(128px + env(safe-area-inset-top,0px));
-    padding-bottom:clamp(50px,7vw,90px);
-    background: linear-gradient(180deg, #241811 0%, #5C3A22 45%, #A66B3D 80%, var(--bg) 100%);
+    padding-bottom:clamp(64px,9vw,110px);
+    background:#241811;
   }
-  .hero-inner{display:flex;justify-content:center;}
-  .hero-card{
-    max-width:640px;
-    width:100%;
+  .hero::before{
+    content:"";position:absolute;inset:-20% -10% auto -10%;height:640px;
+    background:
+      radial-gradient(60% 100% at 30% 0%, rgba(181,101,46,.38), transparent 70%),
+      radial-gradient(50% 90% at 85% 10%, rgba(217,164,65,.30), transparent 70%),
+      radial-gradient(45% 80% at 60% 40%, rgba(138,75,46,.32), transparent 70%);
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;
+    max-width:640px;margin-inline:auto;
     text-align:center;
-    backdrop-filter:blur(20px) saturate(1.4);
-    -webkit-backdrop-filter:blur(20px) saturate(1.4);
-    border-radius:32px;
-    padding:clamp(32px,5vw,52px) clamp(22px,5vw,48px);
   }
-  .dark-card{
-    background:linear-gradient(165deg, #241811 0%, #5C3A22 32%, #8A4B2E 62%, #C1874F 100%);
-    border:1px solid rgba(255,255,255,.16);
-    box-shadow:0 30px 70px rgba(40,20,10,.35);
-  }
-  .dark-card .hero-tagline, .dark-card h2, .dark-card h3{color:#fff;}
-  .dark-card .hero-sub, .dark-card .lede{color:rgba(250,240,225,.78);}
-  .dark-card .eyebrow{color:#F3D9B4;}
-  .dark-card .eyebrow::before{background:#F3D9B4;}
-  .dark-card .edition-badge{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff;}
-  .dark-card .pill-meta{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff;}
-  .dark-card .btn-ghost{border-color:rgba(255,255,255,.42);color:#fff;background:rgba(255,255,255,.08);}
-  .dark-card .btn-ghost:hover{border-color:#fff;}
-  .dark-card .btn-primary{box-shadow:0 10px 26px rgba(10,4,20,.35);}
+  .on-dark .hero-tagline, .on-dark h2, .on-dark h3{color:#fff;}
+  .on-dark .hero-sub, .on-dark .lede{color:rgba(250,240,225,.78);}
+  .on-dark .eyebrow{color:#F3D9B4;}
+  .on-dark .eyebrow::before{background:#F3D9B4;}
+  .on-dark .edition-badge{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff;}
+  .on-dark .pill-meta{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff;}
+  .on-dark .btn-ghost{border-color:rgba(255,255,255,.42);color:#fff;background:rgba(255,255,255,.08);}
+  .on-dark .btn-ghost:hover{border-color:#fff;}
+  .on-dark .btn-primary{box-shadow:0 10px 26px rgba(10,4,20,.35);}
   .hero-tagline{
     margin-top:24px;
-    font-size:clamp(20px,2.6vw,28px);
+    font-size:clamp(24px,3.4vw,36px);
     font-weight:700;
     font-family:'Baloo 2',sans-serif;
     color:var(--ink);
-    max-width:460px;
+    max-width:480px;
     margin-inline:auto;
   }
   .edition-badge{
@@ -224,13 +222,13 @@
   }
   .hero-sub{
     margin-top:16px;
-    font-size:15px;
+    font-size:15.5px;
     color:var(--ink-dim);
     max-width:440px;
     margin-inline:auto;
   }
   .hero-meta{
-    margin-top:26px;
+    margin-top:28px;
     display:inline-flex;flex-wrap:wrap;justify-content:center;gap:10px;
   }
   .pill-meta{
@@ -244,7 +242,7 @@
   }
   .pill-meta svg{flex-shrink:0;}
   .hero-cta{
-    margin-top:28px;
+    margin-top:30px;
     display:flex;flex-wrap:wrap;justify-content:center;gap:12px;
   }
   .btn{
@@ -689,21 +687,23 @@
 
   /* ---------- FOOTER CTA ---------- */
   .final{
-    padding-block:clamp(60px,8vw,100px);
-    background: linear-gradient(180deg, var(--bg) 0%, #A66B3D 55%, #5C3A22 85%, #241811 100%);
+    position:relative;overflow:hidden;
+    padding-block:clamp(72px,10vw,120px);
+    background:#241811;
   }
-  .final-inner{display:flex;justify-content:center;}
-  .final-card{
-    max-width:600px;width:100%;text-align:center;
-    backdrop-filter:blur(20px) saturate(1.4);
-    -webkit-backdrop-filter:blur(20px) saturate(1.4);
-    border-radius:32px;
-    padding:clamp(32px,5vw,52px) clamp(22px,5vw,44px);
+  .final::before{
+    content:"";position:absolute;inset:auto -10% -20% -10%;height:640px;
+    background:
+      radial-gradient(60% 100% at 70% 100%, rgba(181,101,46,.38), transparent 70%),
+      radial-gradient(50% 90% at 15% 90%, rgba(217,164,65,.30), transparent 70%),
+      radial-gradient(45% 80% at 40% 60%, rgba(138,75,46,.32), transparent 70%);
+    pointer-events:none;
   }
-  .final-card .logo-mark{margin-bottom:22px;}
+  .final-inner{position:relative;max-width:600px;margin-inline:auto;text-align:center;}
+  .final-inner .logo-mark{margin-bottom:22px;}
   .final h2{
     margin-top:14px;
-    font-size:clamp(30px,5vw,50px);
+    font-size:clamp(32px,5.4vw,54px);
     font-weight:700;
     color:var(--ink);
   }
@@ -805,30 +805,28 @@
 
 <!-- ================= HERO ================= -->
 <div id="top"></div>
-<section class="hero">
+<section class="hero on-dark">
   <div class="wrap hero-inner">
-    <div class="hero-card dark-card">
-      <span class="logo-mark lg"><img src="assets/logo-soul-white.png" alt="Soul Experience"></span>
-      <p class="hero-tagline">Uma pausa, um respiro, um encontro.</p>
-      <span class="edition-badge"><span class="blob sm"></span> 2ª edição · Grão de Aventura</span>
-      <p class="hero-sub">Uma proposta de parceria para marcas que querem fazer parte de uma manhã inteira dedicada ao bem-estar, em Fortaleza.</p>
-      <div class="hero-meta">
-        <span class="pill-meta">
-          <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 1v3M8 1v3M3.5 3h9A1.5 1.5 0 0 1 14 4.5V13a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13V4.5A1.5 1.5 0 0 1 3.5 3z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 6.5h12" stroke="currentColor" stroke-width="1.3"/></svg>
-          28 de novembro de 2026
-        </span>
-        <span class="pill-meta">
-          <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.3"/><path d="M8 4.5V8l2.6 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-          06h30 às 10h
-        </span>
-        <span class="pill-meta">
-          <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 14.5S13 10 13 6.5A5 5 0 0 0 3 6.5C3 10 8 14.5 8 14.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><circle cx="8" cy="6.5" r="1.7" stroke="currentColor" stroke-width="1.3"/></svg>
-          Fortaleza · CE
-        </span>
-      </div>
-      <div class="hero-cta">
-        <a href="#patrocinio" class="btn btn-primary">Quero patrocinar</a>
-      </div>
+    <span class="logo-mark lg"><img src="assets/logo-soul-white.png" alt="Soul Experience"></span>
+    <p class="hero-tagline">Uma pausa, um respiro, um encontro.</p>
+    <span class="edition-badge"><span class="blob sm"></span> 2ª edição · Grão de Aventura</span>
+    <p class="hero-sub">Uma proposta de parceria para marcas que querem fazer parte de uma manhã inteira dedicada ao bem-estar, em Fortaleza.</p>
+    <div class="hero-meta">
+      <span class="pill-meta">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 1v3M8 1v3M3.5 3h9A1.5 1.5 0 0 1 14 4.5V13a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13V4.5A1.5 1.5 0 0 1 3.5 3z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 6.5h12" stroke="currentColor" stroke-width="1.3"/></svg>
+        28 de novembro de 2026
+      </span>
+      <span class="pill-meta">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.3"/><path d="M8 4.5V8l2.6 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        06h30 às 10h
+      </span>
+      <span class="pill-meta">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 14.5S13 10 13 6.5A5 5 0 0 0 3 6.5C3 10 8 14.5 8 14.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><circle cx="8" cy="6.5" r="1.7" stroke="currentColor" stroke-width="1.3"/></svg>
+        Fortaleza · CE
+      </span>
+    </div>
+    <div class="hero-cta">
+      <a href="#patrocinio" class="btn btn-primary">Quero patrocinar</a>
     </div>
   </div>
 </section>

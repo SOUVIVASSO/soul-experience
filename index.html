@@ -377,33 +377,6 @@
   .station .desc{margin-top:6px;font-size:12.5px;color:var(--ink-dim);line-height:1.45;}
 
   /* ---------- STATION MODAL ---------- */
-  .station-modal{
-    display:none;position:fixed;inset:0;z-index:700;
-    background:rgba(24,16,10,.55);backdrop-filter:blur(4px);
-    align-items:center;justify-content:center;padding:24px;
-  }
-  .station-modal.open{display:flex;}
-  .station-modal-card{
-    position:relative;max-width:440px;width:100%;
-    background:var(--bg-alt);border-radius:24px;
-    padding:36px 30px;text-align:center;
-    box-shadow:0 40px 80px rgba(30,15,5,.35);
-  }
-  .station-modal-icon{
-    width:56px;height:56px;border-radius:16px;margin:0 auto 18px;
-    display:flex;align-items:center;justify-content:center;
-    background:var(--panel-lav);
-  }
-  .station-modal-icon svg{width:30px;height:30px;}
-  .station-modal-card h3{font-size:22px;font-weight:700;color:var(--ink);}
-  .station-modal-card p{margin-top:14px;font-size:14.5px;color:var(--ink-dim);line-height:1.6;}
-  .station-modal-close{
-    position:absolute;top:16px;right:16px;
-    width:32px;height:32px;border-radius:50%;
-    border:1px solid var(--line-strong);background:none;color:var(--ink);
-    display:flex;align-items:center;justify-content:center;cursor:pointer;
-  }
-
   /* ---------- PHOTO LIGHTBOX ---------- */
   .photo-lightbox{
     display:none;position:fixed;inset:0;z-index:800;
@@ -1009,36 +982,36 @@
     </div>
 
     <div class="stations">
-      <button type="button" class="station" data-station="bike">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" color="#B5652E"><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="18" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M6 18l4-8h4l4 8M10 10h3M13 6h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <a class="station" href="estacoes.html#bike">
+        <svg width="30" height="30" viewBox="0 0 256 256" fill="#B5652E"><path d="M208,116a43.66,43.66,0,0,0-18.62,4.15L159,68h33a12,12,0,0,1,12,12,4,4,0,0,0,8,0,20,20,0,0,0-20-20H152a4,4,0,0,0-3.46,6L163.7,92H97L79.46,62A4,4,0,0,0,76,60H48a4,4,0,0,0,0,8H73.7L89.89,95.76,70.57,122.25A44.21,44.21,0,1,0,77,127L94.29,103.3,128.54,162a4,4,0,0,0,3.46,2,4.11,4.11,0,0,0,2-.54,4,4,0,0,0,1.44-5.48l-33.83-58h66.74l14.11,24.19A44,44,0,1,0,208,116ZM84,160a36,36,0,1,1-18.16-31.25L44.77,157.64a4,4,0,0,0,6.46,4.72l21.07-28.9A35.92,35.92,0,0,1,84,160Zm124,36a36,36,0,0,1-21.47-64.88l18,30.9a4,4,0,0,0,3.46,2,4.11,4.11,0,0,0,2-.54,4,4,0,0,0,1.44-5.48l-18-30.89A36,36,0,1,1,208,196Z"/></svg>
         <div class="name">Bike</div>
         <div class="desc">Pedalada guiada em sessões curtas, com professor acompanhando</div>
-      </button>
-      <button type="button" class="station" data-station="wolffit">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" color="#8A4B2E"><rect x="4" y="9" width="3" height="6" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="17" y="9" width="3" height="6" rx="1" stroke="currentColor" stroke-width="1.6"/><path d="M7 12h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </a>
+      <a class="station" href="estacoes.html#wolffit">
+        <svg width="30" height="30" viewBox="0 0 256 256" fill="#8A4B2E"><path d="M248,124H236V88a12,12,0,0,0-12-12H204V64a12,12,0,0,0-12-12H168a12,12,0,0,0-12,12v60H100V64A12,12,0,0,0,88,52H64A12,12,0,0,0,52,64V76H32A12,12,0,0,0,20,88v36H8a4,4,0,0,0,0,8H20v36a12,12,0,0,0,12,12H52v12a12,12,0,0,0,12,12H88a12,12,0,0,0,12-12V132h56v60a12,12,0,0,0,12,12h24a12,12,0,0,0,12-12V180h20a12,12,0,0,0,12-12V132h12a4,4,0,0,0,0-8ZM32,172a4,4,0,0,1-4-4V88a4,4,0,0,1,4-4H52v88Zm60,20a4,4,0,0,1-4,4H64a4,4,0,0,1-4-4V64a4,4,0,0,1,4-4H88a4,4,0,0,1,4,4Zm104,0a4,4,0,0,1-4,4H168a4,4,0,0,1-4-4V64a4,4,0,0,1,4-4h24a4,4,0,0,1,4,4Zm32-24a4,4,0,0,1-4,4H204V84h20a4,4,0,0,1,4,4Z"/></svg>
         <div class="name">WolfFit</div>
         <div class="desc">Treino funcional em grupo, intensidade livre</div>
-      </button>
-      <button type="button" class="station" data-station="yoga">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" color="#D9A441"><circle cx="12" cy="6" r="2" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v3M8 18c0-3 1.8-5 4-5s4 2 4 5M6 18h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="station" href="estacoes.html#yoga">
+        <svg width="30" height="30" viewBox="0 0 256 256" fill="#D9A441"><path d="M242.37,123.65a11.54,11.54,0,0,0-7.08-5.46A71.5,71.5,0,0,0,209,116.52c5.48-21.46,2.38-38.36-.75-48a12.16,12.16,0,0,0-14.16-8.19,82.85,82.85,0,0,0-31,14.17,91.06,91.06,0,0,0-27.9-36,11.91,11.91,0,0,0-14.44,0,91.06,91.06,0,0,0-27.9,36,82.92,82.92,0,0,0-31-14.17,12.16,12.16,0,0,0-14.16,8.19c-3.13,9.68-6.23,26.58-.75,48a71.5,71.5,0,0,0-26.26,1.67,11.54,11.54,0,0,0-7.08,5.46,12,12,0,0,0-1.2,9.22c3.24,12,13.2,34.81,43.52,52.92S113.45,204,128,204s41.61,0,72.07-18.21,40.28-40.93,43.52-52.92A12,12,0,0,0,242.37,123.65ZM195.8,68.11A4.2,4.2,0,0,1,200.67,71c4,12.5,8,38.35-10.77,71-10.45,18.19-25.11,32.2-38.11,41.44C162,170,172,149.24,172,119.19a113.35,113.35,0,0,0-5.88-37A75.28,75.28,0,0,1,195.8,68.11ZM55.33,71a4.19,4.19,0,0,1,4.87-2.84A75.28,75.28,0,0,1,89.88,82.19a113.35,113.35,0,0,0-5.88,37c0,30.05,10,50.82,20.21,64.23-13-9.24-27.66-23.25-38.11-41.44C47.32,109.3,51.29,83.45,55.33,71Zm4.72,108c-27.9-16.67-37-37.32-39.9-48.15a4,4,0,0,1,.41-3.13,3.59,3.59,0,0,1,2.21-1.73,64.62,64.62,0,0,1,26.73-1,123.48,123.48,0,0,0,9.66,21c13.28,23.1,32.66,39.67,48.27,49.11A116.34,116.34,0,0,1,60.05,178.93Zm68,16.34a75.75,75.75,0,0,1-17.08-16.4C98.37,162.58,92,142.5,92,119.19c0-44.25,23.49-66.75,33.59-74.36a4,4,0,0,1,4.82,0C140.51,52.44,164,74.94,164,119.19c0,23.31-6.37,43.39-18.92,59.68A75.75,75.75,0,0,1,128,195.27Zm107.85-64.49c-2.92,10.83-12,31.48-39.9,48.15a116.34,116.34,0,0,1-47.38,16.15c15.61-9.44,35-26,48.27-49.11a123.48,123.48,0,0,0,9.66-21,64.45,64.45,0,0,1,26.73,1,3.59,3.59,0,0,1,2.21,1.73A4,4,0,0,1,235.85,130.78Z"/></svg>
         <div class="name">Yoga</div>
         <div class="desc">Sessões suaves, ideais para desacelerar entre estações</div>
-      </button>
-      <button type="button" class="station" data-station="dance">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" color="#D48A52"><circle cx="7" cy="18" r="2" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="16.5" r="2" stroke="currentColor" stroke-width="1.6"/><path d="M9 18V6l9-1.5v11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="station" href="estacoes.html#dance">
+        <svg width="30" height="30" viewBox="0 0 256 256" fill="#D48A52"><path d="M128,28A100,100,0,1,0,228,128,100.11,100.11,0,0,0,128,28Zm0,192a92,92,0,1,1,92-92A92.1,92.1,0,0,1,128,220Zm0-152a60.07,60.07,0,0,0-60,60,4,4,0,0,1-8,0,68.07,68.07,0,0,1,68-68,4,4,0,0,1,0,8Zm68,60a68.07,68.07,0,0,1-68,68,4,4,0,0,1,0-8,60.07,60.07,0,0,0,60-60,4,4,0,0,1,8,0Zm-40,0a28,28,0,1,0-28,28A28,28,0,0,0,156,128Zm-48,0a20,20,0,1,1,20,20A20,20,0,0,1,108,128Z"/></svg>
         <div class="name">Dance Mix</div>
         <div class="desc">Aula de dança leve e divertida, sem coreografia decorada</div>
-      </button>
-      <button type="button" class="station" data-station="aerobox">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" color="#6E4020"><path d="M7 14V9a2.5 2.5 0 015 0v1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 10.5a2.5 2.5 0 015 0V14a4 4 0 01-4 4H9a3 3 0 01-3-3v-1a2 2 0 012-2h1" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      </a>
+      <a class="station" href="estacoes.html#aerobox">
+        <svg width="30" height="30" viewBox="0 0 256 256" fill="#6E4020"><path d="M168,20H120A52.06,52.06,0,0,0,68,72v4H56a28,28,0,0,0-28,28v29.19a12,12,0,0,0,2.63,7.5c.1.12.2.24.31.35L68,177.67V216a12,12,0,0,0,12,12H192a12,12,0,0,0,12-12V176.56l15.54-54.38a12.34,12.34,0,0,0,.46-3.3V72A52.06,52.06,0,0,0,168,20Zm44,98.88a4.11,4.11,0,0,1-.15,1.1l-15.7,54.92A4.11,4.11,0,0,0,196,176v40a4,4,0,0,1-4,4H80a4,4,0,0,1-4-4V176a4,4,0,0,0-1.19-2.84L36.76,135.54a4,4,0,0,1-.76-2.35V104A20,20,0,0,1,56,84H68v20a4,4,0,0,0,8,0V72a44.05,44.05,0,0,1,44-44h48a44.05,44.05,0,0,1,44,44Zm-42.21,44.7L145,176l24.84,12.42a4,4,0,0,1-3.58,7.16L136,180.47l-30.21,15.11a4,4,0,1,1-3.58-7.16L127.05,176l-24.84-12.42a4,4,0,1,1,3.58-7.16L136,171.53l30.21-15.11a4,4,0,0,1,3.58,7.16Z"/></svg>
         <div class="name">Aerobox</div>
         <div class="desc">Boxe funcional guiado, liberação de energia</div>
-      </button>
-      <button type="button" class="station" data-station="corrida">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" color="#A6683F"><circle cx="15" cy="5" r="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 19l3-4 2-2-1-3 3-2 1 3 3 1M10 13l-2 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="station" href="estacoes.html#corrida">
+        <svg width="30" height="30" viewBox="0 0 256 256" fill="#A6683F"><path d="M152,84a28,28,0,1,0-28-28A28,28,0,0,0,152,84Zm0-48a20,20,0,1,1-20,20A20,20,0,0,1,152,36Zm65.66,101c-.57.26-6.84,3-18.08,3-13.86,0-35.25-4.15-62.81-22.16a162.59,162.59,0,0,1-19.49,40.78c9.47,2.56,23.08,7.5,35.14,16.67,18.3,13.92,27.58,33,27.58,56.68a4,4,0,0,1-8,0c0-15.89-5.88-53.77-59.7-66.37q-1.56,2.06-3.22,4.08c-18.85,22.83-42.42,34.72-68.6,34.72q-4.4,0-8.89-.45a4,4,0,1,1,.8-8c27.33,2.73,51.06-7.83,70.52-31.41,13.82-16.74,22.89-37.44,26.9-51.32-42.84-26.69-71-4.8-71.32-4.57a4,4,0,1,1-5-6.24c.36-.29,9-7.1,23.84-9.58,13.5-2.27,35-1.26,60.91,16.34,25,17,44.41,21.64,56.29,22.56,12.75,1,19.77-2,19.84-2.05a4,4,0,0,1,3.29,7.29Z"/></svg>
         <div class="name">Corrida</div>
         <div class="desc">Percurso guiado, ritmo livre</div>
-      </button>
+      </a>
     </div>
     <p style="margin-top:14px;font-size:12.5px;color:rgba(250,240,225,.6);">Toque numa estação para ver os detalhes.</p>
   </div>
@@ -1464,16 +1437,6 @@
   </form>
 </div>
 
-<div class="station-modal" id="stationModal">
-  <div class="station-modal-card">
-    <button type="button" class="station-modal-close" id="stationModalClose" aria-label="Fechar">
-      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
-    <div class="station-modal-icon" id="stationModalIcon"></div>
-    <h3 id="stationModalTitle"></h3>
-    <p id="stationModalDesc"></p>
-  </div>
-</div>
 
 <div class="photo-lightbox" id="photoLightbox">
   <button type="button" class="photo-lightbox-close" id="photoLightboxClose" aria-label="Fechar">
@@ -1561,66 +1524,6 @@
     });
   }
 
-  var STATION_INFO = {
-    bike: {
-      name: 'Bike',
-      desc: 'Pedalada guiada em sessões curtas, sempre com um professor por perto orientando postura e ritmo. Ideal pra quem quer se movimentar sem pressa, sentindo o vento e acordando o corpo aos poucos.'
-    },
-    wolffit: {
-      name: 'WolfFit',
-      desc: 'Treino funcional em grupo, com exercícios adaptáveis pra qualquer nível de condicionamento. O clima é de energia coletiva: todo mundo treina junto, no próprio ritmo, sem cobrança de performance.'
-    },
-    yoga: {
-      name: 'Yoga',
-      desc: 'Sessões suaves de yoga, pensadas pra desacelerar entre uma estação mais intensa e outra. Respiração guiada, alongamento e alguns minutos de pausa consciente antes de seguir o circuito.'
-    },
-    dance: {
-      name: 'Dance Mix',
-      desc: 'Aula de dança leve e divertida, sem coreografia pra decorar. É só se soltar no ritmo da música, entre risadas e energia boa, num momento pensado pra alegria, não pra performance.'
-    },
-    aerobox: {
-      name: 'Aerobox',
-      desc: 'Sessão guiada de boxe funcional, com movimentos simples de soco e defesa. Ótima forma de liberar energia e tensão logo pela manhã, sem experiência prévia nenhuma.'
-    },
-    corrida: {
-      name: 'Corrida',
-      desc: 'Percurso guiado ao redor do circuito, em ritmo livre: cada um corre ou caminha no seu tempo. É essa estação que puxa todo mundo pro fechamento, a grande corrida coletiva do final, com premiação e dicas das nutricionistas parceiras.'
-    }
-  };
-
-  var stationModal = document.getElementById('stationModal');
-  var stationModalIcon = document.getElementById('stationModalIcon');
-  var stationModalTitle = document.getElementById('stationModalTitle');
-  var stationModalDesc = document.getElementById('stationModalDesc');
-  var stationModalClose = document.getElementById('stationModalClose');
-
-  function openStationModal(key, iconHTML, color){
-    var info = STATION_INFO[key];
-    if(!info || !stationModal) return;
-    stationModalIcon.innerHTML = iconHTML;
-    stationModalIcon.style.color = color;
-    stationModalTitle.textContent = info.name;
-    stationModalDesc.textContent = info.desc;
-    stationModal.classList.add('open');
-  }
-  function closeStationModal(){
-    if(stationModal) stationModal.classList.remove('open');
-  }
-  document.querySelectorAll('.station').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var key = btn.getAttribute('data-station');
-      var svg = btn.querySelector('svg');
-      var color = svg ? svg.getAttribute('color') : '';
-      openStationModal(key, svg ? svg.outerHTML : '', color);
-    });
-  });
-  if(stationModalClose) stationModalClose.addEventListener('click', closeStationModal);
-  if(stationModal){
-    stationModal.addEventListener('click', function(e){
-      if(e.target === stationModal) closeStationModal();
-    });
-  }
-
   var photoLightbox = document.getElementById('photoLightbox');
   var photoLightboxImg = document.getElementById('photoLightboxImg');
   var photoLightboxClose = document.getElementById('photoLightboxClose');
@@ -1646,7 +1549,7 @@
     });
   }
   document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape'){ closeLightbox(); closeStationModal(); }
+    if(e.key === 'Escape'){ closeLightbox(); }
   });
 
   var pgMoreBtn = document.getElementById('pgMoreBtn');

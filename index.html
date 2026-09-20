@@ -114,12 +114,12 @@
   .nav-inner{
     display:flex;align-items:center;justify-content:space-between;gap:20px;
   }
-  .nav-brand{
-    display:flex;align-items:center;
-    font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;
-    white-space:nowrap;
-    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  .nav-brand{display:flex;align-items:center;}
+  .nav-brand img{
+    height:32px;width:auto;display:block;
+    opacity:0;transition:opacity .3s ease;
   }
+  .nav[data-scrolled="true"] .nav-brand img{opacity:1;}
   .nav-links{
     display:flex;gap:26px;align-items:center;
     font-size:14.5px;font-weight:600;color:#D9C7B4;
@@ -299,7 +299,7 @@
     align-items:start;
   }
   .about-grid .lede{max-width:none;}
-  .vivasso-logo{height:28px;width:auto;margin-top:22px;}
+  .vivasso-logo{height:46px;width:auto;margin-top:22px;}
   .quote-block{
     margin-top:26px;
     padding-left:20px;
@@ -923,7 +923,7 @@
 <!-- ================= NAV ================= -->
 <header class="nav" id="siteNav">
   <div class="wrap nav-inner">
-    <a href="#top" class="nav-brand">Soul Experience</a>
+    <a href="#top" class="nav-brand"><img src="assets/logo-soul-nav.png" alt="Soul Experience"></a>
     <nav class="nav-links">
       <a href="#sobre">Sobre</a>
       <a href="#evento">Evento</a>
@@ -958,7 +958,7 @@
 <div id="top"></div>
 <section class="hero on-dark">
   <div class="wrap hero-inner">
-    <span class="logo-mark lg"><img src="assets/logo-soul-white.png" alt="Soul Experience"></span>
+    <span class="logo-mark lg" id="heroLogo"><img src="assets/logo-soul-white.png" alt="Soul Experience"></span>
     <h1 class="hero-tagline">O Soul Experience volta em 28 de novembro</h1>
     <p class="hero-sub">Uma proposta de parceria para marcas que querem fazer parte de uma manhã inteira dedicada ao bem-estar, em Fortaleza.</p>
     <div class="hero-cta">
@@ -1495,6 +1495,18 @@
   }
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
+
+  var heroLogo = document.getElementById('heroLogo');
+  if(nav && heroLogo && 'IntersectionObserver' in window){
+    var logoObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        nav.setAttribute('data-scrolled', entry.isIntersecting ? 'false' : 'true');
+      });
+    }, {threshold: 0});
+    logoObserver.observe(heroLogo);
+  } else if(nav){
+    nav.setAttribute('data-scrolled', 'true');
+  }
 
   var burger = document.getElementById('burgerBtn');
   var menu = document.getElementById('mobileMenu');

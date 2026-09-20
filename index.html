@@ -730,6 +730,18 @@
     border-radius:14px;padding:14px 18px;font-size:13.5px;font-weight:600;
   }
   .lead-success.show{display:block;}
+  #interesse{background:linear-gradient(160deg, #241811 0%, #4A2C1C 100%);}
+  #interesse .eyebrow{color:#F3D9B4;}
+  #interesse .eyebrow::before{background:#F3D9B4;}
+  #interesse .section-title{color:#fff;}
+  #interesse .lede{color:rgba(250,240,225,.78);}
+  #interesse .lead-form{box-shadow:0 30px 70px rgba(10,5,0,.35);}
+  #interesse .btn-primary{background:var(--grad);}
+  #interesse .btn-primary:hover{background:var(--grad);filter:brightness(1.08);}
+  .interesse-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start;}
+  .interesse-contact{margin-top:28px;display:flex;flex-direction:column;gap:12px;}
+  .interesse-contact a{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:14.5px;}
+  @media (max-width:900px){.interesse-grid{grid-template-columns:1fr;}}
 
   /* ---------- PUBLICO ---------- */
   .publico-grid{
@@ -1382,12 +1394,16 @@
 </section>
 
 <!-- ================= LEAD FORM (final) ================= -->
-<section id="interesse" style="background:var(--panel-lav);border-top:1px solid var(--line);">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">Uma nova forma de viver experiências começa aqui</span>
+<section id="interesse" style="border-top:1px solid var(--line);">
+  <div class="wrap interesse-grid">
+    <div>
+      <span class="eyebrow">Fale com a gente</span>
       <h2 class="section-title">Quero fazer parte</h2>
       <p class="lede">Preencha os dados da sua marca. Ao enviar, você é direcionado ao WhatsApp da Vivasso com tudo já preenchido.</p>
+      <div class="interesse-contact">
+        <a href="mailto:souvivasso@gmail.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> souvivasso@gmail.com</a>
+        <a href="https://wa.me/558597712114" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5 8.42 8.42 0 01-4-1L3 20l1.05-3.5A8.5 8.5 0 1121 11.5z"/></svg> (85) 9771-2114 (WhatsApp)</a>
+      </div>
     </div>
     <form id="leadForm" class="lead-form">
       <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" type="text" required></div>

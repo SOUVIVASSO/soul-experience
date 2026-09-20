@@ -101,11 +101,25 @@
   .logo-mark img{width:150px;height:auto;display:block;}
   .logo-mark.lg img{width:230px;}
 
+  /* ---------- COUNTDOWN BAR ---------- */
+  .countdown-bar{
+    position:fixed;top:0;left:0;right:0;z-index:501;
+    background:var(--grad);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    gap:10px;padding:9px 16px calc(9px + env(safe-area-inset-top,0px)*0);
+    padding-top:calc(9px + env(safe-area-inset-top,0px));
+    font-size:12.5px;font-weight:700;text-align:center;
+    flex-wrap:wrap;row-gap:2px;
+  }
+  .countdown-bar a{color:#fff;text-decoration:underline;white-space:nowrap;}
+  .countdown-bar-time{font-variant-numeric:tabular-nums;white-space:nowrap;}
+  @media (max-width:640px){.countdown-bar{font-size:11px;gap:6px;}.countdown-bar-cta{display:none;}}
+
   /* ---------- NAV ---------- */
   header.nav{
-    position:fixed;top:0;left:0;right:0;
+    position:fixed;top:40px;left:0;right:0;
     z-index:500;
-    padding-block: calc(14px + env(safe-area-inset-top,0px)) 14px;
+    padding-block: calc(14px + env(safe-area-inset-top,0px)*0) 14px;
     background:rgba(36,24,17,.90);
     backdrop-filter:blur(14px) saturate(140%);
     -webkit-backdrop-filter:blur(14px) saturate(140%);
@@ -173,7 +187,7 @@
   /* ---------- HERO ---------- */
   .hero{
     position:relative;overflow:hidden;
-    padding-top:calc(128px + env(safe-area-inset-top,0px));
+    padding-top:calc(168px + env(safe-area-inset-top,0px));
     padding-bottom:clamp(64px,9vw,110px);
     background:linear-gradient(155deg, #1D130C 0%, #6B4020 55%, #8A4B2E 100%);
   }
@@ -199,6 +213,14 @@
   .on-dark .btn-ghost{border-color:rgba(255,255,255,.42);color:#fff;background:rgba(255,255,255,.08);}
   .on-dark .btn-ghost:hover{border-color:#fff;}
   .on-dark .btn-primary{box-shadow:0 10px 26px rgba(10,4,20,.35);}
+  .hero-date{
+    margin-top:20px;
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);
+    color:#fff;font-size:12.5px;font-weight:700;
+    padding:8px 16px;border-radius:999px;
+  }
+  .hero-date:hover{background:rgba(255,255,255,.16);}
   .hero-tagline{
     margin-top:24px;
     font-size:clamp(24px,3.4vw,36px);
@@ -244,6 +266,11 @@
     margin-top:30px;
     display:flex;flex-wrap:wrap;justify-content:center;gap:12px;
   }
+  .hero-support{margin-top:36px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .hero-support>span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,240,225,.55);}
+  .hero-support-logos{display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.94);padding:10px 24px;border-radius:14px;box-shadow:0 12px 30px rgba(10,5,0,.25);}
+  .hero-support-logos img{height:26px;width:auto;}
+  @media (max-width:480px){.hero-support-logos{gap:16px;padding:8px 18px;}.hero-support-logos img{height:20px;}}
   .btn{
     display:inline-flex;align-items:center;gap:10px;
     padding:16px 30px;
@@ -373,6 +400,7 @@
     -webkit-appearance:none;appearance:none;
   }
   .station svg{margin:0 auto 14px;display:block;}
+  .station-tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:2px;}
   .station .name{font-weight:700;font-size:14.5px;color:var(--ink);}
   .station .desc{margin-top:6px;font-size:12.5px;color:var(--ink-dim);line-height:1.45;}
 
@@ -681,6 +709,9 @@
     font-size:24px;
     color:var(--ink);
   }
+  .tier-sponsor{display:flex;align-items:center;gap:8px;margin-top:8px;}
+  .tier-sponsor img{height:20px;width:auto;}
+  .tier-sponsor span{font-size:12px;font-weight:700;color:var(--ink-dim);}
   .price-card .price{
     margin-top:14px;
     font-family:'Unbounded',sans-serif;
@@ -701,6 +732,27 @@
   .vacancy-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--violet),var(--pink));}
   .price-card .btn{margin-top:22px;justify-content:center;width:100%;}
   .price-note{margin-top:20px;font-size:12.5px;color:var(--ink-dim);}
+  .countdown{display:flex;gap:16px;justify-content:center;margin-top:48px;flex-wrap:wrap;}
+  .countdown-unit{background:var(--panel-lav);border:1px solid var(--line);border-radius:16px;padding:14px 20px;min-width:76px;text-align:center;}
+  .countdown-num{display:block;font-family:'Unbounded',sans-serif;font-weight:700;font-size:36px;color:var(--ink);font-variant-numeric:tabular-nums;}
+  .countdown-label{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);margin-top:4px;}
+  .countdown-caption{text-align:center;font-size:13px;color:var(--ink-dim);margin-top:14px;}
+  .countdown-ended{font-size:15px;font-weight:700;color:var(--ink);text-align:center;padding:14px;}
+  .launch-reminder{margin-top:14px;font-size:14px;color:var(--ink-dim);text-align:center;}
+  .launch-reminder a{color:var(--violet);font-weight:700;text-decoration:underline;}
+  @media (max-width:480px){.countdown{gap:10px;}.countdown-unit{padding:12px 14px;min-width:64px;}.countdown-num{font-size:28px;}}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{margin-top:32px;max-width:760px;margin-inline:auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-item summary{
+    list-style:none;cursor:pointer;padding:18px 2px;display:flex;justify-content:space-between;
+    align-items:center;font-family:'Unbounded',sans-serif;font-weight:600;font-size:15px;gap:16px;color:var(--ink);
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary .chev{width:18px;height:18px;flex-shrink:0;stroke:var(--violet);transition:transform .2s ease;}
+  .faq-item[open] summary .chev{transform:rotate(180deg);}
+  .faq-item .a{padding:0 26px 18px 2px;font-size:14.5px;color:var(--ink-dim);line-height:1.6;max-width:70ch;}
 
   /* ---------- LEAD FORM ---------- */
   .lead-form{
@@ -906,6 +958,12 @@
 
 
 <!-- ================= NAV ================= -->
+<div class="sticky-head">
+  <div class="countdown-bar" id="countdownBar">
+    <span>O Soul Experience chega em</span>
+    <span class="countdown-bar-time" id="countdownBarTime">--d --h --m --s</span>
+    <a href="#patrocinio" class="countdown-bar-cta">Quero participar</a>
+  </div>
 <header class="nav" id="siteNav">
   <div class="wrap nav-inner">
     <a href="#top" class="nav-brand"><img src="assets/logo-soul-nav.png" alt="Soul Experience"></a>
@@ -925,6 +983,7 @@
     </div>
   </div>
 </header>
+</div>
 
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileCloseBtn" aria-label="Fechar menu">
@@ -944,10 +1003,21 @@
 <section class="hero on-dark">
   <div class="wrap hero-inner">
     <span class="logo-mark lg" id="heroLogo"><img src="assets/logo-soul-white.png" alt="Soul Experience"></span>
+    <a class="hero-date" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Soul%20Experience%20-%202%C2%AA%20edi%C3%A7%C3%A3o&dates=20261128T093000Z/20261128T130000Z&details=A%202%C2%AA%20edi%C3%A7%C3%A3o%20do%20Soul%20Experience%20acontece%20no%20Iguatemi%20Bosque%2C%20em%20Fortaleza.&location=Iguatemi%20Bosque%2C%20Fortaleza" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+      28 de novembro de 2026 · Adicionar ao calendário
+    </a>
     <h1 class="hero-tagline">O Soul Experience volta em 28 de novembro</h1>
     <p class="hero-sub">Uma proposta de parceria para marcas que querem fazer parte de uma manhã inteira dedicada ao bem-estar, em Fortaleza.</p>
     <div class="hero-cta">
       <a href="#patrocinio" class="btn btn-primary">Quero participar</a>
+    </div>
+    <div class="hero-support">
+      <span>Com o apoio de</span>
+      <div class="hero-support-logos">
+        <img src="assets/bodytech-logo.svg" alt="Bodytech">
+        <img src="assets/iguatemi-bosque-logo.png" alt="Iguatemi Bosque">
+      </div>
     </div>
   </div>
 </section>
@@ -994,29 +1064,34 @@
     </div>
 
     <div class="stations">
-      <a class="station" href="estacoes.html#bike">
-        <svg width="30" height="30" viewBox="0 0 256 256" fill="#B5652E"><path d="M208,116a43.66,43.66,0,0,0-18.62,4.15L159,68h33a12,12,0,0,1,12,12,4,4,0,0,0,8,0,20,20,0,0,0-20-20H152a4,4,0,0,0-3.46,6L163.7,92H97L79.46,62A4,4,0,0,0,76,60H48a4,4,0,0,0,0,8H73.7L89.89,95.76,70.57,122.25A44.21,44.21,0,1,0,77,127L94.29,103.3,128.54,162a4,4,0,0,0,3.46,2,4.11,4.11,0,0,0,2-.54,4,4,0,0,0,1.44-5.48l-33.83-58h66.74l14.11,24.19A44,44,0,1,0,208,116ZM84,160a36,36,0,1,1-18.16-31.25L44.77,157.64a4,4,0,0,0,6.46,4.72l21.07-28.9A35.92,35.92,0,0,1,84,160Zm124,36a36,36,0,0,1-21.47-64.88l18,30.9a4,4,0,0,0,3.46,2,4.11,4.11,0,0,0,2-.54,4,4,0,0,0,1.44-5.48l-18-30.89A36,36,0,1,1,208,196Z"/></svg>
-        <div class="name">Bike</div>
+      <a class="station" href="estacoes.html#bike" style="background:#fdefe4;border-color:rgba(246,142,67,.35);">
+        <svg width="30" height="30" viewBox="0 0 256 256" fill="#f68e43"><path d="M208,116a43.66,43.66,0,0,0-18.62,4.15L159,68h33a12,12,0,0,1,12,12,4,4,0,0,0,8,0,20,20,0,0,0-20-20H152a4,4,0,0,0-3.46,6L163.7,92H97L79.46,62A4,4,0,0,0,76,60H48a4,4,0,0,0,0,8H73.7L89.89,95.76,70.57,122.25A44.21,44.21,0,1,0,77,127L94.29,103.3,128.54,162a4,4,0,0,0,3.46,2,4.11,4.11,0,0,0,2-.54,4,4,0,0,0,1.44-5.48l-33.83-58h66.74l14.11,24.19A44,44,0,1,0,208,116ZM84,160a36,36,0,1,1-18.16-31.25L44.77,157.64a4,4,0,0,0,6.46,4.72l21.07-28.9A35.92,35.92,0,0,1,84,160Zm124,36a36,36,0,0,1-21.47-64.88l18,30.9a4,4,0,0,0,3.46,2,4.11,4.11,0,0,0,2-.54,4,4,0,0,0,1.44-5.48l-18-30.89A36,36,0,1,1,208,196Z"/></svg>
+        <div class="station-tag">Bike</div>
+        <div class="name">Mix Disposição</div>
         <div class="desc">Pedalada guiada em sessões curtas, com professor acompanhando</div>
       </a>
-      <a class="station" href="estacoes.html#wolffit">
-        <svg width="30" height="30" viewBox="0 0 256 256" fill="#8A4B2E"><path d="M248,124H236V88a12,12,0,0,0-12-12H204V64a12,12,0,0,0-12-12H168a12,12,0,0,0-12,12v60H100V64A12,12,0,0,0,88,52H64A12,12,0,0,0,52,64V76H32A12,12,0,0,0,20,88v36H8a4,4,0,0,0,0,8H20v36a12,12,0,0,0,12,12H52v12a12,12,0,0,0,12,12H88a12,12,0,0,0,12-12V132h56v60a12,12,0,0,0,12,12h24a12,12,0,0,0,12-12V180h20a12,12,0,0,0,12-12V132h12a4,4,0,0,0,0-8ZM32,172a4,4,0,0,1-4-4V88a4,4,0,0,1,4-4H52v88Zm60,20a4,4,0,0,1-4,4H64a4,4,0,0,1-4-4V64a4,4,0,0,1,4-4H88a4,4,0,0,1,4,4Zm104,0a4,4,0,0,1-4,4H168a4,4,0,0,1-4-4V64a4,4,0,0,1,4-4h24a4,4,0,0,1,4,4Zm32-24a4,4,0,0,1-4,4H204V84h20a4,4,0,0,1,4,4Z"/></svg>
-        <div class="name">WolfFit</div>
+      <a class="station" href="estacoes.html#wolffit" style="background:#f9e0e1;border-color:rgba(213,34,42,.35);">
+        <svg width="30" height="30" viewBox="0 0 256 256" fill="#d5222a"><path d="M248,124H236V88a12,12,0,0,0-12-12H204V64a12,12,0,0,0-12-12H168a12,12,0,0,0-12,12v60H100V64A12,12,0,0,0,88,52H64A12,12,0,0,0,52,64V76H32A12,12,0,0,0,20,88v36H8a4,4,0,0,0,0,8H20v36a12,12,0,0,0,12,12H52v12a12,12,0,0,0,12,12H88a12,12,0,0,0,12-12V132h56v60a12,12,0,0,0,12,12h24a12,12,0,0,0,12-12V180h20a12,12,0,0,0,12-12V132h12a4,4,0,0,0,0-8ZM32,172a4,4,0,0,1-4-4V88a4,4,0,0,1,4-4H52v88Zm60,20a4,4,0,0,1-4,4H64a4,4,0,0,1-4-4V64a4,4,0,0,1,4-4H88a4,4,0,0,1,4,4Zm104,0a4,4,0,0,1-4,4H168a4,4,0,0,1-4-4V64a4,4,0,0,1,4-4h24a4,4,0,0,1,4,4Zm32-24a4,4,0,0,1-4,4H204V84h20a4,4,0,0,1,4,4Z"/></svg>
+        <div class="station-tag">WolfFit</div>
+        <div class="name">Mix Coração</div>
         <div class="desc">Treino funcional em grupo, intensidade livre</div>
       </a>
-      <a class="station" href="estacoes.html#yoga">
-        <svg width="30" height="30" viewBox="0 0 256 256" fill="#D9A441"><path d="M242.37,123.65a11.54,11.54,0,0,0-7.08-5.46A71.5,71.5,0,0,0,209,116.52c5.48-21.46,2.38-38.36-.75-48a12.16,12.16,0,0,0-14.16-8.19,82.85,82.85,0,0,0-31,14.17,91.06,91.06,0,0,0-27.9-36,11.91,11.91,0,0,0-14.44,0,91.06,91.06,0,0,0-27.9,36,82.92,82.92,0,0,0-31-14.17,12.16,12.16,0,0,0-14.16,8.19c-3.13,9.68-6.23,26.58-.75,48a71.5,71.5,0,0,0-26.26,1.67,11.54,11.54,0,0,0-7.08,5.46,12,12,0,0,0-1.2,9.22c3.24,12,13.2,34.81,43.52,52.92S113.45,204,128,204s41.61,0,72.07-18.21,40.28-40.93,43.52-52.92A12,12,0,0,0,242.37,123.65ZM195.8,68.11A4.2,4.2,0,0,1,200.67,71c4,12.5,8,38.35-10.77,71-10.45,18.19-25.11,32.2-38.11,41.44C162,170,172,149.24,172,119.19a113.35,113.35,0,0,0-5.88-37A75.28,75.28,0,0,1,195.8,68.11ZM55.33,71a4.19,4.19,0,0,1,4.87-2.84A75.28,75.28,0,0,1,89.88,82.19a113.35,113.35,0,0,0-5.88,37c0,30.05,10,50.82,20.21,64.23-13-9.24-27.66-23.25-38.11-41.44C47.32,109.3,51.29,83.45,55.33,71Zm4.72,108c-27.9-16.67-37-37.32-39.9-48.15a4,4,0,0,1,.41-3.13,3.59,3.59,0,0,1,2.21-1.73,64.62,64.62,0,0,1,26.73-1,123.48,123.48,0,0,0,9.66,21c13.28,23.1,32.66,39.67,48.27,49.11A116.34,116.34,0,0,1,60.05,178.93Zm68,16.34a75.75,75.75,0,0,1-17.08-16.4C98.37,162.58,92,142.5,92,119.19c0-44.25,23.49-66.75,33.59-74.36a4,4,0,0,1,4.82,0C140.51,52.44,164,74.94,164,119.19c0,23.31-6.37,43.39-18.92,59.68A75.75,75.75,0,0,1,128,195.27Zm107.85-64.49c-2.92,10.83-12,31.48-39.9,48.15a116.34,116.34,0,0,1-47.38,16.15c15.61-9.44,35-26,48.27-49.11a123.48,123.48,0,0,0,9.66-21,64.45,64.45,0,0,1,26.73,1,3.59,3.59,0,0,1,2.21,1.73A4,4,0,0,1,235.85,130.78Z"/></svg>
-        <div class="name">Yoga</div>
+      <a class="station" href="estacoes.html#yoga" style="background:#ede3ec;border-color:rgba(127,60,126,.35);">
+        <svg width="30" height="30" viewBox="0 0 256 256" fill="#7f3c7e"><path d="M242.37,123.65a11.54,11.54,0,0,0-7.08-5.46A71.5,71.5,0,0,0,209,116.52c5.48-21.46,2.38-38.36-.75-48a12.16,12.16,0,0,0-14.16-8.19,82.85,82.85,0,0,0-31,14.17,91.06,91.06,0,0,0-27.9-36,11.91,11.91,0,0,0-14.44,0,91.06,91.06,0,0,0-27.9,36,82.92,82.92,0,0,0-31-14.17,12.16,12.16,0,0,0-14.16,8.19c-3.13,9.68-6.23,26.58-.75,48a71.5,71.5,0,0,0-26.26,1.67,11.54,11.54,0,0,0-7.08,5.46,12,12,0,0,0-1.2,9.22c3.24,12,13.2,34.81,43.52,52.92S113.45,204,128,204s41.61,0,72.07-18.21,40.28-40.93,43.52-52.92A12,12,0,0,0,242.37,123.65ZM195.8,68.11A4.2,4.2,0,0,1,200.67,71c4,12.5,8,38.35-10.77,71-10.45,18.19-25.11,32.2-38.11,41.44C162,170,172,149.24,172,119.19a113.35,113.35,0,0,0-5.88-37A75.28,75.28,0,0,1,195.8,68.11ZM55.33,71a4.19,4.19,0,0,1,4.87-2.84A75.28,75.28,0,0,1,89.88,82.19a113.35,113.35,0,0,0-5.88,37c0,30.05,10,50.82,20.21,64.23-13-9.24-27.66-23.25-38.11-41.44C47.32,109.3,51.29,83.45,55.33,71Zm4.72,108c-27.9-16.67-37-37.32-39.9-48.15a4,4,0,0,1,.41-3.13,3.59,3.59,0,0,1,2.21-1.73,64.62,64.62,0,0,1,26.73-1,123.48,123.48,0,0,0,9.66,21c13.28,23.1,32.66,39.67,48.27,49.11A116.34,116.34,0,0,1,60.05,178.93Zm68,16.34a75.75,75.75,0,0,1-17.08-16.4C98.37,162.58,92,142.5,92,119.19c0-44.25,23.49-66.75,33.59-74.36a4,4,0,0,1,4.82,0C140.51,52.44,164,74.94,164,119.19c0,23.31-6.37,43.39-18.92,59.68A75.75,75.75,0,0,1,128,195.27Zm107.85-64.49c-2.92,10.83-12,31.48-39.9,48.15a116.34,116.34,0,0,1-47.38,16.15c15.61-9.44,35-26,48.27-49.11a123.48,123.48,0,0,0,9.66-21,64.45,64.45,0,0,1,26.73,1,3.59,3.59,0,0,1,2.21,1.73A4,4,0,0,1,235.85,130.78Z"/></svg>
+        <div class="station-tag">Yoga</div>
+        <div class="name">Mix do Sono</div>
         <div class="desc">Sessões suaves, ideais para desacelerar entre estações</div>
       </a>
-      <a class="station" href="estacoes.html#dance">
-        <svg width="30" height="30" viewBox="0 0 256 256" fill="#D48A52"><path d="M128,28A100,100,0,1,0,228,128,100.11,100.11,0,0,0,128,28Zm0,192a92,92,0,1,1,92-92A92.1,92.1,0,0,1,128,220Zm0-152a60.07,60.07,0,0,0-60,60,4,4,0,0,1-8,0,68.07,68.07,0,0,1,68-68,4,4,0,0,1,0,8Zm68,60a68.07,68.07,0,0,1-68,68,4,4,0,0,1,0-8,60.07,60.07,0,0,0,60-60,4,4,0,0,1,8,0Zm-40,0a28,28,0,1,0-28,28A28,28,0,0,0,156,128Zm-48,0a20,20,0,1,1,20,20A20,20,0,0,1,108,128Z"/></svg>
-        <div class="name">Dance Mix</div>
+      <a class="station" href="estacoes.html#dance" style="background:#fcdfee;border-color:rgba(239,28,138,.35);">
+        <svg width="30" height="30" viewBox="0 0 256 256" fill="#ef1c8a"><path d="M128,28A100,100,0,1,0,228,128,100.11,100.11,0,0,0,128,28Zm0,192a92,92,0,1,1,92-92A92.1,92.1,0,0,1,128,220Zm0-152a60.07,60.07,0,0,0-60,60,4,4,0,0,1-8,0,68.07,68.07,0,0,1,68-68,4,4,0,0,1,0,8Zm68,60a68.07,68.07,0,0,1-68,68,4,4,0,0,1,0-8,60.07,60.07,0,0,0,60-60,4,4,0,0,1,8,0Zm-40,0a28,28,0,1,0-28,28A28,28,0,0,0,156,128Zm-48,0a20,20,0,1,1,20,20A20,20,0,0,1,108,128Z"/></svg>
+        <div class="station-tag">Dance Mix</div>
+        <div class="name">Mix Beleza</div>
         <div class="desc">Aula de dança leve e divertida, sem coreografia decorada</div>
       </a>
-      <a class="station" href="estacoes.html#aerobox">
-        <svg width="30" height="30" viewBox="0 0 256 256" fill="#6E4020"><path d="M168,20H120A52.06,52.06,0,0,0,68,72v4H56a28,28,0,0,0-28,28v29.19a12,12,0,0,0,2.63,7.5c.1.12.2.24.31.35L68,177.67V216a12,12,0,0,0,12,12H192a12,12,0,0,0,12-12V176.56l15.54-54.38a12.34,12.34,0,0,0,.46-3.3V72A52.06,52.06,0,0,0,168,20Zm44,98.88a4.11,4.11,0,0,1-.15,1.1l-15.7,54.92A4.11,4.11,0,0,0,196,176v40a4,4,0,0,1-4,4H80a4,4,0,0,1-4-4V176a4,4,0,0,0-1.19-2.84L36.76,135.54a4,4,0,0,1-.76-2.35V104A20,20,0,0,1,56,84H68v20a4,4,0,0,0,8,0V72a44.05,44.05,0,0,1,44-44h48a44.05,44.05,0,0,1,44,44Zm-42.21,44.7L145,176l24.84,12.42a4,4,0,0,1-3.58,7.16L136,180.47l-30.21,15.11a4,4,0,1,1-3.58-7.16L127.05,176l-24.84-12.42a4,4,0,1,1,3.58-7.16L136,171.53l30.21-15.11a4,4,0,0,1,3.58,7.16Z"/></svg>
-        <div class="name">Aerobox</div>
+      <a class="station" href="estacoes.html#aerobox" style="background:#dbf4e3;border-color:rgba(2,181,62,.35);">
+        <svg width="30" height="30" viewBox="0 0 256 256" fill="#02b53e"><path d="M168,20H120A52.06,52.06,0,0,0,68,72v4H56a28,28,0,0,0-28,28v29.19a12,12,0,0,0,2.63,7.5c.1.12.2.24.31.35L68,177.67V216a12,12,0,0,0,12,12H192a12,12,0,0,0,12-12V176.56l15.54-54.38a12.34,12.34,0,0,0,.46-3.3V72A52.06,52.06,0,0,0,168,20Zm44,98.88a4.11,4.11,0,0,1-.15,1.1l-15.7,54.92A4.11,4.11,0,0,0,196,176v40a4,4,0,0,1-4,4H80a4,4,0,0,1-4-4V176a4,4,0,0,0-1.19-2.84L36.76,135.54a4,4,0,0,1-.76-2.35V104A20,20,0,0,1,56,84H68v20a4,4,0,0,0,8,0V72a44.05,44.05,0,0,1,44-44h48a44.05,44.05,0,0,1,44,44Zm-42.21,44.7L145,176l24.84,12.42a4,4,0,0,1-3.58,7.16L136,180.47l-30.21,15.11a4,4,0,1,1-3.58-7.16L127.05,176l-24.84-12.42a4,4,0,1,1,3.58-7.16L136,171.53l30.21-15.11a4,4,0,0,1,3.58,7.16Z"/></svg>
+        <div class="station-tag">Aerobox</div>
+        <div class="name">Mix Imunidade</div>
         <div class="desc">Boxe funcional guiado, liberação de energia</div>
       </a>
       <a class="station" href="estacoes.html#corrida">
@@ -1333,6 +1408,7 @@
         <span class="sold-ribbon">Esgotado</span>
         <div class="quota">1 cota ao todo</div>
         <div class="tier-name">Assinante</div>
+        <div class="tier-sponsor"><img src="assets/lovenuts/lovenuts-logo.png" alt="LoveNuts"><span>Cota preenchida por LoveNuts</span></div>
         <div class="price">R$ 5.000</div>
         <div class="price-list">
           <div class="row on highlight"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.4 2.9 3.2.5-2.3 2.2.5 3.2L7 8.3 4.2 9.8l.5-3.2L2.4 4.4l3.2-.5L7 1z" fill="currentColor"/></svg>2 dias de ativação na Academia Bodytech</div>
@@ -1350,6 +1426,15 @@
       </div>
     </div>
     <p class="price-note">*Cada marca é responsável por seu próprio material de ativação (estande, utensílios e ferramentas). Disponibilidade de cotas atualizada manualmente pela Vivasso.</p>
+
+    <div class="countdown" id="eventCountdown">
+      <div class="countdown-unit"><span class="countdown-num" id="cd-days">00</span><span class="countdown-label">dias</span></div>
+      <div class="countdown-unit"><span class="countdown-num" id="cd-hours">00</span><span class="countdown-label">horas</span></div>
+      <div class="countdown-unit"><span class="countdown-num" id="cd-mins">00</span><span class="countdown-label">min</span></div>
+      <div class="countdown-unit"><span class="countdown-num" id="cd-secs">00</span><span class="countdown-label">seg</span></div>
+    </div>
+    <p class="countdown-caption">até a 2ª edição do Soul Experience, 28 de novembro</p>
+    <p class="launch-reminder">Lembrando: o evento será dia 28 de novembro. Não perca a data, <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Soul%20Experience%20-%202%C2%AA%20edi%C3%A7%C3%A3o&dates=20261128T093000Z/20261128T130000Z&details=A%202%C2%AA%20edi%C3%A7%C3%A3o%20do%20Soul%20Experience%20acontece%20no%20Iguatemi%20Bosque%2C%20em%20Fortaleza.&location=Iguatemi%20Bosque%2C%20Fortaleza" target="_blank" rel="noopener">adicione um lembrete no seu calendário clicando aqui</a>.</p>
   </div>
 </section>
 
@@ -1387,6 +1472,46 @@
           <div class="pbar-track"><div class="pbar-fill" style="width:95%"></div></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" style="background:var(--panel-lav);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2 class="section-title">Dúvidas mais comuns</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Quando e onde acontece a 2ª edição?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="a">A 2ª edição do Soul Experience acontece no dia 28 de novembro de 2026, das 06h30 às 10h, na área externa do Iguatemi Bosque, em Fortaleza.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Como funciona o patrocínio?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="a">Sua marca escolhe uma das cotas disponíveis (Apoio ou Master), preenche o formulário de interesse e a equipe da Vivasso entra em contato pelo WhatsApp para fechar os detalhes e a ativação.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quais são as cotas disponíveis?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="a">Apoio (R$ 1.500, 10 cotas) e Master (R$ 3.000, 5 cotas). A cota Assinante (R$ 5.000, 1 cota) já foi preenchida pela LoveNuts nesta edição. Todas incluem 2 dias de ativação na Academia Bodytech e desconto garantido no patrocínio da próxima edição.</p>
+      </details>
+      <details class="faq-item">
+        <summary>O que está incluso na ativação na Academia Bodytech?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="a">Todo patrocinador, do plano Apoio ao Assinante, ganha 2 dias para ativar a própria marca dentro da Academia Bodytech: um espaço de alto padrão e visibilidade que normalmente tem um custo elevado para qualquer marca.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quem coordena o evento?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="a">Carmen Prado, diretora de eventos com anos de experiência em Fortaleza e atual diretora de eventos da Academia Bodytech, coordena o Soul Experience de ponta a ponta.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Como foi a 1ª edição?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="a">A 1ª edição, Pérola Tropical, aconteceu em 21 de agosto no Sunrise Beach Club, em Fortaleza, reunindo marcas, influenciadores e convidados numa manhã de bem-estar. Você pode ver fotos e vídeos na seção "1ª edição" desta página.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Como faço para garantir minha cota?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="a">Preencha o formulário no fim desta página ou chame no WhatsApp. As cotas são limitadas e a disponibilidade é atualizada manualmente pela equipe da Vivasso, então quanto antes sua marca entrar, maior o espaço de protagonismo.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -1465,6 +1590,41 @@
 
 <script>
 (function(){
+  var EVENT_START = new Date('2026-11-28T06:30:00-03:00').getTime();
+  var cdWrap = document.getElementById('eventCountdown');
+  var cdD = document.getElementById('cd-days');
+  var cdH = document.getElementById('cd-hours');
+  var cdM = document.getElementById('cd-mins');
+  var cdS = document.getElementById('cd-secs');
+  var cdBar = document.getElementById('countdownBar');
+  var cdBarTime = document.getElementById('countdownBarTime');
+  var cdTimer;
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function cdTick(){
+    var diff = EVENT_START - Date.now();
+    if(diff <= 0){
+      if(cdWrap) cdWrap.innerHTML = '<div class="countdown-ended">O Soul Experience começou!</div>';
+      if(cdBar) cdBar.hidden = true;
+      clearInterval(cdTimer);
+      return;
+    }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    if(cdWrap){
+      cdD.textContent = pad(d);
+      cdH.textContent = pad(h);
+      cdM.textContent = pad(m);
+      cdS.textContent = pad(s);
+    }
+    if(cdBarTime){
+      cdBarTime.textContent = d + 'd ' + pad(h) + 'h ' + pad(m) + 'm ' + pad(s) + 's';
+    }
+  }
+  cdTick();
+  cdTimer = setInterval(cdTick, 1000);
+
   var nav = document.getElementById('siteNav');
   function onScroll(){
     if(window.scrollY > 40){ nav.classList.add('solid'); }

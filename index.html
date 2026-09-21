@@ -953,6 +953,19 @@
   .chat-fab:hover{transform:scale(1.07);}
   @media (max-width:480px){.chat-fab{width:50px;height:50px;bottom:78px;right:16px;}}
 
+  .cookie-notice{
+    position:fixed;bottom:22px;left:22px;z-index:400;max-width:300px;
+    background:#fff;border:1px solid var(--line-strong);border-radius:14px;
+    padding:16px 18px;box-shadow:0 15px 40px -15px rgba(42,27,20,.35);
+  }
+  .cookie-notice p{font-size:12px;color:var(--ink-dim);line-height:1.5;}
+  .cookie-notice p a{color:var(--ink);text-decoration:underline;}
+  .cookie-notice button{
+    margin-top:10px;font-size:12.5px;font-weight:700;color:#fff;background:var(--grad);
+    border:none;padding:8px 16px;border-radius:999px;cursor:pointer;
+  }
+  @media (max-width:480px){.cookie-notice{left:12px;right:12px;bottom:12px;max-width:none;}}
+
   .chat-panel{
     position:fixed;bottom:90px;right:22px;z-index:600;width:340px;max-width:calc(100vw - 32px);
     height:460px;max-height:calc(100vh - 120px);background:var(--bg-alt);
@@ -1572,7 +1585,7 @@
         <summary>Como faço para garantir minha cota?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
         <p class="a">Preencha o formulário no fim desta página ou chame no WhatsApp. As cotas são limitadas e a disponibilidade é atualizada manualmente pela equipe da Vivasso, então quanto antes sua marca entrar, maior o espaço de protagonismo.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" id="privacidade">
         <summary>Política de Privacidade<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
         <p class="a">Este site usa cookies de analytics (Microsoft Clarity) para entender como as pessoas navegam pela página, como tempo de visita e cliques, e assim melhorar a experiência. Os campos do formulário são mascarados e não ficam visíveis nessas gravações. Ao continuar navegando, você concorda com o uso desses cookies.</p>
       </details>
@@ -1656,8 +1669,13 @@
 </div>
 
 <footer>
-  <span><strong>Soul Experience</strong> · 2ª edição · Produzido por Vivasso</span>
+  <span><strong>Soul Experience</strong> · 2ª edição · Produzido por Vivasso · <a href="#privacidade" style="text-decoration:underline;color:inherit">Política de Privacidade</a></span>
 </footer>
+
+<div class="cookie-notice" id="cookie-notice">
+  <p>Este site usa cookies de analytics pra entender como você navega e melhorar sua experiência. Ao continuar, você concorda com nossa <a href="#privacidade">Política de Privacidade</a>.</p>
+  <button type="button" id="cookie-ok">Entendi</button>
+</div>
 
 <script>
 (function(){
@@ -2074,6 +2092,18 @@
       var v = chatInput.value;
       chatInput.value = '';
       askBot(v);
+    });
+  }
+
+  var cookieNotice = document.getElementById('cookie-notice');
+  if(cookieNotice){
+    var cookieOk = document.getElementById('cookie-ok');
+    var alreadyOk = false;
+    try { alreadyOk = localStorage.getItem('se_cookie_ok') === '1'; } catch(e){}
+    if(alreadyOk){ cookieNotice.style.display = 'none'; }
+    cookieOk.addEventListener('click', function(){
+      cookieNotice.style.display = 'none';
+      try { localStorage.setItem('se_cookie_ok', '1'); } catch(e){}
     });
   }
 })();

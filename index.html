@@ -1,4 +1,18 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Proposta de patrocinio do Soul Experience, evento de bem-estar em Fortaleza.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%8C%85%3C/text%3E%3C/svg%3E">
 <title>Soul Experience</title>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yk7jxi8oy6");
+</script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
@@ -1007,6 +1021,8 @@
     .stats-inner{grid-template-columns:1fr 1fr;}
   }
 </style>
+</head>
+<body>
 
 <!-- ================= NAV ================= -->
 <div class="sticky-head">
@@ -1554,6 +1570,10 @@
         <summary>Como faço para garantir minha cota?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
         <p class="a">Preencha o formulário no fim desta página ou chame no WhatsApp. As cotas são limitadas e a disponibilidade é atualizada manualmente pela equipe da Vivasso, então quanto antes sua marca entrar, maior o espaço de protagonismo.</p>
       </details>
+      <details class="faq-item">
+        <summary>Política de Privacidade<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="a">Este site usa cookies de analytics (Microsoft Clarity) para entender como as pessoas navegam pela página, como tempo de visita e cliques, e assim melhorar a experiência. Os campos do formulário são mascarados e não ficam visíveis nessas gravações. Ao continuar navegando, você concorda com o uso desses cookies.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -1571,11 +1591,11 @@
       </div>
     </div>
     <form id="leadForm" class="lead-form">
-      <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" type="text" required></div>
-      <div class="field"><label for="f-marca">Marca / empresa</label><input id="f-marca" name="marca" type="text" required></div>
-      <div class="field"><label for="f-cnpj">CNPJ</label><input id="f-cnpj" name="cnpj" type="text"></div>
-      <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" required></div>
-      <div class="field"><label for="f-whats">WhatsApp</label><input id="f-whats" name="whats" type="tel" required></div>
+      <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" type="text" required class="clarity-mask"></div>
+      <div class="field"><label for="f-marca">Marca / empresa</label><input id="f-marca" name="marca" type="text" required class="clarity-mask"></div>
+      <div class="field"><label for="f-cnpj">CNPJ</label><input id="f-cnpj" name="cnpj" type="text" class="clarity-mask"></div>
+      <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" required class="clarity-mask"></div>
+      <div class="field"><label for="f-whats">WhatsApp</label><input id="f-whats" name="whats" type="tel" required class="clarity-mask"></div>
       <div class="field"><label for="f-cota">Cota de interesse</label>
         <select id="f-cota" name="cota">
           <option value="Apoio (R$ 1.500)">Apoio · R$ 1.500</option>
@@ -1603,7 +1623,7 @@
     <div class="chat-panel-head-text"><b>Vivi</b><span>Assistente virtual do Soul Experience</span></div>
     <button class="chat-close" id="chat-close" type="button" aria-label="Fechar assistente"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
-  <div class="chat-body" id="chat-body">
+  <div class="chat-body clarity-mask" id="chat-body">
     <div class="chat-msg bot">Oi! Eu sou a Vivi 👋 Pode perguntar sobre data, local, patrocínio, atividades ou como participar do Soul Experience. Se preferir, toque numa das opções abaixo.</div>
   </div>
   <div class="chat-quick" id="chat-quick">
@@ -1613,7 +1633,7 @@
     <button type="button" data-q="Falar com atendente">Falar com atendente</button>
   </div>
   <form class="chat-input-row" id="chat-form">
-    <input type="text" id="chat-input" placeholder="Digite sua dúvida..." autocomplete="off">
+    <input type="text" id="chat-input" placeholder="Digite sua dúvida..." autocomplete="off" class="clarity-mask">
     <button type="submit" aria-label="Enviar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
   </form>
 </div>
@@ -2056,3 +2076,6 @@
   }
 })();
 </script>
+
+</body>
+</html>

@@ -538,7 +538,7 @@
   .pg-item:hover img{transform:scale(1.08);}
   .pg-item:hover{box-shadow:0 16px 34px rgba(30,15,5,.28);}
   @media (max-width:640px){
-    .pg-thumbs,.pg-thumbs-more.open{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+    .pg-thumbs:not(.pg-thumbs-more),.pg-thumbs-more.open{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
     .pg-item{width:100%;height:auto;aspect-ratio:1;}
   }
   .perola-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;}
@@ -594,7 +594,7 @@
     font-family:'Unbounded',sans-serif;font-weight:700;font-size:18px;
   }
   .influ-row{margin-top:32px;}
-  .influ-row + .influ-row{margin-top:4px;}
+  .influ-row.influ-row + .influ-row{margin-top:4px;}
   .influ-row .marquee-track{gap:16px;}
   .influ-row .marquee-track a{width:auto;height:auto;display:flex;}
   .influ-row.right .marquee-track{animation-duration:40s;}

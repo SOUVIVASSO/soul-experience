@@ -423,17 +423,6 @@
   .print-strip img{width:100%;}
   .print-caption{margin-top:10px;font-size:12.5px;color:var(--ink-dim);}
 
-  .dimension-list{display:flex;flex-direction:column;gap:0;}
-  .dimension-row{
-    display:flex;justify-content:space-between;align-items:baseline;gap:16px;
-    padding:18px 0;
-    border-bottom:1px solid var(--line);
-  }
-  .dimension-row:first-child{padding-top:0;}
-  .dimension-row:last-child{border-bottom:none;}
-  .dimension-row .name{font-weight:700;font-size:15.5px;white-space:nowrap;}
-  .dimension-row .tag{font-size:13px;color:var(--ink-dim);text-align:right;}
-
   /* ---------- GRAO SECTION ---------- */
   .grao{
     background:linear-gradient(160deg, #241811 0%, #4A2C1C 100%);
@@ -443,10 +432,7 @@
   .grao .eyebrow{color:#F3D9B4;}
   .grao .section-title, .grao h3{color:#fff;}
   .grao .lede{color:rgba(250,240,225,.78);}
-  .grao .dimension-row{border-bottom-color:rgba(255,255,255,.14);}
-  .grao .dimension-row .name{color:#fff;}
   .circuito-logo{height:60px;width:auto;aspect-ratio:1.9565;margin-top:12px;display:block;}
-  .grao .dimension-row .tag{color:rgba(250,240,225,.7);}
   .grao-head{
     display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;
   }
@@ -1092,8 +1078,6 @@
     .part-card h3{font-size:13px;line-height:1.25;}
     .part-card p{font-size:11.5px;line-height:1.4;}
     .pricing{grid-template-columns:1fr;}
-    .dimension-row{flex-direction:column;align-items:flex-start;gap:4px;}
-    .dimension-row .tag{text-align:left;}
     .lead-form{grid-template-columns:1fr;}
   }
   @media (max-width:560px){
@@ -1178,10 +1162,6 @@
         <span class="eyebrow">O evento</span>
         <h2 class="section-title">Soul Experience</h2>
         <p class="lede">Nasce para celebrar o bem-estar em suas múltiplas dimensões: física, emocional, mental, sensorial e social. Cada edição tem nome, identidade visual e cores próprias, sempre priorizando a experiência de quem participa, nunca um padrão a ser seguido.</p>
-      </div>
-      <div class="dimension-list" style="min-width:280px;">
-        <div class="dimension-row"><span class="name">1ª edição</span><span class="tag">Pérola Tropical · 21 de agosto</span></div>
-        <div class="dimension-row"><span class="name">2ª edição</span><span class="tag">Circuito das Estações · 28 de novembro de 2026</span></div>
       </div>
     </div>
 

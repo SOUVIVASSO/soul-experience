@@ -72,13 +72,55 @@
         <div class="meta">Sunrise Beach Club, Fortaleza</div>
         <p>Uma noite à beira-mar com moda praia boho chic, que celebrou a beleza que emerge do cuidado e da transformação. Reuniu 100 convidados e impactou mais de 80 mil pessoas.</p>
         <div class="links">
-          <a href="index.html#perola">Ver fotos e vídeo →</a>
+          <a href="#perola-galeria">Ver fotos e vídeo →</a>
           <a href="blog/perola-tropical-1a-edicao.html">Ler o recap no blog →</a>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<section id="perola-galeria" class="perola-full">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Como foi a 1ª edição</span>
+      <img class="perola-logo" src="assets/perola/perola-logo.png" alt="Pérola Tropical - 1ª edição">
+      <p class="lede">A edição Pérola Tropical nasceu da fusão entre a delicadeza da pérola e a força do trópico: assim como a pérola surge do mar, lenta, preciosa e única, essa edição celebrou a beleza que emerge do cuidado, da transformação e do que há de mais genuíno em cada mulher. Uma noite ao pôr do sol, à beira-mar de Fortaleza, no Sunrise Beach Club, em 21 de agosto de 2026, reunindo 100 convidados presenciais e impactando mais de 80 mil pessoas com uma audiência qualificada de Wellness e lifestyle.</p>
+    </div>
+    <div class="perola-gallery">
+      <div class="pg-a video-tile" id="perolaVideoTile">
+        <img src="assets/perola/backdrop.webp" alt="Vídeo oficial Pérola Tropical">
+        <button type="button" class="play-btn" id="perolaVideoPlay" aria-label="Assistir vídeo oficial">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 4.5v11l9-5.5-9-5.5z" fill="currentColor"/></svg>
+        </button>
+        <span class="video-label">Vídeo oficial</span>
+      </div>
+      <div class="pg-thumbs">
+        <div class="pg-item"><img src="assets/perola/decoracao.webp" alt="Decoração do evento"></div>
+        <div class="pg-item"><img src="assets/perola/dj.webp" alt="DJ Otávio Camargo"></div>
+        <div class="pg-item"><img src="assets/perola/cerimonialista.webp" alt="Cerimonialista conduzindo o evento"></div>
+        <div class="pg-item"><img src="assets/perola/convidados.webp" alt="Convidados no evento"></div>
+        <div class="pg-item"><img src="assets/perola/cesar-costa.webp" alt="Foto oficial César Costa"></div>
+        <div class="pg-item"><img src="assets/perola/awe-patrocinador.webp" alt="Ativação da marca awe"></div>
+      </div>
+      <div class="pg-thumbs pg-thumbs-more" id="pgMore">
+        <div class="pg-item"><img src="assets/perola/carmen-prado-organizadora.webp" alt="Carmen Prado, organizadora do evento"></div>
+        <div class="pg-item"><img src="assets/perola/backdrop2.webp" alt="Backdrop de marcas patrocinadoras"></div>
+        <div class="pg-item"><img src="assets/perola/emape-patrocinador.webp" alt="Ativação da marca Emape"></div>
+        <div class="pg-item"><img src="assets/perola/equipe1.webp" alt="Equipe Soul Experience"></div>
+        <div class="pg-item"><img src="assets/perola/equipe2.webp" alt="Equipe Soul Experience"></div>
+        <div class="pg-item"><img src="assets/perola/chery-glow-patrocinador.webp" alt="Ativação da marca Chery Glow"></div>
+        <div class="pg-item"><img src="assets/perola/momento-fogueira.webp" alt="Momento fogueira na praia"></div>
+      </div>
+    </div>
+    <div class="perola-actions">
+      <button type="button" class="btn btn-ghost" id="pgMoreBtn">Ver mais fotos</button>
+      <a href="https://drive.google.com/drive/folders/1KclRjQdj5ICJSZFGA8sCt2qh79IA4n7C?usp=sharing" target="_blank" rel="noopener" class="btn btn-ghost">Ver álbum completo no Drive</a>
+      <a href="https://www.fotto.com.br/soul-experience/e/402636" target="_blank" rel="noopener" class="btn btn-ghost">Comprar fotos em alta (César Costa)</a>
+      <a href="https://open.spotify.com/playlist/51Q1posiwUpnbpTWyc8k9e" target="_blank" rel="noopener" class="btn btn-ghost">Ouvir playlist oficial</a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap foot-inner">
@@ -102,6 +144,84 @@
     notice.style.display = 'none';
     try { localStorage.setItem('se_cookie_ok', '1'); } catch(e){}
   });
+})();
+</script>
+
+<div class="video-modal" id="videoModal">
+  <button type="button" class="video-modal-close" id="videoModalClose" aria-label="Fechar vídeo">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+  <div class="video-modal-frame" id="videoModalFrame"></div>
+</div>
+
+<div class="photo-lightbox" id="photoLightbox">
+  <button type="button" class="photo-lightbox-close" id="photoLightboxClose" aria-label="Fechar">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+  <img id="photoLightboxImg" src="" alt="">
+</div>
+
+<script>
+(function(){
+  var photoLightbox = document.getElementById('photoLightbox');
+  var photoLightboxImg = document.getElementById('photoLightboxImg');
+  var photoLightboxClose = document.getElementById('photoLightboxClose');
+  function openLightbox(src, alt){
+    photoLightboxImg.src = src;
+    photoLightboxImg.alt = alt || '';
+    photoLightbox.classList.add('open');
+  }
+  function closeLightbox(){
+    photoLightbox.classList.remove('open');
+    photoLightboxImg.src = '';
+  }
+  document.querySelectorAll('.pg-item').forEach(function(item){
+    item.addEventListener('click', function(){
+      var img = item.querySelector('img');
+      if(img) openLightbox(img.getAttribute('src'), img.getAttribute('alt'));
+    });
+  });
+  if(photoLightboxClose) photoLightboxClose.addEventListener('click', closeLightbox);
+  if(photoLightbox){
+    photoLightbox.addEventListener('click', function(e){
+      if(e.target === photoLightbox) closeLightbox();
+    });
+  }
+
+  var perolaVideoPlay = document.getElementById('perolaVideoPlay');
+  var videoModal = document.getElementById('videoModal');
+  var videoModalFrame = document.getElementById('videoModalFrame');
+  var videoModalClose = document.getElementById('videoModalClose');
+  function openVideoModal(){
+    videoModalFrame.innerHTML = '<iframe src="https://drive.google.com/file/d/1feK7oPDgLCbgEW6_buLoqCzYqj4WwtHi/preview" allow="autoplay; fullscreen" allowfullscreen frameborder="0"></iframe>';
+    videoModal.classList.add('open');
+  }
+  function closeVideoModal(){
+    videoModal.classList.remove('open');
+    videoModalFrame.innerHTML = '';
+  }
+  if(perolaVideoPlay && videoModal){
+    perolaVideoPlay.addEventListener('click', openVideoModal);
+  }
+  if(videoModalClose) videoModalClose.addEventListener('click', closeVideoModal);
+  if(videoModal){
+    videoModal.addEventListener('click', function(e){
+      if(e.target === videoModal) closeVideoModal();
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeLightbox(); closeVideoModal(); }
+  });
+
+  var pgMoreBtn = document.getElementById('pgMoreBtn');
+  var pgMore = document.getElementById('pgMore');
+  if(pgMoreBtn && pgMore){
+    pgMoreBtn.addEventListener('click', function(){
+      var isOpen = pgMore.classList.toggle('open');
+      pgMoreBtn.textContent = isOpen ? 'Ver menos fotos' : 'Ver mais fotos';
+    });
+  }
 })();
 </script>
 

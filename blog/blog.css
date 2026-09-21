@@ -116,6 +116,47 @@ footer{background:var(--bg-dark);padding-block:28px;margin-top:40px}
 .back-link:hover{color:var(--ink)}
 .disclaimer{margin-top:32px;font-size:12.5px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:16px}
 
+/* ---------- PEROLA GALLERY (full experience) ---------- */
+.perola-full{background:var(--bg-dark);padding-block:48px}
+.perola-full .eyebrow{color:#F3D9B4}
+.perola-full .eyebrow::before{background:#F3D9B4}
+.perola-full .section-head{max-width:720px}
+.perola-full .lede{margin-top:16px;font-size:15.5px;color:var(--ink-on-dark-soft);line-height:1.7}
+.perola-logo{height:88px;width:auto;aspect-ratio:2;margin-top:16px}
+.perola-gallery{margin-top:32px}
+.pg-a{display:block;border-radius:18px;overflow:hidden}
+.pg-a img{width:100%;height:100%;object-fit:cover;max-height:340px}
+.video-tile{position:relative;display:block;aspect-ratio:16/9;max-height:340px}
+.video-tile .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;color:var(--violet);box-shadow:0 14px 34px rgba(20,10,40,.3);transition:transform .2s}
+.video-tile:hover .play-btn{transform:translate(-50%,-50%) scale(1.08)}
+.video-tile .video-label{position:absolute;bottom:14px;left:14px;background:rgba(24,20,42,.72);color:#fff;font-size:12px;font-weight:700;padding:7px 14px;border-radius:999px}
+.pg-thumbs{margin-top:14px;display:flex;flex-wrap:wrap;gap:12px}
+.pg-thumbs-more{display:none}
+.pg-thumbs-more.open{display:flex}
+.pg-item{width:150px;height:150px;border-radius:14px;overflow:hidden;cursor:pointer;position:relative;transition:transform .25s ease,box-shadow .25s ease}
+.pg-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.pg-item:hover img{transform:scale(1.08)}
+.pg-item:hover{box-shadow:0 16px 34px rgba(30,15,5,.28)}
+@media (max-width:640px){
+  .pg-thumbs:not(.pg-thumbs-more),.pg-thumbs-more.open{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .pg-item{width:100%;height:auto;aspect-ratio:1}
+}
+.perola-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
+.btn-ghost{border:1px solid rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.08)}
+.btn-ghost:hover{border-color:#fff}
+
+/* ---------- PHOTO LIGHTBOX / VIDEO MODAL ---------- */
+.photo-lightbox{display:none;position:fixed;inset:0;z-index:800;background:rgba(10,6,3,.88);align-items:center;justify-content:center;padding:32px}
+.photo-lightbox.open{display:flex}
+.photo-lightbox img{max-width:90vw;max-height:88vh;width:auto;height:auto;border-radius:12px;box-shadow:0 40px 90px rgba(0,0,0,.5);display:block}
+.photo-lightbox-close{position:absolute;top:22px;right:26px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.video-modal{display:none;position:fixed;inset:0;z-index:800;background:rgba(10,6,3,.92);align-items:center;justify-content:center;padding:20px}
+.video-modal.open{display:flex}
+.video-modal-frame{width:min(1100px,94vw);aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.5)}
+.video-modal-frame iframe{width:100%;height:100%;border:0;display:block}
+.video-modal-close{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2}
+@media (max-width:700px){.video-modal{padding:0;align-items:stretch}.video-modal-frame{width:100vw;height:100vh;aspect-ratio:auto;border-radius:0}}
+
 /* ---------- COOKIE NOTICE ---------- */
 .cookie-notice{position:fixed;bottom:22px;left:22px;z-index:55;max-width:300px;
   background:#fff;border:1px solid var(--line);border-radius:14px;

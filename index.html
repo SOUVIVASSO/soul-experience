@@ -488,51 +488,6 @@
   .station-mix:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.22);filter:brightness(1.05);}
   .station .desc{margin-top:6px;font-size:12.5px;color:var(--ink-dim);line-height:1.45;}
 
-  /* ---------- STATION MODAL ---------- */
-  /* ---------- PHOTO LIGHTBOX ---------- */
-  .photo-lightbox{
-    display:none;position:fixed;inset:0;z-index:800;
-    background:rgba(10,6,3,.88);
-    align-items:center;justify-content:center;padding:32px;
-  }
-  .photo-lightbox.open{display:flex;}
-  .photo-lightbox img{
-    max-width:90vw;max-height:88vh;width:auto;height:auto;
-    border-radius:12px;box-shadow:0 40px 90px rgba(0,0,0,.5);
-    display:block;
-  }
-  .video-modal{
-    display:none;position:fixed;inset:0;z-index:800;
-    background:rgba(10,6,3,.92);
-    align-items:center;justify-content:center;padding:20px;
-  }
-  .video-modal.open{display:flex;}
-  .video-modal-frame{
-    width:min(1100px, 94vw);
-    aspect-ratio:16/9;
-    background:#000;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 40px 90px rgba(0,0,0,.5);
-  }
-  .video-modal-frame iframe{width:100%;height:100%;border:0;display:block;}
-  .video-modal-close{
-    position:absolute;top:16px;right:16px;
-    width:40px;height:40px;border-radius:50%;
-    border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;
-    display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;
-  }
-  @media (max-width:700px){
-    .video-modal{padding:0;align-items:stretch;}
-    .video-modal-frame{width:100vw;height:100vh;aspect-ratio:auto;border-radius:0;}
-  }
-  .photo-lightbox-close{
-    position:absolute;top:22px;right:26px;
-    width:40px;height:40px;border-radius:50%;
-    border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;
-    display:flex;align-items:center;justify-content:center;cursor:pointer;
-  }
-
   /* ---------- CAMPANHA ---------- */
   .campanha-grid{
     display:grid;
@@ -569,61 +524,21 @@
   .campanha-step p{font-size:14.5px;color:var(--ink-dim);}
   .campanha-step strong{color:var(--ink);}
 
-  /* ---------- PEROLA GALLERY ---------- */
+  /* ---------- PEROLA SUMMARY ---------- */
   .perola{background:linear-gradient(160deg, #241811 0%, #4A2C1C 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .perola .eyebrow{color:#F3D9B4;}
   .perola .eyebrow::before{background:#F3D9B4;}
-  .perola .lede{color:rgba(250,240,225,.78);}
-  .perola .perola-sponsor > span{color:rgba(250,240,225,.6);}
-  .perola .perola-sponsor-brand b{color:#F3D9B4;}
-  .perola .btn-ghost{border-color:rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.08);}
-  .perola .btn-ghost:hover{border-color:#fff;}
-  .perola-gallery{margin-top:36px;}
-  .pg-a{display:block;border-radius:18px;overflow:hidden;}
-  .pg-a img{width:100%;height:100%;object-fit:cover;max-height:340px;}
-  .video-tile{aspect-ratio:16/9;max-height:340px;}
-  .video-tile iframe{width:100%;height:100%;display:block;border:0;}
-  .perola-logo{height:96px;width:auto;aspect-ratio:2;margin-top:18px;}
-  .perola-sponsor{margin-top:20px;display:flex;align-items:center;flex-wrap:wrap;gap:12px;}
-  .perola-sponsor > span{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-dim);}
-  .perola-sponsor-brand{display:flex;align-items:center;gap:10px;}
-  .perola-sponsor-brand img{height:34px;width:auto;aspect-ratio:1.2824;}
-  .perola-sponsor-brand b{font-family:'Unbounded',sans-serif;font-weight:600;font-size:15px;}
-  .pg-thumbs{
-    margin-top:14px;
-    display:flex;flex-wrap:wrap;gap:12px;
-  }
-  .pg-thumbs-more{display:none;}
-  .pg-thumbs-more.open{display:flex;}
-  .pg-item{
-    width:150px;height:150px;border-radius:14px;overflow:hidden;
-    cursor:pointer;position:relative;
-    transition:transform .25s ease, box-shadow .25s ease;
-  }
-  .pg-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;}
-  .pg-item:hover img{transform:scale(1.08);}
-  .pg-item:hover{box-shadow:0 16px 34px rgba(30,15,5,.28);}
-  @media (max-width:640px){
-    .pg-thumbs:not(.pg-thumbs-more),.pg-thumbs-more.open{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-    .pg-item{width:100%;height:auto;aspect-ratio:1;}
-  }
-  .perola-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;}
-  .video-tile{position:relative;display:block;}
-  .video-tile .play-btn{
-    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-    width:64px;height:64px;border-radius:50%;
-    background:rgba(255,255,255,.92);
-    display:flex;align-items:center;justify-content:center;
-    color:var(--violet);
-    box-shadow:0 14px 34px rgba(20,10,40,.3);
-    transition:transform .2s;
-  }
-  .video-tile:hover .play-btn{transform:translate(-50%,-50%) scale(1.08);}
-  .video-tile .video-label{
-    position:absolute;bottom:14px;left:14px;
-    background:rgba(24,20,42,.72);color:#fff;
-    font-size:12px;font-weight:700;
-    padding:7px 14px;border-radius:999px;
+  .perola .section-title{color:#fff;}
+  .perola-summary{margin-top:32px;display:flex;align-items:center;gap:28px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;overflow:hidden;}
+  .perola-summary img{width:220px;height:260px;object-fit:cover;flex-shrink:0;display:block;}
+  .perola-summary .content{padding:24px 28px 24px 0;}
+  .perola-summary-badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);}
+  .perola-summary p{margin-top:10px;font-size:14.5px;color:rgba(250,240,225,.8);line-height:1.6;max-width:440px;}
+  .perola-summary .btn{margin-top:18px;}
+  @media (max-width:560px){
+    .perola-summary{flex-direction:column;gap:0;}
+    .perola-summary img{width:100%;height:220px;}
+    .perola-summary .content{padding:20px 22px 24px;}
   }
   .reach-banner{
     margin-top:40px;
@@ -1336,48 +1251,15 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Como foi a 1ª edição</span>
-      <img class="perola-logo" src="assets/perola/perola-logo.png" alt="Pérola Tropical - 1ª edição">
-      <p class="lede">A edição Pérola Tropical nasceu da fusão entre a delicadeza da pérola e a força do trópico: assim como a pérola surge do mar, lenta, preciosa e única, essa edição celebrou a beleza que emerge do cuidado, da transformação e do que há de mais genuíno em cada mulher. Uma noite ao pôr do sol, à beira-mar de Fortaleza, no Sunrise Beach Club, em 21 de agosto de 2026, reunindo 100 convidados presenciais e impactando mais de 80 mil pessoas com uma audiência qualificada de Wellness e lifestyle.</p>
-      <div class="perola-sponsor">
-        <span>Marca assinante da edição</span>
-        <span class="perola-sponsor-brand">
-          <img src="assets/iana-dias-logo.png" alt="Dra. Iana Dias">
-          <b>Dra. Iana Dias</b>
-        </span>
-      </div>
+      <h2 class="section-title">Pérola Tropical</h2>
     </div>
-    <div class="perola-gallery">
-      <div class="pg-a video-tile" id="perolaVideoTile">
-        <img src="assets/perola/backdrop.webp" alt="Vídeo oficial Pérola Tropical">
-        <button type="button" class="play-btn" id="perolaVideoPlay" aria-label="Assistir vídeo oficial">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 4.5v11l9-5.5-9-5.5z" fill="currentColor"/></svg>
-        </button>
-        <span class="video-label">Vídeo oficial</span>
+    <div class="perola-summary">
+      <img src="assets/perola/decoracao3.webp" alt="Pérola Tropical">
+      <div class="content">
+        <span class="perola-summary-badge">1ª edição · 21 de agosto de 2026</span>
+        <p>Uma noite à beira-mar com moda praia boho chic, que celebrou a beleza que emerge do cuidado e da transformação. Reuniu 100 convidados presenciais e impactou mais de 80 mil pessoas.</p>
+        <a class="btn btn-grad" href="edicoes.html">Ver fotos e vídeos</a>
       </div>
-      <div class="pg-thumbs">
-        <div class="pg-item"><img src="assets/perola/decoracao.webp" alt="Decoração do evento"></div>
-        <div class="pg-item"><img src="assets/perola/dj.webp" alt="DJ Otávio Camargo"></div>
-        <div class="pg-item"><img src="assets/perola/cerimonialista.webp" alt="Cerimonialista conduzindo o evento"></div>
-        <div class="pg-item"><img src="assets/perola/convidados.webp" alt="Convidados no evento"></div>
-        <div class="pg-item"><img src="assets/perola/cesar-costa.webp" alt="Foto oficial César Costa"></div>
-        <div class="pg-item"><img src="assets/perola/awe-patrocinador.webp" alt="Ativação da marca awe"></div>
-      </div>
-      <div class="pg-thumbs pg-thumbs-more" id="pgMore">
-        <div class="pg-item"><img src="assets/perola/carmen-prado-organizadora.webp" alt="Carmen Prado, organizadora do evento"></div>
-        <div class="pg-item"><img src="assets/perola/backdrop2.webp" alt="Backdrop de marcas patrocinadoras"></div>
-        <div class="pg-item"><img src="assets/perola/dra-iana-dias.webp" alt="Ativação da marca Dra. Iana Dias"></div>
-        <div class="pg-item"><img src="assets/perola/emape-patrocinador.webp" alt="Ativação da marca Emape"></div>
-        <div class="pg-item"><img src="assets/perola/equipe1.webp" alt="Equipe Soul Experience"></div>
-        <div class="pg-item"><img src="assets/perola/equipe2.webp" alt="Equipe Soul Experience"></div>
-        <div class="pg-item"><img src="assets/perola/chery-glow-patrocinador.webp" alt="Ativação da marca Chery Glow"></div>
-        <div class="pg-item"><img src="assets/perola/momento-fogueira.webp" alt="Momento fogueira na praia"></div>
-      </div>
-    </div>
-    <div class="perola-actions">
-      <button type="button" class="btn btn-ghost" id="pgMoreBtn">Ver mais fotos</button>
-      <a href="https://drive.google.com/drive/folders/1KclRjQdj5ICJSZFGA8sCt2qh79IA4n7C?usp=sharing" target="_blank" rel="noopener" class="btn btn-ghost">Ver álbum completo no Drive</a>
-      <a href="https://www.fotto.com.br/soul-experience/e/402636" target="_blank" rel="noopener" class="btn btn-ghost">Comprar fotos em alta (César Costa)</a>
-      <a href="https://open.spotify.com/playlist/51Q1posiwUpnbpTWyc8k9e" target="_blank" rel="noopener" class="btn btn-ghost">Ouvir playlist oficial</a>
     </div>
   </div>
 </section>
@@ -1727,20 +1609,6 @@
 </div>
 
 
-<div class="video-modal" id="videoModal">
-  <button type="button" class="video-modal-close" id="videoModalClose" aria-label="Fechar vídeo">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-  </button>
-  <div class="video-modal-frame" id="videoModalFrame"></div>
-</div>
-
-<div class="photo-lightbox" id="photoLightbox">
-  <button type="button" class="photo-lightbox-close" id="photoLightboxClose" aria-label="Fechar">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-  </button>
-  <img id="photoLightboxImg" src="" alt="">
-</div>
-
 </main>
 
 <footer>
@@ -1889,65 +1757,6 @@
       var text = encodeURIComponent(lines.join('\n'));
       if(leadSuccess) leadSuccess.classList.add('show');
       window.open('https://wa.me/558597712114?text=' + text, '_blank');
-    });
-  }
-
-  var photoLightbox = document.getElementById('photoLightbox');
-  var photoLightboxImg = document.getElementById('photoLightboxImg');
-  var photoLightboxClose = document.getElementById('photoLightboxClose');
-  function openLightbox(src, alt){
-    photoLightboxImg.src = src;
-    photoLightboxImg.alt = alt || '';
-    photoLightbox.classList.add('open');
-  }
-  function closeLightbox(){
-    photoLightbox.classList.remove('open');
-    photoLightboxImg.src = '';
-  }
-  document.querySelectorAll('.pg-item').forEach(function(item){
-    item.addEventListener('click', function(){
-      var img = item.querySelector('img');
-      if(img) openLightbox(img.getAttribute('src'), img.getAttribute('alt'));
-    });
-  });
-  if(photoLightboxClose) photoLightboxClose.addEventListener('click', closeLightbox);
-  if(photoLightbox){
-    photoLightbox.addEventListener('click', function(e){
-      if(e.target === photoLightbox) closeLightbox();
-    });
-  }
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape'){ closeLightbox(); closeVideoModal(); }
-  });
-
-  var perolaVideoPlay = document.getElementById('perolaVideoPlay');
-  var videoModal = document.getElementById('videoModal');
-  var videoModalFrame = document.getElementById('videoModalFrame');
-  var videoModalClose = document.getElementById('videoModalClose');
-  function openVideoModal(){
-    videoModalFrame.innerHTML = '<iframe src="https://drive.google.com/file/d/1feK7oPDgLCbgEW6_buLoqCzYqj4WwtHi/preview" allow="autoplay; fullscreen" allowfullscreen frameborder="0"></iframe>';
-    videoModal.classList.add('open');
-  }
-  function closeVideoModal(){
-    videoModal.classList.remove('open');
-    videoModalFrame.innerHTML = '';
-  }
-  if(perolaVideoPlay && videoModal){
-    perolaVideoPlay.addEventListener('click', openVideoModal);
-  }
-  if(videoModalClose) videoModalClose.addEventListener('click', closeVideoModal);
-  if(videoModal){
-    videoModal.addEventListener('click', function(e){
-      if(e.target === videoModal) closeVideoModal();
-    });
-  }
-
-  var pgMoreBtn = document.getElementById('pgMoreBtn');
-  var pgMore = document.getElementById('pgMore');
-  if(pgMoreBtn && pgMore){
-    pgMoreBtn.addEventListener('click', function(){
-      var isOpen = pgMore.classList.toggle('open');
-      pgMoreBtn.textContent = isOpen ? 'Ver menos fotos' : 'Ver mais fotos';
     });
   }
 

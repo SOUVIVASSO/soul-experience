@@ -1743,6 +1743,12 @@
   }
   syncBarHeight();
   window.addEventListener('resize', syncBarHeight);
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(syncBarHeight);
+  }
+  if(window.ResizeObserver && countdownBarEl){
+    new ResizeObserver(syncBarHeight).observe(countdownBarEl);
+  }
   function onScroll(){
     if(window.scrollY > 40){ nav.classList.add('solid'); }
     else{ nav.classList.remove('solid'); }

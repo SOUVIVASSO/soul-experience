@@ -154,9 +154,9 @@
     display:none;
     width:40px;height:40px;
     border-radius:50%;
-    border:1px solid var(--line-strong);
-    background:none;
-    color:var(--ink);
+    border:1px solid rgba(255,255,255,.32);
+    background:rgba(255,255,255,.06);
+    color:#fff;
     align-items:center;justify-content:center;
     cursor:pointer;
   }
@@ -217,6 +217,10 @@
     text-align:center;
   }
   .hero-date:hover{background:rgba(255,255,255,.16);}
+  @media (max-width:480px){
+    .hero-date{font-size:10px;padding:7px 12px;gap:6px;white-space:nowrap;}
+    .hero-date svg{width:12px;height:12px;flex-shrink:0;}
+  }
   .hero-tagline{
     margin-top:24px;
     font-size:clamp(24px,3.4vw,36px);
@@ -1109,7 +1113,7 @@
 
     <div style="margin-top:56px;">
       <span class="eyebrow">Circuito de estações · com apoio LoveNuts</span>
-      <h3 style="font-size:clamp(22px,3vw,28px);margin-top:10px;">Circuito das Estações</h3>
+      <h3 style="font-size:clamp(22px,3vw,28px);margin-top:10px;">Segunda edição: Circuito das Estações</h3>
       <p class="lede" style="margin-top:14px;"><strong>Cada estação, uma cor e um sabor.</strong> Estruturado como um circuito de estações, cada uma leva o nome e a cor de um mix de castanhas LoveNuts, unindo movimento, sabor e descoberta. No fechamento, todo mundo se encontra numa corrida coletiva, com premiação e dicas das nutricionistas parceiras.</p>
     </div>
 
@@ -1655,6 +1659,7 @@
     if(diff <= 0){
       if(cdWrap) cdWrap.innerHTML = '<div class="countdown-ended">O Soul Experience começou!</div>';
       if(cdBar) cdBar.hidden = true;
+      if(nav) nav.style.top = '0px';
       clearInterval(cdTimer);
       return;
     }
@@ -1676,6 +1681,14 @@
   cdTimer = setInterval(cdTick, 1000);
 
   var nav = document.getElementById('siteNav');
+  var countdownBarEl = document.getElementById('countdownBar');
+  function syncBarHeight(){
+    if(countdownBarEl && nav && !countdownBarEl.hidden){
+      nav.style.top = countdownBarEl.offsetHeight + 'px';
+    }
+  }
+  syncBarHeight();
+  window.addEventListener('resize', syncBarHeight);
   function onScroll(){
     if(window.scrollY > 40){ nav.classList.add('solid'); }
     else{ nav.classList.remove('solid'); }

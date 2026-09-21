@@ -2102,11 +2102,64 @@
     chatBody.scrollTop = chatBody.scrollHeight;
     return div;
   }
-  function askBot(q){
+
+  var VIVI_API_URL = 'https://vivasso-vivi-chat.souvivasso.workers.dev/';
+  var chatHistory = [];
+
+  var CHAT_ACTIONS = {
+    cotas: { label: 'Ver cotas de patrocínio', href: '#patrocinio' },
+    interesse: { label: 'Preencher formulário', href: '#interesse' },
+    whatsapp: { label: 'Falar no WhatsApp', href: 'https://wa.me/558597712114?text=' + encodeURIComponent('Olá! Vim pela landing page do Soul Experience e queria saber mais.'), target: '_blank' }
+  };
+
+  function extractChatAction(text){
+    var m = text.match(/\[\[BOTAO:(\w+)\]\]\s*$/i);
+    if (!m) return { clean: text, action: null };
+    var key = m[1].toLowerCase();
+    var clean = text.slice(0, m.index).trim();
+    if (/\?\s*$/.test(clean)) return { clean: clean, action: null };
+    return { clean: clean, action: CHAT_ACTIONS[key] || null };
+  }
+
+  function addChatActionBtn(action){
+    var a = document.createElement('a');
+    a.className = 'chat-action-btn';
+    a.href = action.href;
+    a.textContent = action.label;
+    if (action.target) { a.target = action.target; a.rel = 'noopener'; }
+    a.addEventListener('click', function(){ chatPanel.setAttribute('data-open', 'false'); });
+    chatBody.appendChild(a);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  async function askBot(q){
     if(!q || !q.trim()) return;
     if(chatQuick) chatQuick.style.display = 'none';
     addChatMsg(q, 'user');
-    addChatMsg(linkifyChatReply(botAnswer(q)), 'bot');
+    var typing = addChatMsg('digitando<span class="chat-dots">...</span>', 'bot');
+    try {
+      var ctrl = new AbortController();
+      var timeoutId = setTimeout(function(){ ctrl.abort(); }, 12000);
+      var res = await fetch(VIVI_API_URL, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ message: q, history: chatHistory.slice(-6), site: 'soul' }),
+        signal: ctrl.signal
+      });
+      clearTimeout(timeoutId);
+      if(!res.ok) throw new Error('bad status');
+      var data = await res.json();
+      if(!data || !data.reply) throw new Error('no reply');
+      typing.remove();
+      var parsed = extractChatAction(data.reply);
+      addChatMsg(linkifyChatReply(parsed.clean), 'bot');
+      if (parsed.action) addChatActionBtn(parsed.action);
+      chatHistory.push({role:'user', content:q});
+      chatHistory.push({role:'assistant', content:data.reply});
+    } catch(err){
+      typing.remove();
+      addChatMsg(linkifyChatReply(botAnswer(q)), 'bot');
+    }
   }
 
   if(chatFab && chatPanel){

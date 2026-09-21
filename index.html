@@ -3,9 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Proposta de patrocinio do Soul Experience, evento de bem-estar em Fortaleza.">
+<meta name="description" content="Proposta de patrocinio do Soul Experience, evento de bem-estar em Fortaleza. 2ª edicao em 28 de novembro de 2026, no Iguatemi Bosque.">
+<link rel="canonical" href="https://soulexperience.vivasso.com.br/">
 <link rel="icon" type="image/png" href="assets/favicon.png?v=3">
 <title>Soul Experience</title>
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Soul Experience">
+<meta property="og:title" content="Soul Experience · Segunda edição: Circuito das Estações">
+<meta property="og:description" content="Proposta de patrocínio do Soul Experience, evento de bem-estar em Fortaleza. 2ª edição em 28 de novembro de 2026, no Iguatemi Bosque.">
+<meta property="og:image" content="https://soulexperience.vivasso.com.br/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://soulexperience.vivasso.com.br/">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Soul Experience · Segunda edição: Circuito das Estações">
+<meta name="twitter:description" content="Proposta de patrocínio do Soul Experience, evento de bem-estar em Fortaleza. 2ª edição em 28 de novembro de 2026, no Iguatemi Bosque.">
+<meta name="twitter:image" content="https://soulexperience.vivasso.com.br/assets/og-image.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Soul Experience · Segunda edição: Circuito das Estações",
+  "startDate": "2026-11-28T06:30:00-03:00",
+  "endDate": "2026-11-28T10:00:00-03:00",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "Iguatemi Bosque",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Fortaleza",
+      "addressRegion": "CE",
+      "addressCountry": "BR"
+    }
+  },
+  "image": ["https://soulexperience.vivasso.com.br/assets/og-image.jpg"],
+  "description": "O Soul Experience e um evento de bem-estar da Vivasso: uma manha com um circuito de estacoes de atividade fisica, cada uma com o nome e a cor de um mix de castanhas LoveNuts, terminando numa corrida coletiva com premiacao e dicas de nutricionistas.",
+  "organizer": {
+    "@type": "Organization",
+    "name": "Vivasso",
+    "email": "souvivasso@gmail.com",
+    "url": "https://soulexperience.vivasso.com.br/"
+  }
+}
+</script>
 <link rel="preload" href="assets/fonts/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/unbounded.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/logo-soul-white.png" as="image">
@@ -91,7 +136,7 @@
     font-size:12.5px;
     letter-spacing:.16em;
     text-transform:uppercase;
-    color:var(--violet);
+    color:var(--pink);
     display:inline-flex;
     align-items:center;
     gap:8px;
@@ -435,6 +480,10 @@
   .station.station-mix .station-tag{color:#fff;opacity:.9;text-shadow:0 1px 4px rgba(0,0,0,.4);}
   .station.station-mix .name{color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.4);}
   .station.station-mix .desc{color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.4);}
+  .station.station-mix.station-dark{color:#1A1208;}
+  .station.station-mix.station-dark .station-tag{color:#1A1208;opacity:1;text-shadow:0 1px 3px rgba(255,255,255,.4);}
+  .station.station-mix.station-dark .name{color:#1A1208;text-shadow:0 1px 3px rgba(255,255,255,.4);}
+  .station.station-mix.station-dark .desc{color:#1A1208;text-shadow:none;}
   .station-mix:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.22);filter:brightness(1.05);}
   .station .desc{margin-top:6px;font-size:12.5px;color:var(--ink-dim);line-height:1.45;}
 
@@ -748,6 +797,23 @@
   }
   .local-photo-logo img{height:38px;width:auto;}
   @media (max-width:600px){.local-photo-logo{left:14px;bottom:14px;padding:9px 14px;}.local-photo-logo img{height:28px;}}
+
+  /* ---------- DEPOIMENTOS ---------- */
+  .testi-grid{
+    margin-top:36px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+  }
+  .testi-card{
+    background:var(--bg-alt);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:28px 26px;
+  }
+  .testi-quote{color:var(--gold);opacity:.7;}
+  .testi-text{margin-top:14px;font-size:15px;line-height:1.6;color:var(--ink);font-style:italic;}
+  .testi-author{margin-top:16px;font-family:'Unbounded',sans-serif;font-weight:600;font-size:13.5px;color:var(--pink);}
 
   /* ---------- PATROCINIO ---------- */
   .pricing{
@@ -1158,7 +1224,7 @@
     </div>
 
     <div class="stations">
-      <a class="station station-mix" href="estacoes.html#bike" style="background:#f68e43;">
+      <a class="station station-mix station-dark" href="estacoes.html#bike" style="background:#f68e43;">
         <svg width="30" height="30" viewBox="0 0 256 256" fill="currentColor"><path d="M208,116a43.66,43.66,0,0,0-18.62,4.15L159,68h33a12,12,0,0,1,12,12,4,4,0,0,0,8,0,20,20,0,0,0-20-20H152a4,4,0,0,0-3.46,6L163.7,92H97L79.46,62A4,4,0,0,0,76,60H48a4,4,0,0,0,0,8H73.7L89.89,95.76,70.57,122.25A44.21,44.21,0,1,0,77,127L94.29,103.3,128.54,162a4,4,0,0,0,3.46,2,4.11,4.11,0,0,0,2-.54,4,4,0,0,0,1.44-5.48l-33.83-58h66.74l14.11,24.19A44,44,0,1,0,208,116ZM84,160a36,36,0,1,1-18.16-31.25L44.77,157.64a4,4,0,0,0,6.46,4.72l21.07-28.9A35.92,35.92,0,0,1,84,160Zm124,36a36,36,0,0,1-21.47-64.88l18,30.9a4,4,0,0,0,3.46,2,4.11,4.11,0,0,0,2-.54,4,4,0,0,0,1.44-5.48l-18-30.89A36,36,0,1,1,208,196Z"/></svg>
         <div class="station-tag">Bike</div>
         <div class="name">Mix Disposição</div>
@@ -1176,13 +1242,13 @@
         <div class="name">Mix do Sono</div>
         <div class="desc">Sessões suaves, ideais para desacelerar entre estações</div>
       </a>
-      <a class="station station-mix" href="estacoes.html#dance" style="background:#ef1c8a;">
+      <a class="station station-mix station-dark" href="estacoes.html#dance" style="background:#ef1c8a;">
         <svg width="30" height="30" viewBox="0 0 256 256" fill="currentColor"><path d="M128,28A100,100,0,1,0,228,128,100.11,100.11,0,0,0,128,28Zm0,192a92,92,0,1,1,92-92A92.1,92.1,0,0,1,128,220Zm0-152a60.07,60.07,0,0,0-60,60,4,4,0,0,1-8,0,68.07,68.07,0,0,1,68-68,4,4,0,0,1,0,8Zm68,60a68.07,68.07,0,0,1-68,68,4,4,0,0,1,0-8,60.07,60.07,0,0,0,60-60,4,4,0,0,1,8,0Zm-40,0a28,28,0,1,0-28,28A28,28,0,0,0,156,128Zm-48,0a20,20,0,1,1,20,20A20,20,0,0,1,108,128Z"/></svg>
         <div class="station-tag">Dance Mix</div>
         <div class="name">Mix Beleza</div>
         <div class="desc">Aula de dança leve e divertida, sem coreografia decorada</div>
       </a>
-      <a class="station station-mix" href="estacoes.html#aerobox" style="background:#02b53e;">
+      <a class="station station-mix station-dark" href="estacoes.html#aerobox" style="background:#02b53e;">
         <svg width="30" height="30" viewBox="0 0 256 256" fill="currentColor"><path d="M168,20H120A52.06,52.06,0,0,0,68,72v4H56a28,28,0,0,0-28,28v29.19a12,12,0,0,0,2.63,7.5c.1.12.2.24.31.35L68,177.67V216a12,12,0,0,0,12,12H192a12,12,0,0,0,12-12V176.56l15.54-54.38a12.34,12.34,0,0,0,.46-3.3V72A52.06,52.06,0,0,0,168,20Zm44,98.88a4.11,4.11,0,0,1-.15,1.1l-15.7,54.92A4.11,4.11,0,0,0,196,176v40a4,4,0,0,1-4,4H80a4,4,0,0,1-4-4V176a4,4,0,0,0-1.19-2.84L36.76,135.54a4,4,0,0,1-.76-2.35V104A20,20,0,0,1,56,84H68v20a4,4,0,0,0,8,0V72a44.05,44.05,0,0,1,44-44h48a44.05,44.05,0,0,1,44,44Zm-42.21,44.7L145,176l24.84,12.42a4,4,0,0,1-3.58,7.16L136,180.47l-30.21,15.11a4,4,0,1,1-3.58-7.16L127.05,176l-24.84-12.42a4,4,0,1,1,3.58-7.16L136,171.53l30.21-15.11a4,4,0,0,1,3.58,7.16Z"/></svg>
         <div class="station-tag">Aerobox</div>
         <div class="name">Mix Imunidade</div>
@@ -1448,6 +1514,24 @@
     <div class="marquee-track">
       <a href="marcas.html" title="Aquaclara"><img src="assets/brands/aquaclara.png" alt="Aquaclara"></a><a href="marcas.html" title="Pesō Carnes Especiais"><img src="assets/brands/peso-carnes.png" alt="Pesō Carnes Especiais"></a><a href="marcas.html" title="TS Health Center"><img src="assets/brands/ts-health.png" alt="TS Health Center"></a><a href="marcas.html" title="Artcenic Eventos"><img src="assets/brands/artcenic.png" alt="Artcenic Eventos"></a><a href="marcas.html" title="doTERRA"><img src="assets/brands/doterra.png" alt="doTERRA"></a><a href="marcas.html" title="Subli Mídia"><img src="assets/brands/subli-midia.png" alt="Subli Mídia"></a><a href="marcas.html" title="Hits Produções"><img src="assets/brands/hits-producoes.png" alt="Hits Produções"></a><a href="marcas.html" title="S4 Soluções Visuais"><img src="assets/brands/s4-solucoes.png" alt="S4 Soluções Visuais"></a><a href="marcas.html" title="Supplements Sports Nutrition"><img src="assets/brands/supplements.png" alt="Supplements Sports Nutrition"></a><a href="marcas.html" title="Imua Ceará Vaca"><img src="assets/brands/imua-ceara.png" alt="Imua Ceará Vaca"></a><a href="marcas.html" title="Le'Loyn"><img src="assets/brands/leloyn.png" alt="Le'Loyn"></a><a href="marcas.html" title="awe"><img src="assets/brands/awe.png" alt="awe"></a>
       <a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/aquaclara.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/peso-carnes.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/ts-health.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/artcenic.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/doterra.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/subli-midia.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/hits-producoes.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/s4-solucoes.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/supplements.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/imua-ceara.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/leloyn.png" alt=""></a><a href="marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/awe.png" alt=""></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEPOIMENTOS ================= -->
+<section id="depoimentos" style="border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Quem viveu, recomenda</span>
+      <h2 class="section-title">O que dizem sobre o Soul Experience</h2>
+      <p class="lede">Depoimentos de convidados da 1ª edição, a Pérola Tropical.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <svg class="testi-quote" width="28" height="22" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.4 5.2 1.2 12.8 0L14.4 3.6C9.6 4.8 6.8 7.6 6.4 11.6H12.8V24H0ZM17.6 24V14.4C17.6 6.4 22.8 1.2 30.4 0L32 3.6C27.2 4.8 24.4 7.6 24 11.6H30.4V24H17.6Z" fill="currentColor"/></svg>
+        <p class="testi-text">Gostaria de parabenizar pela iniciativa. O cuidado com cada detalhe, desde o cenário na praia até a proposta da vestimenta em estilo boho chic, tornou a experiência muito acolhedora e elegante.</p>
+        <div class="testi-author">Samya Fernandes Silva</div>
+      </div>
     </div>
   </div>
 </section>

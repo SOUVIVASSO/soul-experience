@@ -29,11 +29,18 @@
   .about-section p{margin-top:16px;font-size:16px;color:var(--ink-soft);line-height:1.7}
   .about-section h2{font-size:22px;font-weight:700;margin-top:38px}
   .about-quote{margin-top:32px;padding:24px 28px;background:var(--bg-panel);border-radius:18px;font-style:italic;font-size:16.5px;color:var(--ink)}
-  .about-people{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .about-people{margin-top:40px;display:flex;flex-direction:column;gap:20px}
   .about-person{background:var(--bg-panel);border-radius:18px;padding:24px}
   .about-person h3{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--ink)}
   .about-person span{display:block;margin-top:4px;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--violet)}
   .about-person p{margin-top:10px;font-size:14px;color:var(--ink-soft)}
+  .about-person.featured{display:flex;align-items:center;gap:28px;padding:0;overflow:hidden;background:var(--bg-dark)}
+  .about-person.featured img{width:220px;height:280px;object-fit:cover;flex-shrink:0;display:block}
+  .about-person.featured .content{padding:24px 28px 24px 0}
+  .about-person.featured h3{color:var(--ink-on-dark);font-size:19px}
+  .about-person.featured span{color:var(--gold)}
+  .about-person.featured p{color:var(--ink-on-dark-soft)}
+  @media (max-width:560px){.about-person.featured{flex-direction:column;gap:0}.about-person.featured img{width:100%;height:260px}.about-person.featured .content{padding:20px 22px 24px}}
 </style>
 </head>
 <body>
@@ -72,10 +79,13 @@
 
     <h2>Quem faz acontecer</h2>
     <div class="about-people">
-      <div class="about-person">
-        <h3>Carmen Prado</h3>
-        <span>Direção e coordenação</span>
-        <p>Diretora de eventos com anos de experiência em Fortaleza e atual diretora de eventos da Academia Bodytech, coordena o Soul Experience de ponta a ponta.</p>
+      <div class="about-person featured">
+        <img src="assets/team/carmen-prado-photo.webp" alt="Carmen Prado">
+        <div class="content">
+          <h3>Carmen Prado</h3>
+          <span>Direção e coordenação</span>
+          <p>Diretora de eventos com anos de experiência em Fortaleza e atual diretora de eventos da Academia Bodytech, coordena o Soul Experience de ponta a ponta.</p>
+        </div>
       </div>
       <div class="about-person">
         <h3>Academia Bodytech</h3>

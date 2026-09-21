@@ -639,6 +639,18 @@
   }
   .reach-banner .txt{font-size:14.5px;color:var(--ink-dim);max-width:360px;text-align:left;}
 
+  /* ---------- NA MIDIA ---------- */
+  .midia-grid{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+  .midia-card{
+    display:flex;flex-direction:column;gap:6px;
+    background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;
+    padding:20px 22px;text-decoration:none;
+    transition:border-color .2s, transform .2s;
+  }
+  .midia-card:hover{border-color:var(--violet);transform:translateY(-2px);}
+  .midia-source{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--violet);}
+  .midia-title{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.4;}
+
   /* ---------- INFLUENCIADORES ---------- */
   .avatar-ring{
     width:64px;height:64px;border-radius:50%;
@@ -1352,6 +1364,25 @@
     <div class="perola-actions">
       <button type="button" class="btn btn-ghost" id="pgMoreBtn">Ver mais fotos</button>
       <a href="https://drive.google.com/drive/folders/1KclRjQdj5ICJSZFGA8sCt2qh79IA4n7C?usp=sharing" target="_blank" rel="noopener" class="btn btn-ghost">Ver álbum completo no Drive</a>
+      <a href="https://www.fotto.com.br/soul-experience/e/402636" target="_blank" rel="noopener" class="btn btn-ghost">Comprar fotos em alta (César Costa)</a>
+      <a href="https://open.spotify.com/playlist/51Q1posiwUpnbpTWyc8k9e" target="_blank" rel="noopener" class="btn btn-ghost">Ouvir playlist oficial</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NA MIDIA ================= -->
+<section id="midia" style="padding-block:48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel-lav);">
+  <div class="wrap">
+    <span class="eyebrow">Na mídia</span>
+    <div class="midia-grid">
+      <a class="midia-card" href="https://karolbang.com.br/soul-experience-o-evento-que-provou-que-bem-estar-vai-muito-alem-da-academia" target="_blank" rel="noopener">
+        <span class="midia-source">Karol Bang</span>
+        <span class="midia-title">"Um evento que provou que bem-estar vai muito além da academia"</span>
+      </a>
+      <a class="midia-card" href="https://karolbang.com.br/soul-experience-estreia-em-fortaleza-com-uma-proposta-de-bem-estar-que-ultrapassa-os-limites-da-atividade-fisica" target="_blank" rel="noopener">
+        <span class="midia-source">Karol Bang</span>
+        <span class="midia-title">"Soul Experience estreia em Fortaleza com uma proposta diferente"</span>
+      </a>
     </div>
   </div>
 </section>

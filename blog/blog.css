@@ -77,6 +77,22 @@ footer{background:var(--bg-dark);padding-block:28px;margin-top:40px}
 .blog-card p{margin-top:10px;font-size:14px;color:var(--ink-soft)}
 .blog-card .read-more{display:inline-block;margin-top:16px;font-size:13px;font-weight:700;color:var(--violet)}
 
+/* ---------- EDICOES INDEX ---------- */
+.edition-grid{display:flex;flex-direction:column;gap:22px;padding-block:48px}
+.edition-card{display:flex;gap:24px;align-items:center;background:var(--bg-panel);border-radius:20px;padding:24px;border:1px solid var(--line)}
+.edition-card img{width:180px;height:180px;object-fit:cover;border-radius:14px;flex-shrink:0}
+.edition-card .content{flex:1;min-width:0}
+.edition-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.edition-badge.atual{background:var(--gold);color:#241811}
+.edition-badge.realizada{background:var(--line);color:var(--ink-soft)}
+.edition-card h2{font-size:22px;font-weight:700;margin-top:10px}
+.edition-card .meta{font-size:13px;color:var(--ink-soft);margin-top:6px}
+.edition-card p{margin-top:10px;font-size:14.5px;color:var(--ink-soft)}
+.edition-card .links{margin-top:14px;display:flex;gap:18px;flex-wrap:wrap}
+.edition-card .links a{font-size:13px;font-weight:700;color:var(--violet);text-decoration:none}
+.edition-card .links a:hover{text-decoration:underline}
+@media (max-width:640px){.edition-card{flex-direction:column;align-items:stretch}.edition-card img{width:100%;height:180px}}
+
 /* ---------- ARTICLE PAGE ---------- */
 .article-hero{background:var(--grad);padding-block:56px 40px;color:#fff}
 .article-hero .eyebrow{color:#FCE9C9}

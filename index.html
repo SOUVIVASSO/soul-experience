@@ -637,7 +637,12 @@
   }
 
   /* ---------- NA MIDIA ---------- */
-  .midia-grid{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+  .midia-author{margin-top:28px;display:flex;align-items:center;gap:16px;}
+  .midia-author img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--bg-alt);box-shadow:0 4px 14px rgba(42,27,20,.12);}
+  .midia-author h3{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:700;color:var(--ink);}
+  .midia-author p{margin-top:4px;font-size:13px;color:var(--ink-dim);line-height:1.5;max-width:520px;}
+  .midia-cta-hint{margin-top:24px;font-size:13px;font-weight:700;color:var(--ink-dim);}
+  .midia-grid{margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
   .midia-card{
     display:flex;flex-direction:column;gap:6px;
     background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;
@@ -647,6 +652,7 @@
   .midia-card:hover{border-color:var(--violet);transform:translateY(-2px);}
   .midia-source{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--violet);}
   .midia-title{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.4;}
+  .midia-readmore{margin-top:8px;font-size:12.5px;font-weight:700;color:var(--violet);}
 
   /* ---------- CRONOGRAMA ---------- */
   .timeline{
@@ -1373,15 +1379,26 @@
 <!-- ================= NA MIDIA ================= -->
 <section id="midia" style="padding-block:48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel-lav);">
   <div class="wrap">
-    <span class="eyebrow">Na mídia</span>
+    <span class="eyebrow">Imprensa</span>
+    <h2 class="section-title" style="font-size:clamp(24px,3vw,32px);margin-top:8px;">Saímos na mídia</h2>
+    <div class="midia-author">
+      <img src="assets/team/karol-bang.webp" alt="Karol Bang">
+      <div class="content">
+        <h3>Karol Bang</h3>
+        <p>Colunista digital com mais de 5 milhões de visualizações por mês, publica no karolbang.com.br sobre cultura, comportamento e lifestyle — e deu espaço pro Soul Experience em duas matérias.</p>
+      </div>
+    </div>
+    <p class="midia-cta-hint">Clique e confira as matérias completas:</p>
     <div class="midia-grid">
       <a class="midia-card" href="https://karolbang.com.br/soul-experience-o-evento-que-provou-que-bem-estar-vai-muito-alem-da-academia" target="_blank" rel="noopener">
         <span class="midia-source">Karol Bang</span>
         <span class="midia-title">"Um evento que provou que bem-estar vai muito além da academia"</span>
+        <span class="midia-readmore">Ler matéria completa →</span>
       </a>
       <a class="midia-card" href="https://karolbang.com.br/soul-experience-estreia-em-fortaleza-com-uma-proposta-de-bem-estar-que-ultrapassa-os-limites-da-atividade-fisica" target="_blank" rel="noopener">
         <span class="midia-source">Karol Bang</span>
         <span class="midia-title">"Soul Experience estreia em Fortaleza com uma proposta diferente"</span>
+        <span class="midia-readmore">Ler matéria completa →</span>
       </a>
     </div>
   </div>

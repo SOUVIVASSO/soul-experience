@@ -403,6 +403,10 @@
   }
   .about-grid .lede{max-width:none;}
   .vivasso-logo{height:46px;width:auto;margin-top:22px;}
+  .about-more{max-width:720px;}
+  .about-more h3{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;margin-top:34px;color:var(--ink);}
+  .about-more p{margin-top:14px;font-size:15px;color:var(--ink-dim);line-height:1.7;}
+  .about-quote{margin-top:28px;padding:22px 26px;background:var(--panel-lav);border-radius:16px;font-style:italic;font-size:15.5px;color:var(--ink);}
   .quote-block{
     margin-top:26px;
     padding-left:20px;
@@ -442,6 +446,7 @@
     display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;
   }
   .grao-edition-head{display:flex;align-items:center;gap:16px;}
+  .circuito-logo{height:60px;width:auto;aspect-ratio:1.9565;margin-top:12px;display:block;}
   .stations{
     margin-top:44px;
     display:grid;
@@ -681,6 +686,22 @@
   }
   .influ-chip:hover{border-color:var(--violet);box-shadow:0 12px 28px rgba(90,55,25,.14);}
   .influ-chip .name{font-weight:700;font-size:14px;color:var(--ink);white-space:nowrap;}
+  .midia-author{margin-top:28px;display:flex;align-items:center;gap:16px;}
+  .midia-author img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--bg-alt);box-shadow:0 4px 14px rgba(42,27,20,.12);}
+  .midia-author h3{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:700;color:var(--ink);}
+  .midia-author p{margin-top:4px;font-size:13px;color:var(--ink-dim);line-height:1.5;max-width:520px;}
+  .midia-cta-hint{margin-top:24px;font-size:13px;font-weight:700;color:var(--ink-dim);}
+  .midia-grid{margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+  .midia-card{
+    display:flex;flex-direction:column;gap:6px;
+    background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;
+    padding:20px 22px;text-decoration:none;
+    transition:border-color .2s, transform .2s;
+  }
+  .midia-card:hover{border-color:var(--violet);transform:translateY(-2px);}
+  .midia-source{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--violet);}
+  .midia-title{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.4;}
+  .midia-readmore{margin-top:8px;font-size:12.5px;font-weight:700;color:var(--violet);}
   .influ-chip .handle{font-size:12px;color:var(--ink-dim);margin-top:2px;white-space:nowrap;}
 
   /* ---------- CRONOGRAMA ---------- */
@@ -741,6 +762,22 @@
   .part-card p{margin-top:8px;font-size:13.5px;color:var(--ink-dim);line-height:1.55;}
 
   /* ---------- COORDENACAO ---------- */
+  .edicoes-grid{margin-top:36px;display:flex;flex-direction:column;gap:20px;}
+  .edicoes-card{display:flex;gap:22px;align-items:center;background:var(--bg-alt);border:1px solid var(--line);border-radius:20px;padding:22px;}
+  .edicoes-card img{width:160px;height:160px;object-fit:cover;border-radius:14px;flex-shrink:0;}
+  .edicoes-card .content{flex:1;min-width:0;}
+  .edicoes-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;}
+  .edicoes-badge.atual{background:var(--gold);color:var(--ink);}
+  .edicoes-badge.realizada{background:var(--panel-lav);color:var(--ink-dim);}
+  .edicoes-card h3{font-family:'Unbounded',sans-serif;font-size:19px;font-weight:700;margin-top:10px;color:var(--ink);}
+  .edicoes-card .meta{font-size:12.5px;color:var(--ink-dim);margin-top:5px;}
+  .edicoes-card p{margin-top:8px;font-size:13.5px;color:var(--ink-dim);line-height:1.5;}
+  .edicoes-card .link{margin-top:12px;display:inline-block;font-size:13px;font-weight:700;color:var(--violet);}
+  .edicoes-card.expandable{cursor:pointer;transition:border-color .2s,box-shadow .2s;}
+  .edicoes-card.expandable:hover{border-color:var(--violet);box-shadow:0 12px 28px rgba(90,55,25,.14);}
+  @media (max-width:640px){.edicoes-card{flex-direction:column;align-items:stretch;}.edicoes-card img{width:100%;height:180px;}}
+  #perola-galeria{max-height:0;opacity:0;overflow:hidden;padding-block:0;transition:max-height .5s ease, opacity .4s ease, padding-block .4s ease;}
+  #perola-galeria.open{max-height:2600px;opacity:1;padding-block:clamp(56px,9vw,108px);}
   .coord-logos{margin-top:36px;display:flex;flex-wrap:wrap;align-items:center;gap:48px;}
   .coord-logo-card{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;}
   .coord-logo-card img{height:80px;width:auto;display:block;}
@@ -1150,7 +1187,7 @@
     <nav class="nav-links">
       <a href="#sobre">Sobre</a>
       <a href="#evento">Evento</a>
-      <a href="#perola">1ª edição</a>
+      <a href="#edicoes">Edições</a>
       <a href="#cronograma">Cronograma</a>
       <a href="#influenciadores">Influenciadores</a>
       <a href="#patrocinio">Patrocínio</a>
@@ -1165,7 +1202,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#sobre">Sobre</a>
     <a href="#evento">Evento</a>
-    <a href="#perola">1ª edição</a>
+    <a href="#edicoes">Edições</a>
     <a href="#cronograma">Cronograma</a>
     <a href="#influenciadores">Influenciadores</a>
     <a href="#patrocinio">Patrocínio</a>
@@ -1216,6 +1253,23 @@
     <h2 class="section-title">A marca por trás do movimento</h2>
     <p class="lede">A VIVASSO é uma agência voltada para o movimento Wellness, saúde e qualidade de vida. Criamos projetos que enriquecem corpo e mente, promovendo conexão e aprendizado para todas as idades, inspirando uma vida mais plena e consciente.</p>
     <img class="vivasso-logo" src="assets/vivasso-dark.png" alt="Vivasso">
+
+    <div class="about-more">
+      <h3>Uma edição nunca repete a outra</h3>
+      <p>Cada edição do Soul Experience tem nome, identidade visual e cores próprias, sempre priorizando a experiência de quem participa, nunca um padrão fixo a ser seguido. A <strong>Pérola Tropical</strong> nasceu da fusão entre a delicadeza da pérola e a força do trópico. O <strong>Circuito das Estações</strong> transforma bem-estar em movimento, com cada estação levando o nome e a cor de um mix de castanhas LoveNuts. As próximas edições vão continuar essa busca por reinventar o que significa cuidar de si.</p>
+
+      <div class="about-quote">"Sempre priorizando a experiência de quem participa, nunca um padrão a ser seguido."</div>
+
+      <h3>O fundador</h3>
+      <div class="coord-feature">
+        <img src="../assets/team/joao-victor-prado.webp" alt="João Victor Prado">
+        <div class="content">
+          <h3 style="margin-top:0;">João Victor Prado</h3>
+          <span>Fundador da Vivasso</span>
+          <p>Fortalezense e apaixonado por empreender desde sempre, João Victor tem 28 anos e vive fora do Brasil desde 2023. Formado em Marketing, ele transformou tudo o que aprendeu pelo caminho na Vivasso, seu projeto mais recente.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1231,10 +1285,12 @@
     </div>
 
     <div style="margin-top:56px;">
-      <span class="eyebrow">Circuito de estações · com apoio LoveNuts</span>
-      <h3 style="font-size:clamp(22px,3vw,28px);margin-top:10px;">Segunda edição: Circuito das Estações</h3>
+      <span class="eyebrow">Segunda edição · com apoio LoveNuts</span>
+      <img src="../assets/circuito-logo-white.png" alt="Circuito das Estações" class="circuito-logo">
       <p class="lede" style="margin-top:14px;"><strong>Cada estação, uma cor e um sabor.</strong> Estruturado como um circuito de estações, cada uma leva o nome e a cor de um mix de castanhas LoveNuts, unindo movimento, sabor e descoberta. No fechamento, todo mundo se encontra numa corrida coletiva, com premiação e dicas das nutricionistas parceiras.</p>
     </div>
+
+    <p style="margin-top:32px;font-size:14px;font-weight:700;color:#F3D9B4;text-align:center;">Clique em cada atividade abaixo e veja mais detalhes sobre ela.</p>
 
     <div class="stations">
       <a class="station station-mix station-dark" href="#" data-station="bike" style="background:#f8a76c;">
@@ -1274,7 +1330,6 @@
       </a>
     </div>
     <div class="station-detail" id="stationDetail"></div>
-    <p style="margin-top:14px;font-size:12.5px;color:rgba(250,240,225,.6);">Toque numa estação para ver os detalhes.</p>
   </div>
 </section>
 
@@ -1306,8 +1361,41 @@
   </div>
 </section>
 
+<!-- ================= EDICOES ================= -->
+<section id="edicoes">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Edições</span>
+      <h2 class="section-title">Cada edição, uma experiência exclusiva</h2>
+      <p class="lede">O Soul Experience nunca se repete. Cada edição explora um universo diferente do wellness.</p>
+    </div>
+    <div class="edicoes-grid">
+      <div class="edicoes-card expandable" id="edicoesCircuitoCard">
+        <img src="assets/iguatemi-bosque.webp" alt="Circuito das Estações">
+        <div class="content">
+          <span class="edicoes-badge atual">2ª edição · 28 nov 2026</span>
+          <h3>Circuito das Estações</h3>
+          <div class="meta">Iguatemi Bosque, Fortaleza</div>
+          <p>Um circuito de 6 estações de atividade física, cada uma com o nome e a cor de um mix de castanhas LoveNuts, terminando com uma corrida coletiva e premiação especial.</p>
+          <span class="link">Ver o local do evento ↓</span>
+        </div>
+      </div>
+      <div class="edicoes-card expandable" id="edicoesPerolaCard">
+        <img src="assets/perola/decoracao3.webp" alt="Pérola Tropical">
+        <div class="content">
+          <span class="edicoes-badge realizada">1ª edição · 21 ago 2026</span>
+          <h3>Pérola Tropical</h3>
+          <div class="meta">Sunrise Beach Club, Fortaleza</div>
+          <p>Uma noite à beira-mar com moda praia boho chic, que celebrou a beleza que emerge do cuidado e da transformação. Reuniu 100 convidados e impactou mais de 80 mil pessoas.</p>
+          <span class="link" id="edicoesPerolaLink">Ver fotos e vídeo ↓</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= PEROLA TROPICAL GALLERY ================= -->
-<section id="perola" class="perola">
+<section id="perola-galeria" class="perola">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Como foi a 1ª edição</span>
@@ -1351,6 +1439,34 @@
     <div class="perola-actions">
       <button type="button" class="btn btn-ghost" id="pgMoreBtn">Ver mais fotos</button>
       <a href="https://drive.google.com/drive/folders/1KclRjQdj5ICJSZFGA8sCt2qh79IA4n7C?usp=sharing" target="_blank" rel="noopener" class="btn btn-ghost">Ver álbum completo no Drive</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NA MIDIA ================= -->
+<section id="midia" style="padding-block:48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel-lav);">
+  <div class="wrap">
+    <span class="eyebrow">Imprensa</span>
+    <h2 class="section-title" style="font-size:clamp(24px,3vw,32px);margin-top:8px;">Saímos na mídia</h2>
+    <div class="midia-author">
+      <img src="../assets/team/karol-bang.webp" alt="Karol Bang">
+      <div class="content">
+        <h3>Karol Bang</h3>
+        <p>Colunista digital com mais de 5 milhões de visualizações por mês, com temas de comportamento e lifestyle em Fortaleza.</p>
+      </div>
+    </div>
+    <p class="midia-cta-hint">Clique e confira as matérias completas:</p>
+    <div class="midia-grid">
+      <a class="midia-card" href="https://karolbang.com.br/soul-experience-o-evento-que-provou-que-bem-estar-vai-muito-alem-da-academia" target="_blank" rel="noopener">
+        <span class="midia-source">Karol Bang</span>
+        <span class="midia-title">"Um evento que provou que bem-estar vai muito além da academia"</span>
+        <span class="midia-readmore">Ler matéria completa →</span>
+      </a>
+      <a class="midia-card" href="https://karolbang.com.br/soul-experience-estreia-em-fortaleza-com-uma-proposta-de-bem-estar-que-ultrapassa-os-limites-da-atividade-fisica" target="_blank" rel="noopener">
+        <span class="midia-source">Karol Bang</span>
+        <span class="midia-title">"Soul Experience estreia em Fortaleza com uma proposta diferente"</span>
+        <span class="midia-readmore">Ler matéria completa →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -2447,6 +2563,41 @@
     if(isHoverCapable){
       el.addEventListener('mouseenter', function(){ openStation(key); });
     }
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var card = document.getElementById('edicoesPerolaCard');
+  var panel = document.getElementById('perola-galeria');
+  if(!card || !panel) return;
+  var isHoverCapable = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  function openPerola(){
+    panel.classList.add('open');
+  }
+  function togglePerola(){
+    if(panel.classList.contains('open')){
+      panel.classList.remove('open');
+    } else {
+      openPerola();
+      setTimeout(function(){ panel.scrollIntoView({behavior:'smooth', block:'start'}); }, 80);
+    }
+  }
+  card.addEventListener('click', togglePerola);
+  if(isHoverCapable){
+    card.addEventListener('mouseenter', openPerola);
+  }
+})();
+</script>
+
+<script>
+(function(){
+  var circuitoCard = document.getElementById('edicoesCircuitoCard');
+  var localSection = document.getElementById('local');
+  if(!circuitoCard || !localSection) return;
+  circuitoCard.addEventListener('click', function(){
+    localSection.scrollIntoView({behavior:'smooth', block:'start'});
   });
 })();
 </script>

@@ -397,6 +397,10 @@
   }
   .about-grid .lede{max-width:none;}
   .vivasso-logo{height:46px;width:auto;margin-top:22px;}
+  .about-more{max-width:720px;}
+  .about-more h3{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;margin-top:34px;color:var(--ink);}
+  .about-more p{margin-top:14px;font-size:15px;color:var(--ink-dim);line-height:1.7;}
+  .about-quote{margin-top:28px;padding:22px 26px;background:var(--panel-lav);border-radius:16px;font-style:italic;font-size:15.5px;color:var(--ink);}
   .quote-block{
     margin-top:26px;
     padding-left:20px;
@@ -506,19 +510,118 @@
   .campanha-step p{font-size:14.5px;color:var(--ink-dim);}
   .campanha-step strong{color:var(--ink);}
 
-  /* ---------- PEROLA SUMMARY ---------- */
-  .perola{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .perola-summary{margin-top:32px;display:flex;align-items:center;gap:28px;background:var(--bg);border:1px solid var(--line);border-radius:20px;overflow:hidden;}
-  .perola-summary img{width:220px;height:260px;object-fit:cover;flex-shrink:0;display:block;}
-  .perola-summary .content{padding:24px 28px 24px 0;}
-  .perola-summary-badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--violet);}
-  .perola-summary p{margin-top:10px;font-size:14.5px;color:var(--ink-dim);line-height:1.6;max-width:440px;}
-  .perola-summary .btn{margin-top:18px;}
-  @media (max-width:560px){
-    .perola-summary{flex-direction:column;gap:0;}
-    .perola-summary img{width:100%;height:220px;}
-    .perola-summary .content{padding:20px 22px 24px;}
+  /* ---------- EDICOES ---------- */
+  .edicoes-grid{margin-top:36px;display:flex;flex-direction:column;gap:20px;}
+  .edicoes-card{display:flex;gap:22px;align-items:center;background:var(--bg-alt);border:1px solid var(--line);border-radius:20px;padding:22px;}
+  .edicoes-card img{width:160px;height:160px;object-fit:cover;border-radius:14px;flex-shrink:0;}
+  .edicoes-card .content{flex:1;min-width:0;}
+  .edicoes-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;}
+  .edicoes-badge.atual{background:var(--gold);color:var(--ink);}
+  .edicoes-badge.realizada{background:var(--panel-lav);color:var(--ink-dim);}
+  .edicoes-card h3{font-family:'Unbounded',sans-serif;font-size:19px;font-weight:700;margin-top:10px;color:var(--ink);}
+  .edicoes-card .meta{font-size:12.5px;color:var(--ink-dim);margin-top:5px;}
+  .edicoes-card p{margin-top:8px;font-size:13.5px;color:var(--ink-dim);line-height:1.5;}
+  .edicoes-card .link{margin-top:12px;display:inline-block;font-size:13px;font-weight:700;color:var(--violet);}
+  @media (max-width:640px){.edicoes-card{flex-direction:column;align-items:stretch;}.edicoes-card img{width:100%;height:180px;}}
+
+  /* ---------- PEROLA GALLERY ---------- */
+  .perola{background:linear-gradient(160deg, #241811 0%, #4A2C1C 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .perola .eyebrow{color:#F3D9B4;}
+  .perola .eyebrow::before{background:#F3D9B4;}
+  .perola .lede{color:rgba(250,240,225,.78);}
+  .perola .btn-ghost{border-color:rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.08);}
+  .perola .btn-ghost:hover{border-color:#fff;}
+  .perola-logo{height:96px;width:auto;margin-top:18px;}
+  .perola-gallery{margin-top:36px;}
+  .pg-a{display:block;border-radius:18px;overflow:hidden;}
+  .pg-a img{width:100%;height:100%;object-fit:cover;max-height:340px;}
+  .video-tile{position:relative;display:block;aspect-ratio:16/9;max-height:340px;}
+  .video-tile iframe{width:100%;height:100%;display:block;border:0;}
+  .video-tile .play-btn{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:64px;height:64px;border-radius:50%;
+    background:rgba(255,255,255,.92);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--violet);
+    box-shadow:0 14px 34px rgba(20,10,40,.3);
+    transition:transform .2s;
   }
+  .video-tile:hover .play-btn{transform:translate(-50%,-50%) scale(1.08);}
+  .video-tile .video-label{
+    position:absolute;bottom:14px;left:14px;
+    background:rgba(24,20,42,.72);color:#fff;
+    font-size:12px;font-weight:700;
+    padding:7px 14px;border-radius:999px;
+  }
+  .pg-thumbs{margin-top:14px;display:flex;flex-wrap:wrap;gap:12px;}
+  .pg-thumbs-more{display:none;}
+  .pg-thumbs-more.open{display:flex;}
+  .pg-item{
+    width:150px;height:150px;border-radius:14px;overflow:hidden;
+    cursor:pointer;position:relative;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .pg-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;}
+  .pg-item:hover img{transform:scale(1.08);}
+  .pg-item:hover{box-shadow:0 16px 34px rgba(30,15,5,.28);}
+  @media (max-width:640px){
+    .pg-thumbs:not(.pg-thumbs-more),.pg-thumbs-more.open{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+    .pg-item{width:100%;height:auto;aspect-ratio:1;}
+  }
+  .perola-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;}
+
+  /* ---------- PHOTO LIGHTBOX / VIDEO MODAL ---------- */
+  .photo-lightbox{
+    display:none;position:fixed;inset:0;z-index:800;
+    background:rgba(10,6,3,.88);
+    align-items:center;justify-content:center;padding:32px;
+  }
+  .photo-lightbox.open{display:flex;}
+  .photo-lightbox img{
+    max-width:90vw;max-height:88vh;width:auto;height:auto;
+    border-radius:12px;box-shadow:0 40px 90px rgba(0,0,0,.5);
+    display:block;
+  }
+  .photo-lightbox-close{
+    position:absolute;top:22px;right:26px;
+    width:40px;height:40px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+  }
+  .video-modal{
+    display:none;position:fixed;inset:0;z-index:800;
+    background:rgba(10,6,3,.92);
+    align-items:center;justify-content:center;padding:20px;
+  }
+  .video-modal.open{display:flex;}
+  .video-modal-frame{
+    width:min(1100px, 94vw);
+    aspect-ratio:16/9;
+    background:#000;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 40px 90px rgba(0,0,0,.5);
+  }
+  .video-modal-frame iframe{width:100%;height:100%;border:0;display:block;}
+  .video-modal-close{
+    position:absolute;top:16px;right:16px;
+    width:40px;height:40px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;
+  }
+  @media (max-width:700px){
+    .video-modal{padding:0;align-items:stretch;}
+    .video-modal-frame{width:100vw;height:100vh;aspect-ratio:auto;border-radius:0;}
+  }
+
+  /* ---------- BLOG PREVIEW ---------- */
+  .blog-grid{margin-top:36px;display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .blog-card{background:var(--bg-alt);border:1px solid var(--line);border-radius:20px;padding:26px 24px;}
+  .blog-card .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--violet);}
+  .blog-card h3{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:700;margin-top:10px;color:var(--ink);}
+  .blog-card p{margin-top:10px;font-size:13.5px;color:var(--ink-dim);line-height:1.55;}
+  @media (max-width:760px){.blog-grid{grid-template-columns:1fr;}}
+
   /* ---------- NA MIDIA ---------- */
   .midia-grid{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
   .midia-card{
@@ -1047,11 +1150,11 @@
   <div class="wrap nav-inner">
     <a href="#top" class="nav-brand"><img src="assets/logo-soul-nav.png" alt="Soul Experience"></a>
     <nav class="nav-links">
-      <a href="sobre.html">Sobre</a>
+      <a href="#sobre">Sobre</a>
       <a href="#evento">Evento</a>
-      <a href="edicoes.html">Edições</a>
+      <a href="#edicoes">Edições</a>
       <a href="#cronograma">Cronograma</a>
-      <a href="blog.html">Blog</a>
+      <a href="#blog">Blog</a>
       <a href="#ingressos">Ingressos</a>
     </nav>
     <div class="nav-right">
@@ -1062,11 +1165,11 @@
     </div>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="sobre.html">Sobre</a>
+    <a href="#sobre">Sobre</a>
     <a href="#evento">Evento</a>
-    <a href="edicoes.html">Edições</a>
+    <a href="#edicoes">Edições</a>
     <a href="#cronograma">Cronograma</a>
-    <a href="blog.html">Blog</a>
+    <a href="#blog">Blog</a>
     <a href="#ingressos">Quero meu ingresso</a>
   </div>
 </header>
@@ -1097,6 +1200,16 @@
     <h2 class="section-title">A marca por trás do movimento</h2>
     <p class="lede">A VIVASSO é uma agência voltada para o movimento Wellness, saúde e qualidade de vida. Criamos projetos que enriquecem corpo e mente, promovendo conexão e aprendizado para todas as idades, inspirando uma vida mais plena e consciente.</p>
     <img class="vivasso-logo" src="assets/vivasso-dark.png" alt="Vivasso">
+
+    <div class="about-more">
+      <h3>Por que o Soul Experience existe</h3>
+      <p>O Soul Experience nasceu para celebrar o bem-estar em suas múltiplas dimensões: física, emocional, mental, sensorial e social. Num mundo cada vez mais acelerado, acreditamos que pausar, respirar e se conectar de verdade com outras pessoas é tão importante quanto qualquer treino ou rotina de cuidado.</p>
+
+      <h3>Uma edição nunca repete a outra</h3>
+      <p>Cada edição do Soul Experience tem nome, identidade visual e cores próprias, sempre priorizando a experiência de quem participa, nunca um padrão fixo a ser seguido. A <strong>Pérola Tropical</strong> nasceu da fusão entre a delicadeza da pérola e a força do trópico. O <strong>Circuito das Estações</strong> transforma bem-estar em movimento, com cada estação levando o nome e a cor de um mix de castanhas LoveNuts. As próximas edições vão continuar essa busca por reinventar o que significa cuidar de si.</p>
+
+      <div class="about-quote">"Sempre priorizando a experiência de quem participa, nunca um padrão a ser seguido."</div>
+    </div>
   </div>
 </section>
 
@@ -1158,20 +1271,77 @@
   </div>
 </section>
 
+<!-- ================= EDICOES ================= -->
+<section id="edicoes">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Edições</span>
+      <h2 class="section-title">Cada edição, um nome, uma cor, uma experiência</h2>
+      <p class="lede">O Soul Experience nunca repete um padrão. Cada edição nasce com identidade própria, sempre priorizando quem participa.</p>
+    </div>
+    <div class="edicoes-grid">
+      <div class="edicoes-card">
+        <img src="assets/iguatemi-bosque.webp" alt="Circuito das Estações">
+        <div class="content">
+          <span class="edicoes-badge atual">2ª edição · 28 nov 2026</span>
+          <h3>Circuito das Estações</h3>
+          <div class="meta">Iguatemi Bosque, Fortaleza</div>
+          <p>Um circuito de 6 estações de atividade física, cada uma com o nome e a cor de um mix de castanhas LoveNuts, terminando numa corrida coletiva com premiação.</p>
+        </div>
+      </div>
+      <div class="edicoes-card">
+        <img src="assets/perola/decoracao3.webp" alt="Pérola Tropical">
+        <div class="content">
+          <span class="edicoes-badge realizada">1ª edição · 21 ago 2026</span>
+          <h3>Pérola Tropical</h3>
+          <div class="meta">Sunrise Beach Club, Fortaleza</div>
+          <p>Uma noite à beira-mar com moda praia boho chic, que celebrou a beleza que emerge do cuidado e da transformação. Reuniu 100 convidados e impactou mais de 80 mil pessoas.</p>
+          <a class="link" href="#perola-galeria">Ver fotos e vídeo ↓</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= PEROLA TROPICAL GALLERY ================= -->
-<section id="perola" class="perola">
+<section id="perola-galeria" class="perola">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Como foi a 1ª edição</span>
-      <h2 class="section-title">Pérola Tropical</h2>
+      <img class="perola-logo" src="assets/perola/perola-logo.png" alt="Pérola Tropical - 1ª edição">
+      <p class="lede">A edição Pérola Tropical nasceu da fusão entre a delicadeza da pérola e a força do trópico: assim como a pérola surge do mar, lenta, preciosa e única, essa edição celebrou a beleza que emerge do cuidado, da transformação e do que há de mais genuíno em cada mulher. Uma noite ao pôr do sol, à beira-mar de Fortaleza, no Sunrise Beach Club, em 21 de agosto de 2026, reunindo 100 convidados presenciais e impactando mais de 80 mil pessoas com uma audiência qualificada de Wellness e lifestyle.</p>
     </div>
-    <div class="perola-summary">
-      <img src="assets/perola/decoracao3.webp" alt="Pérola Tropical">
-      <div class="content">
-        <span class="perola-summary-badge">1ª edição · 21 de agosto de 2026</span>
-        <p>Uma noite à beira-mar com moda praia boho chic, que celebrou a beleza que emerge do cuidado e da transformação. Reuniu 100 convidados presenciais e impactou mais de 80 mil pessoas.</p>
-        <a class="btn btn-primary" href="edicoes.html">Ver fotos e vídeos</a>
+    <div class="perola-gallery">
+      <div class="pg-a video-tile" id="perolaVideoTile">
+        <img src="assets/perola/backdrop.webp" alt="Vídeo oficial Pérola Tropical">
+        <button type="button" class="play-btn" id="perolaVideoPlay" aria-label="Assistir vídeo oficial">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 4.5v11l9-5.5-9-5.5z" fill="currentColor"/></svg>
+        </button>
+        <span class="video-label">Vídeo oficial</span>
       </div>
+      <div class="pg-thumbs">
+        <div class="pg-item"><img src="assets/perola/decoracao.webp" alt="Decoração do evento"></div>
+        <div class="pg-item"><img src="assets/perola/dj.webp" alt="DJ Otávio Camargo"></div>
+        <div class="pg-item"><img src="assets/perola/cerimonialista.webp" alt="Cerimonialista conduzindo o evento"></div>
+        <div class="pg-item"><img src="assets/perola/convidados.webp" alt="Convidados no evento"></div>
+        <div class="pg-item"><img src="assets/perola/cesar-costa.webp" alt="Foto oficial César Costa"></div>
+        <div class="pg-item"><img src="assets/perola/awe-patrocinador.webp" alt="Ativação da marca awe"></div>
+      </div>
+      <div class="pg-thumbs pg-thumbs-more" id="pgMore">
+        <div class="pg-item"><img src="assets/perola/carmen-prado-organizadora.webp" alt="Carmen Prado, organizadora do evento"></div>
+        <div class="pg-item"><img src="assets/perola/backdrop2.webp" alt="Backdrop de marcas patrocinadoras"></div>
+        <div class="pg-item"><img src="assets/perola/emape-patrocinador.webp" alt="Ativação da marca Emape"></div>
+        <div class="pg-item"><img src="assets/perola/equipe1.webp" alt="Equipe Soul Experience"></div>
+        <div class="pg-item"><img src="assets/perola/equipe2.webp" alt="Equipe Soul Experience"></div>
+        <div class="pg-item"><img src="assets/perola/chery-glow-patrocinador.webp" alt="Ativação da marca Chery Glow"></div>
+        <div class="pg-item"><img src="assets/perola/momento-fogueira.webp" alt="Momento fogueira na praia"></div>
+      </div>
+    </div>
+    <div class="perola-actions">
+      <button type="button" class="btn btn-ghost" id="pgMoreBtn">Ver mais fotos</button>
+      <a href="https://drive.google.com/drive/folders/1KclRjQdj5ICJSZFGA8sCt2qh79IA4n7C?usp=sharing" target="_blank" rel="noopener" class="btn btn-ghost">Ver álbum completo no Drive</a>
+      <a href="https://www.fotto.com.br/soul-experience/e/402636" target="_blank" rel="noopener" class="btn btn-ghost">Comprar fotos em alta (César Costa)</a>
+      <a href="https://open.spotify.com/playlist/51Q1posiwUpnbpTWyc8k9e" target="_blank" rel="noopener" class="btn btn-ghost">Ouvir playlist oficial</a>
     </div>
   </div>
 </section>
@@ -1208,6 +1378,29 @@
       <div class="tl-item"><span class="dot"></span><div class="time">09:15</div><div class="title">Revelação</div><div class="desc">Lançamento surpresa da 6ª estação e do novo produto LoveNuts</div></div>
       <div class="tl-item"><span class="dot"></span><div class="time">09:45</div><div class="title">Fechamento simbólico</div><div class="desc">Música e distribuição dos prêmios finais</div></div>
       <div class="tl-item"><span class="dot"></span><div class="time">10:00</div><div class="title">Encerramento</div><div class="desc">Fim da 2ª edição do Soul Experience</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOG ================= -->
+<section id="blog">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Blog</span>
+      <h2 class="section-title">Bem-estar, bastidores e as histórias do Soul Experience</h2>
+      <p class="lede">Matérias sobre como foram as edições, o que esperar da próxima e reflexões sobre bem-estar no dia a dia.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <span class="tag">Recap</span>
+        <h3>Pérola Tropical: como foi a 1ª edição do Soul Experience</h3>
+        <p>Uma noite à beira-mar em Fortaleza que uniu bem-estar, moda praia e conexão real. Relembre os detalhes na seção "Edições" desta página.</p>
+      </div>
+      <div class="blog-card">
+        <span class="tag">Prévia</span>
+        <h3>Circuito das Estações: o que esperar da 2ª edição</h3>
+        <p>Bike, WolfFit, Yoga, Dance Mix, Aerobox e Corrida: conheça as 6 estações que vão movimentar o Iguatemi Bosque em 28 de novembro.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1365,7 +1558,7 @@
         <div class="ticket-detail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5M16 4.2a3.2 3.2 0 0 1 0 6.2M20.5 20c0-3-1.9-5.5-4.5-6.3"/></svg> Apenas 100 vagas presenciais</div>
       </div>
       <div class="ticket-cta">
-        <a class="btn btn-primary" href="https://wa.me/558597712114?text=Oi!%20Quero%20garantir%20meu%20ingresso%20para%20o%20Soul%20Experience." target="_blank" rel="noopener">Quero meu ingresso</a>
+        <a class="btn btn-primary" href="https://www.sympla.com.br/evento/soul-experience--1-ediCAo---circuito-das-estaCOes/3587190" target="_blank" rel="noopener">Quero meu ingresso</a>
         <span class="ticket-note">Vendas pelo Sympla · lotes limitados</span>
       </div>
     </div>
@@ -1400,7 +1593,7 @@
       </details>
       <details class="faq-item">
         <summary>Onde compro meu ingresso?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <p class="a">Os ingressos são vendidos pelo Sympla. Toque em "Quero meu ingresso" nesta página pra ser direcionado assim que as vendas abrirem, ou chame no WhatsApp que a gente te avisa em primeira mão.</p>
+        <p class="a">Os ingressos são vendidos pelo Sympla. Toque em "Quero meu ingresso" nesta página que você vai direto pra página de vendas.</p>
       </details>
       <details class="faq-item">
         <summary>Quantas vagas existem?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
@@ -1416,7 +1609,7 @@
       </details>
       <details class="faq-item">
         <summary>Como foi a 1ª edição?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <p class="a">A 1ª edição, Pérola Tropical, aconteceu em 21 de agosto no Sunrise Beach Club, em Fortaleza, reunindo marcas, influenciadores e convidados numa manhã de bem-estar. Você pode ver fotos e vídeos na seção "1ª edição" desta página.</p>
+        <p class="a">A 1ª edição, Pérola Tropical, aconteceu em 21 de agosto no Sunrise Beach Club, em Fortaleza, reunindo marcas, influenciadores e convidados numa manhã de bem-estar. Você pode ver fotos e vídeos na seção "Edições" desta página.</p>
       </details>
       <details class="faq-item">
         <summary>Preciso levar algo?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
@@ -1441,7 +1634,7 @@
       <a href="https://wa.me/558597712114?text=Oi!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Soul%20Experience." target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5 8.42 8.42 0 01-4-1L3 20l1.05-3.5A8.5 8.5 0 1121 11.5z"/></svg> (85) 9771-2114 (WhatsApp)</a>
     </div>
     <div style="margin-top:28px;">
-      <a class="btn btn-primary" href="https://wa.me/558597712114?text=Oi!%20Quero%20garantir%20meu%20ingresso%20para%20o%20Soul%20Experience." target="_blank" rel="noopener">Quero meu ingresso</a>
+      <a class="btn btn-primary" href="https://www.sympla.com.br/evento/soul-experience--1-ediCAo---circuito-das-estaCOes/3587190" target="_blank" rel="noopener">Quero meu ingresso</a>
     </div>
   </div>
 </section>
@@ -1473,6 +1666,19 @@
   </form>
 </div>
 
+<div class="video-modal" id="videoModal">
+  <button type="button" class="video-modal-close" id="videoModalClose" aria-label="Fechar vídeo">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+  <div class="video-modal-frame" id="videoModalFrame"></div>
+</div>
+
+<div class="photo-lightbox" id="photoLightbox">
+  <button type="button" class="photo-lightbox-close" id="photoLightboxClose" aria-label="Fechar">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+  <img id="photoLightboxImg" src="" alt="">
+</div>
 
 </main>
 
@@ -1491,8 +1697,8 @@
     <span class="promo-emoji">🎉</span>
     <h3>Não deixe essa oportunidade passar!</h3>
     <p>Garanta seu ingresso pro Soul Experience com <strong>10% de desconto</strong> usando o cupom abaixo:</p>
-    <button type="button" class="promo-coupon" id="promoCoupon">CARMEN10 <span class="copy-hint">toque pra copiar</span></button>
-    <a class="btn btn-primary promo-cta" id="promoCta" href="https://wa.me/558597712114?text=Oi!%20Quero%20garantir%20meu%20ingresso%20com%20o%20cupom%20CARMEN10." target="_blank" rel="noopener">Quero meu ingresso</a>
+    <button type="button" class="promo-coupon" id="promoCoupon">VIVASSO10 <span class="copy-hint">toque pra copiar</span></button>
+    <a class="btn btn-primary promo-cta" id="promoCta" href="https://www.sympla.com.br/evento/soul-experience--1-ediCAo---circuito-das-estaCOes/3587190" target="_blank" rel="noopener">Quero meu ingresso</a>
   </div>
 </div>
 
@@ -1622,6 +1828,66 @@
       var text = encodeURIComponent(lines.join('\n'));
       if(leadSuccess) leadSuccess.classList.add('show');
       window.open('https://wa.me/558597712114?text=' + text, '_blank');
+    });
+  }
+
+  var photoLightbox = document.getElementById('photoLightbox');
+  var photoLightboxImg = document.getElementById('photoLightboxImg');
+  var photoLightboxClose = document.getElementById('photoLightboxClose');
+  function openLightbox(src, alt){
+    photoLightboxImg.src = src;
+    photoLightboxImg.alt = alt || '';
+    photoLightbox.classList.add('open');
+  }
+  function closeLightbox(){
+    photoLightbox.classList.remove('open');
+    photoLightboxImg.src = '';
+  }
+  document.querySelectorAll('.pg-item').forEach(function(item){
+    item.addEventListener('click', function(){
+      var img = item.querySelector('img');
+      if(img) openLightbox(img.getAttribute('src'), img.getAttribute('alt'));
+    });
+  });
+  if(photoLightboxClose) photoLightboxClose.addEventListener('click', closeLightbox);
+  if(photoLightbox){
+    photoLightbox.addEventListener('click', function(e){
+      if(e.target === photoLightbox) closeLightbox();
+    });
+  }
+
+  var perolaVideoPlay = document.getElementById('perolaVideoPlay');
+  var videoModal = document.getElementById('videoModal');
+  var videoModalFrame = document.getElementById('videoModalFrame');
+  var videoModalClose = document.getElementById('videoModalClose');
+  function openVideoModal(){
+    videoModalFrame.innerHTML = '<iframe src="https://drive.google.com/file/d/1feK7oPDgLCbgEW6_buLoqCzYqj4WwtHi/preview" allow="autoplay; fullscreen" allowfullscreen frameborder="0"></iframe>';
+    videoModal.classList.add('open');
+  }
+  function closeVideoModal(){
+    videoModal.classList.remove('open');
+    videoModalFrame.innerHTML = '';
+  }
+  if(perolaVideoPlay && videoModal){
+    perolaVideoPlay.addEventListener('click', openVideoModal);
+  }
+  if(videoModalClose) videoModalClose.addEventListener('click', closeVideoModal);
+  if(videoModal){
+    videoModal.addEventListener('click', function(e){
+      if(e.target === videoModal) closeVideoModal();
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeLightbox(); closeVideoModal(); }
+  });
+
+  var pgMoreBtn = document.getElementById('pgMoreBtn');
+  var pgMore = document.getElementById('pgMore');
+  if(pgMoreBtn && pgMore){
+    pgMoreBtn.addEventListener('click', function(){
+      var isOpen = pgMore.classList.toggle('open');
+      pgMoreBtn.textContent = isOpen ? 'Ver menos fotos' : 'Ver mais fotos';
     });
   }
 
@@ -1756,7 +2022,7 @@
     { kw:['o que e o soul experience','o que e isso','do que se trata','como funciona o evento','o que e esse evento'],
       a:'O Soul Experience é um evento de bem-estar da Vivasso: uma manhã com um circuito de estações de atividade física (bike, yoga, WolfFit, dance mix, aerobox e corrida), cada uma com o nome e a cor de um mix de castanhas LoveNuts, terminando numa corrida coletiva com premiação e dicas de nutricionistas.' },
     { kw:['onde compro ingresso','como compro ingresso','quanto custa o ingresso','valor do ingresso','preco do ingresso','quando abrem os ingressos','vendas dos ingressos'],
-      a:'Os ingressos são vendidos pelo Sympla. Toque em "Quero meu ingresso" aqui na página que a gente te ajuda a garantir o seu assim que as vendas abrirem.' },
+      a:'Os ingressos já estão à venda pelo Sympla! [[BOTAO:ingresso]]' },
     { kw:['quantas vagas','vagas limitadas','quantas pessoas','lotacao','capacidade do evento'],
       a:'É uma edição seletiva e intimista, com apenas 100 vagas presenciais. As vagas são limitadas, então quanto antes garantir, melhor.' },
     { kw:['o que esta incluso','o que vem no ingresso','o que ganho no evento','o que tem incluido'],
@@ -1770,7 +2036,7 @@
     { kw:['influenciadores','quem sao os influenciadores','quantos influenciadores','quais creators'],
       a:'São 11 perfis de Fortaleza alinhados ao universo wellness e lifestyle, entre nutricionistas, psicóloga, advogada e criadores de conteúdo. [[BOTAO:influenciadores]]' },
     { kw:['primeira edicao','edicao passada','perola tropical','como foi a primeira'],
-      a:'A 1ª edição, a Pérola Tropical, aconteceu em 21 de agosto no Sunrise Beach Club, em Fortaleza. Tem fotos e o vídeo oficial dela na seção "1ª edição" aqui na página.' },
+      a:'A 1ª edição, a Pérola Tropical, aconteceu em 21 de agosto no Sunrise Beach Club, em Fortaleza. Tem fotos e o vídeo oficial dela na seção "Edições" aqui na página.' },
     { kw:['o que levar','preciso levar algo','o que vestir','roupa pro evento','dress code'],
       a:'Venha com roupa confortável pra atividade física e disposição pra participar das estações. Qualquer detalhe adicional a gente confirma mais perto da data.' },
     { kw:['falar com atendente','falar com humano','falar com alguem','atendimento','whatsapp','falar com voces','contato'],
@@ -1840,7 +2106,7 @@
   var chatHistory = [];
 
   var CHAT_ACTIONS = {
-    ingresso: { label: 'Quero meu ingresso', href: 'https://wa.me/558597712114?text=' + encodeURIComponent('Oi! Quero garantir meu ingresso para o Soul Experience.'), target: '_blank' },
+    ingresso: { label: 'Quero meu ingresso', href: 'https://www.sympla.com.br/evento/soul-experience--1-ediCAo---circuito-das-estaCOes/3587190', target: '_blank' },
     contato: { label: 'Falar com a gente', href: '#interesse' },
     whatsapp: { label: 'Falar no WhatsApp', href: 'https://wa.me/558597712114?text=' + encodeURIComponent('Olá! Vim pela landing page do Soul Experience e queria saber mais.'), target: '_blank' },
     influenciadores: { label: 'Ver influenciadores', href: 'influenciadores.html' }
@@ -1946,7 +2212,7 @@
     overlay.classList.remove('open');
   }
 
-  var idleTimer = shown ? null : setTimeout(openPromo, 35000);
+  var idleTimer = shown ? null : setTimeout(openPromo, 60000);
 
   closeBtn.addEventListener('click', closePromo);
   overlay.addEventListener('click', function(e){ if(e.target === overlay) closePromo(); });
@@ -1962,7 +2228,7 @@
   });
 
   couponBtn.addEventListener('click', function(){
-    try { navigator.clipboard.writeText('CARMEN10'); } catch(e){}
+    try { navigator.clipboard.writeText('VIVASSO10'); } catch(e){}
     couponBtn.classList.add('copied');
     var hint = couponBtn.querySelector('.copy-hint');
     var old = hint ? hint.textContent : '';

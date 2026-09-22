@@ -833,6 +833,21 @@
   .marcas .eyebrow::before{background:#F3D9B4;}
   .marcas .section-title{color:#fff;}
   .marcas .lede{color:rgba(250,240,225,.78);}
+  .brand-full{max-height:0;opacity:0;overflow:hidden;transition:max-height .5s ease, opacity .4s ease, margin-top .4s ease;}
+  .brand-full.open{max-height:2400px;opacity:1;margin-top:28px;}
+  .brand-full-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;}
+  .brand-full-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:18px;
+    padding:22px 16px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+    min-height:130px;
+    transition:background .2s,border-color .2s;
+  }
+  .brand-full-card:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.24);}
+  .brand-full-card img{max-width:100%;max-height:48px;width:auto;height:auto;object-fit:contain;}
+  .brand-full-card span{font-size:12px;color:rgba(250,240,225,.7);text-align:center;}
   .marquee-row{
     width:100%;overflow:hidden;margin-top:28px;
     -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
@@ -1731,19 +1746,50 @@
     <div class="section-head center">
       <span class="eyebrow">Confiança de quem já participou</span>
       <h2 class="section-title">Marcas que já passaram por aqui</h2>
-      <p class="lede">Um recorte das marcas que estiveram na 1ª edição do Soul Experience. Clique e veja a lista completa.</p>
+      <p class="lede">Um recorte das marcas que estiveram na 1ª edição do Soul Experience. Toque numa marca e veja a lista completa.</p>
     </div>
   </div>
   <div class="marquee-row right">
     <div class="marquee-track">
-      <a href="../marcas.html" title="Cherry Glow"><img src="assets/brands/cherry-glow.png" alt="Cherry Glow"></a><a href="../marcas.html" title="JD Cirurgia Plástica"><img src="assets/brands/jd-cirurgia.png" alt="JD Cirurgia Plástica"></a><a href="../marcas.html" title="Love Nuts"><img src="assets/brands/love-nuts.png" alt="Love Nuts"></a><a href="../marcas.html" title="CURC Creatina e Colflex Whey"><img src="assets/brands/curc-colflex.png" alt="CURC Creatina e Colflex Whey"></a><a href="../marcas.html" title="Qvino"><img src="assets/brands/qvino.png" alt="Qvino"></a><a href="../marcas.html" title="Breno Diniz Imóveis"><img src="assets/brands/breno-diniz.png" alt="Breno Diniz Imóveis"></a><a href="../marcas.html" title="Saladex"><img src="assets/brands/saladex.png" alt="Saladex"></a><a href="../marcas.html" title="Shake 2Go"><img src="assets/brands/shake2go.png" alt="Shake 2Go"></a><a href="../marcas.html" title="Jatobá Estofados"><img src="assets/brands/jatoba.png" alt="Jatobá Estofados"></a><a href="../marcas.html" title="Bodytech"><img src="assets/brands/bodytech.png" alt="Bodytech"></a><a href="../marcas.html" title="Moura Dubeux"><img src="assets/brands/moura-dubeux.png" alt="Moura Dubeux"></a><a href="../marcas.html" title="Naturalle Iceup"><img src="assets/brands/naturalle-iceup.png" alt="Naturalle Iceup"></a><a href="../marcas.html" title="MadNutz"><img src="assets/brands/madnutz.png" alt="MadNutz"></a>
-      <a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/cherry-glow.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/jd-cirurgia.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/love-nuts.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/curc-colflex.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/qvino.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/breno-diniz.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/saladex.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/shake2go.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/jatoba.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/bodytech.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/moura-dubeux.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/naturalle-iceup.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/madnutz.png" alt=""></a>
+      <a href="#" title="Cherry Glow"><img src="assets/brands/cherry-glow.png" alt="Cherry Glow"></a><a href="#" title="JD Cirurgia Plástica"><img src="assets/brands/jd-cirurgia.png" alt="JD Cirurgia Plástica"></a><a href="#" title="Love Nuts"><img src="assets/brands/love-nuts.png" alt="Love Nuts"></a><a href="#" title="CURC Creatina e Colflex Whey"><img src="assets/brands/curc-colflex.png" alt="CURC Creatina e Colflex Whey"></a><a href="#" title="Qvino"><img src="assets/brands/qvino.png" alt="Qvino"></a><a href="#" title="Breno Diniz Imóveis"><img src="assets/brands/breno-diniz.png" alt="Breno Diniz Imóveis"></a><a href="#" title="Saladex"><img src="assets/brands/saladex.png" alt="Saladex"></a><a href="#" title="Shake 2Go"><img src="assets/brands/shake2go.png" alt="Shake 2Go"></a><a href="#" title="Jatobá Estofados"><img src="assets/brands/jatoba.png" alt="Jatobá Estofados"></a><a href="#" title="Bodytech"><img src="assets/brands/bodytech.png" alt="Bodytech"></a><a href="#" title="Moura Dubeux"><img src="assets/brands/moura-dubeux.png" alt="Moura Dubeux"></a><a href="#" title="Naturalle Iceup"><img src="assets/brands/naturalle-iceup.png" alt="Naturalle Iceup"></a><a href="#" title="MadNutz"><img src="assets/brands/madnutz.png" alt="MadNutz"></a>
+      <a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/cherry-glow.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/jd-cirurgia.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/love-nuts.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/curc-colflex.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/qvino.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/breno-diniz.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/saladex.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/shake2go.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/jatoba.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/bodytech.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/moura-dubeux.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/naturalle-iceup.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/madnutz.png" alt=""></a>
     </div>
   </div>
   <div class="marquee-row left">
     <div class="marquee-track">
-      <a href="../marcas.html" title="Aquaclara"><img src="assets/brands/aquaclara.png" alt="Aquaclara"></a><a href="../marcas.html" title="Pesō Carnes Especiais"><img src="assets/brands/peso-carnes.png" alt="Pesō Carnes Especiais"></a><a href="../marcas.html" title="TS Health Center"><img src="assets/brands/ts-health.png" alt="TS Health Center"></a><a href="../marcas.html" title="Artcenic Eventos"><img src="assets/brands/artcenic.png" alt="Artcenic Eventos"></a><a href="../marcas.html" title="doTERRA"><img src="assets/brands/doterra.png" alt="doTERRA"></a><a href="../marcas.html" title="Subli Mídia"><img src="assets/brands/subli-midia.png" alt="Subli Mídia"></a><a href="../marcas.html" title="Hits Produções"><img src="assets/brands/hits-producoes.png" alt="Hits Produções"></a><a href="../marcas.html" title="S4 Soluções Visuais"><img src="assets/brands/s4-solucoes.png" alt="S4 Soluções Visuais"></a><a href="../marcas.html" title="Supplements Sports Nutrition"><img src="assets/brands/supplements.png" alt="Supplements Sports Nutrition"></a><a href="../marcas.html" title="Imua Ceará Vaca"><img src="assets/brands/imua-ceara.png" alt="Imua Ceará Vaca"></a><a href="../marcas.html" title="Le'Loyn"><img src="assets/brands/leloyn.png" alt="Le'Loyn"></a><a href="../marcas.html" title="awe"><img src="assets/brands/awe.png" alt="awe"></a>
-      <a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/aquaclara.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/peso-carnes.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/ts-health.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/artcenic.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/doterra.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/subli-midia.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/hits-producoes.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/s4-solucoes.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/supplements.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/imua-ceara.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/leloyn.png" alt=""></a><a href="../marcas.html" tabindex="-1" aria-hidden="true"><img src="assets/brands/awe.png" alt=""></a>
+      <a href="#" title="Aquaclara"><img src="assets/brands/aquaclara.png" alt="Aquaclara"></a><a href="#" title="Pesō Carnes Especiais"><img src="assets/brands/peso-carnes.png" alt="Pesō Carnes Especiais"></a><a href="#" title="TS Health Center"><img src="assets/brands/ts-health.png" alt="TS Health Center"></a><a href="#" title="Artcenic Eventos"><img src="assets/brands/artcenic.png" alt="Artcenic Eventos"></a><a href="#" title="doTERRA"><img src="assets/brands/doterra.png" alt="doTERRA"></a><a href="#" title="Subli Mídia"><img src="assets/brands/subli-midia.png" alt="Subli Mídia"></a><a href="#" title="Hits Produções"><img src="assets/brands/hits-producoes.png" alt="Hits Produções"></a><a href="#" title="S4 Soluções Visuais"><img src="assets/brands/s4-solucoes.png" alt="S4 Soluções Visuais"></a><a href="#" title="Supplements Sports Nutrition"><img src="assets/brands/supplements.png" alt="Supplements Sports Nutrition"></a><a href="#" title="Imua Ceará Vaca"><img src="assets/brands/imua-ceara.png" alt="Imua Ceará Vaca"></a><a href="#" title="Le'Loyn"><img src="assets/brands/leloyn.png" alt="Le'Loyn"></a><a href="#" title="awe"><img src="assets/brands/awe.png" alt="awe"></a>
+      <a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/aquaclara.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/peso-carnes.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/ts-health.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/artcenic.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/doterra.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/subli-midia.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/hits-producoes.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/s4-solucoes.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/supplements.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/imua-ceara.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/leloyn.png" alt=""></a><a href="#" tabindex="-1" aria-hidden="true"><img src="assets/brands/awe.png" alt=""></a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="brand-full" id="brandFull">
+      <div class="brand-full-grid">
+        <div class="brand-full-card"><img src="assets/brands/cherry-glow.png" alt="Cherry Glow"><span>Cherry Glow</span></div>
+        <div class="brand-full-card"><img src="assets/brands/jd-cirurgia.png" alt="JD Cirurgia Plástica"><span>JD Cirurgia Plástica</span></div>
+        <div class="brand-full-card"><img src="assets/brands/love-nuts.png" alt="Love Nuts"><span>Love Nuts</span></div>
+        <div class="brand-full-card"><img src="assets/brands/curc-colflex.png" alt="CURC Creatina e Colflex Whey"><span>CURC Creatina e Colflex Whey</span></div>
+        <div class="brand-full-card"><img src="assets/brands/qvino.png" alt="Qvino"><span>Qvino</span></div>
+        <div class="brand-full-card"><img src="assets/brands/breno-diniz.png" alt="Breno Diniz Imóveis"><span>Breno Diniz Imóveis</span></div>
+        <div class="brand-full-card"><img src="assets/brands/saladex.png" alt="Saladex"><span>Saladex</span></div>
+        <div class="brand-full-card"><img src="assets/brands/shake2go.png" alt="Shake 2Go"><span>Shake 2Go</span></div>
+        <div class="brand-full-card"><img src="assets/brands/jatoba.png" alt="Jatobá Estofados"><span>Jatobá Estofados</span></div>
+        <div class="brand-full-card"><img src="assets/brands/bodytech.png" alt="Bodytech"><span>Bodytech</span></div>
+        <div class="brand-full-card"><img src="assets/brands/moura-dubeux.png" alt="Moura Dubeux"><span>Moura Dubeux</span></div>
+        <div class="brand-full-card"><img src="assets/brands/naturalle-iceup.png" alt="Naturalle Iceup"><span>Naturalle Iceup</span></div>
+        <div class="brand-full-card"><img src="assets/brands/madnutz.png" alt="MadNutz"><span>MadNutz</span></div>
+        <div class="brand-full-card"><img src="assets/brands/aquaclara.png" alt="Aquaclara"><span>Aquaclara</span></div>
+        <div class="brand-full-card"><img src="assets/brands/peso-carnes.png" alt="Pesō Carnes Especiais"><span>Pesō Carnes Especiais</span></div>
+        <div class="brand-full-card"><img src="assets/brands/ts-health.png" alt="TS Health Center"><span>TS Health Center</span></div>
+        <div class="brand-full-card"><img src="assets/brands/artcenic.png" alt="Artcenic Eventos"><span>Artcenic Eventos</span></div>
+        <div class="brand-full-card"><img src="assets/brands/doterra.png" alt="doTERRA"><span>doTERRA</span></div>
+        <div class="brand-full-card"><img src="assets/brands/subli-midia.png" alt="Subli Mídia"><span>Subli Mídia</span></div>
+        <div class="brand-full-card"><img src="assets/brands/hits-producoes.png" alt="Hits Produções"><span>Hits Produções</span></div>
+        <div class="brand-full-card"><img src="assets/brands/s4-solucoes.png" alt="S4 Soluções Visuais"><span>S4 Soluções Visuais</span></div>
+        <div class="brand-full-card"><img src="assets/brands/supplements.png" alt="Supplements Sports Nutrition"><span>Supplements Sports Nutrition</span></div>
+        <div class="brand-full-card"><img src="assets/brands/imua-ceara.png" alt="Imua Ceará Vaca"><span>Imua Ceará Vaca</span></div>
+        <div class="brand-full-card"><img src="assets/brands/leloyn.png" alt="Le'Loyn"><span>Le'Loyn</span></div>
+        <div class="brand-full-card"><img src="assets/brands/awe.png" alt="awe"><span>awe</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -2747,6 +2793,27 @@
   }
   chips.forEach(function(chip){
     chip.addEventListener('click', function(e){
+      e.preventDefault();
+      openFull();
+    });
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var full = document.getElementById('brandFull');
+  var marcasSection = document.getElementById('marcas');
+  if(!full || !marcasSection) return;
+  var links = marcasSection.querySelectorAll('.marquee-track a');
+  if(!links.length) return;
+  function openFull(){
+    if(full.classList.contains('open')) return;
+    full.classList.add('open');
+    setTimeout(function(){ full.scrollIntoView({behavior:'smooth', block:'start'}); }, 80);
+  }
+  links.forEach(function(link){
+    link.addEventListener('click', function(e){
       e.preventDefault();
       openFull();
     });

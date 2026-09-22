@@ -494,9 +494,9 @@
   .station-detail-tag{display:block;margin-top:2px;font-size:13px;font-weight:700;}
   .station-detail-desc{margin-top:18px;font-size:14.5px;color:var(--ink-dim);line-height:1.65;max-width:680px;}
   .station-detail-grid{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;}
-  .station-detail-box{background:var(--panel-lav);border-radius:16px;padding:16px 18px;}
+  .station-detail-box{background:var(--panel-lav);border-radius:16px;padding:16px 18px;min-height:190px;}
   .station-detail-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-dim);}
-  .station-detail-box img.sd-product{max-width:100%;max-height:100px;border-radius:10px;margin-top:10px;display:block;}
+  .station-detail-box img.sd-product{width:100%;height:80px;object-fit:contain;border-radius:10px;margin-top:10px;display:block;}
   .sd-person{margin-top:10px;display:flex;align-items:center;gap:10px;text-decoration:none;}
   .sd-person img{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0;}
   .sd-person .sd-name{font-weight:700;font-size:12.5px;color:var(--ink);}
@@ -795,7 +795,7 @@
 
   /* ---------- LOCAL ---------- */
   .local-photo{border-radius:24px;overflow:hidden;margin-top:36px;position:relative;}
-  .local-photo > img{width:100%;height:auto;aspect-ratio:1.5007;display:block;}
+  .local-photo > img{width:100%;height:auto;aspect-ratio:3.0014;display:block;object-fit:cover;}
   .local-photo-logo{
     position:absolute;left:20px;bottom:20px;
     background:rgba(255,255,255,.95);
@@ -1727,8 +1727,8 @@
 <section id="ingressos" style="border-top:1px solid var(--line);">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow">Garanta sua vaga</span>
-      <h2 class="section-title">Ingressos para o Soul Experience</h2>
+      <span class="eyebrow">Segunda edição · Circuito das Estações</span>
+      <h2 class="section-title">Garanta seu ingresso</h2>
       <p class="lede">Uma edição seletiva e intimista, com apenas 60 vagas presenciais. Os ingressos são vendidos pelo Sympla, com lotes limitados.</p>
     </div>
 
@@ -2485,6 +2485,7 @@
   var panel = document.getElementById('stationDetail');
   var stationEls = Array.prototype.slice.call(document.querySelectorAll('.station[data-station]'));
   var activeKey = null;
+  var engaged = false;
 
   function setActive(key){
     stationEls.forEach(function(el){
@@ -2505,6 +2506,7 @@
   function closeStation(){
     if(panel) panel.classList.remove('open');
     activeKey = null;
+    engaged = false;
     setActive(null);
   }
 
@@ -2516,6 +2518,7 @@
       if(activeKey === key){
         closeStation();
       } else {
+        engaged = true;
         openStation(key);
         if(!isHoverCapable){
           setTimeout(function(){ panel.scrollIntoView({behavior:'smooth', block:'nearest'}); }, 80);
@@ -2523,9 +2526,16 @@
       }
     });
     if(isHoverCapable){
-      el.addEventListener('mouseenter', function(){ openStation(key); });
+      el.addEventListener('mouseenter', function(){ if(engaged) openStation(key); });
     }
   });
+
+  if(panel){
+    panel.addEventListener('click', function(e){
+      if(e.target.closest('#stationDetailClose')) return;
+      closeStation();
+    });
+  }
 })();
 </script>
 

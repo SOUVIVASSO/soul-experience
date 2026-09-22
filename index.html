@@ -2316,19 +2316,17 @@
   var closeBtn = document.getElementById('promoClose');
   var couponBtn = document.getElementById('promoCoupon');
   var shown = false;
-  try { shown = sessionStorage.getItem('se_promo_shown') === '1'; } catch(e){}
 
   function openPromo(){
     if(shown) return;
     shown = true;
-    try { sessionStorage.setItem('se_promo_shown', '1'); } catch(e){}
     overlay.classList.add('open');
   }
   function closePromo(){
     overlay.classList.remove('open');
   }
 
-  var idleTimer = shown ? null : setTimeout(openPromo, 60000);
+  var idleTimer = setTimeout(openPromo, 60000);
 
   closeBtn.addEventListener('click', closePromo);
   overlay.addEventListener('click', function(e){ if(e.target === overlay) closePromo(); });
@@ -2339,7 +2337,6 @@
     if(link){
       clearTimeout(idleTimer);
       shown = true;
-      try { sessionStorage.setItem('se_promo_shown', '1'); } catch(e){}
     }
   });
 

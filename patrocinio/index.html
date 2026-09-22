@@ -2848,9 +2848,13 @@
   if(!full || !chips.length) return;
   function openFull(){
     if(full.classList.contains('open')) return;
+    full.style.maxHeight = full.scrollHeight + 'px';
     full.classList.add('open');
     setTimeout(function(){ full.scrollIntoView({behavior:'smooth', block:'start'}); }, 80);
   }
+  window.addEventListener('resize', function(){
+    if(full.classList.contains('open')) full.style.maxHeight = full.scrollHeight + 'px';
+  });
   chips.forEach(function(chip){
     chip.addEventListener('click', function(e){
       e.preventDefault();
@@ -2869,9 +2873,13 @@
   if(!links.length) return;
   function openFull(){
     if(full.classList.contains('open')) return;
+    full.style.maxHeight = full.scrollHeight + 'px';
     full.classList.add('open');
     setTimeout(function(){ full.scrollIntoView({behavior:'smooth', block:'start'}); }, 80);
   }
+  window.addEventListener('resize', function(){
+    if(full.classList.contains('open')) full.style.maxHeight = full.scrollHeight + 'px';
+  });
   links.forEach(function(link){
     link.addEventListener('click', function(e){
       e.preventDefault();

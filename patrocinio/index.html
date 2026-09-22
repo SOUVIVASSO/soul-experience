@@ -749,6 +749,14 @@
   .cronograma-dark .tl-item .desc{color:rgba(250,240,225,.65);}
   .cronograma-dark .tl-item .dot{background:#241811;}
   .cronograma-dark .timeline::before{background:rgba(255,255,255,.2);}
+  .cronograma-notes{margin-top:36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;}
+  .cronograma-note{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px 20px;}
+  .cronograma-note .icon{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.1);color:#F3D9B4;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .cronograma-note .note-title{font-weight:700;font-size:14px;color:#fff;}
+  .cronograma-note .note-text{margin-top:5px;font-size:12.5px;color:rgba(250,240,225,.72);line-height:1.5;}
+  .cronograma-note .color-dots{margin-top:10px;display:flex;gap:8px;}
+  .cronograma-note .color-dots span{width:16px;height:16px;border-radius:50%;display:inline-block;border:1px solid rgba(255,255,255,.3);}
+  @media (max-width:640px){.cronograma-notes{grid-template-columns:1fr;}}
 
   /* ---------- PARTICIPACAO ---------- */
   .part-grid{
@@ -1688,6 +1696,36 @@
       <div class="tl-item"><span class="dot"></span><div class="time">09:45</div><div class="title">Fechamento simbólico</div><div class="desc">Música e distribuição dos prêmios finais</div></div>
       <div class="tl-item"><span class="dot"></span><div class="time">10:00</div><div class="title">Encerramento</div><div class="desc">Fim da 2ª edição do Soul Experience</div></div>
     </div>
+    <div class="cronograma-notes">
+      <div class="cronograma-note">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div>
+          <div class="note-title">Chegue no horário</div>
+          <div class="note-text">A abertura é às 06h30. Chegar no horário garante que os convidados da sua marca participem de todas as estações e do circuito completo.</div>
+        </div>
+      </div>
+      <div class="cronograma-note">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M9 3L3 7l2 3 2-2v13h10V8l2 2 2-3-6-4-3 2-3-2z"/></svg></div>
+        <div>
+          <div class="note-title">Dress code: as cores das estações</div>
+          <div class="note-text">Roupa de treino em qualquer uma das cores LoveNuts: laranja, vermelho, roxo, rosa ou verde.</div>
+          <div class="color-dots">
+            <span style="background:#f68e43;"></span>
+            <span style="background:#d5222a;"></span>
+            <span style="background:#7f3c7e;"></span>
+            <span style="background:#ef1c8a;"></span>
+            <span style="background:#02b53e;"></span>
+          </div>
+        </div>
+      </div>
+      <div class="cronograma-note">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5M16 4.2a3.2 3.2 0 0 1 0 6.2M20.5 20c0-3-1.9-5.5-4.5-6.3"/></svg></div>
+        <div>
+          <div class="note-title">Vagas por atividade</div>
+          <div class="note-text">Cada estação tem duas sessões: a primeira é reservada por nome no momento da compra do ingresso no Sympla, e a segunda é livre. Cada participante passa por até 2 modalidades, encerrando com a atividade surpresa.</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -2463,6 +2501,8 @@
       a:'O evento é coordenado por Carmen Prado, diretora de eventos com anos de experiência em Fortaleza e atual diretora de eventos da Academia Bodytech. É através dela que toda a estrutura de bem-estar e atividade física do Soul Experience é oferecida.' },
     { kw:['quais atividades','quais estacoes','circuito de estacoes','o que tem no circuito','quais sao as atividades'],
       a:'O circuito tem 6 estações: Bike, WolfFit, Yoga, Dance Mix, Aerobox e uma atividade surpresa de encerramento. Cada uma leva o nome e a cor de um mix de castanhas LoveNuts, e no final todo mundo participa da atividade surpresa, com premiação especial.' },
+    { kw:['como funcionam as sessoes','quantas sessoes','duas sessoes','como reserva a vaga','vagas por atividade','quantas vagas por estacao'],
+      a:'Cada estação tem duas sessões: a primeira o convidado já escolhe e reserva por nome no momento da compra do ingresso no Sympla, e a segunda é livre no dia. Ou seja, cada participante passa por até 2 modalidades, encerrando com a atividade surpresa.' },
     { kw:['influenciadores','quem sao os influenciadores','quantos influenciadores','quais creators'],
       a:'São 11 perfis de Fortaleza alinhados ao universo wellness e lifestyle, entre nutricionistas, psicóloga, advogada e criadores de conteúdo. Dá pra ver todos na seção "Influenciadores" aqui na página.' },
     { kw:['primeira edicao','edicao passada','perola tropical','como foi a primeira'],
@@ -2635,7 +2675,9 @@
       profLabel:'Professor(a) responsável',
       professors:[{name:'Benjamim Benício', role:'Treinador de Cycling Indoor', photo:'../assets/team/benjamim-benicio.jpg', ig:'https://instagram.com/ben.beni2901'}],
       nutri:'A definir',
-      vagas:'A definir'
+      coachLabel:'Coach motivacional',
+      coaches:[],
+      vagas:'20 vagas'
     },
     wolffit: {
       icon: '<path d="M248,124H236V88a12,12,0,0,0-12-12H204V64a12,12,0,0,0-12-12H168a12,12,0,0,0-12,12v60H100V64A12,12,0,0,0,88,52H64A12,12,0,0,0,52,64V76H32A12,12,0,0,0,20,88v36H8a4,4,0,0,0,0,8H20v36a12,12,0,0,0,12,12H52v12a12,12,0,0,0,12,12H88a12,12,0,0,0,12-12V132h56v60a12,12,0,0,0,12,12h24a12,12,0,0,0,12-12V180h20a12,12,0,0,0,12-12V132h12a4,4,0,0,0,0-8ZM32,172a4,4,0,0,1-4-4V88a4,4,0,0,1,4-4H52v88Zm60,20a4,4,0,0,1-4,4H64a4,4,0,0,1-4-4V64a4,4,0,0,1,4-4H88a4,4,0,0,1,4,4Zm104,0a4,4,0,0,1-4,4H168a4,4,0,0,1-4-4V64a4,4,0,0,1,4-4h24a4,4,0,0,1,4,4Zm32-24a4,4,0,0,1-4,4H204V84h20a4,4,0,0,1,4,4Z"/>',
@@ -2645,6 +2687,8 @@
       profLabel:'Professor(a) responsável',
       professors:[{name:'Rômulo Gomes', role:'Personal Trainer · Consultor de Ginástica', photo:'../assets/team/romulo-gomes.jpg', ig:'https://instagram.com/romuloamericano'}],
       nutri:'A definir',
+      coachLabel:'Coach motivacional',
+      coaches:[],
       vagas:'A definir'
     },
     yoga: {
@@ -2655,6 +2699,8 @@
       profLabel:'Professor(a) responsável',
       professors:[{name:'Clayton De Serpa', role:'Professor de Hatha Yoga · Bodytech', photo:'../assets/team/clayton-serpa.jpg', ig:'https://instagram.com/claytonyogaserpa'}],
       nutri:'A definir',
+      coachLabel:'Coach motivacional',
+      coaches:[],
       vagas:'A definir'
     },
     dance: {
@@ -2669,7 +2715,9 @@
       ],
       extraNote:'+ 1 professor(a) a definir',
       nutri:'A definir',
-      vagas:'A definir'
+      coachLabel:'Coach motivacional',
+      coaches:[],
+      vagas:'Ilimitado'
     },
     aerobox: {
       icon: '<path d="M168,20H120A52.06,52.06,0,0,0,68,72v4H56a28,28,0,0,0-28,28v29.19a12,12,0,0,0,2.63,7.5c.1.12.2.24.31.35L68,177.67V216a12,12,0,0,0,12,12H192a12,12,0,0,0,12-12V176.56l15.54-54.38a12.34,12.34,0,0,0,.46-3.3V72A52.06,52.06,0,0,0,168,20Zm44,98.88a4.11,4.11,0,0,1-.15,1.1l-15.7,54.92A4.11,4.11,0,0,0,196,176v40a4,4,0,0,1-4,4H80a4,4,0,0,1-4-4V176a4,4,0,0,0-1.19-2.84L36.76,135.54a4,4,0,0,1-.76-2.35V104A20,20,0,0,1,56,84H68v20a4,4,0,0,0,8,0V72a44.05,44.05,0,0,1,44-44h48a44.05,44.05,0,0,1,44,44Zm-42.21,44.7L145,176l24.84,12.42a4,4,0,0,1-3.58,7.16L136,180.47l-30.21,15.11a4,4,0,1,1-3.58-7.16L127.05,176l-24.84-12.42a4,4,0,1,1,3.58-7.16L136,171.53l30.21-15.11a4,4,0,0,1,3.58,7.16Z"/>',
@@ -2679,6 +2727,8 @@
       profLabel:'Professor(a) responsável',
       professors:[],
       nutri:'A definir',
+      coachLabel:'Coach motivacional',
+      coaches:[],
       vagas:'A definir'
     },
     corrida: {
@@ -2690,7 +2740,9 @@
       profLabel:'Professor(a) responsável',
       professors:[],
       nutri:'A definir',
-      vagas:'A definir'
+      coachLabel:'Coach motivacional',
+      coaches:[],
+      vagas:'Ilimitado'
     }
   };
 
@@ -2714,6 +2766,9 @@
     var lovenutsHTML = s.lovenuts
       ? '<img class="sd-product" src="'+s.lovenuts.img+'" alt="'+s.lovenuts.alt+'">'
       : '<div class="sd-placeholder">'+(s.lovenutsNote||'A definir')+'</div>';
+    var coachHTML = (s.coaches && s.coaches.length)
+      ? s.coaches.map(personHTML).join('')
+      : '<div class="sd-placeholder">A definir</div>';
     var tagHTML = s.tag ? '<span class="station-detail-tag" style="color:'+s.color+'">· '+s.tag+'</span>' : '';
     return ''+
       '<div class="station-detail-inner">'+
@@ -2727,6 +2782,7 @@
           '<div class="station-detail-box"><span class="station-detail-label">Produto LoveNuts</span>'+lovenutsHTML+'</div>'+
           '<div class="station-detail-box"><span class="station-detail-label">'+s.profLabel+'</span>'+profHTML+'</div>'+
           '<div class="station-detail-box"><span class="station-detail-label">Nutricionista responsável</span><div class="sd-placeholder">'+s.nutri+'</div></div>'+
+          '<div class="station-detail-box"><span class="station-detail-label">'+s.coachLabel+'</span>'+coachHTML+'</div>'+
           '<div class="station-detail-box"><span class="station-detail-label">Vagas</span><div class="sd-placeholder">'+s.vagas+'</div></div>'+
         '</div>'+
       '</div>';

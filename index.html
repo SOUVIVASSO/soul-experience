@@ -2542,20 +2542,12 @@
   var toggle = document.getElementById('faqMoreToggle');
   var more = document.getElementById('faqMore');
   if(!toggle || !more) return;
-  var label = toggle.querySelector('span');
   function openMore(){
     more.classList.add('open');
     toggle.setAttribute('aria-expanded', 'true');
-    label.textContent = 'Ver menos dúvidas';
+    toggle.style.display = 'none';
   }
-  function closeMore(){
-    more.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-    label.textContent = 'Veja outras dúvidas';
-  }
-  toggle.addEventListener('click', function(){
-    if(more.classList.contains('open')){ closeMore(); } else { openMore(); }
-  });
+  toggle.addEventListener('click', openMore);
   function handlePrivacyHash(){
     if(location.hash === '#privacidade'){
       openMore();

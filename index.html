@@ -1866,7 +1866,8 @@
   var countdownBarEl = document.getElementById('countdownBar');
   function syncBarHeight(){
     if(countdownBarEl && nav && !countdownBarEl.hidden){
-      nav.style.top = countdownBarEl.offsetHeight + 'px';
+      var h = countdownBarEl.getBoundingClientRect().height;
+      nav.style.top = Math.max(0, h - 1) + 'px';
     }
   }
   syncBarHeight();

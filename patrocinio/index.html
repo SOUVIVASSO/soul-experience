@@ -87,7 +87,7 @@
     --panel-blue:#F0E3D1;
     --ink:#2A1B14;
     --ink-dim:#6E5A47;
-    --violet:#B5652E;
+    --violet:#A35B29;
     --violet-2:#D48A52;
     --pink:#8A4B2E;
     --cyan:#C99A5B;
@@ -470,10 +470,12 @@
   .station svg{margin:0 auto 14px;display:block;}
   .station-tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:2px;}
   .station .name{font-weight:700;font-size:14.5px;color:var(--ink);}
-  .station.station-mix{color:#fff;border:none;}
-  .station.station-mix .station-tag{color:#fff;opacity:.9;text-shadow:0 1px 4px rgba(0,0,0,.4);}
-  .station.station-mix .name{color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.4);}
-  .station.station-mix .desc{color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.4);}
+  .station.station-mix{color:#fff;border:none;position:relative;}
+  .station.station-mix::before{content:'';position:absolute;inset:0;border-radius:inherit;background:rgba(0,0,0,.45);pointer-events:none;}
+  .station.station-mix svg,.station.station-mix .station-tag,.station.station-mix .name,.station.station-mix .desc{position:relative;z-index:1;}
+  .station.station-mix .station-tag{color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.35);}
+  .station.station-mix .name{color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.35);}
+  .station.station-mix .desc{color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.35);}
   .station-mix:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.22);filter:brightness(1.05);}
   .station .desc{margin-top:6px;font-size:12.5px;color:var(--ink-dim);line-height:1.45;}
   .station[aria-expanded="true"]{box-shadow:0 0 0 3px rgba(255,255,255,.55);}
@@ -2123,7 +2125,7 @@
     <button type="button" data-q="Falar com atendente">Falar com atendente</button>
   </div>
   <form class="chat-input-row" id="chat-form">
-    <input type="text" id="chat-input" placeholder="Digite sua dúvida..." autocomplete="off" class="clarity-mask">
+    <input type="text" id="chat-input" placeholder="Digite sua dúvida..." aria-label="Digite sua dúvida" autocomplete="off" class="clarity-mask">
     <button type="submit" aria-label="Enviar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
   </form>
 </div>

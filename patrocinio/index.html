@@ -222,6 +222,7 @@
     transition:background .2s, transform .2s;
   }
   .nav-cta:hover{background:var(--violet-2);transform:translateY(-1px);}
+  .nav-cta-mobile{display:none;}
   .nav-right{display:flex;align-items:center;gap:16px;}
   .burger{
     display:none;
@@ -955,6 +956,20 @@
   .faq-item summary .chev{width:18px;height:18px;flex-shrink:0;stroke:var(--violet);transition:transform .2s ease;}
   .faq-item[open] summary .chev{transform:rotate(180deg);}
   .faq-item .a{padding:0 26px 18px 2px;font-size:14.5px;color:var(--ink-dim);line-height:1.6;max-width:70ch;}
+  .faq-more-toggle{
+    margin-top:18px;max-width:760px;
+    display:flex;align-items:center;gap:8px;
+    background:none;border:none;cursor:pointer;
+    font-family:'Unbounded',sans-serif;font-weight:600;font-size:14px;
+    color:var(--violet);padding:4px 2px;
+  }
+  .faq-more-toggle .chev{width:16px;height:16px;flex-shrink:0;stroke:var(--violet);transition:transform .25s ease;}
+  .faq-more-toggle[aria-expanded="true"] .chev{transform:rotate(180deg);}
+  .faq-more{
+    max-height:0;opacity:0;overflow:hidden;
+    transition:max-height .5s ease, opacity .4s ease;
+  }
+  .faq-more.open{max-height:3000px;opacity:1;margin-top:4px;}
 
   /* ---------- LEAD FORM ---------- */
   .lead-form{
@@ -1062,12 +1077,23 @@
   }
   footer{
     border-top:1px solid var(--line);
-    padding-block:28px;
+    padding:28px 24px;
+    padding-bottom:calc(28px + 132px);
     text-align:center;
     font-size:12.5px;
     color:var(--ink-dim);
   }
   footer strong{color:var(--ink);}
+  .footer-row{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+    gap:6px 14px;
+    max-width:560px;margin-inline:auto;
+  }
+  .footer-row a{color:inherit;text-decoration:underline;}
+  @media (max-width:480px){
+    footer{padding:22px 20px;padding-bottom:calc(22px + 120px);font-size:11.5px;}
+    .footer-row{gap:5px 10px;}
+  }
 
   .wa-fab{
     position:fixed;bottom:22px;right:22px;z-index:400;
@@ -1078,7 +1104,7 @@
     transition:transform .15s ease;
   }
   .wa-fab:hover{transform:scale(1.07);}
-  .wa-fab svg{stroke:#fff;}
+  .wa-fab svg{fill:#fff;}
   @media (max-width:480px){.wa-fab{width:50px;height:50px;bottom:16px;right:16px;}}
 
   /* ---------- VIVI CHAT ---------- */
@@ -1146,6 +1172,17 @@
   @media (max-width:900px){
     .nav-links{display:none;}
     .nav-cta{display:none;}
+    .nav-cta-mobile{
+      display:inline-flex;align-items:center;
+      background:var(--violet);color:#fff;
+      font-weight:700;font-size:12.5px;
+      padding:8px 14px;border-radius:999px;
+      white-space:nowrap;
+      opacity:0;transform:scale(.9);
+      transition:opacity .3s ease, transform .3s ease;
+      pointer-events:none;
+    }
+    .nav[data-scrolled="true"] .nav-cta-mobile{opacity:1;transform:scale(1);pointer-events:auto;}
     .burger{display:flex;}
     .about-grid,.campanha-grid,.publico-grid{grid-template-columns:1fr;gap:40px;}
     .stats-inner{grid-template-columns:repeat(2,1fr);}
@@ -1194,6 +1231,7 @@
     </nav>
     <div class="nav-right">
       <a class="nav-cta" href="#patrocinio">Quero patrocinar</a>
+      <a class="nav-cta-mobile" href="#patrocinio">Patrocinar</a>
       <button class="burger" id="burgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 4h16M1 9h16M1 14h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </button>
@@ -1793,6 +1831,24 @@
     </div>
     <div class="faq-list">
       <details class="faq-item">
+        <summary>Como funciona o pagamento?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="a">O pagamento é pré-pago, podendo ser dividido em até 2 vezes, com vencimentos entre outubro e novembro de 2026 (a data exata fica a critério da marca). Os demais detalhes de forma de pagamento e dados para emissão são formalizados em contrato após a confirmação da cota.</p>
+      </details>
+      <details class="faq-item">
+        <summary>O que está incluso na ativação na Academia Bodytech?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="a">Todo patrocinador, do plano Apoio ao Assinante, ganha dias para ativar a própria marca dentro da Academia Bodytech (de 1 a 3, conforme o plano): um espaço de alto padrão e visibilidade que normalmente tem um custo elevado para qualquer marca.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Como faço para garantir minha cota?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="a">Preencha o formulário no fim desta página ou chame no WhatsApp. As cotas são limitadas e a disponibilidade é atualizada manualmente pela equipe da Vivasso, então quanto antes sua marca entrar, maior o espaço de protagonismo.</p>
+      </details>
+    </div>
+    <button type="button" class="faq-more-toggle" id="faqMoreToggle" aria-expanded="false" aria-controls="faqMore">
+      <span>Veja outras dúvidas</span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="faq-list faq-more" id="faqMore">
+      <details class="faq-item">
         <summary>Quando e onde acontece a 2ª edição?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
         <p class="a">A 2ª edição do Soul Experience acontece no dia 28 de novembro de 2026, das 06h30 às 10h, na área externa do Iguatemi Bosque, em Fortaleza.</p>
       </details>
@@ -1805,24 +1861,12 @@
         <p class="a">Apoio (R$ 1.500, 10 cotas) e Master (R$ 3.000, 5 cotas). A cota Assinante (R$ 5.000, 1 cota) já foi preenchida pela LoveNuts nesta edição. Todas incluem ativação na Academia Bodytech (de 1 a 3 dias, conforme o plano) e desconto garantido no patrocínio da próxima edição.</p>
       </details>
       <details class="faq-item">
-        <summary>Como funciona o pagamento?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <p class="a">O pagamento é pré-pago, podendo ser dividido em até 2 vezes, com vencimentos entre outubro e novembro de 2026 (a data exata fica a critério da marca). Os demais detalhes de forma de pagamento e dados para emissão são formalizados em contrato após a confirmação da cota.</p>
-      </details>
-      <details class="faq-item">
-        <summary>O que está incluso na ativação na Academia Bodytech?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <p class="a">Todo patrocinador, do plano Apoio ao Assinante, ganha dias para ativar a própria marca dentro da Academia Bodytech (de 1 a 3, conforme o plano): um espaço de alto padrão e visibilidade que normalmente tem um custo elevado para qualquer marca.</p>
-      </details>
-      <details class="faq-item">
         <summary>Quem coordena o evento?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
         <p class="a">Carmen Prado, diretora de eventos com mais de 30 anos de experiência em Fortaleza e atual diretora de eventos da Academia Bodytech, coordena o Soul Experience de ponta a ponta.</p>
       </details>
       <details class="faq-item">
         <summary>Como foi a 1ª edição?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <p class="a">A 1ª edição, Pérola Tropical, aconteceu em 21 de agosto no Sunrise Beach Club, em Fortaleza, reunindo marcas, influenciadores e convidados numa manhã de bem-estar. Você pode ver fotos e vídeos na seção "1ª edição" desta página.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Como faço para garantir minha cota?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <p class="a">Preencha o formulário no fim desta página ou chame no WhatsApp. As cotas são limitadas e a disponibilidade é atualizada manualmente pela equipe da Vivasso, então quanto antes sua marca entrar, maior o espaço de protagonismo.</p>
+        <p class="a">A 1ª edição, Pérola Tropical, aconteceu em 21 de agosto no Sunrise Beach Club, em Fortaleza, reunindo marcas, influenciadores e convidados numa manhã de bem-estar. Você pode ver fotos e vídeos na seção "Edições" desta página.</p>
       </details>
       <details class="faq-item" id="privacidade">
         <summary>Política de Privacidade<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
@@ -1866,7 +1910,7 @@
 </section>
 
 <a class="wa-fab" href="https://wa.me/558597712114?text=Oi!%20Quero%20saber%20mais%20sobre%20ser%20parceiro%20do%20Soul%20Experience" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5 8.42 8.42 0 01-4-1L3 20l1.05-3.5A8.5 8.5 0 1121 11.5z"/></svg>
+  <svg width="28" height="28" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 0C5.372 0 0 5.373 0 12.004c0 2.116.552 4.192 1.601 6.02L0 24l6.145-1.612c1.759.968 3.744 1.478 5.859 1.478h.001c6.63 0 12.003-5.373 12.003-12.005 0-3.208-1.248-6.223-3.516-8.49C18.226 1.25 15.211.002 12.004 0zm.001 21.999h-.001a9.947 9.947 0 01-5.075-1.393l-.364-.216-3.642.955.972-3.553-.237-.365a9.958 9.958 0 01-1.529-5.416c.001-5.502 4.478-9.979 9.98-9.979 2.665 0 5.171 1.038 7.053 2.922 1.883 1.883 2.92 4.39 2.92 7.055-.004 5.502-4.48 9.979-9.978 9.979z"/></svg>
 </a>
 
 <button class="chat-fab" id="chat-fab" type="button" aria-label="Falar com a Vivi" style="background-image:url('assets/vivi-avatar.webp');background-size:cover;background-position:center 30%"></button>
@@ -1910,7 +1954,11 @@
 </main>
 
 <footer>
-  <span><strong>Soul Experience</strong> · 2ª edição · Produzido por Vivasso · <a href="#privacidade" style="text-decoration:underline;color:inherit">Política de Privacidade</a></span>
+  <div class="footer-row">
+    <span><strong>Soul Experience</strong> · 2ª edição</span>
+    <span>Produzido por Vivasso</span>
+    <a href="#privacidade">Política de Privacidade</a>
+  </div>
 </footer>
 
 <div class="cookie-notice" id="cookie-notice">
@@ -1960,7 +2008,8 @@
   var countdownBarEl = document.getElementById('countdownBar');
   function syncBarHeight(){
     if(countdownBarEl && nav && !countdownBarEl.hidden){
-      nav.style.top = countdownBarEl.offsetHeight + 'px';
+      var h = countdownBarEl.getBoundingClientRect().height;
+      nav.style.top = Math.max(0, h - 1) + 'px';
     }
   }
   syncBarHeight();
@@ -2599,6 +2648,32 @@
   circuitoCard.addEventListener('click', function(){
     localSection.scrollIntoView({behavior:'smooth', block:'start'});
   });
+})();
+</script>
+
+<script>
+(function(){
+  var toggle = document.getElementById('faqMoreToggle');
+  var more = document.getElementById('faqMore');
+  if(!toggle || !more) return;
+  function openMore(){
+    more.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.style.display = 'none';
+  }
+  toggle.addEventListener('click', openMore);
+  function handlePrivacyHash(){
+    if(location.hash === '#privacidade'){
+      openMore();
+      var priv = document.getElementById('privacidade');
+      if(priv){
+        priv.open = true;
+        setTimeout(function(){ priv.scrollIntoView({behavior:'auto', block:'start'}); }, 60);
+      }
+    }
+  }
+  handlePrivacyHash();
+  window.addEventListener('hashchange', handlePrivacyHash);
 })();
 </script>
 

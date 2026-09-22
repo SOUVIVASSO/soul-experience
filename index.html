@@ -926,6 +926,20 @@
   .faq-item summary .chev{width:18px;height:18px;flex-shrink:0;stroke:var(--violet);transition:transform .2s ease;}
   .faq-item[open] summary .chev{transform:rotate(180deg);}
   .faq-item .a{padding:0 26px 18px 2px;font-size:14.5px;color:var(--ink-dim);line-height:1.6;max-width:70ch;}
+  .faq-more-toggle{
+    margin-top:18px;max-width:760px;
+    display:flex;align-items:center;gap:8px;
+    background:none;border:none;cursor:pointer;
+    font-family:'Unbounded',sans-serif;font-weight:600;font-size:14px;
+    color:var(--violet);padding:4px 2px;
+  }
+  .faq-more-toggle .chev{width:16px;height:16px;flex-shrink:0;stroke:var(--violet);transition:transform .25s ease;}
+  .faq-more-toggle[aria-expanded="true"] .chev{transform:rotate(180deg);}
+  .faq-more{
+    max-height:0;opacity:0;overflow:hidden;
+    transition:max-height .5s ease, opacity .4s ease;
+  }
+  .faq-more.open{max-height:3000px;opacity:1;margin-top:4px;}
 
   /* ---------- LEAD FORM ---------- */
   .lead-form{
@@ -1639,24 +1653,30 @@
     </div>
     <div class="faq-list">
       <details class="faq-item">
+        <summary>Onde compro meu ingresso?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="a">Os ingressos são vendidos pelo Sympla. Toque em "Quero meu ingresso" nesta página que você vai direto pra página de vendas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>O que está incluso no ingresso?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="a">Acesso a todo o circuito de estações, Welcome Kit com produtos e mimos das marcas parceiras, ativações ao longo do percurso, bate-papo com nutricionistas parceiras e participação na atividade surpresa de encerramento, com premiação especial.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quantas vagas existem?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="a">É uma edição seletiva e intimista, com apenas 60 vagas presenciais. As vagas são limitadas e não há reposição de lote além do previsto, então quanto antes garantir, melhor.</p>
+      </details>
+    </div>
+    <button type="button" class="faq-more-toggle" id="faqMoreToggle" aria-expanded="false" aria-controls="faqMore">
+      <span>Veja outras dúvidas</span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="faq-list faq-more" id="faqMore">
+      <details class="faq-item">
         <summary>Quando e onde acontece a 2ª edição?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
         <p class="a">A 2ª edição do Soul Experience acontece no dia 28 de novembro de 2026, das 06h30 às 10h, na área externa do Iguatemi Bosque, em Fortaleza.</p>
       </details>
       <details class="faq-item">
         <summary>Como funciona o Soul Experience?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
         <p class="a">É uma manhã de bem-estar com um circuito de 6 estações de atividade física (Bike, WolfFit, Yoga, Dance Mix e Fit Dance, Aerobox e uma atividade surpresa de encerramento), cada uma com profissionais acompanhando. No fechamento, todo mundo participa da atividade surpresa, com premiação especial.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Onde compro meu ingresso?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <p class="a">Os ingressos são vendidos pelo Sympla. Toque em "Quero meu ingresso" nesta página que você vai direto pra página de vendas.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Quantas vagas existem?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <p class="a">É uma edição seletiva e intimista, com apenas 60 vagas presenciais. As vagas são limitadas e não há reposição de lote além do previsto, então quanto antes garantir, melhor.</p>
-      </details>
-      <details class="faq-item">
-        <summary>O que está incluso no ingresso?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <p class="a">Acesso a todo o circuito de estações, Welcome Kit com produtos e mimos das marcas parceiras, ativações ao longo do percurso, bate-papo com nutricionistas parceiras e participação na atividade surpresa de encerramento, com premiação especial.</p>
       </details>
       <details class="faq-item">
         <summary>Quem coordena o evento?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
@@ -2510,6 +2530,40 @@
   if(isHoverCapable){
     card.addEventListener('mouseenter', openPerola);
   }
+})();
+</script>
+
+<script>
+(function(){
+  var toggle = document.getElementById('faqMoreToggle');
+  var more = document.getElementById('faqMore');
+  if(!toggle || !more) return;
+  var label = toggle.querySelector('span');
+  function openMore(){
+    more.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    label.textContent = 'Ver menos dúvidas';
+  }
+  function closeMore(){
+    more.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    label.textContent = 'Veja outras dúvidas';
+  }
+  toggle.addEventListener('click', function(){
+    if(more.classList.contains('open')){ closeMore(); } else { openMore(); }
+  });
+  function handlePrivacyHash(){
+    if(location.hash === '#privacidade'){
+      openMore();
+      var priv = document.getElementById('privacidade');
+      if(priv){
+        priv.open = true;
+        setTimeout(function(){ priv.scrollIntoView({behavior:'auto', block:'start'}); }, 60);
+      }
+    }
+  }
+  handlePrivacyHash();
+  window.addEventListener('hashchange', handlePrivacyHash);
 })();
 </script>
 

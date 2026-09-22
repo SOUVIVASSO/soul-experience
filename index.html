@@ -932,16 +932,17 @@
     border-radius:14px;padding:14px 18px;font-size:13.5px;font-weight:600;
   }
   .lead-success.show{display:block;}
-  #interesse{background:linear-gradient(160deg, #241811 0%, #4A2C1C 100%);}
-  #interesse .eyebrow{color:#F3D9B4;}
-  #interesse .eyebrow::before{background:#F3D9B4;}
-  #interesse .section-title{color:#fff;}
-  #interesse .lede{color:rgba(250,240,225,.78);}
-  #interesse .lead-form{box-shadow:0 30px 70px rgba(10,5,0,.35);}
-  #interesse .btn-primary{background:var(--grad);}
-  #interesse .btn-primary:hover{background:var(--grad);filter:brightness(1.08);}
-  .interesse-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start;}
-  .interesse-contact{margin-top:28px;display:flex;flex-direction:column;gap:12px;}
+  #ingressos{background:linear-gradient(160deg, #241811 0%, #4A2C1C 100%);}
+  #ingressos .eyebrow{color:#F3D9B4;}
+  #ingressos .eyebrow::before{background:#F3D9B4;}
+  #ingressos .section-title{color:#fff;}
+  #ingressos .lede{color:rgba(250,240,225,.78);}
+  #ingressos .countdown-caption{color:rgba(250,240,225,.7);}
+  #ingressos .launch-reminder{color:rgba(250,240,225,.7);}
+  #ingressos .launch-reminder a{color:var(--gold);}
+  #ingressos .btn-primary{background:var(--grad);}
+  #ingressos .btn-primary:hover{background:var(--grad);filter:brightness(1.08);}
+  .interesse-contact{margin-top:28px;display:flex;flex-direction:column;align-items:center;gap:12px;}
   .interesse-contact a{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:14.5px;}
   @media (max-width:900px){.interesse-grid{grid-template-columns:1fr;}}
 
@@ -1573,39 +1574,6 @@
   </div>
 </section>
 
-<!-- ================= INGRESSOS ================= -->
-<section id="ingressos">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">Garanta sua vaga</span>
-      <h2 class="section-title">Ingressos para o Soul Experience</h2>
-      <p class="lede">Uma edição seletiva e intimista, com apenas 60 vagas presenciais. Os ingressos são vendidos pelo Sympla, com lotes limitados.</p>
-    </div>
-
-    <div class="ticket-card">
-      <div class="ticket-info">
-        <div class="ticket-detail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> 28 de novembro de 2026 · 06h30 às 10h</div>
-        <div class="ticket-detail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Iguatemi Bosque, Fortaleza</div>
-        <div class="ticket-detail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5M16 4.2a3.2 3.2 0 0 1 0 6.2M20.5 20c0-3-1.9-5.5-4.5-6.3"/></svg> Apenas 60 vagas presenciais</div>
-      </div>
-      <div class="ticket-cta">
-        <a class="btn btn-primary" href="https://www.sympla.com.br/evento/soul-experience--1-ediCAo---circuito-das-estaCOes/3587190" target="_blank" rel="noopener">Quero meu ingresso</a>
-        <span class="ticket-note">Vendas pelo Sympla · lotes limitados</span>
-      </div>
-    </div>
-
-    <div class="countdown" id="eventCountdown">
-      <div class="countdown-unit"><span class="countdown-num" id="cd-days">00</span><span class="countdown-label">dias</span></div>
-      <div class="countdown-unit"><span class="countdown-num" id="cd-hours">00</span><span class="countdown-label">horas</span></div>
-      <div class="countdown-unit"><span class="countdown-num" id="cd-mins">00</span><span class="countdown-label">min</span></div>
-      <div class="countdown-unit"><span class="countdown-num" id="cd-secs">00</span><span class="countdown-label">seg</span></div>
-    </div>
-    <p class="countdown-caption">até a 2ª edição do Soul Experience, 28 de novembro</p>
-    <p class="launch-reminder">Lembrando: o evento será dia 28 de novembro. Não perca a data, <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Soul%20Experience%20-%202%C2%AA%20edi%C3%A7%C3%A3o&dates=20261128T093000Z/20261128T130000Z&details=A%202%C2%AA%20edi%C3%A7%C3%A3o%20do%20Soul%20Experience%20acontece%20no%20Iguatemi%20Bosque%2C%20em%20Fortaleza.&location=Iguatemi%20Bosque%2C%20Fortaleza" target="_blank" rel="noopener">adicione um lembrete no seu calendário clicando aqui</a>.</p>
-  </div>
-</section>
-
-
 <!-- ================= FAQ ================= -->
 <section id="faq" style="background:var(--panel-lav);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
   <div class="wrap">
@@ -1666,18 +1634,39 @@
   </div>
 </section>
 
-<!-- ================= LEAD FORM (final) ================= -->
-<section id="interesse" style="border-top:1px solid var(--line);">
-  <div class="wrap" style="text-align:center;max-width:620px;">
-    <span class="eyebrow">Fale com a gente</span>
-    <h2 class="section-title">Alguma dúvida?</h2>
-    <p class="lede">Chama a gente no WhatsApp ou manda um e-mail. É só entrar em contato que respondemos rapidinho.</p>
-    <div class="interesse-contact" style="justify-content:center;margin-top:22px;">
+<!-- ================= INGRESSOS + CONTATO (final) ================= -->
+<section id="ingressos" style="border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Garanta sua vaga</span>
+      <h2 class="section-title">Ingressos para o Soul Experience</h2>
+      <p class="lede">Uma edição seletiva e intimista, com apenas 60 vagas presenciais. Os ingressos são vendidos pelo Sympla, com lotes limitados.</p>
+    </div>
+
+    <div class="ticket-card">
+      <div class="ticket-info">
+        <div class="ticket-detail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> 28 de novembro de 2026 · 06h30 às 10h</div>
+        <div class="ticket-detail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Iguatemi Bosque, Fortaleza</div>
+        <div class="ticket-detail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5M16 4.2a3.2 3.2 0 0 1 0 6.2M20.5 20c0-3-1.9-5.5-4.5-6.3"/></svg> Apenas 60 vagas presenciais</div>
+      </div>
+      <div class="ticket-cta">
+        <a class="btn btn-primary" href="https://www.sympla.com.br/evento/soul-experience--1-ediCAo---circuito-das-estaCOes/3587190" target="_blank" rel="noopener">Quero meu ingresso</a>
+        <span class="ticket-note">Vendas pelo Sympla · lotes limitados</span>
+      </div>
+    </div>
+
+    <div class="countdown" id="eventCountdown">
+      <div class="countdown-unit"><span class="countdown-num" id="cd-days">00</span><span class="countdown-label">dias</span></div>
+      <div class="countdown-unit"><span class="countdown-num" id="cd-hours">00</span><span class="countdown-label">horas</span></div>
+      <div class="countdown-unit"><span class="countdown-num" id="cd-mins">00</span><span class="countdown-label">min</span></div>
+      <div class="countdown-unit"><span class="countdown-num" id="cd-secs">00</span><span class="countdown-label">seg</span></div>
+    </div>
+    <p class="countdown-caption">até a 2ª edição do Soul Experience, 28 de novembro</p>
+    <p class="launch-reminder">Lembrando: o evento será dia 28 de novembro. Não perca a data, <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Soul%20Experience%20-%202%C2%AA%20edi%C3%A7%C3%A3o&dates=20261128T093000Z/20261128T130000Z&details=A%202%C2%AA%20edi%C3%A7%C3%A3o%20do%20Soul%20Experience%20acontece%20no%20Iguatemi%20Bosque%2C%20em%20Fortaleza.&location=Iguatemi%20Bosque%2C%20Fortaleza" target="_blank" rel="noopener">adicione um lembrete no seu calendário clicando aqui</a>.</p>
+
+    <div class="interesse-contact" style="justify-content:center;margin-top:36px;">
       <a href="mailto:souvivasso@gmail.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> souvivasso@gmail.com</a>
       <a href="https://wa.me/558597712114?text=Oi!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Soul%20Experience." target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5 8.42 8.42 0 01-4-1L3 20l1.05-3.5A8.5 8.5 0 1121 11.5z"/></svg> (85) 9771-2114 (WhatsApp)</a>
-    </div>
-    <div style="margin-top:28px;">
-      <a class="btn btn-primary" href="https://www.sympla.com.br/evento/soul-experience--1-ediCAo---circuito-das-estaCOes/3587190" target="_blank" rel="noopener">Quero meu ingresso</a>
     </div>
   </div>
 </section>
@@ -2150,7 +2139,7 @@
 
   var CHAT_ACTIONS = {
     ingresso: { label: 'Quero meu ingresso', href: 'https://www.sympla.com.br/evento/soul-experience--1-ediCAo---circuito-das-estaCOes/3587190', target: '_blank' },
-    contato: { label: 'Falar com a gente', href: '#interesse' },
+    contato: { label: 'Falar com a gente', href: '#ingressos' },
     whatsapp: { label: 'Falar no WhatsApp', href: 'https://wa.me/558597712114?text=' + encodeURIComponent('Olá! Vim pela landing page do Soul Experience e queria saber mais.'), target: '_blank' },
     influenciadores: { label: 'Ver influenciadores', href: 'influenciadores.html' }
   };

@@ -1315,13 +1315,14 @@
       <p class="lede">O Soul Experience nunca repete um padrão. Cada edição nasce com identidade própria, sempre priorizando quem participa.</p>
     </div>
     <div class="edicoes-grid">
-      <div class="edicoes-card">
+      <div class="edicoes-card expandable" id="edicoesCircuitoCard">
         <img src="assets/iguatemi-bosque.webp" alt="Circuito das Estações">
         <div class="content">
           <span class="edicoes-badge atual">2ª edição · 28 nov 2026</span>
           <h3>Circuito das Estações</h3>
           <div class="meta">Iguatemi Bosque, Fortaleza</div>
           <p>Um circuito de 6 estações de atividade física, cada uma com o nome e a cor de um mix de castanhas LoveNuts, terminando com uma atividade surpresa e premiação especial.</p>
+          <span class="link">Ver o local do evento ↓</span>
         </div>
       </div>
       <div class="edicoes-card expandable" id="edicoesPerolaCard">
@@ -2458,6 +2459,17 @@
   if(isHoverCapable){
     card.addEventListener('mouseenter', openPerola);
   }
+})();
+</script>
+
+<script>
+(function(){
+  var circuitoCard = document.getElementById('edicoesCircuitoCard');
+  var localSection = document.getElementById('local');
+  if(!circuitoCard || !localSection) return;
+  circuitoCard.addEventListener('click', function(){
+    localSection.scrollIntoView({behavior:'smooth', block:'start'});
+  });
 })();
 </script>
 

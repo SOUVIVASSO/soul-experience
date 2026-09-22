@@ -704,6 +704,16 @@
   .midia-title{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.4;}
   .midia-readmore{margin-top:8px;font-size:12.5px;font-weight:700;color:var(--violet);}
   .influ-chip .handle{font-size:12px;color:var(--ink-dim);margin-top:2px;white-space:nowrap;}
+  .influ-full{max-height:0;opacity:0;overflow:hidden;transition:max-height .5s ease, opacity .4s ease, margin-top .4s ease;}
+  .influ-full.open{max-height:2400px;opacity:1;margin-top:32px;}
+  .influ-full-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;}
+  .influ-full-card{display:flex;align-items:center;gap:12px;background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:14px 16px;text-decoration:none;transition:border-color .2s;}
+  .influ-full-card:hover{border-color:var(--violet);}
+  .influ-full-card img{width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0;}
+  .influ-full-card .info{min-width:0;}
+  .influ-full-card .name{font-weight:700;font-size:13.5px;color:var(--ink);white-space:normal;}
+  .influ-full-card .role{font-size:11.5px;color:var(--ink-dim);margin-top:1px;}
+  .influ-full-card .handle{font-size:11.5px;color:var(--violet);font-weight:600;margin-top:2px;white-space:normal;}
 
   /* ---------- CRONOGRAMA ---------- */
   .timeline{
@@ -1515,40 +1525,88 @@
     <div class="section-head center">
       <span class="eyebrow">Quem serão as vozes do evento</span>
       <h2 class="section-title">Influenciadores</h2>
-      <p class="lede">11 perfis alinhados ao universo Wellness e lifestyle em Fortaleza. Clique e veja a lista completa.</p>
+      <p class="lede">11 perfis alinhados ao universo Wellness e lifestyle em Fortaleza. Toque num perfil e veja a lista completa.</p>
     </div>
   </div>
   <div class="marquee-row influ-row right">
     <div class="marquee-track">
-      <a class="influ-chip" href="../influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/victor-bluhm.jpg" alt="Victor Bluhm"></span><div><div class="name">Victor Bluhm</div><div class="handle">@victorbluhmm · 157k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/marina-pecem.jpg" alt="Marina do Pecém"></span><div><div class="name">Marina do Pecém</div><div class="handle">@marinadopecem · 9.4k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/bella-maciel.jpg" alt="Bella Maciel"></span><div><div class="name">Bella Maciel</div><div class="handle">@bellamacielnutri · 16k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/caroline-mota.jpg" alt="Caroline Mota"></span><div><div class="name">Caroline Mota</div><div class="handle">@carolinemotanutri · 9.1k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/emerson-paiva.jpg" alt="Emerson Paiva"></span><div><div class="name">Emerson Paiva</div><div class="handle">@emersonpaivanutri · 16k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/danisa.jpg" alt="Nisa Barreira"></span><div><div class="name">Nisa Barreira</div><div class="handle">@dicasdanisa · 254k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/victor-bluhm.jpg" alt=""></span><div><div class="name">Victor Bluhm</div><div class="handle">@victorbluhmm · 157k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/marina-pecem.jpg" alt=""></span><div><div class="name">Marina do Pecém</div><div class="handle">@marinadopecem · 9.4k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/bella-maciel.jpg" alt=""></span><div><div class="name">Bella Maciel</div><div class="handle">@bellamacielnutri · 16k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/caroline-mota.jpg" alt=""></span><div><div class="name">Caroline Mota</div><div class="handle">@carolinemotanutri · 9.1k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/emerson-paiva.jpg" alt=""></span><div><div class="name">Emerson Paiva</div><div class="handle">@emersonpaivanutri · 16k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/danisa.jpg" alt=""></span><div><div class="name">Nisa Barreira</div><div class="handle">@dicasdanisa · 254k</div></div></a>
+      <a class="influ-chip" href="#"><span class="avatar-ring sm"><img src="assets/team/victor-bluhm.jpg" alt="Victor Bluhm"></span><div><div class="name">Victor Bluhm</div><div class="handle">@victorbluhmm · 157k</div></div></a>
+      <a class="influ-chip" href="#"><span class="avatar-ring sm"><img src="assets/team/marina-pecem.jpg" alt="Marina do Pecém"></span><div><div class="name">Marina do Pecém</div><div class="handle">@marinadopecem · 9.4k</div></div></a>
+      <a class="influ-chip" href="#"><span class="avatar-ring sm"><img src="assets/team/bella-maciel.jpg" alt="Bella Maciel"></span><div><div class="name">Bella Maciel</div><div class="handle">@bellamacielnutri · 16k</div></div></a>
+      <a class="influ-chip" href="#"><span class="avatar-ring sm"><img src="assets/team/caroline-mota.jpg" alt="Caroline Mota"></span><div><div class="name">Caroline Mota</div><div class="handle">@carolinemotanutri · 9.1k</div></div></a>
+      <a class="influ-chip" href="#"><span class="avatar-ring sm"><img src="assets/team/emerson-paiva.jpg" alt="Emerson Paiva"></span><div><div class="name">Emerson Paiva</div><div class="handle">@emersonpaivanutri · 16k</div></div></a>
+      <a class="influ-chip" href="#"><span class="avatar-ring sm"><img src="assets/team/danisa.jpg" alt="Nisa Barreira"></span><div><div class="name">Nisa Barreira</div><div class="handle">@dicasdanisa · 254k</div></div></a>
+      <a class="influ-chip" href="#" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/victor-bluhm.jpg" alt=""></span><div><div class="name">Victor Bluhm</div><div class="handle">@victorbluhmm · 157k</div></div></a>
+      <a class="influ-chip" href="#" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/marina-pecem.jpg" alt=""></span><div><div class="name">Marina do Pecém</div><div class="handle">@marinadopecem · 9.4k</div></div></a>
+      <a class="influ-chip" href="#" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/bella-maciel.jpg" alt=""></span><div><div class="name">Bella Maciel</div><div class="handle">@bellamacielnutri · 16k</div></div></a>
+      <a class="influ-chip" href="#" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/caroline-mota.jpg" alt=""></span><div><div class="name">Caroline Mota</div><div class="handle">@carolinemotanutri · 9.1k</div></div></a>
+      <a class="influ-chip" href="#" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/emerson-paiva.jpg" alt=""></span><div><div class="name">Emerson Paiva</div><div class="handle">@emersonpaivanutri · 16k</div></div></a>
+      <a class="influ-chip" href="#" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/danisa.jpg" alt=""></span><div><div class="name">Nisa Barreira</div><div class="handle">@dicasdanisa · 254k</div></div></a>
     </div>
   </div>
   <div class="marquee-row influ-row left">
     <div class="marquee-track">
-      <a class="influ-chip" href="../influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/camila-aragao.jpg" alt="Camila Aragão"></span><div><div class="name">Camila Aragão</div><div class="handle">@nutricamilaragao · 8.5k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/jessika-elias.jpg" alt="Jéssika Elias"></span><div><div class="name">Jéssika Elias</div><div class="handle">@jessikaeliasnutri · 5.8k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/natacha-fraga.jpg" alt="Natacha Fraga"></span><div><div class="name">Natacha Fraga</div><div class="handle">@natachafraga.psi · 8.1k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/luana-braga.jpg" alt="Luana Ribeiro Braga"></span><div><div class="name">Luana Ribeiro Braga</div><div class="handle">@luanaribeirobraga · 13k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html"><span class="avatar-ring sm"><img src="assets/team/germana-lustosa.jpg" alt="Germana Lustosa"></span><div><div class="name">Germana Lustosa</div><div class="handle">@germanalustosa · 15k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/camila-aragao.jpg" alt=""></span><div><div class="name">Camila Aragão</div><div class="handle">@nutricamilaragao · 8.5k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/jessika-elias.jpg" alt=""></span><div><div class="name">Jéssika Elias</div><div class="handle">@jessikaeliasnutri · 5.8k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/natacha-fraga.jpg" alt=""></span><div><div class="name">Natacha Fraga</div><div class="handle">@natachafraga.psi · 8.1k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/luana-braga.jpg" alt=""></span><div><div class="name">Luana Ribeiro Braga</div><div class="handle">@luanaribeirobraga · 13k</div></div></a>
-      <a class="influ-chip" href="../influenciadores.html" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/germana-lustosa.jpg" alt=""></span><div><div class="name">Germana Lustosa</div><div class="handle">@germanalustosa · 15k</div></div></a>
+      <a class="influ-chip" href="#"><span class="avatar-ring sm"><img src="assets/team/camila-aragao.jpg" alt="Camila Aragão"></span><div><div class="name">Camila Aragão</div><div class="handle">@nutricamilaragao · 8.5k</div></div></a>
+      <a class="influ-chip" href="#"><span class="avatar-ring sm"><img src="assets/team/jessika-elias.jpg" alt="Jéssika Elias"></span><div><div class="name">Jéssika Elias</div><div class="handle">@jessikaeliasnutri · 5.8k</div></div></a>
+      <a class="influ-chip" href="#"><span class="avatar-ring sm"><img src="assets/team/natacha-fraga.jpg" alt="Natacha Fraga"></span><div><div class="name">Natacha Fraga</div><div class="handle">@natachafraga.psi · 8.1k</div></div></a>
+      <a class="influ-chip" href="#"><span class="avatar-ring sm"><img src="assets/team/luana-braga.jpg" alt="Luana Ribeiro Braga"></span><div><div class="name">Luana Ribeiro Braga</div><div class="handle">@luanaribeirobraga · 13k</div></div></a>
+      <a class="influ-chip" href="#"><span class="avatar-ring sm"><img src="assets/team/germana-lustosa.jpg" alt="Germana Lustosa"></span><div><div class="name">Germana Lustosa</div><div class="handle">@germanalustosa · 15k</div></div></a>
+      <a class="influ-chip" href="#" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/camila-aragao.jpg" alt=""></span><div><div class="name">Camila Aragão</div><div class="handle">@nutricamilaragao · 8.5k</div></div></a>
+      <a class="influ-chip" href="#" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/jessika-elias.jpg" alt=""></span><div><div class="name">Jéssika Elias</div><div class="handle">@jessikaeliasnutri · 5.8k</div></div></a>
+      <a class="influ-chip" href="#" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/natacha-fraga.jpg" alt=""></span><div><div class="name">Natacha Fraga</div><div class="handle">@natachafraga.psi · 8.1k</div></div></a>
+      <a class="influ-chip" href="#" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/luana-braga.jpg" alt=""></span><div><div class="name">Luana Ribeiro Braga</div><div class="handle">@luanaribeirobraga · 13k</div></div></a>
+      <a class="influ-chip" href="#" tabindex="-1" aria-hidden="true"><span class="avatar-ring sm"><img src="assets/team/germana-lustosa.jpg" alt=""></span><div><div class="name">Germana Lustosa</div><div class="handle">@germanalustosa · 15k</div></div></a>
     </div>
   </div>
   <div class="wrap">
+    <div class="influ-full" id="influFull">
+      <div class="influ-full-grid">
+        <a class="influ-full-card" href="https://instagram.com/victorbluhmm" target="_blank" rel="noopener">
+          <img src="assets/team/victor-bluhm.jpg" alt="Victor Bluhm">
+          <div class="info"><div class="name">Victor Bluhm</div><div class="role">Nutricionista</div><div class="handle">@victorbluhmm · 157k</div></div>
+        </a>
+        <a class="influ-full-card" href="https://instagram.com/marinadopecem" target="_blank" rel="noopener">
+          <img src="assets/team/marina-pecem.jpg" alt="Marina do Pecém">
+          <div class="info"><div class="name">Marina do Pecém</div><div class="role">Empresária</div><div class="handle">@marinadopecem · 9.4k</div></div>
+        </a>
+        <a class="influ-full-card" href="https://instagram.com/bellamacielnutri" target="_blank" rel="noopener">
+          <img src="assets/team/bella-maciel.jpg" alt="Bella Maciel">
+          <div class="info"><div class="name">Bella Maciel</div><div class="role">Nutricionista</div><div class="handle">@bellamacielnutri · 16k</div></div>
+        </a>
+        <a class="influ-full-card" href="https://instagram.com/carolinemotanutri" target="_blank" rel="noopener">
+          <img src="assets/team/caroline-mota.jpg" alt="Caroline Mota">
+          <div class="info"><div class="name">Caroline Mota</div><div class="role">Nutricionista</div><div class="handle">@carolinemotanutri · 9.1k</div></div>
+        </a>
+        <a class="influ-full-card" href="https://instagram.com/emersonpaivanutri" target="_blank" rel="noopener">
+          <img src="assets/team/emerson-paiva.jpg" alt="Emerson Paiva">
+          <div class="info"><div class="name">Emerson Paiva</div><div class="role">Nutricionista</div><div class="handle">@emersonpaivanutri · 16k</div></div>
+        </a>
+        <a class="influ-full-card" href="https://instagram.com/nutricamilaragao" target="_blank" rel="noopener">
+          <img src="assets/team/camila-aragao.jpg" alt="Camila Aragão">
+          <div class="info"><div class="name">Camila Aragão</div><div class="role">Nutricionista</div><div class="handle">@nutricamilaragao · 8.5k</div></div>
+        </a>
+        <a class="influ-full-card" href="https://instagram.com/jessikaeliasnutri" target="_blank" rel="noopener">
+          <img src="assets/team/jessika-elias.jpg" alt="Jéssika Elias">
+          <div class="info"><div class="name">Jéssika Elias</div><div class="role">Nutricionista</div><div class="handle">@jessikaeliasnutri · 5.8k</div></div>
+        </a>
+        <a class="influ-full-card" href="https://instagram.com/natachafraga.psi" target="_blank" rel="noopener">
+          <img src="assets/team/natacha-fraga.jpg" alt="Natacha Fraga">
+          <div class="info"><div class="name">Natacha Fraga</div><div class="role">Psicóloga</div><div class="handle">@natachafraga.psi · 8.1k</div></div>
+        </a>
+        <a class="influ-full-card" href="https://instagram.com/luanaribeirobraga" target="_blank" rel="noopener">
+          <img src="assets/team/luana-braga.jpg" alt="Luana Ribeiro Braga">
+          <div class="info"><div class="name">Luana Ribeiro Braga</div><div class="role">Lifestyle</div><div class="handle">@luanaribeirobraga · 13k</div></div>
+        </a>
+        <a class="influ-full-card" href="https://instagram.com/germanalustosa" target="_blank" rel="noopener">
+          <img src="assets/team/germana-lustosa.jpg" alt="Germana Lustosa">
+          <div class="info"><div class="name">Germana Lustosa</div><div class="role">Convidada</div><div class="handle">@germanalustosa · 15k</div></div>
+        </a>
+        <a class="influ-full-card" href="https://instagram.com/dicasdanisa" target="_blank" rel="noopener">
+          <img src="assets/team/danisa.jpg" alt="Nisa Barreira">
+          <div class="info"><div class="name">Nisa Barreira</div><div class="role">Advogada e Atleta</div><div class="handle">@dicasdanisa · 254k</div></div>
+        </a>
+      </div>
+    </div>
     <div class="reach-banner">
       <div class="num">+500 mil</div>
       <div class="txt">pessoas impactadas somando os seguidores desses influenciadores</div>
@@ -2674,6 +2732,25 @@
   }
   handlePrivacyHash();
   window.addEventListener('hashchange', handlePrivacyHash);
+})();
+</script>
+
+<script>
+(function(){
+  var full = document.getElementById('influFull');
+  var chips = document.querySelectorAll('.influ-chip');
+  if(!full || !chips.length) return;
+  function openFull(){
+    if(full.classList.contains('open')) return;
+    full.classList.add('open');
+    setTimeout(function(){ full.scrollIntoView({behavior:'smooth', block:'start'}); }, 80);
+  }
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(e){
+      e.preventDefault();
+      openFull();
+    });
+  });
 })();
 </script>
 

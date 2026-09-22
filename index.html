@@ -578,8 +578,6 @@
     padding:7px 14px;border-radius:999px;
   }
   .pg-thumbs{margin-top:14px;display:flex;flex-wrap:wrap;gap:12px;}
-  .pg-thumbs-more{display:none;}
-  .pg-thumbs-more.open{display:flex;}
   .pg-item{
     width:150px;height:150px;border-radius:14px;overflow:hidden;
     cursor:pointer;position:relative;
@@ -589,7 +587,7 @@
   .pg-item:hover img{transform:scale(1.08);}
   .pg-item:hover{box-shadow:0 16px 34px rgba(30,15,5,.28);}
   @media (max-width:640px){
-    .pg-thumbs:not(.pg-thumbs-more),.pg-thumbs-more.open{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+    .pg-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
     .pg-item{width:100%;height:auto;aspect-ratio:1;}
   }
   .perola-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;}
@@ -1363,18 +1361,8 @@
         <div class="pg-item"><img src="assets/perola/cesar-costa.webp" alt="Foto oficial César Costa"></div>
         <div class="pg-item"><img src="assets/perola/awe-patrocinador.webp" alt="Ativação da marca awe"></div>
       </div>
-      <div class="pg-thumbs pg-thumbs-more" id="pgMore">
-        <div class="pg-item"><img src="assets/perola/carmen-prado-organizadora.webp" alt="Carmen Prado, organizadora do evento"></div>
-        <div class="pg-item"><img src="assets/perola/backdrop2.webp" alt="Backdrop de marcas patrocinadoras"></div>
-        <div class="pg-item"><img src="assets/perola/emape-patrocinador.webp" alt="Ativação da marca Emape"></div>
-        <div class="pg-item"><img src="assets/perola/equipe1.webp" alt="Equipe Soul Experience"></div>
-        <div class="pg-item"><img src="assets/perola/equipe2.webp" alt="Equipe Soul Experience"></div>
-        <div class="pg-item"><img src="assets/perola/chery-glow-patrocinador.webp" alt="Ativação da marca Chery Glow"></div>
-        <div class="pg-item"><img src="assets/perola/momento-fogueira.webp" alt="Momento fogueira na praia"></div>
-      </div>
     </div>
     <div class="perola-actions">
-      <button type="button" class="btn btn-ghost" id="pgMoreBtn">Ver mais fotos</button>
       <a href="https://drive.google.com/drive/folders/1KclRjQdj5ICJSZFGA8sCt2qh79IA4n7C?usp=sharing" target="_blank" rel="noopener" class="btn btn-ghost">Ver álbum completo no Drive</a>
       <a href="https://www.fotto.com.br/soul-experience/e/402636" target="_blank" rel="noopener" class="btn btn-ghost">Comprar fotos em alta (César Costa)</a>
       <a href="https://open.spotify.com/playlist/51Q1posiwUpnbpTWyc8k9e" target="_blank" rel="noopener" class="btn btn-ghost">Ouvir playlist oficial</a>
@@ -1913,15 +1901,6 @@
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape'){ closeLightbox(); closeVideoModal(); }
   });
-
-  var pgMoreBtn = document.getElementById('pgMoreBtn');
-  var pgMore = document.getElementById('pgMore');
-  if(pgMoreBtn && pgMore){
-    pgMoreBtn.addEventListener('click', function(){
-      var isOpen = pgMore.classList.toggle('open');
-      pgMoreBtn.textContent = isOpen ? 'Ver menos fotos' : 'Ver mais fotos';
-    });
-  }
 
   function getTranslateX(el){
     var st = window.getComputedStyle(el);

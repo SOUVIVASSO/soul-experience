@@ -1161,6 +1161,13 @@
   .newsletter-success{display:none;align-items:center;gap:12px;flex-wrap:wrap;}
   .newsletter-success.show{display:flex;}
   .newsletter-success span{font-size:12.5px;color:var(--ink-dim);}
+  .newsletter-coupon{
+    border:2px dashed var(--violet);border-radius:999px;background:rgba(181,101,46,.08);
+    padding:8px 16px;font-family:'Unbounded',sans-serif;font-weight:700;font-size:14px;letter-spacing:.05em;color:var(--violet);
+    cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+  }
+  .newsletter-coupon .copy-hint{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-dim);}
+  .newsletter-coupon.copied .copy-hint{color:var(--violet);}
 
   @media (max-width:480px){
     footer{padding:22px 20px;padding-bottom:calc(22px + 120px);font-size:11.5px;}
@@ -2067,7 +2074,8 @@
       <button type="submit">Assinar</button>
     </form>
     <div class="newsletter-success" id="newsletterSuccess">
-      <span>Inscrito! Confira seu e-mail — te mandamos o cupom de desconto por lá.</span>
+      <span>Inscrito! Aqui está seu cupom de 10% de desconto:</span>
+      <button type="button" class="newsletter-coupon" id="newsletterCoupon">VIVASSO10 <span class="copy-hint">toque pra copiar</span></button>
     </div>
   </div>
   <div class="footer-row">
@@ -2825,6 +2833,7 @@
 
   var footerForm = document.getElementById('newsletterForm');
   var footerSuccess = document.getElementById('newsletterSuccess');
+  var newsletterCoupon = document.getElementById('newsletterCoupon');
 
   function resetNewsletter(){
     if(footerForm){
@@ -2840,6 +2849,20 @@
       submitNewsletter(document.getElementById('newsletterNome').value, document.getElementById('newsletterEmail').value);
       footerForm.style.display = 'none';
       if(footerSuccess) footerSuccess.classList.add('show');
+    });
+  }
+
+  if(newsletterCoupon){
+    newsletterCoupon.addEventListener('click', function(){
+      try { navigator.clipboard.writeText('VIVASSO10'); } catch(e){}
+      newsletterCoupon.classList.add('copied');
+      var hint = newsletterCoupon.querySelector('.copy-hint');
+      var old = hint ? hint.textContent : '';
+      if(hint) hint.textContent = 'copiado!';
+      setTimeout(function(){
+        newsletterCoupon.classList.remove('copied');
+        if(hint) hint.textContent = old;
+      }, 1600);
     });
   }
 

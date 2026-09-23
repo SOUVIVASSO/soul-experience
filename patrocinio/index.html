@@ -295,9 +295,10 @@
   }
   .hero-date:hover{background:rgba(255,255,255,.16);}
   @media (max-width:480px){
-    .hero-date{font-size:10px;padding:7px 12px;gap:6px;text-align:center;white-space:normal;}
+    .hero-date{font-size:10px;padding:7px 12px;gap:6px;white-space:nowrap;}
     .hero-date svg{width:12px;height:12px;flex-shrink:0;}
   }
+  @media (max-width:360px){.hero-date{font-size:9px;padding:6px 10px;gap:5px;}}
   .hero-tagline{
     margin-top:24px;
     font-size:clamp(24px,3.4vw,36px);
@@ -919,27 +920,12 @@
   .insta-text .lede{margin-inline:0;}
   .insta-phone-wrap{position:relative;display:flex;align-items:flex-start;gap:22px;flex-shrink:0;}
   .insta-phone{
-    width:220px;height:500px;background:#171018;border-radius:36px;padding:10px;
+    width:220px;height:465px;background:#171018;border-radius:36px;padding:10px;
     box-shadow:0 30px 60px -20px rgba(20,10,4,.45);position:relative;
   }
   .insta-phone-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:68px;height:15px;background:#171018;border-radius:0 0 12px 12px;z-index:2;}
-  .insta-phone-screen{background:#fff;width:100%;height:100%;border-radius:26px;overflow:hidden;display:flex;flex-direction:column;}
-  .insta-phone-profile{padding:16px 10px 8px;text-align:center;flex-shrink:0;}
-  .insta-phone-avatar{width:44px;height:44px;border-radius:50%;margin:0 auto 6px;background-size:cover;background-position:center;}
-  .insta-phone-name{font-size:11px;font-weight:700;color:var(--ink);}
-  .insta-phone-handle{font-size:8.5px;color:var(--ink-dim);margin-top:1px;}
-  .insta-phone-stats{display:flex;justify-content:center;gap:16px;margin-top:9px;}
-  .insta-phone-stats div{display:flex;flex-direction:column;align-items:center;}
-  .insta-phone-stats b{font-size:11px;color:var(--ink);}
-  .insta-phone-stats span{font-size:7.5px;color:var(--ink-dim);}
-  .insta-phone-bio{margin-top:9px;font-size:8.5px;line-height:1.45;color:var(--ink-dim);padding:0 6px;}
-  .insta-phone-btns{display:flex;gap:6px;margin-top:9px;}
-  .insta-phone-btns span{flex:1;background:var(--panel-lav);border-radius:8px;padding:5px 0;font-size:8.5px;font-weight:700;color:var(--ink);}
-  .insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;flex:1;}
-  .insta-post{
-    background-size:cover;background-position:center;background-repeat:no-repeat;
-    aspect-ratio:1;background-color:var(--panel-lav);
-  }
+  .insta-phone-screen{background:#fff;width:100%;height:100%;border-radius:26px;overflow:hidden;padding-top:18px;}
+  .insta-phone-screen img{display:block;width:100%;height:auto;}
   @media (max-width:780px){
     .insta-wrap{flex-direction:column;text-align:center;gap:32px;}
     .insta-text{text-align:center;}
@@ -1414,7 +1400,7 @@
     <span class="logo-mark lg" id="heroLogo"><img src="assets/logo-soul-white.png" alt="Soul Experience"></span>
     <a class="hero-date" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Soul%20Experience%20-%202%C2%AA%20edi%C3%A7%C3%A3o&dates=20261128T090000Z/20261128T123000Z&details=A%202%C2%AA%20edi%C3%A7%C3%A3o%20do%20Soul%20Experience%20acontece%20no%20Iguatemi%20Bosque%2C%20em%20Fortaleza.&location=Iguatemi%20Bosque%2C%20Fortaleza" target="_blank" rel="noopener">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-      28 de novembro de 2026 · 06h às 09h30 · Adicionar ao calendário
+      28/11/2026 · 06h às 09h30 · Adicionar ao calendário
     </a>
     <h1 class="hero-tagline">Segunda edição: Circuito das Estações</h1>
     <p class="hero-sub">Uma proposta de parceria para marcas que querem fazer parte de uma manhã inteira dedicada<br class="br-mobile"> ao bem-estar, em Fortaleza.</p>
@@ -1981,29 +1967,7 @@
       <div class="insta-phone" id="instaPhone">
         <div class="insta-phone-notch"></div>
         <div class="insta-phone-screen">
-          <div class="insta-phone-profile">
-            <div class="insta-phone-avatar" style="background-image:url('../assets/instagram/profile.jpg')"></div>
-            <div class="insta-phone-name">Soul Experience</div>
-            <div class="insta-phone-handle">@wellnessoulexp</div>
-            <div class="insta-phone-stats">
-              <div><b>75</b><span>posts</span></div>
-              <div><b>164</b><span>seguidores</span></div>
-              <div><b>73</b><span>seguindo</span></div>
-            </div>
-            <p class="insta-phone-bio">Evento de @souvivasso<br>2ª edição dia 28 de novembro 📌<br>Edição assinada por @lovenuts</p>
-            <div class="insta-phone-btns"><span>Seguindo</span><span>Mensagem</span></div>
-          </div>
-          <div class="insta-grid" id="instaGrid">
-            <div class="insta-post" style="background-image:url('../assets/instagram/post1.jpg')"></div>
-            <div class="insta-post" style="background-image:url('../assets/instagram/post2.jpg')"></div>
-            <div class="insta-post" style="background-image:url('../assets/instagram/post3.jpg')"></div>
-            <div class="insta-post" style="background-image:url('../assets/instagram/post4.jpg')"></div>
-            <div class="insta-post" style="background-image:url('../assets/instagram/post5.jpg')"></div>
-            <div class="insta-post" style="background-image:url('../assets/instagram/post6.jpg')"></div>
-            <div class="insta-post" style="background-image:url('../assets/instagram/post7.jpg')"></div>
-            <div class="insta-post" style="background-image:url('../assets/instagram/post8.jpg')"></div>
-            <div class="insta-post" style="background-image:url('../assets/instagram/post9.jpg')"></div>
-          </div>
+          <img src="../assets/instagram/perfil-print.jpg" alt="Perfil @wellnessoulexp no Instagram">
         </div>
       </div>
     </div>

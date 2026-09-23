@@ -923,7 +923,7 @@
   .insta-phone-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:68px;height:15px;background:#171018;border-radius:0 0 12px 12px;z-index:2;}
   .insta-phone-screen{background:#fff;width:100%;height:100%;border-radius:26px;overflow:hidden;display:flex;flex-direction:column;}
   .insta-phone-head{display:flex;align-items:center;gap:8px;padding:14px 10px 8px;flex-shrink:0;}
-  .insta-phone-avatar{width:26px;height:26px;border-radius:50%;flex-shrink:0;}
+  .insta-phone-avatar{width:26px;height:26px;border-radius:50%;flex-shrink:0;background-size:cover;background-position:center;}
   .insta-phone-head b{display:block;font-size:10.5px;color:var(--ink);}
   .insta-phone-head span{font-size:8.5px;color:var(--ink-dim);}
   .insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;flex:1;}
@@ -943,6 +943,7 @@
   .insta-caption-close{position:absolute;top:10px;right:10px;background:none;border:none;font-size:18px;line-height:1;color:var(--ink-dim);cursor:pointer;padding:4px;}
   .insta-caption-card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;display:block;background:var(--panel-lav);}
   .insta-caption-card p{margin-top:12px;font-size:13px;line-height:1.55;color:var(--ink);}
+  .insta-caption-card a{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--violet);text-decoration:underline;}
   @media (max-width:780px){
     .insta-wrap{flex-direction:column;text-align:center;gap:32px;}
     .insta-text{text-align:center;}
@@ -1966,33 +1967,24 @@
 <!-- ================= INSTAGRAM ================= -->
 <section id="instagram" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
   <div class="wrap insta-wrap">
-    <div class="insta-text">
-      <div class="instagram-icon">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-      </div>
-      <h2 class="section-title" style="font-size:clamp(22px,3vw,28px);margin-top:14px;">Siga a gente no Instagram</h2>
-      <p class="lede">Sorteios, bastidores e todas as novidades do Soul Experience são por lá — inclusive pra sua marca acompanhar de perto o retorno do patrocínio. Toque numa foto do feed ao lado pra ver de perto.</p>
-      <a class="btn btn-primary" href="https://instagram.com/wellnessoulexp" target="_blank" rel="noopener" style="margin-top:20px;">@wellnessoulexp</a>
-    </div>
-
     <div class="insta-phone-wrap">
       <div class="insta-phone" id="instaPhone">
         <div class="insta-phone-notch"></div>
         <div class="insta-phone-screen">
           <div class="insta-phone-head">
-            <div class="insta-phone-avatar" style="background-image:url('../assets/logo-soul-white.png');background-size:60%;background-position:center;background-repeat:no-repeat;background-color:var(--ink);"></div>
-            <div><b>wellnessoulexp</b><span>Soul Experience</span></div>
+            <div class="insta-phone-avatar" style="background-image:url('../assets/instagram/profile.jpg')"></div>
+            <div><b>wellnessoulexp</b><span>163 seguidores · 73 seguindo</span></div>
           </div>
           <div class="insta-grid" id="instaGrid">
-            <button type="button" class="insta-post" data-post="0" style="background-image:url('../assets/iguatemi-bosque.webp')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post" data-post="1" style="background-image:url('../assets/team/joao-victor-prado.webp')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post" data-post="2" style="background-image:url('../assets/team/rodrigo-lima.jpg')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post" data-post="3" style="background-image:url('../assets/team/karol-bang.webp')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post insta-post-contain" data-post="4" style="background-image:url('../assets/lovenuts/mix-imunidade.png')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post" data-post="5" style="background-image:url('../assets/team/felipe-porfirio.jpg')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post" data-post="6" style="background-image:url('../assets/team/benjamim-benicio.jpg')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post insta-post-contain insta-post-dark" data-post="7" style="background-image:url('../assets/circuito-logo-white.png')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post" data-post="8" style="background-image:url('../assets/team/charlyson-ribeiro.jpg')" aria-label="Ver post"></button>
+            <button type="button" class="insta-post" data-post="0" style="background-image:url('../assets/instagram/post1.jpg')" aria-label="Ver post"></button>
+            <button type="button" class="insta-post" data-post="1" style="background-image:url('../assets/instagram/post2.jpg')" aria-label="Ver post"></button>
+            <button type="button" class="insta-post" data-post="2" style="background-image:url('../assets/instagram/post3.jpg')" aria-label="Ver post"></button>
+            <button type="button" class="insta-post" data-post="3" style="background-image:url('../assets/instagram/post4.jpg')" aria-label="Ver post"></button>
+            <button type="button" class="insta-post" data-post="4" style="background-image:url('../assets/instagram/post5.jpg')" aria-label="Ver post"></button>
+            <button type="button" class="insta-post" data-post="5" style="background-image:url('../assets/instagram/post6.jpg')" aria-label="Ver post"></button>
+            <button type="button" class="insta-post" data-post="6" style="background-image:url('../assets/instagram/post7.jpg')" aria-label="Ver post"></button>
+            <button type="button" class="insta-post" data-post="7" style="background-image:url('../assets/instagram/post8.jpg')" aria-label="Ver post"></button>
+            <button type="button" class="insta-post" data-post="8" style="background-image:url('../assets/instagram/post9.jpg')" aria-label="Ver post"></button>
           </div>
         </div>
       </div>
@@ -2001,7 +1993,14 @@
         <button type="button" class="insta-caption-close" id="instaCaptionClose" aria-label="Fechar">&times;</button>
         <img id="instaCaptionImg" src="" alt="">
         <p id="instaCaptionText"></p>
+        <a id="instaCaptionLink" target="_blank" rel="noopener">Ver publicação no Instagram ↗</a>
       </div>
+    </div>
+
+    <div class="insta-text">
+      <h2 class="section-title" style="font-size:clamp(22px,3vw,28px);">Siga a gente no Instagram</h2>
+      <p class="lede">Sorteios, bastidores e todas as novidades do Soul Experience são por lá — inclusive pra sua marca acompanhar de perto o retorno do patrocínio. Toque numa foto do feed ao lado pra ver de perto.</p>
+      <a class="btn btn-primary" href="https://instagram.com/wellnessoulexp" target="_blank" rel="noopener" style="margin-top:20px;">@wellnessoulexp</a>
     </div>
   </div>
 </section>
@@ -2827,19 +2826,20 @@
   var grid = document.getElementById('instaGrid');
   if(!grid) return;
   var POSTS = {
-    0:{img:'../assets/iguatemi-bosque.webp', text:'📍 O point da 2ª edição! Área externa do Iguatemi Bosque, saída da Zara. 28 de novembro, já ali.'},
-    1:{img:'../assets/team/joao-victor-prado.webp', text:'Por trás do Soul Experience: João Victor Prado, fundador da Vivasso, botando fé numa manhã diferente pra Fortaleza.'},
-    2:{img:'../assets/team/rodrigo-lima.jpg', text:'Rodrigo Lima comanda o Fit Dance no circuito. Vem suar e sorrir com a gente na Dance Mix.'},
-    3:{img:'../assets/team/karol-bang.webp', text:'A Karol Bang já tá falando sobre a gente ✨ O Soul Experience conquistando a mídia de Fortaleza.'},
-    4:{img:'../assets/lovenuts/mix-imunidade.png', text:'Welcome Kit chegando! Castanhas LoveNuts pra recarregar as energias em cada estação do circuito.'},
-    5:{img:'../assets/team/felipe-porfirio.jpg', text:'Treino com propósito: Felipe Porfirio no Dance Mix e Fit Dance, pronto pra receber você.'},
-    6:{img:'../assets/team/benjamim-benicio.jpg', text:'Bora pedalar? Benjamim Benício comanda o Mix Disposição na bike, ritmo leve pra despertar o corpo.'},
-    7:{img:'../assets/circuito-logo-white.png', text:'Segunda edição confirmada: Circuito das Estações. 6 estações, 1 manhã, muita energia.'},
-    8:{img:'../assets/team/charlyson-ribeiro.jpg', text:'Charlyson Ribeiro também tá no Dance Mix e Fit Dance. Bora se soltar no ritmo?'}
+    0:{img:'../assets/instagram/post1.jpg', date:'27 de agosto de 2026', link:'https://www.instagram.com/germanalustosa/p/DcjyHA6mugD/'},
+    1:{img:'../assets/instagram/post2.jpg', date:'27 de agosto de 2026', link:'https://www.instagram.com/luanaribeirobraga/p/DcjNVK2EaYK/'},
+    2:{img:'../assets/instagram/post3.jpg', date:'25 de agosto de 2026', link:'https://www.instagram.com/wellnessoulexp/p/DcdedtnOaC0/'},
+    3:{img:'../assets/instagram/post4.jpg', date:'21 de agosto de 2026', link:'https://www.instagram.com/jacquelinealmeiida/reel/DcUonTYNNHJ/'},
+    4:{img:'../assets/instagram/post5.jpg', date:'25 de agosto de 2026', link:'https://www.instagram.com/wellnessoulexp/reel/DcejbfttpzT/'},
+    5:{img:'../assets/instagram/post6.jpg', date:'22 de agosto de 2026', link:'https://www.instagram.com/natachafraga.psi/p/DcXEx7mEbYF/'},
+    6:{img:'../assets/instagram/post7.jpg', date:'25 de agosto de 2026', link:'https://www.instagram.com/brenodinizimoveis.imobiliaria/reel/Dce0vpeTyst/'},
+    7:{img:'../assets/instagram/post8.jpg', date:'24 de agosto de 2026', link:'https://www.instagram.com/marinadopecem/p/DcbsXjcoAdV/'},
+    8:{img:'../assets/instagram/post9.jpg', date:'22 de agosto de 2026', link:'https://www.instagram.com/karolbang/reel/DcW94zHRg6z/'}
   };
   var card = document.getElementById('instaCaptionCard');
   var img = document.getElementById('instaCaptionImg');
   var text = document.getElementById('instaCaptionText');
+  var link = document.getElementById('instaCaptionLink');
   var close = document.getElementById('instaCaptionClose');
   var posts = grid.querySelectorAll('.insta-post');
   var activeKey = null;
@@ -2848,7 +2848,8 @@
     var p = POSTS[key];
     if(!p) return;
     img.src = p.img;
-    text.textContent = p.text;
+    text.textContent = 'Publicado em ' + p.date + ' no perfil @wellnessoulexp. A legenda completa fica no Instagram.';
+    link.href = p.link;
     card.hidden = false;
     posts.forEach(function(el){ el.classList.toggle('active', el.getAttribute('data-post') === key); });
     activeKey = key;
@@ -3057,22 +3058,15 @@
   var card = document.getElementById('edicoesPerolaCard');
   var panel = document.getElementById('perola-galeria');
   if(!card || !panel) return;
-  var isHoverCapable = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  function openPerola(){
-    panel.classList.add('open');
-  }
   function togglePerola(){
     if(panel.classList.contains('open')){
       panel.classList.remove('open');
     } else {
-      openPerola();
+      panel.classList.add('open');
       setTimeout(function(){ panel.scrollIntoView({behavior:'smooth', block:'start'}); }, 80);
     }
   }
   card.addEventListener('click', togglePerola);
-  if(isHoverCapable){
-    card.addEventListener('mouseenter', openPerola);
-  }
 })();
 </script>
 

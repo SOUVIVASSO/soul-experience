@@ -845,13 +845,14 @@
   }
   @media (max-width:360px){.ticket-detail{font-size:11.5px;gap:6px;}}
 
-  /* ---------- PATROCINIO (legado, nao usado nessa pagina) ---------- */
+  /* ---------- PREÇO DO INGRESSO ---------- */
   .pricing{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:22px;
     align-items:stretch;
   }
+  .pricing.single{grid-template-columns:1fr;max-width:400px;margin:0 auto;}
   .price-card{
     position:relative;
     background:var(--bg-alt);
@@ -1729,6 +1730,23 @@
       <span class="eyebrow">Segunda edição · Circuito das Estações</span>
       <h2 class="section-title">Garanta seu ingresso</h2>
       <p class="lede">Uma edição seletiva e intimista, com apenas 60 vagas presenciais. Os ingressos são vendidos pelo Sympla, com lotes limitados.</p>
+    </div>
+
+    <div class="pricing single">
+      <div class="price-card featured">
+        <div class="quota">60 vagas presenciais</div>
+        <div class="tier-name">Ingresso · Segunda edição</div>
+        <div class="price">R$ 100</div>
+        <div class="price-list">
+          <div class="row on highlight"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.4 2.9 3.2.5-2.3 2.2.5 3.2L7 8.3 4.2 9.8l.5-3.2L2.4 4.4l3.2-.5L7 1z" fill="currentColor"/></svg>Participação em 2 das 5 atividades do circuito + atividade surpresa de encerramento</div>
+          <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Welcome Kit com produtos e mimos das marcas parceiras</div>
+          <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Ativações e brindes ao longo de todo o percurso</div>
+          <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Bate-papo com nutricionistas parceiras</div>
+          <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Uma manhã inteira de bem-estar e conexão com outras pessoas</div>
+          <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Premiação especial na atividade surpresa</div>
+        </div>
+        <a class="btn btn-primary" href="https://www.sympla.com.br/evento/soul-experience--1-ediCAo---circuito-das-estaCOes/3587190" target="_blank" rel="noopener">Quero me inscrever</a>
+      </div>
     </div>
 
     <div class="ticket-card">

@@ -541,43 +541,33 @@
   .insta-text .lede{margin-inline:0;}
   .insta-phone-wrap{position:relative;display:flex;align-items:flex-start;gap:22px;flex-shrink:0;}
   .insta-phone{
-    width:220px;height:440px;background:#171018;border-radius:36px;padding:10px;
+    width:220px;height:500px;background:#171018;border-radius:36px;padding:10px;
     box-shadow:0 30px 60px -20px rgba(20,10,4,.45);position:relative;
-    animation:instaFloat 5s ease-in-out infinite;transition:transform .3s ease;
   }
-  .insta-phone:hover{animation-play-state:paused;transform:translateY(-10px) rotate(1deg) scale(1.02);}
-  @keyframes instaFloat{0%,100%{transform:translateY(0) rotate(-1.2deg);}50%{transform:translateY(-9px) rotate(1deg);}}
   .insta-phone-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:68px;height:15px;background:#171018;border-radius:0 0 12px 12px;z-index:2;}
   .insta-phone-screen{background:#fff;width:100%;height:100%;border-radius:26px;overflow:hidden;display:flex;flex-direction:column;}
-  .insta-phone-head{display:flex;align-items:center;gap:8px;padding:14px 10px 8px;flex-shrink:0;}
-  .insta-phone-avatar{width:26px;height:26px;border-radius:50%;flex-shrink:0;background-size:cover;background-position:center;}
-  .insta-phone-head b{display:block;font-size:10.5px;color:var(--ink);}
-  .insta-phone-head span{font-size:8.5px;color:var(--ink-dim);}
+  .insta-phone-profile{padding:16px 10px 8px;text-align:center;flex-shrink:0;}
+  .insta-phone-avatar{width:44px;height:44px;border-radius:50%;margin:0 auto 6px;background-size:cover;background-position:center;}
+  .insta-phone-name{font-size:11px;font-weight:700;color:var(--ink);}
+  .insta-phone-handle{font-size:8.5px;color:var(--ink-dim);margin-top:1px;}
+  .insta-phone-stats{display:flex;justify-content:center;gap:16px;margin-top:9px;}
+  .insta-phone-stats div{display:flex;flex-direction:column;align-items:center;}
+  .insta-phone-stats b{font-size:11px;color:var(--ink);}
+  .insta-phone-stats span{font-size:7.5px;color:var(--ink-dim);}
+  .insta-phone-bio{margin-top:9px;font-size:8.5px;line-height:1.45;color:var(--ink-dim);padding:0 6px;}
+  .insta-phone-btns{display:flex;gap:6px;margin-top:9px;}
+  .insta-phone-btns span{flex:1;background:var(--panel-lav);border-radius:8px;padding:5px 0;font-size:8.5px;font-weight:700;color:var(--ink);}
   .insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;flex:1;}
   .insta-post{
-    border:none;padding:0;margin:0;cursor:pointer;background-size:cover;background-position:center;background-repeat:no-repeat;
-    aspect-ratio:1;position:relative;background-color:var(--panel-lav);
+    background-size:cover;background-position:center;background-repeat:no-repeat;
+    aspect-ratio:1;background-color:var(--panel-lav);
   }
-  .insta-post-contain{background-size:60%;}
-  .insta-post-dark{background-color:var(--ink);}
-  .insta-post::after{content:'';position:absolute;inset:0;background:rgba(20,10,4,0);transition:background .2s;}
-  .insta-post:hover::after{background:rgba(20,10,4,.12);}
-  .insta-post.active::after{background:rgba(163,91,41,.4);}
-  .insta-caption-card{
-    width:230px;background:var(--bg-alt);border:1px solid var(--line);border-radius:20px;padding:18px;
-    position:relative;box-shadow:0 20px 45px -20px rgba(20,10,4,.3);
-  }
-  .insta-caption-close{position:absolute;top:10px;right:10px;background:none;border:none;font-size:18px;line-height:1;color:var(--ink-dim);cursor:pointer;padding:4px;}
-  .insta-caption-card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;display:block;background:var(--panel-lav);}
-  .insta-caption-card p{margin-top:12px;font-size:13px;line-height:1.55;color:var(--ink);}
-  .insta-caption-card a{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--violet);text-decoration:underline;}
   @media (max-width:780px){
     .insta-wrap{flex-direction:column;text-align:center;gap:32px;}
     .insta-text{text-align:center;}
     .insta-text .instagram-icon{margin:0 auto;}
     .insta-text .lede{margin-inline:auto;}
     .insta-phone-wrap{flex-direction:column;align-items:center;}
-    .insta-caption-card{width:220px;}
   }
 
   /* ---------- CAMPANHA ---------- */
@@ -1908,35 +1898,36 @@
       <div class="insta-phone" id="instaPhone">
         <div class="insta-phone-notch"></div>
         <div class="insta-phone-screen">
-          <div class="insta-phone-head">
+          <div class="insta-phone-profile">
             <div class="insta-phone-avatar" style="background-image:url('assets/instagram/profile.jpg')"></div>
-            <div><b>wellnessoulexp</b><span>163 seguidores · 73 seguindo</span></div>
+            <div class="insta-phone-name">Soul Experience</div>
+            <div class="insta-phone-handle">@wellnessoulexp</div>
+            <div class="insta-phone-stats">
+              <div><b>75</b><span>posts</span></div>
+              <div><b>164</b><span>seguidores</span></div>
+              <div><b>73</b><span>seguindo</span></div>
+            </div>
+            <p class="insta-phone-bio">Evento de @souvivasso<br>2ª edição dia 28 de novembro 📌<br>Edição assinada por @lovenuts</p>
+            <div class="insta-phone-btns"><span>Seguindo</span><span>Mensagem</span></div>
           </div>
           <div class="insta-grid" id="instaGrid">
-            <button type="button" class="insta-post" data-post="0" style="background-image:url('assets/instagram/post1.jpg')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post" data-post="1" style="background-image:url('assets/instagram/post2.jpg')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post" data-post="2" style="background-image:url('assets/instagram/post3.jpg')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post" data-post="3" style="background-image:url('assets/instagram/post4.jpg')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post" data-post="4" style="background-image:url('assets/instagram/post5.jpg')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post" data-post="5" style="background-image:url('assets/instagram/post6.jpg')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post" data-post="6" style="background-image:url('assets/instagram/post7.jpg')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post" data-post="7" style="background-image:url('assets/instagram/post8.jpg')" aria-label="Ver post"></button>
-            <button type="button" class="insta-post" data-post="8" style="background-image:url('assets/instagram/post9.jpg')" aria-label="Ver post"></button>
+            <div class="insta-post" style="background-image:url('assets/instagram/post1.jpg')"></div>
+            <div class="insta-post" style="background-image:url('assets/instagram/post2.jpg')"></div>
+            <div class="insta-post" style="background-image:url('assets/instagram/post3.jpg')"></div>
+            <div class="insta-post" style="background-image:url('assets/instagram/post4.jpg')"></div>
+            <div class="insta-post" style="background-image:url('assets/instagram/post5.jpg')"></div>
+            <div class="insta-post" style="background-image:url('assets/instagram/post6.jpg')"></div>
+            <div class="insta-post" style="background-image:url('assets/instagram/post7.jpg')"></div>
+            <div class="insta-post" style="background-image:url('assets/instagram/post8.jpg')"></div>
+            <div class="insta-post" style="background-image:url('assets/instagram/post9.jpg')"></div>
           </div>
         </div>
-      </div>
-
-      <div class="insta-caption-card" id="instaCaptionCard" hidden>
-        <button type="button" class="insta-caption-close" id="instaCaptionClose" aria-label="Fechar">&times;</button>
-        <img id="instaCaptionImg" src="" alt="">
-        <p id="instaCaptionText"></p>
-        <a id="instaCaptionLink" target="_blank" rel="noopener">Ver publicação no Instagram ↗</a>
       </div>
     </div>
 
     <div class="insta-text">
       <h2 class="section-title" style="font-size:clamp(22px,3vw,28px);">Siga a gente no Instagram</h2>
-      <p class="lede">Sorteios, bastidores e todas as novidades do Soul Experience são por lá. Toque numa foto do feed ao lado pra ver de perto.</p>
+      <p class="lede">Sorteios, bastidores e todas as novidades do Soul Experience são por lá. Segue pra não perder nada.</p>
       <a class="btn btn-primary" href="https://instagram.com/wellnessoulexp" target="_blank" rel="noopener" style="margin-top:20px;">@wellnessoulexp</a>
     </div>
   </div>
@@ -2717,56 +2708,6 @@
       target.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
     }
   });
-})();
-</script>
-
-<script>
-(function(){
-  var grid = document.getElementById('instaGrid');
-  if(!grid) return;
-  var POSTS = {
-    0:{img:'assets/instagram/post1.jpg', date:'27 de agosto de 2026', link:'https://www.instagram.com/germanalustosa/p/DcjyHA6mugD/'},
-    1:{img:'assets/instagram/post2.jpg', date:'27 de agosto de 2026', link:'https://www.instagram.com/luanaribeirobraga/p/DcjNVK2EaYK/'},
-    2:{img:'assets/instagram/post3.jpg', date:'25 de agosto de 2026', link:'https://www.instagram.com/wellnessoulexp/p/DcdedtnOaC0/'},
-    3:{img:'assets/instagram/post4.jpg', date:'21 de agosto de 2026', link:'https://www.instagram.com/jacquelinealmeiida/reel/DcUonTYNNHJ/'},
-    4:{img:'assets/instagram/post5.jpg', date:'25 de agosto de 2026', link:'https://www.instagram.com/wellnessoulexp/reel/DcejbfttpzT/'},
-    5:{img:'assets/instagram/post6.jpg', date:'22 de agosto de 2026', link:'https://www.instagram.com/natachafraga.psi/p/DcXEx7mEbYF/'},
-    6:{img:'assets/instagram/post7.jpg', date:'25 de agosto de 2026', link:'https://www.instagram.com/brenodinizimoveis.imobiliaria/reel/Dce0vpeTyst/'},
-    7:{img:'assets/instagram/post8.jpg', date:'24 de agosto de 2026', link:'https://www.instagram.com/marinadopecem/p/DcbsXjcoAdV/'},
-    8:{img:'assets/instagram/post9.jpg', date:'22 de agosto de 2026', link:'https://www.instagram.com/karolbang/reel/DcW94zHRg6z/'}
-  };
-  var card = document.getElementById('instaCaptionCard');
-  var img = document.getElementById('instaCaptionImg');
-  var text = document.getElementById('instaCaptionText');
-  var link = document.getElementById('instaCaptionLink');
-  var close = document.getElementById('instaCaptionClose');
-  var posts = grid.querySelectorAll('.insta-post');
-  var activeKey = null;
-
-  function openPost(key){
-    var p = POSTS[key];
-    if(!p) return;
-    img.src = p.img;
-    text.textContent = 'Publicado em ' + p.date + ' no perfil @wellnessoulexp. A legenda completa fica no Instagram.';
-    link.href = p.link;
-    card.hidden = false;
-    posts.forEach(function(el){ el.classList.toggle('active', el.getAttribute('data-post') === key); });
-    activeKey = key;
-  }
-  function closePost(){
-    card.hidden = true;
-    posts.forEach(function(el){ el.classList.remove('active'); });
-    activeKey = null;
-  }
-
-  grid.addEventListener('click', function(e){
-    var btn = e.target.closest('.insta-post');
-    if(!btn) return;
-    var key = btn.getAttribute('data-post');
-    if(activeKey === key){ closePost(); }
-    else { openPost(key); }
-  });
-  close.addEventListener('click', closePost);
 })();
 </script>
 

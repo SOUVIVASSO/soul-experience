@@ -896,11 +896,11 @@
   /* ---------- PREÇO DO INGRESSO ---------- */
   .pricing{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3,minmax(0,1fr));
     gap:22px;
     align-items:stretch;
   }
-  .pricing.single{grid-template-columns:1fr;max-width:400px;margin:0 auto;}
+  .pricing.single{grid-template-columns:minmax(0,1fr);max-width:400px;margin:0 auto;}
   .pricing.single .tier-name{font-size:20px;}
   .price-card{
     position:relative;
@@ -1335,7 +1335,7 @@
       transition:max-height .35s ease, opacity .3s ease, margin-top .3s ease;
     }
     .part-card.open p{max-height:160px;opacity:1;margin-top:8px;}
-    .pricing{grid-template-columns:1fr;}
+    .pricing{grid-template-columns:minmax(0,1fr);}
     .lead-form{grid-template-columns:1fr;}
   }
   @media (max-width:560px){

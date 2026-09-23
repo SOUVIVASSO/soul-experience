@@ -1153,6 +1153,10 @@
     border:none;padding:9px 18px;border-radius:999px;cursor:pointer;
   }
   @media (max-width:600px){.newsletter-box{flex-direction:column;text-align:center;}.newsletter-text{align-items:center;}.newsletter-form{justify-content:center;width:100%;}.newsletter-form input{flex:1;min-width:0;}}
+  .newsletter-success{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .newsletter-success span{font-size:12.5px;color:var(--ink-dim);}
+  .newsletter-coupon{margin-top:0;width:auto;padding:8px 14px;font-size:14px;}
+  @media (max-width:600px){.newsletter-success{flex-direction:column;}}
 
   @media (max-width:480px){
     footer{padding:22px 20px;padding-bottom:calc(22px + 120px);font-size:11.5px;}
@@ -2029,6 +2033,10 @@
       <input type="email" name="email" id="newsletterEmail" placeholder="Seu e-mail" autocomplete="email" required>
       <button type="submit">Assinar</button>
     </form>
+    <div class="newsletter-success" id="newsletterSuccess" hidden>
+      <span>Inscrito! Seu cupom de desconto:</span>
+      <button type="button" class="promo-coupon newsletter-coupon" id="newsletterCoupon">VIVASSO10 <span class="copy-hint">toque pra copiar</span></button>
+    </div>
   </div>
   <div class="footer-row">
     <span><strong>Soul Experience</strong> · 2ª edição</span>
@@ -2740,17 +2748,43 @@
 
 <script>
 (function(){
-  function goToWhatsApp(nome, email){
-    var msg = 'Oi! Quero assinar a newsletter do Soul Experience e receber o desconto exclusivo.\nNome: ' + nome + '\nE-mail: ' + email;
-    window.open('https://wa.me/558597712114?text=' + encodeURIComponent(msg), '_blank');
+  var GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeDPx0ghe4Kn49hrm58mXAK8gUo_u9ienov3yjK0STcVHPLww/formResponse';
+
+  function submitNewsletter(nome, email){
+    var body = new URLSearchParams();
+    body.append('entry.1277141619', nome);
+    body.append('entry.727345929', email);
+    fetch(GOOGLE_FORM_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: body.toString()
+    }).catch(function(){});
   }
 
   var footerForm = document.getElementById('newsletterForm');
+  var footerSuccess = document.getElementById('newsletterSuccess');
   if(footerForm){
     footerForm.addEventListener('submit', function(e){
       e.preventDefault();
-      goToWhatsApp(document.getElementById('newsletterNome').value, document.getElementById('newsletterEmail').value);
-      footerForm.reset();
+      submitNewsletter(document.getElementById('newsletterNome').value, document.getElementById('newsletterEmail').value);
+      footerForm.hidden = true;
+      if(footerSuccess) footerSuccess.hidden = false;
+    });
+  }
+
+  var newsletterCoupon = document.getElementById('newsletterCoupon');
+  if(newsletterCoupon){
+    newsletterCoupon.addEventListener('click', function(){
+      try { navigator.clipboard.writeText('VIVASSO10'); } catch(e){}
+      newsletterCoupon.classList.add('copied');
+      var hint = newsletterCoupon.querySelector('.copy-hint');
+      var old = hint ? hint.textContent : '';
+      if(hint) hint.textContent = 'copiado!';
+      setTimeout(function(){
+        newsletterCoupon.classList.remove('copied');
+        if(hint) hint.textContent = old;
+      }, 1600);
     });
   }
 })();

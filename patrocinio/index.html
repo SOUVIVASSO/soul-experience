@@ -2947,7 +2947,7 @@
         {name:'Benjamim Benício', role:'Treinador de Cycling Indoor', photo:'../assets/team/benjamim-benicio.jpg', ig:'https://instagram.com/ben.beni2901'},
         {name:'Fernando Santos', role:'Personal Trainer', photo:'../assets/team/fernando-santos.jpg', ig:'https://instagram.com/fernandoflrs'}
       ],
-      nutri:'Jessica',
+      nutri:{name:'Jéssika Elias', role:'Nutricionista · CRN 17935', photo:'../assets/team/jessika-elias.jpg', ig:'https://instagram.com/jessikaeliasnutri'},
       coachLabel:'Coach motivacional',
       coaches:[],
       vagas:'20 vagas'
@@ -2959,7 +2959,7 @@
       lovenuts:{img:'../assets/lovenuts/mix-coracao.png', alt:'Mix Coração LoveNuts', desc:'Castanha de caju, amêndoas, nozes e cranberry, ricos em gorduras boas que ajudam a cuidar da saúde do coração.', buyUrl:'https://www.emporiodunorte.com.br/produtos/mix-do-coracao-40g-love-nuts/'},
       profLabel:'Professor(a) responsável',
       professors:[{name:'Rômulo Gomes', role:'Personal Trainer · Consultor de Ginástica', photo:'../assets/team/romulo-gomes.jpg', ig:'https://instagram.com/romuloamericano'}],
-      nutri:'Victor',
+      nutri:{name:'Victor Bluhm', role:'Nutricionista', photo:'../assets/team/victor-bluhm.jpg', ig:'https://instagram.com/victorbluhmm'},
       coachLabel:'Coach motivacional',
       coaches:[],
       vagas:'20 vagas'
@@ -2971,7 +2971,7 @@
       lovenuts:{img:'../assets/lovenuts/mix-sono.png', alt:'Mix do Sono LoveNuts', desc:'Amendoim, semente de abóbora, castanha do Pará e banana, fonte natural de magnésio que ajuda a relaxar.', buyUrl:'https://www.emporiodunorte.com.br/produtos/mix-do-sono-40g-love-nuts/'},
       profLabel:'Professor(a) responsável',
       professors:[{name:'Clayton De Serpa', role:'Professor de Hatha Yoga · Bodytech', photo:'../assets/team/clayton-serpa.jpg', ig:'https://instagram.com/claytonyogaserpa'}],
-      nutri:'Camila',
+      nutri:{name:'Camila Aragão', role:'Nutrição Funcional Integrativa', photo:'../assets/team/camila-aragao.jpg', ig:'https://instagram.com/nutricamilaragao'},
       coachLabel:'Coach motivacional',
       coaches:[],
       vagas:'20 vagas'
@@ -2987,7 +2987,7 @@
         {name:'Rodrigo Lima', role:'Instrutor FitDance Classic e Swag', photo:'../assets/team/rodrigo-lima.jpg', ig:'https://instagram.com/rodrigo_dancer'},
         {name:'Charlyson Ribeiro', role:'Instrutor de FitDance', photo:'../assets/team/charlyson-ribeiro.jpg', ig:'https://instagram.com/charlyson.ribeiro'}
       ],
-      nutri:'Carol',
+      nutri:{name:'Caroline Mota', role:'Nutricionista', photo:'../assets/team/caroline-mota.jpg', ig:'https://instagram.com/carolinemotanutri'},
       coachLabel:'Coach motivacional',
       coaches:[],
       vagas:'20 vagas'
@@ -2999,7 +2999,7 @@
       lovenuts:{img:'../assets/lovenuts/mix-imunidade.png', alt:'Mix Imunidade LoveNuts', desc:'Castanha de caju, amêndoas, damasco e cacau, com vitaminas A, C, E e zinco pro sistema imunológico.', buyUrl:'https://www.emporiodunorte.com.br/produtos/mix-da-imunidade-40g-love-nuts/'},
       profLabel:'Professor(a) responsável',
       professors:[],
-      nutri:'Emerson',
+      nutri:{name:'Emerson Paiva', role:'Nutricionista · CRN11 10666', photo:'../assets/team/emerson-paiva.jpg', ig:'https://instagram.com/emersonpaivanutri'},
       coachLabel:'Coach motivacional',
       coaches:[],
       vagas:'20 vagas'
@@ -3012,7 +3012,7 @@
       lovenutsNote:'Sem mix associado (estação de fechamento)',
       profLabel:'Professor(a) responsável',
       professors:[],
-      nutri:'A definir',
+      nutri:null,
       coachLabel:'Coach motivacional',
       coaches:[],
       vagas:'Ilimitado'
@@ -3054,7 +3054,7 @@
         '<div class="station-detail-grid">'+
           '<div class="station-detail-box"><span class="station-detail-label">Produto LoveNuts</span>'+lovenutsHTML+'</div>'+
           '<div class="station-detail-box"><span class="station-detail-label">'+s.profLabel+'</span>'+profHTML+'</div>'+
-          '<div class="station-detail-box"><span class="station-detail-label">Nutricionista responsável</span><div class="sd-placeholder">'+s.nutri+'</div></div>'+
+          '<div class="station-detail-box"><span class="station-detail-label">Nutricionista responsável</span>'+(s.nutri ? personHTML(s.nutri) : '<div class="sd-placeholder">A definir</div>')+'</div>'+
           '<div class="station-detail-box"><span class="station-detail-label">'+s.coachLabel+'</span>'+coachHTML+'</div>'+
           '<div class="station-detail-box"><span class="station-detail-label">Vagas</span><div class="sd-placeholder">'+s.vagas+'</div></div>'+
         '</div>'+

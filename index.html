@@ -356,6 +356,12 @@
     margin-top:30px;
     display:flex;flex-wrap:wrap;justify-content:center;gap:12px;
   }
+  .hero-support{margin-top:36px;display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:24px;}
+  .hero-support-group{display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .hero-support-group>span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,240,225,.55);}
+  .hero-support-logos{display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.94);padding:10px 24px;border-radius:14px;box-shadow:0 12px 30px rgba(10,5,0,.25);}
+  .hero-support-logos img{height:26px;width:auto;}
+  @media (max-width:480px){.hero-support-logos{gap:16px;padding:8px 18px;}.hero-support-logos img{height:20px;}}
   .btn{
     display:inline-flex;align-items:center;gap:10px;
     padding:16px 30px;
@@ -1400,6 +1406,21 @@
     <p class="hero-sub">Um circuito de 6 estações de <span class="nw">bem-estar</span> e movimento, em Fortaleza. Venha viver essa experiência com a gente.</p>
     <div class="hero-cta">
       <a href="#ingressos" class="btn btn-primary">Quero meu ingresso</a>
+    </div>
+    <div class="hero-support">
+      <div class="hero-support-group">
+        <span>Com o apoio de</span>
+        <div class="hero-support-logos">
+          <img src="assets/bodytech-logo.svg" alt="Bodytech">
+          <img src="assets/iguatemi-bosque-logo.png" alt="Iguatemi Bosque">
+        </div>
+      </div>
+      <div class="hero-support-group">
+        <span>Assinado por</span>
+        <div class="hero-support-logos">
+          <img src="assets/lovenuts/lovenuts-logo.png" alt="LoveNuts">
+        </div>
+      </div>
     </div>
   </div>
 </section>

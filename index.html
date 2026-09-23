@@ -148,6 +148,9 @@
   @media (max-width:480px){
     .eyebrow{white-space:nowrap;font-size:10.5px;letter-spacing:.1em;}
   }
+  @media (max-width:340px){
+    .eyebrow{white-space:normal;}
+  }
   .eyebrow::before{
     content:"";
     width:7px;height:7px;border-radius:50%;
@@ -858,7 +861,7 @@
   .testi-grid{
     margin-top:36px;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));
     gap:20px;
   }
   .testi-card{

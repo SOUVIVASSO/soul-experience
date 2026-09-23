@@ -3,7 +3,7 @@
 <head>
 <script>(function(){if('scrollRestoration' in history){history.scrollRestoration='manual';}if(location.hash){history.replaceState(null,'',location.pathname+location.search);}window.scrollTo(0,0);function toTop(){window.scrollTo(0,0);}window.addEventListener('load',toTop);window.addEventListener('pageshow',toTop);})();</script>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="description" content="Proposta de patrocinio do Soul Experience, evento de bem-estar em Fortaleza. 2ª edicao em 28 de novembro de 2026, no Iguatemi Bosque.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://soulexperience.vivasso.com.br/patrocinio/">
@@ -835,7 +835,7 @@
   .marcas{
     background:linear-gradient(160deg, #241811 0%, #4A2C1C 100%);
     border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    overflow:hidden;
+    overflow:hidden;contain:layout;
     padding-block:clamp(56px,9vw,96px) clamp(48px,7vw,80px);
   }
   .marcas .eyebrow{color:#F3D9B4;}
@@ -858,7 +858,7 @@
   .brand-full-card img{max-width:120px;max-height:44px;width:auto;height:auto;object-fit:contain;}
   .brand-full-card span{font-size:12px;color:rgba(250,240,225,.7);text-align:center;}
   .marquee-row{
-    width:100%;overflow:hidden;margin-top:28px;
+    width:100%;overflow:hidden;margin-top:28px;contain:layout;
     -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
     mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
   }

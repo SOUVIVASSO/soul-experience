@@ -1388,7 +1388,7 @@
 <main>
 <!-- ================= HERO ================= -->
 <div id="top"></div>
-<section class="hero on-dark">
+<section class="hero on-dark" id="heroSection">
   <div class="wrap hero-inner">
     <span class="logo-mark lg" id="heroLogo"><img src="assets/logo-soul-white.png" alt="Soul Experience"></span>
     <a class="hero-date" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Soul%20Experience%20-%202%C2%AA%20edi%C3%A7%C3%A3o&dates=20261128T090000Z/20261128T123000Z&details=A%202%C2%AA%20edi%C3%A7%C3%A3o%20do%20Soul%20Experience%20acontece%20no%20Iguatemi%20Bosque%2C%20em%20Fortaleza.&location=Iguatemi%20Bosque%2C%20Fortaleza" target="_blank" rel="noopener">
@@ -2121,14 +2121,14 @@
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
 
-  var heroLogo = document.getElementById('heroLogo');
-  if(nav && heroLogo && 'IntersectionObserver' in window){
+  var heroSection = document.getElementById('heroSection');
+  if(nav && heroSection && 'IntersectionObserver' in window){
     var logoObserver = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         nav.setAttribute('data-scrolled', entry.isIntersecting ? 'false' : 'true');
       });
     }, {threshold: 0});
-    logoObserver.observe(heroLogo);
+    logoObserver.observe(heroSection);
   } else if(nav){
     nav.setAttribute('data-scrolled', 'true');
   }

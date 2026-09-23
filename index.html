@@ -1156,7 +1156,8 @@
     border:none;padding:9px 18px;border-radius:999px;cursor:pointer;
   }
   @media (max-width:600px){.newsletter-box{flex-direction:column;text-align:center;}.newsletter-text{align-items:center;}.newsletter-form{justify-content:center;width:100%;}.newsletter-form input{flex:1;min-width:0;}}
-  .newsletter-success{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .newsletter-success{display:none;align-items:center;gap:12px;flex-wrap:wrap;}
+  .newsletter-success.show{display:flex;}
   .newsletter-success span{font-size:12.5px;color:var(--ink-dim);}
 
   @media (max-width:480px){
@@ -2034,7 +2035,7 @@
       <input type="email" name="email" id="newsletterEmail" placeholder="Seu e-mail" autocomplete="email" required>
       <button type="submit">Assinar</button>
     </form>
-    <div class="newsletter-success" id="newsletterSuccess" hidden>
+    <div class="newsletter-success" id="newsletterSuccess">
       <span>Inscrito! Confira seu e-mail — te mandamos o cupom de desconto por lá.</span>
     </div>
   </div>
@@ -2767,18 +2768,18 @@
 
   function resetNewsletter(){
     if(footerForm){
-      footerForm.hidden = false;
+      footerForm.style.display = '';
       footerForm.reset();
     }
-    if(footerSuccess) footerSuccess.hidden = true;
+    if(footerSuccess) footerSuccess.classList.remove('show');
   }
 
   if(footerForm){
     footerForm.addEventListener('submit', function(e){
       e.preventDefault();
       submitNewsletter(document.getElementById('newsletterNome').value, document.getElementById('newsletterEmail').value);
-      footerForm.hidden = true;
-      if(footerSuccess) footerSuccess.hidden = false;
+      footerForm.style.display = 'none';
+      if(footerSuccess) footerSuccess.classList.add('show');
     });
   }
 

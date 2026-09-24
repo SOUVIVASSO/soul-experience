@@ -1151,6 +1151,20 @@
   .newsletter-success span{font-size:12.5px;color:var(--ink-dim);}
   .waitlist-form{display:flex;flex-direction:column;gap:10px;max-width:360px;margin:20px auto 0;}
   .waitlist-form input{font-family:inherit;font-size:13.5px;padding:12px 18px;border-radius:999px;border:1px solid var(--line-strong);background:var(--bg);color:var(--ink);width:100%;}
+  .waitlist-form .btn{justify-content:center;}
+  #waitlistOpenBtn{margin-top:20px;}
+  .waitlist-step2{display:none;flex-direction:column;align-items:center;gap:14px;margin-top:20px;max-width:420px;margin-inline:auto;}
+  .waitlist-step2.show{display:flex;}
+  .waitlist-step2 p{font-size:14px;color:var(--ink-dim);line-height:1.5;margin:0;}
+  .waitlist-step2-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+  .waitlist-step2-actions .btn{justify-content:center;}
+  .waitlist-extra{max-width:460px;}
+  .waitlist-extra .waitlist-q{display:flex;flex-direction:column;gap:6px;text-align:left;font-size:12.5px;color:var(--ink-dim);font-weight:700;}
+  .waitlist-extra textarea{font-family:inherit;font-size:13.5px;padding:12px 18px;border-radius:18px;border:1px solid var(--line-strong);background:var(--bg);color:var(--ink);width:100%;resize:vertical;min-height:56px;}
+  .waitlist-extra fieldset{border:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;text-align:left;}
+  .waitlist-extra legend{font-size:12.5px;color:var(--ink-dim);font-weight:700;margin-bottom:2px;padding:0;}
+  .waitlist-radio{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink);}
+  .waitlist-radio input[type=text]{flex:1;min-width:0;font-family:inherit;font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid var(--line-strong);background:var(--bg);color:var(--ink);}
   .waitlist-success{display:none;flex-direction:column;align-items:center;gap:6px;margin-top:20px;max-width:420px;margin-inline:auto;}
   .waitlist-success.show{display:flex;}
   .waitlist-success strong{font-family:'Unbounded',sans-serif;font-size:15px;color:var(--ink);}
@@ -1984,12 +1998,44 @@
     <span class="eyebrow">Já pensando na próxima</span>
     <h2 class="section-title" style="font-size:clamp(22px,3vw,28px);margin-top:10px;">Não perca a 3ª edição do Soul Experience</h2>
     <p class="lede" style="margin-inline:auto;margin-top:10px;">Entre na lista de espera e seja avisado(a) em primeira mão, com um desconto exclusivo na compra do seu próximo ingresso.</p>
-    <form class="waitlist-form" id="waitlistForm">
+    <button type="button" class="btn btn-primary" id="waitlistOpenBtn">Quero entrar na lista de espera</button>
+
+    <form class="waitlist-form" id="waitlistForm" style="display:none;">
       <input type="text" name="nome" id="waitlistNome" placeholder="Seu nome" autocomplete="name" required>
       <input type="email" name="email" id="waitlistEmail" placeholder="Seu e-mail" autocomplete="email" required>
       <input type="tel" name="whatsapp" id="waitlistWhats" placeholder="Seu WhatsApp" autocomplete="tel" required>
-      <button type="submit" class="btn btn-primary">Quero entrar na lista de espera</button>
+      <button type="submit" class="btn btn-primary">Continuar</button>
     </form>
+
+    <div class="waitlist-step2" id="waitlistStep2">
+      <p>Você gostaria de ajudar a gente a melhorar, respondendo mais algumas perguntas rápidas?</p>
+      <div class="waitlist-step2-actions">
+        <button type="button" class="btn btn-ghost" id="waitlistSkipBtn">Não, obrigado(a)</button>
+        <button type="button" class="btn btn-primary" id="waitlistMoreBtn">Sim, quero ajudar</button>
+      </div>
+    </div>
+
+    <form class="waitlist-form waitlist-extra" id="waitlistFormExtra" style="display:none;">
+      <label class="waitlist-q">O que você gostaria de ver na 3ª edição?
+        <textarea id="waitlistQ1" name="q1"></textarea>
+      </label>
+      <label class="waitlist-q">O que você sente falta em eventos wellness de Fortaleza?
+        <textarea id="waitlistQ2" name="q2"></textarea>
+      </label>
+      <fieldset>
+        <legend>Que tipo de atividade te deixaria mais animado(a) para participar?</legend>
+        <label class="waitlist-radio"><input type="radio" name="q3" value="Atividades físicas com energia"> Atividades físicas com energia</label>
+        <label class="waitlist-radio"><input type="radio" name="q3" value="Roda de conversa / talk com especialistas"> Roda de conversa / talk com especialistas</label>
+        <label class="waitlist-radio"><input type="radio" name="q3" value="Práticas guiadas (respiração, meditação, Yoga)"> Práticas guiadas (respiração, meditação, Yoga)</label>
+        <label class="waitlist-radio"><input type="radio" name="q3" value="Espaço de beleza e autocuidado"> Espaço de beleza e autocuidado</label>
+        <label class="waitlist-radio"><input type="radio" name="q3" value="Experiências sensoriais (aromas, sons, texturas)"> Experiências sensoriais (aromas, sons, texturas)</label>
+        <label class="waitlist-radio"><input type="radio" name="q3" value="Momento social / networking"> Momento social / networking</label>
+        <label class="waitlist-radio"><input type="radio" name="q3" value="Gastronomia e drinks especiais"> Gastronomia e drinks especiais</label>
+        <label class="waitlist-radio"><input type="radio" name="q3" value="__other_option__" id="waitlistQ3OtherRadio"> Outro: <input type="text" id="waitlistQ3Other" placeholder="Conta pra gente"></label>
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
     <div class="waitlist-success" id="waitlistSuccess">
       <strong>Prontinho! 🎉</strong>
       <span>Você está na lista de espera da 3ª edição. A gente avisa em primeira mão, com desconto exclusivo.</span>
@@ -2851,11 +2897,22 @@
 (function(){
   var WAITLIST_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSepdhDxOD4idFK-hhr3MW1d41aY7YFCdXKgJGltp-8ofM254g/formResponse';
 
-  function submitWaitlist(nome, email, whatsapp){
+  function submitWaitlist(extra){
     var body = new URLSearchParams();
-    body.append('entry.1753345178', nome);
-    body.append('entry.1711305997', email);
-    body.append('entry.398197312', whatsapp);
+    body.append('entry.1753345178', document.getElementById('waitlistNome').value);
+    body.append('entry.1711305997', document.getElementById('waitlistEmail').value);
+    body.append('entry.398197312', document.getElementById('waitlistWhats').value);
+    if(extra){
+      body.append('entry.882802161', document.getElementById('waitlistQ1').value);
+      body.append('entry.402148569', document.getElementById('waitlistQ2').value);
+      var q3 = document.querySelector('input[name="q3"]:checked');
+      if(q3){
+        body.append('entry.1099729154', q3.value);
+        if(q3.value === '__other_option__'){
+          body.append('entry.1099729154.other_option_response', document.getElementById('waitlistQ3Other').value);
+        }
+      }
+    }
     fetch(WAITLIST_FORM_URL, {
       method: 'POST',
       mode: 'no-cors',
@@ -2864,19 +2921,64 @@
     }).catch(function(){});
   }
 
+  var waitlistOpenBtn = document.getElementById('waitlistOpenBtn');
   var waitlistForm = document.getElementById('waitlistForm');
+  var waitlistStep2 = document.getElementById('waitlistStep2');
+  var waitlistFormExtra = document.getElementById('waitlistFormExtra');
+  var waitlistSkipBtn = document.getElementById('waitlistSkipBtn');
+  var waitlistMoreBtn = document.getElementById('waitlistMoreBtn');
+  var waitlistQ3Other = document.getElementById('waitlistQ3Other');
+  var waitlistQ3OtherRadio = document.getElementById('waitlistQ3OtherRadio');
   var waitlistSuccess = document.getElementById('waitlistSuccess');
+
+  function showSuccess(){
+    if(waitlistOpenBtn) waitlistOpenBtn.style.display = 'none';
+    if(waitlistForm) waitlistForm.style.display = 'none';
+    if(waitlistStep2) waitlistStep2.classList.remove('show');
+    if(waitlistFormExtra) waitlistFormExtra.style.display = 'none';
+    if(waitlistSuccess) waitlistSuccess.classList.add('show');
+  }
+
+  if(waitlistOpenBtn){
+    waitlistOpenBtn.addEventListener('click', function(){
+      waitlistOpenBtn.style.display = 'none';
+      if(waitlistForm) waitlistForm.style.display = 'flex';
+    });
+  }
 
   if(waitlistForm){
     waitlistForm.addEventListener('submit', function(e){
       e.preventDefault();
-      submitWaitlist(
-        document.getElementById('waitlistNome').value,
-        document.getElementById('waitlistEmail').value,
-        document.getElementById('waitlistWhats').value
-      );
       waitlistForm.style.display = 'none';
-      if(waitlistSuccess) waitlistSuccess.classList.add('show');
+      if(waitlistStep2) waitlistStep2.classList.add('show');
+    });
+  }
+
+  if(waitlistSkipBtn){
+    waitlistSkipBtn.addEventListener('click', function(){
+      submitWaitlist(false);
+      showSuccess();
+    });
+  }
+
+  if(waitlistMoreBtn){
+    waitlistMoreBtn.addEventListener('click', function(){
+      if(waitlistStep2) waitlistStep2.classList.remove('show');
+      if(waitlistFormExtra) waitlistFormExtra.style.display = 'flex';
+    });
+  }
+
+  if(waitlistQ3Other){
+    waitlistQ3Other.addEventListener('input', function(){
+      if(waitlistQ3OtherRadio) waitlistQ3OtherRadio.checked = true;
+    });
+  }
+
+  if(waitlistFormExtra){
+    waitlistFormExtra.addEventListener('submit', function(e){
+      e.preventDefault();
+      submitWaitlist(true);
+      showSuccess();
     });
   }
 })();

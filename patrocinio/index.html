@@ -1003,15 +1003,16 @@
   .vacancy-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--violet),var(--pink));}
   .price-card .btn{margin-top:22px;justify-content:center;width:100%;}
   .price-note{margin-top:20px;font-size:12.5px;color:var(--ink-dim);}
-  .countdown{display:flex;gap:16px;justify-content:center;margin-top:48px;flex-wrap:wrap;}
-  .countdown-unit{background:var(--panel-lav);border:1px solid var(--line);border-radius:16px;padding:14px 20px;min-width:76px;text-align:center;}
-  .countdown-num{display:block;font-family:'Unbounded',sans-serif;font-weight:700;font-size:36px;color:var(--ink);font-variant-numeric:tabular-nums;}
-  .countdown-label{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);margin-top:4px;}
+  .countdown{display:flex;gap:16px;justify-content:center;margin-top:48px;flex-wrap:nowrap;}
+  .countdown-unit{background:var(--panel-lav);border:1px solid var(--line);border-radius:16px;padding:14px 20px;min-width:76px;text-align:center;flex:0 1 auto;}
+  .countdown-num{display:block;font-family:'Unbounded',sans-serif;font-weight:700;font-size:36px;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .countdown-label{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);margin-top:4px;white-space:nowrap;}
   .countdown-caption{text-align:center;font-size:13px;color:var(--ink-dim);margin-top:14px;}
   .countdown-ended{font-size:15px;font-weight:700;color:var(--ink);text-align:center;padding:14px;}
   .launch-reminder{margin-top:14px;font-size:14px;color:var(--ink-dim);text-align:center;}
   .launch-reminder a{color:var(--violet);font-weight:700;text-decoration:underline;}
-  @media (max-width:480px){.countdown{gap:10px;}.countdown-unit{padding:12px 14px;min-width:64px;}.countdown-num{font-size:28px;}}
+  @media (max-width:480px){.countdown{gap:8px;}.countdown-unit{padding:10px 8px;min-width:0;flex:1 1 0;}.countdown-num{font-size:22px;}.countdown-label{font-size:9.5px;letter-spacing:.04em;}}
+  @media (max-width:360px){.countdown{gap:5px;}.countdown-unit{padding:8px 4px;border-radius:12px;}.countdown-num{font-size:18px;}.countdown-label{font-size:8.5px;}}
 
   /* ---------- FAQ ---------- */
   .faq-list{margin-top:32px;max-width:760px;}

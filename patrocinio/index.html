@@ -3161,13 +3161,18 @@
   function openPromo(){
     if(shown) return;
     shown = true;
+    clearTimeout(idleTimer);
     overlay.classList.add('open');
   }
   function closePromo(){
     overlay.classList.remove('open');
   }
 
-  var idleTimer = setTimeout(openPromo, 180000);
+  var idleTimer = setTimeout(openPromo, 90000);
+
+  document.addEventListener('mouseout', function(e){
+    if(!e.relatedTarget && e.clientY <= 0){ openPromo(); }
+  });
 
   closeBtn.addEventListener('click', closePromo);
   overlay.addEventListener('click', function(e){ if(e.target === overlay) closePromo(); });

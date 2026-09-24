@@ -2751,9 +2751,11 @@
 
   var idleTimer = setTimeout(openPromo, 90000);
 
-  document.addEventListener('mouseout', function(e){
-    if(!e.relatedTarget && e.clientY <= 0){ openPromo(); }
-  });
+  if(window.matchMedia && window.matchMedia('(pointer: fine)').matches){
+    document.addEventListener('mouseout', function(e){
+      if(!e.relatedTarget && e.clientY <= 0){ openPromo(); }
+    });
+  }
 
   if(heroCtaBtn){
     heroCtaBtn.addEventListener('click', function(){

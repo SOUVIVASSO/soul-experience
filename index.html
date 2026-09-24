@@ -1147,6 +1147,12 @@
   .newsletter-success{display:none;align-items:center;gap:12px;flex-wrap:wrap;}
   .newsletter-success.show{display:flex;}
   .newsletter-success span{font-size:12.5px;color:var(--ink-dim);}
+  .waitlist-form{display:flex;flex-direction:column;gap:10px;max-width:360px;margin:20px auto 0;}
+  .waitlist-form input{font-family:inherit;font-size:13.5px;padding:12px 18px;border-radius:999px;border:1px solid var(--line-strong);background:var(--bg);color:var(--ink);width:100%;}
+  .waitlist-success{display:none;flex-direction:column;align-items:center;gap:6px;margin-top:20px;max-width:420px;margin-inline:auto;}
+  .waitlist-success.show{display:flex;}
+  .waitlist-success strong{font-family:'Unbounded',sans-serif;font-size:15px;color:var(--ink);}
+  .waitlist-success span{font-size:13px;color:var(--ink-dim);line-height:1.5;}
   .newsletter-coupon{
     border:2px dashed var(--violet);border-radius:999px;background:rgba(181,101,46,.08);
     padding:8px 16px;font-family:'Unbounded',sans-serif;font-weight:700;font-size:14px;letter-spacing:.05em;color:var(--violet);
@@ -1976,7 +1982,16 @@
     <span class="eyebrow">Já pensando na próxima</span>
     <h2 class="section-title" style="font-size:clamp(22px,3vw,28px);margin-top:10px;">Não perca a 3ª edição do Soul Experience</h2>
     <p class="lede" style="margin-inline:auto;margin-top:10px;">Entre na lista de espera e seja avisado(a) em primeira mão, com um desconto exclusivo na compra do seu próximo ingresso.</p>
-    <a class="btn btn-primary" href="https://wa.me/558597712114?text=Oi!%20Quero%20entrar%20na%20lista%20de%20espera%20da%203%C2%AA%20edi%C3%A7%C3%A3o%20do%20Soul%20Experience%20e%20receber%20o%20desconto%20exclusivo." target="_blank" rel="noopener" style="margin-top:20px;">Quero entrar na lista de espera</a>
+    <form class="waitlist-form" id="waitlistForm">
+      <input type="text" name="nome" id="waitlistNome" placeholder="Seu nome" autocomplete="name" required>
+      <input type="email" name="email" id="waitlistEmail" placeholder="Seu e-mail" autocomplete="email" required>
+      <input type="tel" name="whatsapp" id="waitlistWhats" placeholder="Seu WhatsApp" autocomplete="tel" required>
+      <button type="submit" class="btn btn-primary">Quero entrar na lista de espera</button>
+    </form>
+    <div class="waitlist-success" id="waitlistSuccess">
+      <strong>Prontinho! 🎉</strong>
+      <span>Você está na lista de espera da 3ª edição. A gente avisa em primeira mão, com desconto exclusivo.</span>
+    </div>
   </div>
 </section>
 
@@ -2799,6 +2814,41 @@
   window.addEventListener('pageshow', function(e){
     if(e.persisted) resetNewsletter();
   });
+})();
+</script>
+
+<script>
+(function(){
+  var WAITLIST_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSepdhDxOD4idFK-hhr3MW1d41aY7YFCdXKgJGltp-8ofM254g/formResponse';
+
+  function submitWaitlist(nome, email, whatsapp){
+    var body = new URLSearchParams();
+    body.append('entry.1753345178', nome);
+    body.append('entry.1711305997', email);
+    body.append('entry.398197312', whatsapp);
+    fetch(WAITLIST_FORM_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: body.toString()
+    }).catch(function(){});
+  }
+
+  var waitlistForm = document.getElementById('waitlistForm');
+  var waitlistSuccess = document.getElementById('waitlistSuccess');
+
+  if(waitlistForm){
+    waitlistForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      submitWaitlist(
+        document.getElementById('waitlistNome').value,
+        document.getElementById('waitlistEmail').value,
+        document.getElementById('waitlistWhats').value
+      );
+      waitlistForm.style.display = 'none';
+      if(waitlistSuccess) waitlistSuccess.classList.add('show');
+    });
+  }
 })();
 </script>
 

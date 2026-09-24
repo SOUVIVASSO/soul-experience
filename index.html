@@ -690,8 +690,9 @@
   }
   .video-modal.open{display:flex;}
   .video-modal-frame{
-    width:min(1100px, 94vw);
-    aspect-ratio:16/9;
+    width:min(420px, 92vw);
+    aspect-ratio:9/16;
+    max-height:90vh;
     background:#000;
     border-radius:12px;
     overflow:hidden;
@@ -2306,7 +2307,7 @@
   var videoModalFrame = document.getElementById('videoModalFrame');
   var videoModalClose = document.getElementById('videoModalClose');
   function openVideoModal(){
-    videoModalFrame.innerHTML = '<iframe src="https://drive.google.com/file/d/1feK7oPDgLCbgEW6_buLoqCzYqj4WwtHi/preview" allow="autoplay; fullscreen" allowfullscreen frameborder="0"></iframe>';
+    videoModalFrame.innerHTML = '<iframe src="https://www.youtube.com/embed/dmipirNU0xA?autoplay=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen frameborder="0"></iframe>';
     videoModal.classList.add('open');
   }
   function closeVideoModal(){

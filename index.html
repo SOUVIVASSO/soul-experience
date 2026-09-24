@@ -1411,7 +1411,7 @@
     <h1 class="hero-tagline">Segunda edição: Circuito das Estações</h1>
     <p class="hero-sub">Um circuito de 6 estações de <span class="nw">bem-estar</span> e movimento, em Fortaleza. Venha viver essa experiência com a gente.</p>
     <div class="hero-cta">
-      <a href="#ingressos" class="btn btn-primary">Quero meu ingresso</a>
+      <a href="#ingressos" class="btn btn-primary" id="heroCtaBtn">Quero meu ingresso</a>
     </div>
     <div class="hero-support">
       <div class="hero-support-group">
@@ -2090,8 +2090,8 @@
   <div class="promo-popup" role="dialog" aria-modal="true" aria-label="Oferta especial de desconto">
     <button type="button" class="promo-close" id="promoClose" aria-label="Fechar">✕</button>
     <span class="promo-emoji">🎉</span>
-    <h3>Não deixe essa oportunidade passar!</h3>
-    <p>Garanta seu ingresso pro Soul Experience com <strong>10% de desconto</strong> usando o cupom abaixo:</p>
+    <h3 id="promoTitle">Não deixe essa oportunidade passar!</h3>
+    <p id="promoText">Garanta seu ingresso pro Soul Experience com <strong>10% de desconto</strong> usando o cupom abaixo:</p>
     <button type="button" class="promo-coupon" id="promoCoupon">VIVASSO10 <span class="copy-hint">toque pra copiar</span></button>
     <a class="btn btn-primary promo-cta" id="promoCta" href="https://www.sympla.com.br/evento/soul-experience--1-ediCAo---circuito-das-estaCOes/3587190" target="_blank" rel="noopener">Quero meu ingresso</a>
   </div>
@@ -2721,12 +2721,27 @@
   if(!overlay) return;
   var closeBtn = document.getElementById('promoClose');
   var couponBtn = document.getElementById('promoCoupon');
+  var promoTitle = document.getElementById('promoTitle');
+  var promoText = document.getElementById('promoText');
+  var heroCtaBtn = document.getElementById('heroCtaBtn');
   var shown = false;
 
-  function openPromo(){
+  var DEFAULT_TITLE = promoTitle.textContent;
+  var DEFAULT_TEXT = promoText.innerHTML;
+  var HERO_TITLE = 'Você decide rápido, a gente recompensa rápido!';
+  var HERO_TEXT = 'Seja um dos primeiros a garantir seu ingresso com <strong>10% de desconto</strong> usando o cupom abaixo:';
+
+  function openPromo(variant){
     if(shown) return;
     shown = true;
     clearTimeout(idleTimer);
+    if(variant === 'hero'){
+      promoTitle.textContent = HERO_TITLE;
+      promoText.innerHTML = HERO_TEXT;
+    } else {
+      promoTitle.textContent = DEFAULT_TITLE;
+      promoText.innerHTML = DEFAULT_TEXT;
+    }
     overlay.classList.add('open');
   }
   function closePromo(){
@@ -2738,6 +2753,12 @@
   document.addEventListener('mouseout', function(e){
     if(!e.relatedTarget && e.clientY <= 0){ openPromo(); }
   });
+
+  if(heroCtaBtn){
+    heroCtaBtn.addEventListener('click', function(){
+      setTimeout(function(){ openPromo('hero'); }, 650);
+    });
+  }
 
   closeBtn.addEventListener('click', closePromo);
   overlay.addEventListener('click', function(e){ if(e.target === overlay) closePromo(); });

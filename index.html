@@ -2802,12 +2802,6 @@
 
   var idleTimer;
 
-  if(window.matchMedia && window.matchMedia('(pointer: fine)').matches){
-    document.addEventListener('mouseout', function(e){
-      if(!e.relatedTarget && e.clientY <= 0){ openPromo(); }
-    });
-  }
-
   if(heroCtaBtn){
     heroCtaBtn.addEventListener('click', function(){
       setTimeout(function(){ openPromo('hero'); }, 650);
@@ -3081,8 +3075,9 @@
     var filled = v.filled || 0;
     var pct, rightLabel;
     if(v.max){
+      var available = Math.max(0, v.max - filled);
       pct = Math.min(100, Math.round((filled / v.max) * 100));
-      rightLabel = filled + ' de ' + v.max;
+      rightLabel = available + ' de ' + v.max + ' disponíveis';
     } else {
       pct = Math.min(100, Math.round((filled / 20) * 100));
       rightLabel = filled + ' confirmados · ilimitado';

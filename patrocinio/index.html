@@ -920,27 +920,6 @@
   .testi-text{margin-top:14px;font-size:15px;line-height:1.6;color:var(--ink);font-style:italic;}
   .testi-author{margin-top:16px;font-family:'Unbounded',sans-serif;font-weight:600;font-size:13.5px;color:var(--pink);}
 
-  /* ---------- INSTAGRAM ---------- */
-  .instagram-icon{width:52px;height:52px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto;}
-  .insta-wrap{display:flex;align-items:center;gap:56px;text-align:left;max-width:1040px;}
-  .insta-text{flex:1;min-width:240px;}
-  .insta-text .instagram-icon{margin:0;}
-  .insta-text .lede{margin-inline:0;}
-  .insta-phone-wrap{position:relative;display:flex;align-items:flex-start;gap:22px;flex-shrink:0;}
-  .insta-phone{
-    width:220px;height:465px;background:#171018;border-radius:36px;padding:10px;
-    box-shadow:0 30px 60px -20px rgba(20,10,4,.45);position:relative;
-  }
-  .insta-phone-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:68px;height:15px;background:#171018;border-radius:0 0 12px 12px;z-index:2;}
-  .insta-phone-screen{background:#fff;width:100%;height:100%;border-radius:26px;overflow:hidden;padding-top:18px;}
-  .insta-phone-screen img{display:block;width:100%;height:auto;}
-  @media (max-width:780px){
-    .insta-wrap{flex-direction:column;text-align:center;gap:32px;}
-    .insta-text{text-align:center;}
-    .insta-text .instagram-icon{margin:0 auto;}
-    .insta-text .lede{margin-inline:auto;}
-    .insta-phone-wrap{flex-direction:column;align-items:center;}
-  }
 
   /* ---------- PATROCINIO ---------- */
   .pricing{
@@ -1225,37 +1204,49 @@
   .wa-fab svg{fill:#fff;}
   @media (max-width:480px){.wa-fab{width:50px;height:50px;bottom:16px;right:16px;}}
 
+  .ig-fab{
+    position:fixed;bottom:90px;right:22px;z-index:400;
+    width:56px;height:56px;border-radius:50%;
+    background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 30px -8px rgba(24,20,42,.45);
+    transition:transform .15s ease;
+  }
+  .ig-fab:hover{transform:scale(1.07);}
+  @media (max-width:480px){.ig-fab{width:50px;height:50px;bottom:78px;right:16px;}}
+
   /* ---------- VIVI CHAT ---------- */
   .chat-fab{
-    position:fixed;bottom:90px;right:22px;z-index:400;width:56px;height:56px;border-radius:50%;
+    position:fixed;bottom:158px;right:22px;z-index:400;width:56px;height:56px;border-radius:50%;
     background:var(--grad);display:flex;align-items:center;justify-content:center;
     box-shadow:0 12px 30px -8px rgba(24,20,42,.45);transition:transform .15s ease;
     border:none;cursor:pointer;background-repeat:no-repeat;
   }
   .chat-fab:hover{transform:scale(1.07);}
-  @media (max-width:480px){.chat-fab{width:50px;height:50px;bottom:78px;right:16px;}}
+  @media (max-width:480px){.chat-fab{width:50px;height:50px;bottom:140px;right:16px;}}
 
   /* ---------- COMPARTILHAR ---------- */
   .share-fab{
-    position:fixed;bottom:158px;right:22px;z-index:400;width:56px;height:56px;border-radius:50%;
+    position:fixed;bottom:226px;right:22px;z-index:400;width:56px;height:56px;border-radius:50%;
     background:var(--violet);color:#fff;
     display:flex;align-items:center;justify-content:center;
     box-shadow:0 12px 30px -8px rgba(24,20,42,.45);transition:transform .15s ease;
     border:none;cursor:pointer;
   }
   .share-fab:hover{transform:scale(1.07);}
-  @media (max-width:480px){.share-fab{width:50px;height:50px;bottom:140px;right:16px;}}
+  @media (max-width:480px){.share-fab{width:50px;height:50px;bottom:202px;right:16px;}}
   .share-toast{
-    position:fixed;bottom:222px;right:22px;z-index:401;
+    position:fixed;bottom:290px;right:22px;z-index:401;
     background:var(--ink);color:#fff;font-size:12.5px;font-weight:600;
     padding:8px 14px;border-radius:999px;
     opacity:0;pointer-events:none;transform:translateY(6px);
     transition:opacity .2s ease, transform .2s ease;white-space:nowrap;
   }
   .share-toast.show{opacity:1;transform:translateY(0);}
-  @media (max-width:480px){.share-toast{bottom:198px;right:16px;}}
+  @media (max-width:480px){.share-toast{bottom:260px;right:16px;}}
   .share-menu{
-    position:fixed;bottom:158px;right:88px;z-index:401;
+    position:fixed;bottom:226px;right:88px;z-index:401;
     background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;
     padding:8px;box-shadow:0 20px 45px -18px rgba(42,27,20,.4);
     display:flex;flex-direction:column;gap:2px;min-width:160px;
@@ -1268,7 +1259,7 @@
   }
   .share-menu-item:hover{background:var(--panel-lav);}
   .share-menu-item svg{flex-shrink:0;color:var(--violet);}
-  @media (max-width:480px){.share-menu{bottom:140px;right:16px;}}
+  @media (max-width:480px){.share-menu{bottom:202px;right:16px;}}
 
   .cookie-notice{
     position:fixed;bottom:22px;left:22px;z-index:400;max-width:300px;
@@ -1284,13 +1275,13 @@
   @media (max-width:480px){.cookie-notice{left:12px;right:12px;bottom:12px;max-width:none;}}
 
   .chat-panel{
-    position:fixed;bottom:90px;right:22px;z-index:600;width:340px;max-width:calc(100vw - 32px);
+    position:fixed;bottom:158px;right:22px;z-index:600;width:340px;max-width:calc(100vw - 32px);
     height:460px;max-height:calc(100vh - 120px);background:var(--bg-alt);
     border:1px solid var(--line);border-radius:18px;box-shadow:0 25px 60px -15px rgba(30,15,5,.35);
     display:none;flex-direction:column;overflow:hidden;
   }
   .chat-panel[data-open="true"]{display:flex;}
-  @media (max-width:480px){.chat-panel{right:16px;bottom:78px;width:calc(100vw - 32px);}}
+  @media (max-width:480px){.chat-panel{right:16px;bottom:140px;width:calc(100vw - 32px);}}
 
   .chat-panel-head{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--grad);flex-shrink:0;}
   .chat-panel-head .ico{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.25);flex-shrink:0;}
@@ -1971,26 +1962,6 @@
   </div>
 </section>
 
-<!-- ================= INSTAGRAM ================= -->
-<section id="instagram" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
-  <div class="wrap insta-wrap">
-    <div class="insta-phone-wrap">
-      <div class="insta-phone" id="instaPhone">
-        <div class="insta-phone-notch"></div>
-        <div class="insta-phone-screen">
-          <img src="../assets/instagram/perfil-print.jpg" alt="Perfil @wellnessoulexp no Instagram">
-        </div>
-      </div>
-    </div>
-
-    <div class="insta-text">
-      <h2 class="section-title" style="font-size:clamp(22px,3vw,28px);">Siga a gente no Instagram</h2>
-      <p class="lede">Sorteios, bastidores e todas as novidades do Soul Experience são por lá, inclusive pra sua marca acompanhar de perto o retorno do patrocínio.</p>
-      <a class="btn btn-primary" href="https://instagram.com/wellnessoulexp" target="_blank" rel="noopener" style="margin-top:20px;">@wellnessoulexp</a>
-    </div>
-  </div>
-</section>
-
 <!-- ================= PUBLICO ================= -->
 <section id="publico">
   <div class="wrap publico-grid">
@@ -2195,6 +2166,10 @@
 
 <a class="wa-fab" href="https://wa.me/558597712114?text=Oi!%20Quero%20saber%20mais%20sobre%20ser%20parceiro%20do%20Soul%20Experience" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <svg width="28" height="28" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 0C5.372 0 0 5.373 0 12.004c0 2.116.552 4.192 1.601 6.02L0 24l6.145-1.612c1.759.968 3.744 1.478 5.859 1.478h.001c6.63 0 12.003-5.373 12.003-12.005 0-3.208-1.248-6.223-3.516-8.49C18.226 1.25 15.211.002 12.004 0zm.001 21.999h-.001a9.947 9.947 0 01-5.075-1.393l-.364-.216-3.642.955.972-3.553-.237-.365a9.958 9.958 0 01-1.529-5.416c.001-5.502 4.478-9.979 9.98-9.979 2.665 0 5.171 1.038 7.053 2.922 1.883 1.883 2.92 4.39 2.92 7.055-.004 5.502-4.48 9.979-9.978 9.979z"/></svg>
+</a>
+
+<a class="ig-fab" href="https://instagram.com/wellnessoulexp" target="_blank" rel="noopener" aria-label="Seguir no Instagram">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
 </a>
 
 <span class="share-toast" id="shareToast">Link copiado!</span>

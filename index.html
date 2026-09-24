@@ -2800,7 +2800,7 @@
     overlay.classList.remove('open');
   }
 
-  var idleTimer = setTimeout(openPromo, 120000);
+  var idleTimer;
 
   if(window.matchMedia && window.matchMedia('(pointer: fine)').matches){
     document.addEventListener('mouseout', function(e){

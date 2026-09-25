@@ -2916,6 +2916,7 @@
       icon: '<path d="M128,24l20,64l64,20l-64,20l-20,64l-20,-64l-64,-20l64,-20Z"/>',
       color:'#A6683F', name:'Atividade Surpresa', tag:'',
       desc:'A estação de fechamento é surpresa: só vamos revelar no dia do evento! O que já podemos adiantar é que todo mundo participa, tem premiação especial pra quem se destacar, e fecha o circuito com muita energia. Ao final da atividade, todo mundo recebe um brinde das barras LoveNuts.',
+      hideDetails:true,
       lovenuts:null,
       lovenutsNote:'Sem mix associado (estação de fechamento)',
       profLabel:'Professor(a) responsável',
@@ -2974,6 +2975,14 @@
       ? s.coaches.map(personHTML).join('')
       : '<div class="sd-placeholder">A definir</div>';
     var tagHTML = s.tag ? '<span class="station-detail-tag" style="color:'+s.color+'">· '+s.tag+'</span>' : '';
+    var gridHTML = s.hideDetails ? '' :
+        '<div class="station-detail-grid">'+
+          '<div class="station-detail-box"><span class="station-detail-label">Produto LoveNuts</span>'+lovenutsHTML+'</div>'+
+          '<div class="station-detail-box"><span class="station-detail-label">'+s.profLabel+'</span>'+profHTML+'</div>'+
+          '<div class="station-detail-box"><span class="station-detail-label">Nutricionista responsável</span>'+(s.nutri ? personHTML(s.nutri) : '<div class="sd-placeholder">A definir</div>')+'</div>'+
+          '<div class="station-detail-box"><span class="station-detail-label">'+s.coachLabel+'</span>'+coachHTML+'</div>'+
+          '<div class="station-detail-box"><span class="station-detail-label">Vagas</span>'+vagasHTML(s.vagas)+'</div>'+
+        '</div>';
     return ''+
       '<div class="station-detail-inner">'+
         '<button type="button" class="station-detail-close" id="stationDetailClose" aria-label="Fechar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>'+
@@ -2982,13 +2991,7 @@
           '<div><div class="station-detail-title">'+s.name+'</div>'+tagHTML+'</div>'+
         '</div>'+
         '<p class="station-detail-desc">'+s.desc+'</p>'+
-        '<div class="station-detail-grid">'+
-          '<div class="station-detail-box"><span class="station-detail-label">Produto LoveNuts</span>'+lovenutsHTML+'</div>'+
-          '<div class="station-detail-box"><span class="station-detail-label">'+s.profLabel+'</span>'+profHTML+'</div>'+
-          '<div class="station-detail-box"><span class="station-detail-label">Nutricionista responsável</span>'+(s.nutri ? personHTML(s.nutri) : '<div class="sd-placeholder">A definir</div>')+'</div>'+
-          '<div class="station-detail-box"><span class="station-detail-label">'+s.coachLabel+'</span>'+coachHTML+'</div>'+
-          '<div class="station-detail-box"><span class="station-detail-label">Vagas</span>'+vagasHTML(s.vagas)+'</div>'+
-        '</div>'+
+        gridHTML+
       '</div>';
   }
 

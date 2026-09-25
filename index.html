@@ -225,8 +225,10 @@
     font-weight:700;font-size:13.5px;
     padding:10px 20px;border-radius:999px;
     white-space:nowrap;
-    transition:background .2s, transform .2s;
+    opacity:0;pointer-events:none;
+    transition:opacity .3s ease, background .2s, transform .2s;
   }
+  .nav[data-scrolled="true"] .nav-cta{opacity:1;pointer-events:auto;}
   .nav-cta:hover{background:var(--violet-2);transform:translateY(-1px);}
   .nav-cta-mobile{display:none;}
   .nav-right{display:flex;align-items:center;gap:16px;}

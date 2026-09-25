@@ -1121,10 +1121,11 @@
   }
   @media (max-width:600px){
     .footer-cta-row{flex-direction:column;align-items:center;}
-    .newsletter-box{flex-direction:column;text-align:center;}
+    .newsletter-box{flex-direction:column;text-align:center;flex:0 1 auto;}
     .newsletter-text{align-items:center;}
     .newsletter-form{flex-direction:column;align-items:stretch;width:100%;}
-    .newsletter-form input{flex:1;min-width:0;}
+    .newsletter-form input{flex:none;min-width:0;}
+    .footer-influencer{flex:0 1 auto;}
   }
   .newsletter-success{display:none;align-items:center;gap:12px;flex-wrap:wrap;}
   .newsletter-success.show{display:flex;}

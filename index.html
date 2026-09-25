@@ -3104,12 +3104,12 @@
     }
   });
 
-  if(panel){
-    panel.addEventListener('click', function(e){
-      if(e.target.closest('#stationDetailClose')) return;
-      closeStation();
-    });
-  }
+  document.addEventListener('click', function(e){
+    if(!activeKey) return;
+    if(panel && panel.contains(e.target)) return;
+    if(e.target.closest('.station[data-station]')) return;
+    closeStation();
+  });
 })();
 </script>
 

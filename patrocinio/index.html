@@ -508,6 +508,7 @@
   .sd-person img{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0;}
   .sd-person .sd-name{font-weight:700;font-size:12.5px;color:var(--ink);}
   .sd-person .sd-role{font-size:11px;color:var(--ink-dim);margin-top:1px;}
+  .sd-person .sd-handle{font-size:10.5px;color:var(--violet);margin-top:1px;}
   .sd-placeholder{margin-top:10px;font-size:12.5px;color:var(--ink-dim);font-style:italic;}
   .sd-vagas-note{margin-top:10px;font-size:11.5px;color:var(--ink-dim);line-height:1.45;}
   .station-detail-box .vacancy{margin-top:12px;}
@@ -2952,9 +2953,10 @@
   }
 
   function personHTML(p){
+    var handle = p.ig ? '@'+p.ig.replace(/\/+$/,'').split('/').pop() : '';
     return '<a class="sd-person" href="'+p.ig+'" target="_blank" rel="noopener">'+
       '<img src="'+p.photo+'" alt="'+p.name+'">'+
-      '<div><div class="sd-name">'+p.name+'</div><div class="sd-role">'+p.role+'</div></div>'+
+      '<div><div class="sd-name">'+p.name+'</div><div class="sd-role">'+p.role+'</div>'+(handle ? '<div class="sd-handle">'+handle+'</div>' : '')+'</div>'+
       '</a>';
   }
 

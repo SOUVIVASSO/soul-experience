@@ -1089,9 +1089,13 @@
   .footer-privacy-btn{background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer;}
   .footer-privacy-text{max-height:0;overflow:hidden;opacity:0;text-align:left;max-width:560px;margin:0 auto;line-height:1.6;transition:max-height .35s ease, opacity .3s ease, margin-top .3s ease;}
   .footer-privacy-text.open{max-height:300px;opacity:1;margin-top:14px;}
+  .footer-cta-row{
+    display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:26px 40px;
+    max-width:760px;margin:0 auto 26px;padding-bottom:26px;border-bottom:1px solid var(--line);
+  }
   .newsletter-box{
-    display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px 28px;
-    max-width:680px;margin:0 auto 26px;padding-bottom:26px;border-bottom:1px solid var(--line);text-align:left;
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:18px 28px;
+    text-align:left;flex:1 1 380px;
   }
   .newsletter-text{display:flex;flex-direction:column;gap:3px;}
   .newsletter-text strong{font-family:'Unbounded',sans-serif;font-size:14px;color:var(--ink);}
@@ -1105,7 +1109,23 @@
     font-family:inherit;font-size:12.5px;font-weight:700;color:#fff;background:var(--grad);
     border:none;padding:9px 18px;border-radius:999px;cursor:pointer;
   }
-  @media (max-width:600px){.newsletter-box{flex-direction:column;text-align:center;}.newsletter-text{align-items:center;}.newsletter-form{justify-content:center;width:100%;}.newsletter-form input{flex:1;min-width:0;}}
+  .footer-influencer{
+    display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;
+    flex:0 1 240px;
+  }
+  .footer-influencer span{font-size:12px;color:var(--ink-dim);line-height:1.5;}
+  .footer-influencer-btn{
+    font-family:inherit;font-size:12.5px;font-weight:700;color:#fff;background:var(--grad);
+    border:none;padding:9px 18px;border-radius:999px;cursor:pointer;text-decoration:none;
+    display:inline-flex;align-items:center;white-space:nowrap;
+  }
+  @media (max-width:600px){
+    .footer-cta-row{flex-direction:column;align-items:center;}
+    .newsletter-box{flex-direction:column;text-align:center;}
+    .newsletter-text{align-items:center;}
+    .newsletter-form{flex-direction:column;align-items:stretch;width:100%;}
+    .newsletter-form input{flex:1;min-width:0;}
+  }
   .newsletter-success{display:none;align-items:center;gap:12px;flex-wrap:wrap;}
   .newsletter-success.show{display:flex;}
   .newsletter-success span{font-size:12.5px;color:var(--ink-dim);}
@@ -1834,15 +1854,6 @@
 </section>
 
 <!-- ================= SEJA INFLUENCIADOR ================= -->
-<section id="seja-influenciador" style="border-top:1px solid var(--line);background:var(--panel-lav);">
-  <div class="wrap" style="max-width:620px;text-align:center;">
-    <span class="eyebrow">Faça parte</span>
-    <h2 class="section-title" style="font-size:clamp(22px,3vw,28px);margin-top:10px;">Seja um influenciador oficial do Soul Experience</h2>
-    <p class="lede" style="margin-inline:auto;margin-top:10px;">Criadores de conteúdo alinhados ao universo wellness podem entrar em contato pra fazer parte da nossa rede de influenciadores oficiais.</p>
-    <a href="https://wa.me/558597712114?text=Oi!%20Vi%20a%20proposta%20de%20parceria%20com%20influenciadores%20do%20Soul%20Experience%20e%20tenho%20interesse%20em%20participar.%20Quero%20saber%20como%20funciona." target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:24px;">Quero ser influenciador</a>
-  </div>
-</section>
-
 <!-- ================= INSTAGRAM ================= -->
 <!-- ================= LISTA DE ESPERA 3a EDICAO ================= -->
 <section id="terceira-edicao" style="border-top:1px solid var(--line);background:var(--panel-lav);">
@@ -2010,19 +2021,25 @@
 </main>
 
 <footer>
-  <div class="newsletter-box">
-    <div class="newsletter-text">
-      <strong>Assine nossa newsletter</strong>
-      <span>Receba novidades em primeira mão e ganhe desconto no ingresso.</span>
+  <div class="footer-cta-row">
+    <div class="newsletter-box">
+      <div class="newsletter-text">
+        <strong>Assine nossa newsletter</strong>
+        <span>Receba novidades em primeira mão e ganhe desconto no ingresso.</span>
+      </div>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="text" name="nome" id="newsletterNome" placeholder="Seu nome" autocomplete="name" required>
+        <input type="email" name="email" id="newsletterEmail" placeholder="Seu e-mail" autocomplete="email" required>
+        <button type="submit">Assinar</button>
+      </form>
+      <div class="newsletter-success" id="newsletterSuccess">
+        <span>Inscrito! Aqui está seu cupom de 10% de desconto:</span>
+        <button type="button" class="newsletter-coupon" id="newsletterCoupon">VIVASSO10 <span class="copy-hint">toque pra copiar</span></button>
+      </div>
     </div>
-    <form class="newsletter-form" id="newsletterForm">
-      <input type="text" name="nome" id="newsletterNome" placeholder="Seu nome" autocomplete="name" required>
-      <input type="email" name="email" id="newsletterEmail" placeholder="Seu e-mail" autocomplete="email" required>
-      <button type="submit">Assinar</button>
-    </form>
-    <div class="newsletter-success" id="newsletterSuccess">
-      <span>Inscrito! Aqui está seu cupom de 10% de desconto:</span>
-      <button type="button" class="newsletter-coupon" id="newsletterCoupon">VIVASSO10 <span class="copy-hint">toque pra copiar</span></button>
+    <div class="footer-influencer">
+      <span>Você é influenciador e quer fazer parte do nosso time? Fale com a gente aqui.</span>
+      <a href="https://wa.me/558597712114?text=Oi!%20Vi%20a%20proposta%20de%20parceria%20com%20influenciadores%20do%20Soul%20Experience%20e%20tenho%20interesse%20em%20participar.%20Quero%20saber%20como%20funciona." target="_blank" rel="noopener" class="footer-influencer-btn">Quero ser influenciador</a>
     </div>
   </div>
   <div class="footer-row">

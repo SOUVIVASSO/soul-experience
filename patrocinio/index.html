@@ -3145,12 +3145,6 @@
 
   var idleTimer = setTimeout(openPromo, 120000);
 
-  if(window.matchMedia && window.matchMedia('(pointer: fine)').matches){
-    document.addEventListener('mouseout', function(e){
-      if(!e.relatedTarget && e.clientY <= 0){ openPromo(); }
-    });
-  }
-
   closeBtn.addEventListener('click', closePromo);
   overlay.addEventListener('click', function(e){ if(e.target === overlay) closePromo(); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closePromo(); });

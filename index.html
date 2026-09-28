@@ -544,7 +544,8 @@
   .quiz-result h3{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--ink);margin:0 0 22px;}
   .quiz-result-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:26px;}
   @media (max-width:520px){.quiz-result-cards{grid-template-columns:1fr;}}
-  .quiz-result-card{border-radius:16px;padding:20px 16px;color:#fff;text-align:center;}
+  .quiz-result-card{border-radius:16px;padding:20px 16px;color:#fff;text-align:center;cursor:pointer;border:none;font-family:inherit;transition:transform .2s;}
+  .quiz-result-card:hover{transform:translateY(-2px);}
   .quiz-result-card svg{margin:0 auto 10px;display:block;}
   .quiz-result-card .tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.9;}
   .quiz-result-card .name{font-family:'Unbounded',sans-serif;font-weight:700;font-size:15px;margin-top:2px;}
@@ -1366,9 +1367,8 @@
 <!-- ================= NAV ================= -->
 <div class="sticky-head">
   <div class="countdown-bar" id="countdownBar">
-    <span>O Soul Experience chega em</span>
-    <span class="countdown-bar-time" id="countdownBarTime">--d --h --m --s</span>
-    <span class="countdown-bar-urgency">Mais da metade dos ingressos já vendidos. Corra e garanta o seu!</span>
+    <span>O Soul Experience chega em <span class="countdown-bar-time" id="countdownBarTime">--d --h --m --s</span></span>
+    <span class="countdown-bar-urgency">Em apenas 4 dias, mais da metade dos ingressos já vendidos. Corra e garanta o seu!</span>
   </div>
 <header class="nav" id="siteNav">
   <div class="wrap nav-inner">
@@ -2658,9 +2658,9 @@
     var top2 = ranked.slice(0, 2);
     resultCards.innerHTML = top2.map(function(key){
       var s = STATION_INFO[key];
-      return '<div class="quiz-result-card" style="background:' + s.color + '">' +
+      return '<button type="button" class="quiz-result-card" data-station="' + key + '" style="background:' + s.color + '">' +
         '<svg width="26" height="26" viewBox="0 0 256 256" fill="currentColor">' + s.icon + '</svg>' +
-        '<div class="tag">' + s.tag + '</div><div class="name">' + s.name + '</div></div>';
+        '<div class="tag">' + s.tag + '</div><div class="name">' + s.name + '</div></button>';
     }).join('');
     result.hidden = false;
   }
@@ -2688,6 +2688,20 @@
       e.preventDefault();
       target.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
     }
+  });
+
+  resultCards.addEventListener('click', function(e){
+    var card = e.target.closest('.quiz-result-card');
+    if(!card) return;
+    e.stopPropagation();
+    var key = card.getAttribute('data-station');
+    var tile = document.querySelector('.station[data-station="' + key + '"]');
+    if(!tile) return;
+    tile.click();
+    var detailPanel = document.getElementById('stationDetail');
+    setTimeout(function(){
+      (detailPanel || tile).scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center'});
+    }, 80);
   });
 })();
 </script>

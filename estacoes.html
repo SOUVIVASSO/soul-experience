@@ -82,7 +82,7 @@ fbq('track','PageView');
     var a = e.target.closest && e.target.closest('a[href]');
     if(!a) return;
     var h = a.getAttribute('href') || '';
-    if(h.indexOf('sympla.com.br') !== -1){ track('InitiateCheckout', {content_name:'Ingresso Soul Experience', currency:'BRL', value:100}); }
+    if(h.indexOf('sympla.com.br') !== -1){ track('InitiateCheckout', {content_ids:['soul-2a-edicao-ingresso'], content_type:'product', content_name:'Ingresso Soul Experience', currency:'BRL', value:100}); }
     else if(h.indexOf('wa.me') !== -1){ track('Contact'); }
   }, true);
   // Cadastros: newsletter e lista de espera

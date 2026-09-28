@@ -33,6 +33,35 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "ylof0bpew7");
 </script>
+<!-- Meta Pixel (Soul Experience) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','950125834809504');
+fbq('track','PageView');
+(function(){
+  function track(ev, params){ try{ window.fbq && fbq('track', ev, params || {}); }catch(e){} }
+  // Cliques em "Quero meu ingresso" (Sympla) e no WhatsApp
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]');
+    if(!a) return;
+    var h = a.getAttribute('href') || '';
+    if(h.indexOf('sympla.com.br') !== -1){ track('InitiateCheckout', {content_name:'Ingresso Soul Experience', currency:'BRL', value:100}); }
+    else if(h.indexOf('wa.me') !== -1){ track('Contact'); }
+  }, true);
+  // Cadastros: newsletter e lista de espera
+  document.addEventListener('submit', function(e){
+    var id = e.target && e.target.id;
+    if(id === 'newsletterForm'){ track('Lead', {content_name:'Newsletter'}); }
+    else if(id === 'waitlistForm'){ track('Lead', {content_name:'Lista de espera'}); }
+  }, true);
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=950125834809504&ev=PageView&noscript=1" alt=""></noscript>
+<!-- End Meta Pixel -->
 </head>
 <body>
 

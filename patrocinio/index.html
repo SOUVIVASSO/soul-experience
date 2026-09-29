@@ -1417,14 +1417,21 @@
     <script>(function(){
       var link = document.getElementById('heroCalendarLink');
       if(!link) return;
-      var ua = navigator.userAgent;
-      var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-      var isAndroid = /Android/.test(ua);
-      if(isIOS){
-        link.href = link.href.replace(/^https?:\/\//, 'webcal://');
-      } else if(isAndroid){
-        link.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Soul%20Experience%20-%202%C2%AA%20edi%C3%A7%C3%A3o&dates=20261128T090000Z/20261128T123000Z&details=A%202%C2%AA%20edi%C3%A7%C3%A3o%20do%20Soul%20Experience%20acontece%20no%20Iguatemi%20Bosque%2C%20em%20Fortaleza.&location=Iguatemi%20Bosque%2C%20Fortaleza';
+      var isAndroid = /Android/.test(navigator.userAgent);
+      if(isAndroid){
+        var icsUrl = link.href;
+        var title = 'Soul Experience - 2ª edição';
+        var location = 'Iguatemi Bosque, Fortaleza';
+        var description = 'A 2ª edição do Soul Experience acontece no Iguatemi Bosque, em Fortaleza.';
+        link.href = 'intent:#Intent;action=android.intent.action.INSERT;type=vnd.android.cursor.item/event' +
+          ';S.title=' + encodeURIComponent(title) +
+          ';S.eventLocation=' + encodeURIComponent(location) +
+          ';S.description=' + encodeURIComponent(description) +
+          ';l.beginTime=1795856400000;l.endTime=1795869000000' +
+          ';S.browser_fallback_url=' + encodeURIComponent(icsUrl) +
+          ';end';
       }
+      /* iOS: mantém o link direto pro .ics, que o Safari abre nativamente como "Adicionar Evento" */
     })();</script>
     <h1 class="hero-tagline">Segunda edição: Circuito das Estações</h1>
     <p class="hero-sub">Uma proposta de parceria para marcas que querem fazer parte de uma manhã inteira dedicada ao <span class="nw">bem-estar</span>, em Fortaleza.</p>

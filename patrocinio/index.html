@@ -2283,11 +2283,6 @@
   <button type="button" id="cookie-ok">Entendi</button>
 </div>
 
-<div class="cookie-notice" id="webview-notice" hidden>
-  <p>Você está navegando dentro do Instagram. Pra ter a melhor experiência, toque nos três pontinhos <strong>⋯</strong> no canto superior e escolha <strong>Abrir no navegador</strong>.</p>
-  <button type="button" id="webview-notice-ok">Entendi</button>
-</div>
-
 <div class="promo-overlay" id="promoOverlay">
   <div class="promo-popup" role="dialog" aria-modal="true" aria-label="Cotas de patrocínio limitadas">
     <button type="button" class="promo-close" id="promoClose" aria-label="Fechar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
@@ -2793,26 +2788,6 @@
       cookieNotice.style.display = 'none';
       try { localStorage.setItem('se_cookie_ok', '1'); } catch(e){}
     });
-  }
-
-  var webviewNotice = document.getElementById('webview-notice');
-  if(webviewNotice && /Instagram/i.test(navigator.userAgent)){
-    var webviewOk = document.getElementById('webview-notice-ok');
-    var webviewAlreadyOk = false;
-    try { webviewAlreadyOk = localStorage.getItem('se_webview_notice_ok') === '1'; } catch(e){}
-    if(!webviewAlreadyOk){
-      var showWebviewNotice = function(){ webviewNotice.style.display = 'block'; };
-      var cookieStillOpen = cookieNotice && cookieNotice.style.display !== 'none';
-      if(cookieStillOpen && cookieOk){
-        cookieOk.addEventListener('click', function(){ setTimeout(showWebviewNotice, 300); });
-      } else {
-        setTimeout(showWebviewNotice, 1500);
-      }
-      webviewOk.addEventListener('click', function(){
-        webviewNotice.style.display = 'none';
-        try { localStorage.setItem('se_webview_notice_ok', '1'); } catch(e){}
-      });
-    }
   }
 
   var footerPrivacyBtn = document.getElementById('footerPrivacyBtn');

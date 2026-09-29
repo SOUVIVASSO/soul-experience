@@ -307,7 +307,6 @@
     padding:8px 16px;border-radius:999px;
     text-align:center;
   }
-  .hero-date:hover{background:rgba(255,255,255,.16);}
   @media (max-width:480px){
     .hero-date{font-size:10px;padding:7px 12px;gap:6px;white-space:nowrap;}
     .hero-date svg{width:12px;height:12px;flex-shrink:0;}
@@ -1410,29 +1409,10 @@
 <section class="hero on-dark" id="heroSection">
   <div class="wrap hero-inner">
     <span class="logo-mark lg" id="heroLogo"><img src="assets/logo-soul-white.png" alt="Soul Experience"></span>
-    <a class="hero-date" id="heroCalendarLink" href="assets/soul-experience-2a-edicao.ics">
+    <span class="hero-date">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-      28/11/2026 · 06h às 09h30 · Adicionar ao calendário
-    </a>
-    <script>(function(){
-      var link = document.getElementById('heroCalendarLink');
-      if(!link) return;
-      var isAndroid = /Android/.test(navigator.userAgent);
-      if(isAndroid){
-        var icsUrl = link.href;
-        var title = 'Soul Experience - 2ª edição';
-        var location = 'Iguatemi Bosque, Fortaleza';
-        var description = 'A 2ª edição do Soul Experience acontece no Iguatemi Bosque, em Fortaleza.';
-        link.href = 'intent:#Intent;action=android.intent.action.INSERT;type=vnd.android.cursor.item/event' +
-          ';S.title=' + encodeURIComponent(title) +
-          ';S.eventLocation=' + encodeURIComponent(location) +
-          ';S.description=' + encodeURIComponent(description) +
-          ';l.beginTime=1795856400000;l.endTime=1795869000000' +
-          ';S.browser_fallback_url=' + encodeURIComponent(icsUrl) +
-          ';end';
-      }
-      /* iOS: mantém o link direto pro .ics, que o Safari abre nativamente como "Adicionar Evento" */
-    })();</script>
+      28 de novembro de 2026 · 06h às 09h30
+    </span>
     <h1 class="hero-tagline">Segunda edição: Circuito das Estações</h1>
     <p class="hero-sub">Uma proposta de parceria para marcas que querem fazer parte de uma manhã inteira dedicada ao <span class="nw">bem-estar</span>, em Fortaleza.</p>
     <div class="hero-cta">

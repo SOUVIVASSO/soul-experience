@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://soulexperience.vivasso.com.br/sitemap.xml

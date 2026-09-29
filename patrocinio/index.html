@@ -1416,7 +1416,7 @@
     <h1 class="hero-tagline">Segunda edição: Circuito das Estações</h1>
     <p class="hero-sub">Uma proposta de parceria para marcas que querem fazer parte de uma manhã inteira dedicada ao <span class="nw">bem-estar</span>, em Fortaleza.</p>
     <div class="hero-cta">
-      <a href="#patrocinio" class="btn btn-primary">Quero participar</a>
+      <a href="#patrocinio" class="btn btn-primary" id="heroCtaBtn">Quero participar</a>
     </div>
     <div class="hero-support">
       <div class="hero-support-group">
@@ -2361,14 +2361,14 @@
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
 
-  var heroSection = document.getElementById('heroSection');
-  if(nav && heroSection && 'IntersectionObserver' in window){
+  var heroCtaTrigger = document.getElementById('heroCtaBtn');
+  if(nav && heroCtaTrigger && 'IntersectionObserver' in window){
     var logoObserver = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         nav.setAttribute('data-scrolled', entry.isIntersecting ? 'false' : 'true');
       });
     }, {threshold: 0});
-    logoObserver.observe(heroSection);
+    logoObserver.observe(heroCtaTrigger);
   } else if(nav){
     nav.setAttribute('data-scrolled', 'true');
   }

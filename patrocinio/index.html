@@ -398,7 +398,10 @@
     padding:30px 20px;
     text-align:center;
     border-right:1px solid var(--line);
+    display:block;text-decoration:none;color:inherit;cursor:pointer;
+    transition:background .2s ease;
   }
+  .stat:hover{background:var(--panel-lav);}
   .stat:last-child{border-right:none;}
   .stat .num{
     font-family:'Unbounded',sans-serif;
@@ -1439,10 +1442,10 @@
 <!-- ================= STATS STRIP ================= -->
 <div class="stats">
   <div class="wrap stats-inner">
-    <div class="stat"><div class="num">+495 mil</div><div class="lbl">pessoas impactadas</div></div>
-    <div class="stat"><div class="num">10</div><div class="lbl">influenciadores parceiros</div></div>
-    <div class="stat"><div class="num">100</div><div class="lbl">convidados presenciais</div></div>
-    <div class="stat"><div class="num">3h30</div><div class="lbl">de experiências sensoriais</div></div>
+    <a class="stat" href="#influenciadores"><div class="num">+495 mil</div><div class="lbl">pessoas impactadas</div></a>
+    <a class="stat" href="#influenciadores"><div class="num">10</div><div class="lbl">influenciadores parceiros</div></a>
+    <a class="stat" href="#publico"><div class="num">100</div><div class="lbl">convidados presenciais</div></a>
+    <a class="stat" href="#cronograma"><div class="num">3h30</div><div class="lbl">de experiências sensoriais</div></a>
   </div>
 </div>
 

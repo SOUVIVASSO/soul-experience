@@ -2800,7 +2800,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
     overlay.classList.remove('open');
   }
 
-  var idleTimer = setTimeout(function(){ openPromo(); }, 120000);
+  var idleTimer;
 
   if(heroCtaBtn){
     heroCtaBtn.addEventListener('click', function(){

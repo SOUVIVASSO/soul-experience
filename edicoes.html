@@ -62,6 +62,16 @@ fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=950125834809504&ev=PageView&noscript=1" alt=""></noscript>
 <!-- End Meta Pixel -->
+<script>
+/* Sem zoom por mouse ou teclado no computador (ctrl + scroll, ctrl + / -, pinça no trackpad) */
+(function(){
+  window.addEventListener('wheel', function(e){ if (e.ctrlKey) e.preventDefault(); }, {passive:false});
+  window.addEventListener('keydown', function(e){
+    if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=' || e.key === '_' || e.keyCode === 107 || e.keyCode === 109)) e.preventDefault();
+  });
+  ['gesturestart','gesturechange','gestureend'].forEach(function(t){ document.addEventListener(t, function(e){ e.preventDefault(); }); });
+})();
+</script>
 </head>
 <body>
 

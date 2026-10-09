@@ -362,7 +362,7 @@
   .hero-support-group{display:flex;flex-direction:column;align-items:center;gap:10px;}
   .hero-support-group>span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,240,225,.55);}
   .hero-support-logos{display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.94);padding:10px 24px;border-radius:14px;box-shadow:0 12px 30px rgba(10,5,0,.25);}
-  .hero-support-logos img{height:26px;width:auto;}
+  .hero-support-logos img{height:26px;width:auto;flex-shrink:0;}
   .hero-support-logos img.hs-rowa{height:20px;}
   @media (max-width:480px){.hero-support-logos{gap:16px;padding:8px 18px;}.hero-support-logos img{height:20px;}.hero-support-logos img.hs-rowa{height:15px;}}
   .btn{
@@ -977,9 +977,10 @@
     font-size:24px;
     color:var(--ink);
   }
-  .tier-sponsor{display:flex;align-items:center;gap:8px;margin-top:8px;}
-  .tier-sponsor img{height:20px;width:auto;}
+  .tier-sponsor{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-top:8px;}
+  .tier-sponsor img{height:20px;width:auto;flex-shrink:0;}
   .tier-sponsor img.tier-sponsor-rowa{height:16px;}
+  .tier-sponsor .tier-sponsor-note{flex-basis:100%;}
   .tier-sponsor span{font-size:12px;font-weight:700;color:var(--ink-dim);}
   .price-card .price{
     margin-top:14px;
@@ -2104,7 +2105,7 @@
         <span class="sold-ribbon">Esgotado</span>
         <div class="quota">2 cotas ao todo</div>
         <div class="tier-name">Assinante</div>
-        <div class="tier-sponsor"><img src="assets/lovenuts/lovenuts-logo.png" alt="LoveNuts"><img class="tier-sponsor-rowa" src="assets/brands/rowa-rose.png" alt="Rowa"><span>Cotas preenchidas por LoveNuts e Rowa</span></div>
+        <div class="tier-sponsor"><img src="assets/lovenuts/lovenuts-logo.png" alt="LoveNuts"><img class="tier-sponsor-rowa" src="assets/brands/rowa-rose.png" alt="Rowa"><span class="tier-sponsor-note">Cotas preenchidas por LoveNuts e Rowa</span></div>
         <div class="price">R$ 5.000</div>
         <div class="price-list">
           <div class="row on highlight"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.4 2.9 3.2.5-2.3 2.2.5 3.2L7 8.3 4.2 9.8l.5-3.2L2.4 4.4l3.2-.5L7 1z" fill="currentColor"/></svg>3 dias de ativação na Academia Bodytech</div>

@@ -371,8 +371,9 @@
   .hero-support-group{display:flex;flex-direction:column;align-items:center;gap:10px;}
   .hero-support-group>span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,240,225,.55);}
   .hero-support-logos{display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.94);padding:10px 24px;border-radius:14px;box-shadow:0 12px 30px rgba(10,5,0,.25);}
-  .hero-support-logos img{height:26px;width:auto;}
-  @media (max-width:480px){.hero-support-logos{gap:16px;padding:8px 18px;}.hero-support-logos img{height:20px;}}
+  .hero-support-logos img{height:26px;width:auto;flex-shrink:0;}
+  .hero-support-logos img.hs-rowa{height:20px;}
+  @media (max-width:480px){.hero-support-logos{gap:16px;padding:8px 18px;}.hero-support-logos img{height:20px;}.hero-support-logos img.hs-rowa{height:15px;}}
   .btn{
     display:inline-flex;align-items:center;gap:10px;
     padding:16px 30px;
@@ -1490,6 +1491,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
         <span>Assinado por</span>
         <div class="hero-support-logos">
           <img src="assets/lovenuts/lovenuts-logo.png" alt="LoveNuts">
+          <img class="hs-rowa" src="assets/brands/rowa-rose.png" alt="Rowa">
         </div>
       </div>
     </div>

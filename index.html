@@ -1396,7 +1396,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','950125834809504');
 fbq('track','PageView');
-fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:'product',content_name:'Ingresso Soul Experience',currency:'BRL',value:99.99});
+fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:'product',content_name:'Ingresso Soul Experience',currency:'BRL',value:119.90});
 (function(){
   function track(ev, params){ try{ window.fbq && fbq('track', ev, params || {}); }catch(e){} }
   // Cliques em "Quero meu ingresso" (Sympla) e no WhatsApp
@@ -1404,7 +1404,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
     var a = e.target.closest && e.target.closest('a[href]');
     if(!a) return;
     var h = a.getAttribute('href') || '';
-    if(h.indexOf('sympla.com.br') !== -1){ track('InitiateCheckout', {content_ids:['soul-2a-edicao-ingresso'], content_type:'product', content_name:'Ingresso Soul Experience', currency:'BRL', value:99.99}); }
+    if(h.indexOf('sympla.com.br') !== -1){ track('InitiateCheckout', {content_ids:['soul-2a-edicao-ingresso'], content_type:'product', content_name:'Ingresso Soul Experience', currency:'BRL', value:119.90}); }
     else if(h.indexOf('wa.me') !== -1){ track('Contact'); }
   }, true);
   // Cadastros: newsletter e lista de espera
@@ -1434,7 +1434,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
 <div class="sticky-head">
   <div class="countdown-bar" id="countdownBar">
     <span>O Soul Experience chega em <span class="countdown-bar-time" id="countdownBarTime">--d --h --m --s</span></span>
-    <span class="countdown-bar-urgency">Mais da metade dos ingressos vendidos. Garanta o seu!</span>
+    <span class="countdown-bar-urgency">1º lote esgotado! 2º lote aberto com apenas 20 vagas. Garanta o seu!</span>
   </div>
 <header class="nav" id="siteNav">
   <div class="wrap nav-inner">
@@ -1476,6 +1476,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
     </span>
     <h1 class="hero-tagline">Segunda edição: Circuito das Estações</h1>
     <p class="hero-sub">Um circuito de 6 estações de <span class="nw">bem-estar</span> e movimento, em Fortaleza. Venha viver essa experiência com a gente.</p>
+    <p style="display:inline-block;margin:0 0 18px;padding:9px 18px;border:1px solid #F3D9B4;border-radius:99px;background:rgba(243,217,180,.14);color:#F3D9B4;font-weight:700;font-size:14px;line-height:1.4;">1º lote esgotado! Abrimos o 2º lote com mais 20 vagas. Corra, não vai ter mais.</p>
     <div class="hero-cta">
       <a href="#ingressos" class="btn btn-primary" id="heroCtaBtn">Quero meu ingresso</a>
     </div>
@@ -1929,7 +1930,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
       </details>
       <details class="faq-item">
         <summary>Quantas vagas existem?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <p class="a">É uma edição seletiva e intimista, com apenas 1º lote de 60 ingressos presenciais. As vagas são limitadas e não há reposição de lote além do previsto, então quanto antes garantir, melhor.</p>
+        <p class="a">É uma edição seletiva e intimista. O 1º lote de 60 ingressos esgotou e abrimos o 2º lote com apenas 20 ingressos presenciais, a R$ 119,90. As vagas são limitadas, então quanto antes garantir, melhor.</p>
       </details>
     </div>
     <button type="button" class="faq-more-toggle" id="faqMoreToggle" aria-expanded="false" aria-controls="faqMore">
@@ -2020,14 +2021,14 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
     <div class="section-head center">
       <span class="eyebrow">Segunda edição · Circuito das Estações</span>
       <h2 class="section-title">Garanta seu ingresso</h2>
-      <p class="lede">Uma edição seletiva e intimista, com apenas 1º lote de 60 ingressos presenciais. Os ingressos são vendidos pelo Sympla, com lotes limitados.</p>
+      <p class="lede">O 1º lote de 60 ingressos esgotou! Abrimos o 2º lote com apenas 20 ingressos presenciais, a R$ 119,90. Os ingressos são vendidos pelo Sympla.</p>
     </div>
 
     <div class="pricing single">
       <div class="price-card featured">
-        <div class="quota">1º lote de 60 ingressos presenciais</div>
+        <div class="quota">2º lote · apenas 20 ingressos presenciais</div>
         <div class="tier-name">Ingresso · Segunda edição</div>
-        <div class="price">R$ 99,99</div>
+        <div class="price">R$ 119,90</div>
         <div class="price-list">
           <div class="row on highlight"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.4 2.9 3.2.5-2.3 2.2.5 3.2L7 8.3 4.2 9.8l.5-3.2L2.4 4.4l3.2-.5L7 1z" fill="currentColor"/></svg>Participação em 2 das 5 atividades do circuito + atividade surpresa de encerramento</div>
           <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Welcome Kit com produtos e mimos das marcas parceiras</div>
@@ -2038,15 +2039,15 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
         </div>
         <a class="btn btn-primary" href="https://www.sympla.com.br/evento/soul-experience--1-ediCAo---circuito-das-estaCOes/3587190" target="_blank" rel="noopener">Quero me inscrever</a>
         <div class="vacancy">
-          <div class="vacancy-top"><span>Vagas restantes</span><span>0 de 60</span></div>
-          <div class="vacancy-track"><div class="vacancy-fill" style="width:100%"></div></div>
+          <div class="vacancy-top"><span>Vagas restantes do 2º lote</span><span>20 de 20</span></div>
+          <div class="vacancy-track"><div class="vacancy-fill" style="width:0%"></div></div>
         </div>
         <div class="ticket-info" style="margin-top:22px;">
           <div class="ticket-detail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> 28 de novembro de 2026 · 06h às 09h30</div>
           <div class="ticket-detail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Iguatemi Bosque, Fortaleza</div>
-          <div class="ticket-detail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5M16 4.2a3.2 3.2 0 0 1 0 6.2M20.5 20c0-3-1.9-5.5-4.5-6.3"/></svg> Apenas 1º lote de 60 ingressos presenciais</div>
+          <div class="ticket-detail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5M16 4.2a3.2 3.2 0 0 1 0 6.2M20.5 20c0-3-1.9-5.5-4.5-6.3"/></svg> Apenas 20 ingressos no 2º lote · 1º lote esgotado</div>
         </div>
-        <span class="ticket-note" style="display:block;margin-top:10px;">Vendas pelo Sympla · lotes limitados</span>
+        <span class="ticket-note" style="display:block;margin-top:10px;">Vendas pelo Sympla · cupom de 10% continua valendo</span>
       </div>
     </div>
 
@@ -2498,7 +2499,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
     { kw:['onde compro ingresso','como compro ingresso','quanto custa o ingresso','valor do ingresso','preco do ingresso','quando abrem os ingressos','vendas dos ingressos'],
       a:'Os ingressos já estão à venda pelo Sympla! [[BOTAO:ingresso]]' },
     { kw:['quantas vagas','vagas limitadas','quantas pessoas','lotacao','capacidade do evento'],
-      a:'É uma edição seletiva e intimista, com apenas 1º lote de 60 ingressos presenciais. As vagas são limitadas, então quanto antes garantir, melhor.' },
+      a:'É uma edição seletiva e intimista. O 1º lote de 60 ingressos esgotou e abrimos o 2º lote com apenas 20 ingressos presenciais, a R$ 119,90. As vagas são limitadas, então quanto antes garantir, melhor.' },
     { kw:['como funcionam as sessoes','quantas sessoes','duas sessoes','como reservo minha vaga','como escolho a atividade','em quantas atividades posso participar','reservar atividade','vagas por atividade'],
       a:'Cada estação tem duas sessões: a primeira você já escolhe e reserva por nome no momento da compra do ingresso no Sympla, e a segunda é livre no dia. Ou seja, cada pessoa participa de até 2 modalidades ao longo da manhã, encerrando com a atividade surpresa.' },
     { kw:['o que esta incluso','o que vem no ingresso','o que ganho no evento','o que tem incluido'],

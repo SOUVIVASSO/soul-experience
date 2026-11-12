@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+<script>/* BF: ativa o tema Black Friday ate 19/11/2026 23:59 (Fortaleza). Para estender, mude a data abaixo. */(function(){try{if(Date.now()<Date.parse("2026-11-20T00:00:00-03:00")){document.documentElement.classList.add("bf");}}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EFNE0SLZ2"></script>
 <script>
@@ -1386,6 +1387,87 @@
     .stats-inner{grid-template-columns:1fr 1fr;}
     .station .name{font-size:11.5px;overflow-wrap:break-word;width:100%;}
   }
+  /* ===== BF-START: tema Black Friday (ativo ate 19/11/2026). Para voltar ao original: remover a classe "bf" do <html> ou apagar tudo entre BF-START e BF-END. Original salvo na tag git pre-black-friday ===== */
+  .bf-only{display:none;}
+  html.bf .bf-only{display:block;}
+  html.bf span.bf-only{display:inline;}
+  html.bf .bf-hide{display:none !important;}
+  html.bf{
+    --bg:#070707;--bg-alt:#131313;--panel-lav:#0F0F0F;--panel-pink:#0F0F0F;--panel-blue:#0F0F0F;
+    --ink:#F6F6F6;--ink-dim:#B4B4B4;
+    --violet:#FFD21F;--violet-2:#FFE766;--pink:#FFD21F;--cyan:#FFD21F;--gold:#FFD21F;
+    --line:rgba(255,255,255,.12);--line-strong:rgba(255,255,255,.26);
+    --grad:linear-gradient(100deg,#FFD21F 0%,#FF9F0A 55%,#FF3B30 100%);
+    color-scheme:dark;
+  }
+  html.bf body{background:#070707;color:#F6F6F6;}
+  html.bf .blob{background:conic-gradient(from 210deg,#FFD21F,#FF3B30,#FF9F0A,#FFD21F);}
+  html.bf .countdown-bar{background:linear-gradient(100deg,#FFD21F,#FF9F0A);color:#000;}
+  html.bf .countdown-bar a{color:#000;}
+  html.bf header.nav{background:rgba(0,0,0,.92);border-bottom:1px solid #FFD21F55;}
+  html.bf .nav-links a:hover{color:#FFD21F;}
+  html.bf .btn-primary,html.bf .nav-cta,html.bf .nav-cta-mobile{background:#FFD21F;color:#000;font-weight:800;}
+  html.bf .btn-primary:hover,html.bf .nav-cta:hover{background:#FFE766;}
+  html.bf .on-dark .btn-primary{box-shadow:0 0 0 0 rgba(255,210,31,.7);animation:bfPulse 1.8s infinite;}
+  html.bf .hero{background:radial-gradient(70% 50% at 50% 0%,rgba(255,210,31,.22),transparent 70%),#000;}
+  html.bf .hero::before{background:radial-gradient(40% 70% at 15% 20%,rgba(255,59,48,.25),transparent 70%),radial-gradient(40% 70% at 85% 25%,rgba(255,210,31,.22),transparent 70%);}
+  html.bf .hero-date,html.bf .hero-sub{color:#E8E8E8;}
+  html.bf .on-dark .eyebrow,html.bf .grao .eyebrow,html.bf .perola .eyebrow,html.bf .marcas .eyebrow,html.bf #ingressos .eyebrow{color:#FFD21F;}
+  html.bf .on-dark .eyebrow::before,html.bf .grao .eyebrow::before,html.bf .perola .eyebrow::before,html.bf .marcas .eyebrow::before,html.bf #ingressos .eyebrow::before{background:#FFD21F;}
+  html.bf .grao,html.bf .perola,html.bf .marcas,html.bf #ingressos,html.bf #cronograma,html.bf .cronograma-dark{background:linear-gradient(160deg,#000 0%,#171410 100%) !important;}
+  html.bf .mobile-menu{background:#000;}
+  html.bf .mobile-menu a{color:#E8E8E8;}
+  html.bf .price-card,html.bf .ticket-card{background:#131313;border-color:#FFD21F55;}
+  html.bf .price-card.featured{border-color:#FFD21F;box-shadow:0 0 0 1px #FFD21F,0 20px 60px rgba(255,210,31,.22);}
+  html.bf .vacancy-fill{background:linear-gradient(90deg,#FFD21F,#FF3B30);}
+  html.bf .sold-ribbon{background:#FFD21F;color:#000;}
+  html.bf .hero-support-logos{background:#fff;}
+  html.bf .cookie-notice p{color:#4a3a30;}
+  html.bf .cookie-notice p a{color:#2A1B14;}
+  html.bf .coord-feature{background:#171717;border:1px solid rgba(255,255,255,.14);}
+  html.bf .share-toast{background:#FFD21F;color:#000;}
+  html.bf .edicoes-badge.atual{background:#FFD21F;color:#000;}
+  html.bf .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45);}
+  @keyframes bfPulse{0%{box-shadow:0 0 0 0 rgba(255,210,31,.65);}70%{box-shadow:0 0 0 18px rgba(255,210,31,0);}100%{box-shadow:0 0 0 0 rgba(255,210,31,0);}}
+
+  /* banner grande da hero */
+  .bf-hero{margin:6px auto 22px;text-align:center;position:relative;}
+  .bf-hero-kicker{display:inline-block;background:#FF3B30;color:#fff;font-weight:800;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;padding:7px 16px;border-radius:99px;animation:bfBlink 1.1s steps(2,jump-none) infinite;}
+  .bf-hero-title{font-family:'Unbounded',system-ui,sans-serif;font-weight:900;text-transform:uppercase;line-height:.92;margin:16px 0 0;color:#fff;font-size:clamp(54px,15vw,112px);letter-spacing:-.03em;text-shadow:0 0 28px rgba(255,255,255,.18);}
+  .bf-hero-title span{display:block;}
+  .bf-hero-title .bf-y{display:inline-block;background:#FFD21F;color:#000;padding:.04em .16em .02em;margin-top:.08em;transform:rotate(-2deg);box-shadow:8px 8px 0 #FF3B30;animation:bfShake 3.2s infinite;}
+  .bf-hero-sub{margin-top:26px;font-size:clamp(15px,3.6vw,19px);font-weight:700;color:#fff;}
+  .bf-hero-sub b{color:#FFD21F;}
+  .bf-hero-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px;}
+  .bf-hero-chips span{border:1.5px dashed #FFD21F;color:#FFD21F;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:7px 12px;border-radius:8px;}
+  @keyframes bfBlink{0%{opacity:1;}100%{opacity:.35;}}
+  @keyframes bfShake{0%,86%,100%{transform:rotate(-2deg) translateX(0);}88%{transform:rotate(-1deg) translateX(-4px);}90%{transform:rotate(-3deg) translateX(4px);}92%{transform:rotate(-1.5deg) translateX(-3px);}94%{transform:rotate(-2deg) translateX(0);}}
+
+  /* faixas de promocao em movimento */
+  .bf-tapes{position:relative;height:150px;overflow:hidden;background:#000;display:none;}
+  html.bf .bf-tapes{display:block;}
+  .bf-tape{position:absolute;left:-10%;width:120%;overflow:hidden;white-space:nowrap;padding:13px 0;font-family:'Unbounded',system-ui,sans-serif;font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 8px 24px rgba(0,0,0,.6);}
+  .bf-tape.a{top:30px;background:#FFD21F;color:#000;transform:rotate(-3deg);}
+  .bf-tape.b{top:62px;background:#FF3B30;color:#fff;transform:rotate(2.5deg);z-index:1;}
+  .bf-tape-track{display:inline-block;animation:bfScroll 26s linear infinite;}
+  .bf-tape.b .bf-tape-track{animation-direction:reverse;animation-duration:32s;}
+  .bf-tape-track i{font-style:normal;margin:0 18px;}
+  @keyframes bfScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .bf-strip{display:none;overflow:hidden;white-space:nowrap;background:#FFD21F;color:#000;padding:11px 0;font-family:'Unbounded',system-ui,sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;border-block:3px solid #000;}
+  html.bf .bf-strip{display:block;}
+  .bf-strip .bf-tape-track{animation-duration:22s;}
+  .bf-strip i{font-style:normal;margin:0 16px;}
+
+  /* aviso na secao de ingressos */
+  .bf-ticket{margin:0 auto 26px;max-width:560px;text-align:center;border:2px solid #FFD21F;border-radius:18px;padding:18px 20px;background:repeating-linear-gradient(135deg,#000 0 14px,#0d0d0d 14px 28px);}
+  .bf-ticket b.big{display:block;font-family:'Unbounded',system-ui,sans-serif;font-size:clamp(22px,6vw,34px);color:#FFD21F;text-transform:uppercase;line-height:1.05;}
+  .bf-ticket span{display:block;margin-top:8px;font-size:14px;font-weight:600;color:#eee;}
+
+  @media (prefers-reduced-motion:reduce){
+    .bf-tape-track,.bf-hero-kicker,.bf-hero-title .bf-y,html.bf .on-dark .btn-primary{animation:none !important;}
+  }
+  @media (max-width:640px){.bf-tapes{height:130px;}.bf-tape{font-size:12.5px;}.bf-tape.a{top:24px;}.bf-tape.b{top:52px;}}
+  /* ===== BF-END ===== */
 </style>
 <!-- Meta Pixel (Soul Experience) -->
 <script>
@@ -1434,7 +1516,8 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
 <div class="sticky-head">
   <div class="countdown-bar" id="countdownBar">
     <span>O Soul Experience chega em <span class="countdown-bar-time" id="countdownBarTime">--d --h --m --s</span></span>
-    <span class="countdown-bar-urgency">1º lote esgotado! 2º lote aberto com apenas 20 vagas. Garanta o seu!</span>
+    <span class="countdown-bar-urgency bf-hide">1º lote esgotado! 2º lote aberto com apenas 20 vagas. Garanta o seu!</span>
+    <span class="countdown-bar-urgency bf-only">BLACK FRIDAY SOUL · só até quinta, 19/11 · últimas vagas do 2º lote</span>
   </div>
 <header class="nav" id="siteNav">
   <div class="wrap nav-inner">
@@ -1470,13 +1553,19 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
 <section class="hero on-dark" id="heroSection">
   <div class="wrap hero-inner">
     <span class="logo-mark lg" id="heroLogo"><img src="assets/logo-soul-white.png" alt="Soul Experience"></span>
+    <div class="bf-hero bf-only" aria-label="Black Friday Soul Experience">
+      <span class="bf-hero-kicker">Promoção relâmpago</span>
+      <h2 class="bf-hero-title"><span>Black</span><span class="bf-y">Friday</span></h2>
+      <p class="bf-hero-sub">Só até <b>quinta, 19/11</b>. Garanta seu ingresso do Soul Experience.</p>
+      <div class="bf-hero-chips"><span>Últimas vagas do 2º lote</span><span>Cupom de 10% valendo</span><span>R$ 119,90</span></div>
+    </div>
     <span class="hero-date">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
       28 de novembro de 2026 · 06h às 09h30
     </span>
     <h1 class="hero-tagline">Segunda edição: Circuito das Estações</h1>
     <p class="hero-sub">Um circuito de 6 estações de <span class="nw">bem-estar</span> e movimento, em Fortaleza. Venha viver essa experiência com a gente.</p>
-    <p style="display:inline-block;margin:0 0 18px;padding:9px 18px;border:1px solid #F3D9B4;border-radius:99px;background:rgba(243,217,180,.14);color:#F3D9B4;font-weight:700;font-size:14px;line-height:1.4;">1º lote esgotado! Abrimos o 2º lote com mais 20 vagas. Corra, não vai ter mais.</p>
+    <p class="bf-hide" style="display:inline-block;margin:0 0 18px;padding:9px 18px;border:1px solid #F3D9B4;border-radius:99px;background:rgba(243,217,180,.14);color:#F3D9B4;font-weight:700;font-size:14px;line-height:1.4;">1º lote esgotado! Abrimos o 2º lote com mais 20 vagas. Corra, não vai ter mais.</p>
     <div class="hero-cta">
       <a href="#ingressos" class="btn btn-primary" id="heroCtaBtn">Quero meu ingresso</a>
     </div>
@@ -1498,6 +1587,12 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
     </div>
   </div>
 </section>
+
+<!-- BF: faixas -->
+<div class="bf-tapes" aria-hidden="true">
+  <div class="bf-tape a"><div class="bf-tape-track"><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>ÚLTIMAS VAGAS</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i><span>CUPOM 10%</span><i>★</i><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>ÚLTIMAS VAGAS</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i><span>CUPOM 10%</span><i>★</i><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>ÚLTIMAS VAGAS</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i><span>CUPOM 10%</span><i>★</i><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>ÚLTIMAS VAGAS</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i><span>CUPOM 10%</span><i>★</i></div></div>
+  <div class="bf-tape b"><div class="bf-tape-track"><span>CORRE</span><i>⚡</i><span>NÃO VAI TER MAIS</span><i>⚡</i><span>2º LOTE</span><i>⚡</i><span>28 DE NOVEMBRO</span><i>⚡</i><span>CIRCUITO DAS ESTAÇÕES</span><i>⚡</i><span>CORRE</span><i>⚡</i><span>NÃO VAI TER MAIS</span><i>⚡</i><span>2º LOTE</span><i>⚡</i><span>28 DE NOVEMBRO</span><i>⚡</i><span>CIRCUITO DAS ESTAÇÕES</span><i>⚡</i><span>CORRE</span><i>⚡</i><span>NÃO VAI TER MAIS</span><i>⚡</i><span>2º LOTE</span><i>⚡</i><span>28 DE NOVEMBRO</span><i>⚡</i><span>CIRCUITO DAS ESTAÇÕES</span><i>⚡</i><span>CORRE</span><i>⚡</i><span>NÃO VAI TER MAIS</span><i>⚡</i><span>2º LOTE</span><i>⚡</i><span>28 DE NOVEMBRO</span><i>⚡</i><span>CIRCUITO DAS ESTAÇÕES</span><i>⚡</i></div></div>
+</div>
 
 <!-- ================= EVENTO / GRAO ================= -->
 <section id="evento" class="grao">
@@ -2016,8 +2111,10 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
 </section>
 
 <!-- ================= INGRESSOS + CONTATO (final) ================= -->
+<div class="bf-strip" aria-hidden="true"><div class="bf-tape-track"><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>ÚLTIMAS VAGAS</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i><span>CUPOM 10%</span><i>★</i><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>ÚLTIMAS VAGAS</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i><span>CUPOM 10%</span><i>★</i><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>ÚLTIMAS VAGAS</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i><span>CUPOM 10%</span><i>★</i><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>ÚLTIMAS VAGAS</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i><span>CUPOM 10%</span><i>★</i><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>ÚLTIMAS VAGAS</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i><span>CUPOM 10%</span><i>★</i><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>ÚLTIMAS VAGAS</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i><span>CUPOM 10%</span><i>★</i></div></div>
 <section id="ingressos" style="border-top:1px solid var(--line);">
   <div class="wrap">
+    <div class="bf-ticket bf-only"><b class="big">Black Friday Soul</b><span>Só até quinta, 19/11. Últimas vagas do 2º lote, com o cupom de 10% valendo.</span></div>
     <div class="section-head center">
       <span class="eyebrow">Segunda edição · Circuito das Estações</span>
       <h2 class="section-title">Garanta seu ingresso</h2>

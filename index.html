@@ -201,6 +201,21 @@
   }
   .countdown-bar a{color:#fff;text-decoration:underline;white-space:nowrap;}
   .countdown-bar-time{font-variant-numeric:tabular-nums;white-space:nowrap;}
+  /* URGENCIA: ultimas vagas */
+  @keyframes urgPulse{0%{box-shadow:0 0 0 0 rgba(255,45,45,.65);}70%{box-shadow:0 0 0 14px rgba(255,45,45,0);}100%{box-shadow:0 0 0 0 rgba(255,45,45,0);}}
+  @keyframes urgBlink{0%,100%{opacity:1;}50%{opacity:.45;}}
+  .countdown-bar{background:linear-gradient(100deg,#B80F0A,#FF2D2D 50%,#B80F0A) !important;}
+  .countdown-bar-urgency{opacity:1 !important;font-weight:800 !important;letter-spacing:.06em;text-transform:uppercase;font-size:12px !important;}
+  .countdown-bar-urgency .urg-dot,.urg-pill .urg-dot,.urg-quota .urg-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#fff;margin-right:7px;vertical-align:middle;animation:urgBlink 0.9s ease-in-out infinite;}
+  .urg-pill{display:inline-block;margin:0 0 18px;padding:11px 22px;border-radius:99px;background:linear-gradient(100deg,#D7191C,#FF3B30);color:#fff;font-weight:900;font-size:15px;letter-spacing:.1em;text-transform:uppercase;line-height:1.4;animation:urgPulse 1.5s infinite;}
+  .price-card .quota.urg-quota{display:inline-block;background:#E5231B;color:#fff;font-weight:900;font-size:13px;letter-spacing:.12em;padding:7px 14px;border-radius:99px;animation:urgPulse 1.5s infinite;}
+  .urg-banner{margin:0 auto 22px;max-width:560px;text-align:center;border:2.5px solid #E5231B;border-radius:16px;padding:14px 18px;background:rgba(229,35,27,.18);}
+  .urg-banner b{display:block;font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(24px,6.5vw,38px);color:#FF4B3E;text-transform:uppercase;line-height:1.05;animation:urgBlink 1.1s ease-in-out infinite;}
+  .urg-banner span{display:block;margin-top:6px;font-size:14px;font-weight:700;color:#fff;}
+  .vacancy.urg .vacancy-top{color:#E5231B;font-weight:800;text-transform:uppercase;letter-spacing:.04em;}
+  .vacancy.urg .vacancy-fill{background:linear-gradient(90deg,#FF8A00,#E5231B);animation:urgBlink 1.1s ease-in-out infinite;}
+  @media (prefers-reduced-motion:reduce){.urg-pill,.price-card .quota.urg-quota,.urg-banner b,.vacancy.urg .vacancy-fill,.urg-dot{animation:none !important;}}
+
   .countdown-bar-urgency{flex-basis:100%;font-size:11px;font-weight:600;opacity:.92;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}
   @media (max-width:640px){.countdown-bar{font-size:11px;gap:6px;row-gap:0px;}.countdown-bar-cta{display:none;}.countdown-bar-urgency{font-size:9.5px;}}
 
@@ -1524,7 +1539,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
 <div class="sticky-head">
   <div class="countdown-bar" id="countdownBar">
     <span>O Soul Experience chega em <span class="countdown-bar-time" id="countdownBarTime">--d --h --m --s</span></span>
-    <span class="countdown-bar-urgency bf-hide">1º lote esgotado! 2º lote aberto com as últimas 14 vagas. Garanta o seu!</span>
+    <span class="countdown-bar-urgency bf-hide"><i class="urg-dot"></i>ÚLTIMAS VAGAS! 1º lote esgotado. Garanta a sua agora</span>
     <span class="countdown-bar-urgency bf-only">BLACK FRIDAY SOUL · R$ 69,99 · só até quinta, 19/11</span>
   </div>
 <header class="nav" id="siteNav">
@@ -1574,7 +1589,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
     </span>
     <h1 class="hero-tagline">Segunda edição: Circuito das Estações</h1>
     <p class="hero-sub">Um circuito de 6 estações de <span class="nw">bem-estar</span> e movimento, em Fortaleza. Venha viver essa experiência com a gente.</p>
-    <p class="bf-hide" style="display:inline-block;margin:0 0 18px;padding:9px 18px;border:1px solid #F3D9B4;border-radius:99px;background:rgba(243,217,180,.14);color:#F3D9B4;font-weight:700;font-size:14px;line-height:1.4;">1º lote esgotado! Abrimos o 2º lote, e restam só as últimas 14 vagas. Corra, não vai ter mais.</p>
+    <p class="bf-hide urg-pill"><i class="urg-dot"></i>ÚLTIMAS VAGAS! 1º lote esgotado. Corra, não vai ter mais</p>
     <div class="hero-cta">
       <a href="#ingressos" class="btn btn-primary" id="heroCtaBtn">Quero meu ingresso</a>
     </div>
@@ -2034,7 +2049,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
       </details>
       <details class="faq-item">
         <summary>Quantas vagas existem?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <p class="a">É uma edição seletiva e intimista. O 1º lote de 60 ingressos esgotou e abrimos o 2º lote e restam só as últimas 14 vagas. As vagas são limitadas, então quanto antes garantir, melhor. <span class="bf-hide">O 2º lote está a R$ 119,90.</span><span class="bf-only">Na Black Friday, o ingresso custa R$ 69,99, só até 19/11.</span></p>
+        <p class="a">É uma edição seletiva e intimista. O 1º lote de 60 ingressos esgotou e abrimos o 2º lote e restam só as últimas vagas. As vagas são limitadas, então quanto antes garantir, melhor. <span class="bf-hide">O 2º lote está a R$ 119,90.</span><span class="bf-only">Na Black Friday, o ingresso custa R$ 69,99, só até 19/11.</span></p>
       </details>
     </div>
     <button type="button" class="faq-more-toggle" id="faqMoreToggle" aria-expanded="false" aria-controls="faqMore">
@@ -2123,17 +2138,18 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
 <div class="bf-strip" aria-hidden="true"><div class="bf-tape-track"><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>R$ 69,99</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>R$ 69,99</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>R$ 69,99</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>R$ 69,99</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>R$ 69,99</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i><span>BLACK FRIDAY</span><i>★</i><span>SOUL EXPERIENCE</span><i>★</i><span>R$ 69,99</span><i>★</i><span>SÓ ATÉ 19/11</span><i>★</i></div></div>
 <section id="ingressos" style="border-top:1px solid var(--line);">
   <div class="wrap">
+    <div class="urg-banner bf-hide"><b>Últimas vagas!</b><span>O 1º lote esgotou. Garanta a sua antes que acabe.</span></div>
     <div class="bf-ticket bf-only"><b class="big">Black Friday Soul</b><b class="bf-ticket-price">R$ 69,99</b><span>Só até quinta, 19/11. Depois desse dia o preço da Black Friday acaba.</span></div>
     <div class="section-head center">
       <span class="eyebrow">Segunda edição · Circuito das Estações</span>
       <h2 class="section-title">Garanta seu ingresso</h2>
-      <p class="lede bf-hide">O 1º lote de 60 ingressos esgotou! O 2º lote está nas últimas 14 vagas, a R$ 119,90. Os ingressos são vendidos pelo Sympla.</p>
+      <p class="lede bf-hide">O 1º lote de 60 ingressos esgotou! O 2º lote está nas últimas vagas, a R$ 119,90. Os ingressos são vendidos pelo Sympla.</p>
       <p class="lede bf-only">Preço de Black Friday, válido só até 19/11. Os ingressos são vendidos pelo Sympla.</p>
     </div>
 
     <div class="pricing single">
       <div class="price-card featured">
-        <div class="quota bf-hide">2º lote · últimas 14 vagas</div>
+        <div class="quota urg-quota bf-hide"><i class="urg-dot"></i>ÚLTIMAS VAGAS</div>
         <div class="quota bf-only">2º lote · valor original</div>
         <div class="tier-name">Ingresso · Segunda edição</div>
         <div class="price">R$ 119,90</div>
@@ -2147,14 +2163,14 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
           <div class="row on"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Premiação especial na atividade surpresa</div>
         </div>
         <a class="btn btn-primary" href="https://www.sympla.com.br/evento/soul-experience--1-ediCAo---circuito-das-estaCOes/3587190" target="_blank" rel="noopener">Quero me inscrever</a>
-        <div class="vacancy bf-hide">
-          <div class="vacancy-top"><span>Últimas vagas do 2º lote</span><span>14 restantes</span></div>
+        <div class="vacancy urg bf-hide">
+          <div class="vacancy-top"><span>ÚLTIMAS VAGAS do 2º lote</span><span>só 14 restantes</span></div>
           <div class="vacancy-track"><div class="vacancy-fill" style="width:70%"></div></div>
         </div>
         <div class="ticket-info" style="margin-top:22px;">
           <div class="ticket-detail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> 28 de novembro de 2026 · 06h às 09h30</div>
           <div class="ticket-detail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Iguatemi Bosque, Fortaleza</div>
-          <div class="ticket-detail bf-hide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5M16 4.2a3.2 3.2 0 0 1 0 6.2M20.5 20c0-3-1.9-5.5-4.5-6.3"/></svg> Últimas 14 vagas do 2º lote · 1º lote esgotado</div>
+          <div class="ticket-detail bf-hide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5M16 4.2a3.2 3.2 0 0 1 0 6.2M20.5 20c0-3-1.9-5.5-4.5-6.3"/></svg> Últimas vagas do 2º lote · 1º lote esgotado</div>
         </div>
         <span class="ticket-note bf-hide" style="display:block;margin-top:10px;">Vendas pelo Sympla · cupom de 10% continua valendo</span>
         <span class="ticket-note bf-only" style="margin-top:10px;">Vendas pelo Sympla · preço de Black Friday só até 19/11</span>
@@ -2610,7 +2626,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
     { kw:['onde compro ingresso','como compro ingresso','quanto custa o ingresso','valor do ingresso','preco do ingresso','quando abrem os ingressos','vendas dos ingressos'],
       a:'Os ingressos já estão à venda pelo Sympla! [[BOTAO:ingresso]]' },
     { kw:['quantas vagas','vagas limitadas','quantas pessoas','lotacao','capacidade do evento'],
-      a:(document.documentElement.classList.contains('bf')?'É uma edição seletiva e intimista. O 1º lote esgotou e o 2º lote tem poucas vagas. Na Black Friday o ingresso custa R$ 69,99, só até 19/11. As vagas são limitadas, então quanto antes garantir, melhor.':'É uma edição seletiva e intimista. O 1º lote de 60 ingressos esgotou e abrimos o 2º lote e restam só as últimas 14 vagas, a R$ 119,90. As vagas são limitadas, então quanto antes garantir, melhor.') },
+      a:(document.documentElement.classList.contains('bf')?'É uma edição seletiva e intimista. O 1º lote esgotou e o 2º lote tem poucas vagas. Na Black Friday o ingresso custa R$ 69,99, só até 19/11. As vagas são limitadas, então quanto antes garantir, melhor.':'É uma edição seletiva e intimista. O 1º lote de 60 ingressos esgotou e abrimos o 2º lote e restam só as últimas vagas, a R$ 119,90. As vagas são limitadas, então quanto antes garantir, melhor.') },
     { kw:['como funcionam as sessoes','quantas sessoes','duas sessoes','como reservo minha vaga','como escolho a atividade','em quantas atividades posso participar','reservar atividade','vagas por atividade'],
       a:'Cada estação tem duas sessões: a primeira você já escolhe e reserva por nome no momento da compra do ingresso no Sympla, e a segunda é livre no dia. Ou seja, cada pessoa participa de até 2 modalidades ao longo da manhã, encerrando com a atividade surpresa.' },
     { kw:['o que esta incluso','o que vem no ingresso','o que ganho no evento','o que tem incluido'],

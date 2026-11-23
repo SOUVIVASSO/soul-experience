@@ -2303,17 +2303,6 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
   <button type="button" id="cookie-ok">Entendi</button>
 </div>
 
-<div class="promo-overlay" id="promoOverlay">
-  <div class="promo-popup" role="dialog" aria-modal="true" aria-label="Oferta especial de desconto">
-    <button type="button" class="promo-close" id="promoClose" aria-label="Fechar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
-    <span class="promo-emoji">🎉</span>
-    <h3 id="promoTitle">Vagas encerradas!</h3>
-    <p id="promoText">A 2ª edição está com todas as vagas preenchidas. Entre na lista de espera e receba <strong>em primeira mão</strong> o ingresso da 3ª edição.</p>
-    <button type="button" class="promo-coupon" id="promoCoupon" style="display:none">VIVASSO10 <span class="copy-hint">toque pra copiar</span></button>
-    <a class="btn btn-primary promo-cta" id="promoCta" href="#terceira-edicao">Entrar na lista de espera</a>
-  </div>
-</div>
-
 <script>
 (function(){
   var EVENT_START = new Date('2026-11-28T06:00:00-03:00').getTime();
@@ -2947,72 +2936,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
 })();
 </script>
 
-<script>
-(function(){
-  var overlay = document.getElementById('promoOverlay');
-  if(!overlay) return;
-  var closeBtn = document.getElementById('promoClose');
-  var couponBtn = document.getElementById('promoCoupon');
-  var promoTitle = document.getElementById('promoTitle');
-  var promoText = document.getElementById('promoText');
-  var heroCtaBtn = document.getElementById('heroCtaBtn');
-  var shown = false;
 
-  var DEFAULT_TITLE = promoTitle.textContent;
-  var DEFAULT_TEXT = promoText.innerHTML;
-  var HERO_TITLE = 'Você decide rápido, a gente recompensa rápido!';
-  var HERO_TEXT = 'Seja um dos primeiros a garantir seu ingresso com <strong>10% de desconto</strong> usando o cupom abaixo:';
-
-  function openPromo(variant){
-    if(shown) return;
-    shown = true;
-    clearTimeout(idleTimer);
-    if(variant === 'hero'){
-      promoTitle.textContent = HERO_TITLE;
-      promoText.innerHTML = HERO_TEXT;
-    } else {
-      promoTitle.textContent = DEFAULT_TITLE;
-      promoText.innerHTML = DEFAULT_TEXT;
-    }
-    overlay.classList.add('open');
-  }
-  function closePromo(){
-    overlay.classList.remove('open');
-  }
-
-  var idleTimer;
-
-  if(heroCtaBtn){
-    heroCtaBtn.addEventListener('click', function(){
-      setTimeout(function(){ openPromo('hero'); }, 650);
-    });
-  }
-
-  closeBtn.addEventListener('click', closePromo);
-  overlay.addEventListener('click', function(e){ if(e.target === overlay) closePromo(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closePromo(); });
-
-  document.addEventListener('click', function(e){
-    var link = e.target.closest && e.target.closest('a[href*="wa.me"]');
-    if(link){
-      clearTimeout(idleTimer);
-      shown = true;
-    }
-  });
-
-  couponBtn.addEventListener('click', function(){
-    try { navigator.clipboard.writeText('VIVASSO10'); } catch(e){}
-    couponBtn.classList.add('copied');
-    var hint = couponBtn.querySelector('.copy-hint');
-    var old = hint ? hint.textContent : '';
-    if(hint) hint.textContent = 'copiado!';
-    setTimeout(function(){
-      couponBtn.classList.remove('copied');
-      if(hint) hint.textContent = old;
-    }, 1600);
-  });
-})();
-</script>
 
 <script>
 (function(){

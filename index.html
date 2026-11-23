@@ -2236,11 +2236,11 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
     <button class="chat-close" id="chat-close" type="button" aria-label="Fechar assistente"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
   <div class="chat-body clarity-mask" id="chat-body">
-    <div class="chat-msg bot">Oi! Eu sou a Vivi 👋 Pode perguntar sobre data, local, ingressos, atividades ou como vai funcionar o Soul Experience. Se preferir, toque numa das opções abaixo.</div>
+    <div class="chat-msg bot">Oi! Eu sou a Vivi 👋 Pode perguntar sobre data, local, atividades ou como vai funcionar o Soul Experience. As vagas da 2ª edição estão encerradas, mas você pode entrar na lista de espera da 3ª edição. Se preferir, toque numa das opções abaixo.</div>
   </div>
   <div class="chat-quick" id="chat-quick">
     <button type="button" data-q="Quando é o evento?">Quando é?</button>
-    <button type="button" data-q="Onde compro meu ingresso?">Ingressos</button>
+    <button type="button" data-q="Ainda tem vaga?">Ainda tem vaga?</button>
     <button type="button" data-q="Onde vai ser o evento?">Local</button>
     <button type="button" data-q="Falar com atendente">Falar com atendente</button>
   </div>
@@ -2605,7 +2605,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
 
   var BOT_FAQ = [
     { kw:['oi','ola','bom dia','boa tarde','boa noite','tudo bem'],
-      a:'Oi! Tudo bem? Pode perguntar sobre data, local, ingressos, atividades ou como vai funcionar o Soul Experience. Se preferir, toque numa das opções aqui embaixo.' },
+      a:'Oi! Tudo bem? Pode perguntar sobre data, local, atividades ou como vai funcionar o Soul Experience. As vagas da 2ª edição estão encerradas, mas você pode entrar na lista de espera da 3ª edição. Se preferir, toque numa das opções aqui embaixo.' },
     { kw:['obrigado','obrigada','valeu','entendi','ajudou'],
       a:'De nada! Se aparecer outra dúvida é só chamar por aqui. 🙂' },
     { kw:['quando e o evento','que dia','data do evento','dia do evento','qual a data','quando acontece','horario','que horas'],
@@ -2614,12 +2614,12 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
       a:'O evento acontece na área externa do Iguatemi Bosque, na saída da Zara, em Fortaleza. Um dos shoppings mais conhecidos da cidade, com estrutura completa.' },
     { kw:['o que e o soul experience','o que e isso','do que se trata','como funciona o evento','o que e esse evento'],
       a:'O Soul Experience é um evento de bem-estar da Vivasso: uma manhã com um circuito de estações de atividade física (bike, yoga, WolfFit, dance mix e fit dance, aerobox e uma atividade surpresa de encerramento), cada uma com um momento LoveNuts, com premiação especial na atividade surpresa final.' },
-    { kw:['onde compro ingresso','como compro ingresso','quanto custa o ingresso','valor do ingresso','preco do ingresso','quando abrem os ingressos','vendas dos ingressos'],
-      a:'As vagas da 2ª edição estão encerradas. Entre na lista de espera da 3ª edição e receba o ingresso em primeira mão! [[BOTAO:ingresso]]' },
+    { kw:['onde compro ingresso','como compro ingresso','quero comprar','quero me inscrever','quero participar','ainda tem vaga','tem vaga','tem ingresso','ainda tem ingresso','sympla','comprar ingresso','quanto custa o ingresso','valor do ingresso','preco do ingresso','quando abrem os ingressos','vendas dos ingressos','inscricao','me inscrever'],
+      a:'As vagas da 2ª edição estão encerradas! Mas você pode entrar na lista de espera da 3ª edição e receber o ingresso em primeira mão, com desconto exclusivo: https://soulexperience.vivasso.com.br/#terceira-edicao [[BOTAO:ingresso]]' },
     { kw:['quantas vagas','vagas limitadas','quantas pessoas','lotacao','capacidade do evento'],
       a:(document.documentElement.classList.contains('bf')?'É uma edição seletiva e intimista. As vagas da 2ª edição estão encerradas. Entre na lista de espera da 3ª edição e receba o ingresso em primeira mão.':'É uma edição seletiva e intimista. As vagas da 2ª edição estão encerradas. Entre na lista de espera da 3ª edição e receba o ingresso em primeira mão.') },
     { kw:['como funcionam as sessoes','quantas sessoes','duas sessoes','como reservo minha vaga','como escolho a atividade','em quantas atividades posso participar','reservar atividade','vagas por atividade'],
-      a:'Cada estação tem duas sessões: a primeira você já escolhe e reserva por nome no momento da compra do ingresso no Sympla, e a segunda é livre no dia. Ou seja, cada pessoa participa de até 2 modalidades ao longo da manhã, encerrando com a atividade surpresa.' },
+      a:'Cada estação tem duas sessões: a primeira foi escolhida e reservada por nome no momento da compra do ingresso, e a segunda é livre no dia. Ou seja, cada pessoa participa de até 2 modalidades ao longo da manhã, encerrando com a atividade surpresa.' },
     { kw:['o que esta incluso','o que vem no ingresso','o que ganho no evento','o que tem incluido'],
       a:'O ingresso dá participação em 2 das 5 atividades do circuito (uma reservada na compra, outra livre no dia) mais a atividade surpresa de encerramento, totalizando 3 atividades. Também inclui Welcome Kit com produtos das marcas parceiras, ativações ao longo do percurso, bate-papo com nutricionistas e premiação especial na atividade surpresa.' },
     { kw:['ativacao na bodytech','o que e essa ativacao','academia bodytech'],
@@ -2684,6 +2684,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
   }
   function linkifyChatReply(s){
     var esc = escapeChatHtml(s);
+    esc = esc.replace(/https:\/\/soulexperience\.vivasso\.com\.br\/#terceira-edicao/g, '<a href="#terceira-edicao">Entrar na lista de espera</a>');
     esc = esc.replace(/souvivasso@gmail\.com/g, '<a href="mailto:souvivasso@gmail.com">souvivasso@gmail.com</a>');
     esc = esc.replace(/\(85\)\s?9771[.-]?2114/g, '<a href="https://wa.me/558597712114" target="_blank" rel="noopener">$&</a>');
     return esc;
@@ -2702,7 +2703,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
 
   var CHAT_ACTIONS = {
     ingresso: { label: 'Entrar na lista de espera', href: '#terceira-edicao' },
-    contato: { label: 'Falar com a gente', href: '#ingressos' },
+    contato: { label: 'Falar com a gente', href: '#terceira-edicao' },
     whatsapp: { label: 'Falar no WhatsApp', href: 'https://wa.me/558597712114?text=' + encodeURIComponent('Oi! Estava conversando com a Vivi no site do Soul Experience e não consegui resolver minha dúvida por lá.'), target: '_blank' },
     influenciadores: { label: 'Ver influenciadores', href: 'influenciadores.html' }
   };
@@ -2738,7 +2739,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
       var res = await fetch(VIVI_API_URL, {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({ message: q, history: chatHistory.slice(-6), site: 'soul-ingressos' }),
+        body: JSON.stringify({ message: '[AVISO ATUAL DO SITE, obrigatório: as vagas da 2ª edição do Soul Experience (28/11/2026) estão ENCERRADAS e não existe mais venda de ingressos. Nunca indique o Sympla nem diga que há ingressos ou vagas disponíveis. Avise que as vagas foram encerradas e convide a pessoa a entrar na lista de espera da 3ª edição para receber o ingresso em primeira mão, com desconto exclusivo, enviando este link: https://soulexperience.vivasso.com.br/#terceira-edicao . Termine a resposta com [[BOTAO:ingresso]]. Pergunta da pessoa:] ' + q, history: chatHistory.slice(-6), site: 'soul-ingressos', notice: 'vagas-encerradas', waitlist_url: 'https://soulexperience.vivasso.com.br/#terceira-edicao' }),
         signal: ctrl.signal
       });
       clearTimeout(timeoutId);
@@ -2746,6 +2747,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
       var data = await res.json();
       if(!data || !data.reply) throw new Error('no reply');
       typing.remove();
+      if (/sympla|garanta (a )?sua|ingressos? (est[aã]o|j[aá] est[aã]o) (a )?venda|[uú]ltimas vagas|vagas dispon/i.test(data.reply)) { data.reply = 'As vagas da 2ª edição estão encerradas! Mas você pode entrar na lista de espera da 3ª edição e receber o ingresso em primeira mão, com desconto exclusivo: https://soulexperience.vivasso.com.br/#terceira-edicao [[BOTAO:ingresso]]'; }
       var parsed = extractChatAction(data.reply);
       addChatMsg(linkifyChatReply(parsed.clean), 'bot');
       if (parsed.action) addChatActionBtn(parsed.action);

@@ -799,8 +799,16 @@
   /* ---------- COORDENACAO ---------- */
   /* ===== Fotos do evento (Gleysão) ===== */
   #fotos{padding-block:clamp(40px,6vw,72px);}
-  .fotos-card{display:grid;grid-template-columns:1fr minmax(0,320px);align-items:end;gap:clamp(20px,4vw,48px);background:linear-gradient(160deg,#241811 0%,#4A2C1C 100%);border-radius:24px;overflow:hidden;padding:clamp(24px,4vw,44px) 0 0 clamp(24px,4vw,48px);}
-  .fotos-photo{align-self:end;display:block;width:100%;max-width:320px;height:auto;margin:0 0 0 auto;}
+  .fotos-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);align-items:end;gap:clamp(12px,3vw,32px);background:linear-gradient(160deg,#241811 0%,#4A2C1C 100%);border-radius:24px;overflow:hidden;padding:clamp(24px,4vw,44px) 0 0 clamp(24px,4vw,48px);}
+  .fotos-stage{position:relative;align-self:stretch;display:flex;align-items:flex-end;justify-content:center;min-height:300px;isolation:isolate;}
+  /* luz vindo da esquerda: halo quente + feixes suaves */
+  .fotos-stage::before{content:"";position:absolute;inset:-30% -10% -20% -100%;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(ellipse closest-side at 57% 44%,rgba(255,236,190,.42) 0%,rgba(255,214,150,0) 60%),
+      radial-gradient(ellipse closest-side at 58% 46%,rgba(243,190,120,.34) 0%,rgba(243,190,120,.12) 50%,rgba(243,190,120,0) 100%);}
+  .fotos-photo{display:block;box-sizing:content-box;width:330px;max-width:calc(100% - 60px);height:auto;padding:44px 0 0 60px;
+    filter:drop-shadow(-18px 0 26px rgba(255,214,150,.38)) drop-shadow(-2px 0 3px rgba(255,236,200,.35));
+    -webkit-mask-image:linear-gradient(to right,#000 78%,transparent 100%);mask-image:linear-gradient(to right,#000 78%,transparent 100%);}
   .fotos-body{padding-bottom:clamp(24px,4vw,44px);align-self:center;}
   .fotos-card .eyebrow{color:#F3D9B4;}
   .fotos-card h2{margin:10px 0 0;font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(22px,3vw,34px);line-height:1.12;letter-spacing:-.01em;color:#fff;}
@@ -810,7 +818,7 @@
   .fotos-card .btn-primary:hover{background:#fff;}
   .fotos-ig{font-size:14px;font-weight:700;color:#F3D9B4;text-decoration:underline;text-underline-offset:3px;}
   .fotos-ig:hover{color:#fff;}
-  @media (max-width:640px){.fotos-card{grid-template-columns:1fr;padding:26px 22px 0;gap:0;}.fotos-body{order:1;padding-bottom:22px;}.fotos-photo{order:2;max-width:250px;margin:0 -22px 0 auto;}.fotos-actions .btn{width:100%;justify-content:center;}}
+  @media (max-width:640px){.fotos-card{grid-template-columns:1fr;padding:26px 22px 0;gap:0;}.fotos-body{order:1;padding-bottom:10px;}.fotos-stage{order:2;min-height:260px;margin:0 -22px;}.fotos-photo{width:250px;max-width:calc(100% - 56px);padding:40px 0 0 56px;}}
   .coord-feature{margin-top:36px;display:flex;align-items:center;gap:28px;background:var(--ink);border-radius:20px;overflow:hidden;}
   .coord-feature img{width:220px;height:280px;object-fit:cover;flex-shrink:0;display:block;}
   .coord-feature .content{padding:24px 28px 24px 0;}
@@ -1646,7 +1654,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
           <a class="fotos-ig" href="https://www.instagram.com/gleysaofotografo/" target="_blank" rel="noopener">@gleysaofotografo</a>
         </div>
       </div>
-      <img class="fotos-photo" src="assets/team/gleysao-fotografo.webp" alt="Gleysão Fotógrafo segurando a câmera" width="320" height="447" loading="lazy">
+      <div class="fotos-stage"><img class="fotos-photo" src="assets/team/gleysao-fotografo.webp" alt="Gleysão Fotógrafo segurando a câmera" width="330" height="461" loading="lazy"></div>
     </div>
   </div>
 </section>

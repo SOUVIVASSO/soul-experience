@@ -762,9 +762,8 @@
   .midia-readmore{margin-top:8px;font-size:12.5px;font-weight:700;color:var(--violet);}
 
   /* ===== Saímos em (veículos) ===== */
-  .saimos{margin-top:48px;padding-top:36px;border-top:1px solid var(--line-strong);}
-  .saimos h3{margin:8px 0 0;font-family:'Unbounded',sans-serif;font-size:clamp(20px,2.6vw,28px);font-weight:800;color:var(--ink);line-height:1.15;}
-  .saimos .saimos-sub{margin-top:8px;font-size:14px;color:var(--ink-dim);max-width:560px;}
+  .saimos{margin:0;padding:0;}
+    .saimos .saimos-sub{margin-top:8px;font-size:14px;color:var(--ink-dim);max-width:560px;}
   .saimos-grid{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;}
   .saimos-card{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:16px;background:var(--bg-alt);border:1px solid var(--line);border-radius:18px;text-decoration:none;color:var(--ink);transition:transform .2s,border-color .2s,box-shadow .2s;}
   .saimos-card:hover{transform:translateY(-3px);border-color:var(--violet);box-shadow:0 12px 28px rgba(42,27,20,.10);}
@@ -1936,28 +1935,17 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
 <!-- ================= NA MIDIA ================= -->
 <section id="midia" style="padding-block:48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel-lav);">
   <div class="wrap">
-    <span class="eyebrow">Imprensa · 2ª edição</span>
-    <h2 class="section-title" style="font-size:clamp(24px,3vw,32px);margin-top:8px;">Saímos na mídia</h2>
-    <div class="midia-author">
-      <img src="assets/team/karol-bang.webp" alt="Karol Bang">
-      <div class="content">
-        <h3>Karol Bang</h3>
-        <p>Colunista digital com mais de 5 milhões de visualizações por mês, com temas de comportamento e lifestyle em Fortaleza.</p>
-      </div>
-    </div>
-    <p class="midia-cta-hint">Clique e confira as matérias completas:</p>
-    <div class="midia-grid">
-      <a class="midia-card" href="https://karolbang.com.br/soul-experience-leva-circuito-de-wellness-ao-iguatemi-fortaleza/" target="_blank" rel="noopener">
-        <span class="midia-source">Karol Bang</span>
-        <span class="midia-title">"Soul Experience leva circuito de wellness ao Iguatemi Fortaleza"</span>
-        <span class="midia-readmore">Ler matéria completa →</span>
-      </a>
-    </div>
     <div class="saimos">
-      <span class="eyebrow">Também falaram da 2ª edição</span>
-      <h3>Saímos em</h3>
+      <span class="eyebrow">Imprensa · 2ª edição</span>
+      <h2 class="section-title" style="font-size:clamp(24px,3vw,32px);margin-top:8px;">Saímos em</h2>
       <p class="saimos-sub">Sites, colunas e perfis de Fortaleza que divulgaram o Circuito das Estações.</p>
       <div class="saimos-grid">
+        <a class="saimos-card" href="https://karolbang.com.br/soul-experience-leva-circuito-de-wellness-ao-iguatemi-fortaleza/" target="_blank" rel="noopener">
+          <span class="saimos-logo"><img src="assets/midia/karol-bang.svg" alt="Karol Bang" loading="lazy"></span>
+          <span class="saimos-name">Karol Bang</span>
+          <span class="saimos-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>Site</span>
+          <span class="saimos-go">Ler matéria →</span>
+        </a>
         <a class="saimos-card" href="https://paparazoom.com.br/bodytech-e-vivasso-unem-fitness-e-bem-estar-na-segunda-edicao-do-soul-experience-neste-sabado-28/" target="_blank" rel="noopener">
           <span class="saimos-logo"><img src="assets/midia/paparazoom.svg" alt="Paparazoom" loading="lazy"></span>
           <span class="saimos-name">Paparazoom</span>

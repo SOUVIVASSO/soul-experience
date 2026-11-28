@@ -167,11 +167,3 @@ footer{background:var(--bg-dark);padding-block:28px;margin-top:40px}
   border:none;padding:8px 16px;border-radius:999px;cursor:pointer}
 @media (max-width:480px){.cookie-notice{left:12px;right:12px;bottom:12px;max-width:none}}
 
-.perola-press{margin-top:44px;padding-top:30px;border-top:1px solid rgba(243,217,180,.18);}
-.perola-press h3{margin:8px 0 0;font-family:'Unbounded',sans-serif;font-size:clamp(18px,2.4vw,24px);font-weight:700;color:#fff;}
-.perola-press-grid{margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
-.pp-card{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border-radius:16px;border:1px solid rgba(243,217,180,.22);background:rgba(255,255,255,.05);color:#fff;text-decoration:none;transition:border-color .2s,transform .2s,background .2s;}
-.pp-card:hover{border-color:#F3D9B4;background:rgba(255,255,255,.09);transform:translateY(-2px);}
-.pp-source{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#F3D9B4;}
-.pp-title{font-size:14.5px;font-weight:600;line-height:1.4;color:#fff;}
-.pp-more{margin-top:6px;font-size:12.5px;font-weight:700;color:#F3D9B4;}

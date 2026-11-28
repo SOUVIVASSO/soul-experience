@@ -665,14 +665,6 @@
     .pg-item{width:100%;height:auto;aspect-ratio:1;}
   }
   .perola-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;}
-  .perola-press{margin-top:44px;padding-top:30px;border-top:1px solid rgba(243,217,180,.18);}
-  .perola-press h3{margin:8px 0 0;font-family:'Unbounded',sans-serif;font-size:clamp(18px,2.4vw,24px);font-weight:700;color:#fff;}
-  .perola-press-grid{margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
-  .pp-card{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border-radius:16px;border:1px solid rgba(243,217,180,.22);background:rgba(255,255,255,.05);color:#fff;text-decoration:none;transition:border-color .2s,transform .2s,background .2s;}
-  .pp-card:hover{border-color:#F3D9B4;background:rgba(255,255,255,.09);transform:translateY(-2px);}
-  .pp-source{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#F3D9B4;}
-  .pp-title{font-size:14.5px;font-weight:600;line-height:1.4;color:#fff;}
-  .pp-more{margin-top:6px;font-size:12.5px;font-weight:700;color:#F3D9B4;}
 
   /* ---------- PHOTO LIGHTBOX / VIDEO MODAL ---------- */
   .photo-lightbox{
@@ -741,15 +733,39 @@
   .saimos{margin:0;padding:0;}
     .saimos .saimos-sub{margin-top:8px;font-size:14px;color:var(--ink-dim);max-width:560px;}
   .saimos-grid{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;}
-  .saimos-card{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:16px;background:var(--bg-alt);border:1px solid var(--line);border-radius:18px;text-decoration:none;color:var(--ink);transition:transform .2s,border-color .2s,box-shadow .2s;}
+  .saimos-card{min-width:0;display:flex;flex-direction:column;gap:12px;padding:16px;background:var(--bg-alt);border:1px solid var(--line);border-radius:18px;color:var(--ink);transition:transform .2s,border-color .2s,box-shadow .2s;}
   .saimos-card:hover{transform:translateY(-3px);border-color:var(--violet);box-shadow:0 12px 28px rgba(42,27,20,.10);}
+  .saimos-main{display:flex;flex-direction:column;align-items:flex-start;gap:10px;color:inherit;text-decoration:none;}
+  .saimos-actions{margin-top:auto;display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
+  .saimos-all{display:inline-flex;align-items:center;gap:6px;font-family:inherit;font-size:12.5px;font-weight:700;color:var(--violet);background:rgba(163,91,41,.09);border:1px solid rgba(163,91,41,.28);border-radius:999px;padding:8px 14px;cursor:pointer;transition:background .2s,border-color .2s;}
+  .saimos-all:hover{background:rgba(163,91,41,.16);border-color:var(--violet);}
+  .saimos-all svg{width:14px;height:14px;}
+  .saimos-modal{position:fixed;inset:0;z-index:2500;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(20,12,8,.62);backdrop-filter:blur(3px);}
+  .saimos-modal[hidden]{display:none;}
+  .saimos-modal-box{position:relative;width:100%;max-width:560px;max-height:86vh;overflow:auto;background:var(--bg-alt);border-radius:22px;padding:26px 26px 22px;box-shadow:0 24px 60px rgba(0,0,0,.35);}
+  .saimos-modal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line-strong);background:var(--bg);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;}
+  .saimos-modal-close:hover{border-color:var(--ink);}
+  .saimos-modal-head{display:flex;align-items:center;gap:14px;padding-right:44px;}
+  .saimos-modal-head .saimos-logo{width:132px;height:56px;flex-shrink:0;}
+  .saimos-modal-head .saimos-logo img{max-height:34px;}
+  .saimos-modal-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--violet);}
+  .saimos-modal-head h3{margin:2px 0 0;font-family:'Unbounded',sans-serif;font-size:17px;font-weight:800;line-height:1.2;color:var(--ink);}
+  .saimos-group{margin-top:22px;}
+  .saimos-group-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-bottom:8px;border-bottom:1px solid var(--line-strong);}
+  .saimos-group-head b{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:var(--ink);}
+  .saimos-group-head span{font-size:12.5px;color:var(--ink-dim);}
+  .saimos-group a{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 4px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:14.5px;font-weight:600;line-height:1.4;}
+  .saimos-group a:last-child{border-bottom:none;}
+  .saimos-group a:hover{color:var(--violet);}
+  .saimos-group a svg{width:16px;height:16px;flex-shrink:0;color:var(--violet);}
   .saimos-logo{width:100%;height:84px;border-radius:12px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;border:1px solid var(--line);}
   .saimos-logo img{max-width:78%;max-height:56px;width:auto;height:auto;object-fit:contain;}
   .saimos-logo.sq img{max-width:none;max-height:none;height:84px;width:84px;}
   .saimos-name{font-family:'Unbounded',sans-serif;font-size:14.5px;font-weight:700;line-height:1.25;max-width:100%;overflow-wrap:anywhere;}
   .saimos-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--violet);}
   .saimos-tag svg{width:13px;height:13px;}
-  .saimos-go{margin-top:auto;font-size:12.5px;font-weight:700;color:var(--violet);}
+  .saimos-go{font-size:12.5px;font-weight:700;color:var(--violet);text-decoration:none;}
+  .saimos-go:hover{text-decoration:underline;}
 
   /* ---------- CRONOGRAMA ---------- */
   .timeline{
@@ -1834,22 +1850,6 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
       <a href="https://www.fotto.com.br/soul-experience/e/402636" target="_blank" rel="noopener" class="btn btn-ghost">Comprar fotos em alta (César Costa)</a>
       <a href="https://open.spotify.com/playlist/51Q1posiwUpnbpTWyc8k9e" target="_blank" rel="noopener" class="btn btn-ghost">Ouvir playlist oficial</a>
     </div>
-    <div class="perola-press">
-      <span class="eyebrow">Imprensa</span>
-      <h3>Saiu na mídia</h3>
-      <div class="perola-press-grid">
-        <a class="pp-card" href="https://karolbang.com.br/soul-experience-estreia-em-fortaleza-com-uma-proposta-de-bem-estar-que-ultrapassa-os-limites-da-atividade-fisica" target="_blank" rel="noopener">
-          <span class="pp-source">Karol Bang</span>
-          <span class="pp-title">"Soul Experience estreia em Fortaleza com uma proposta diferente"</span>
-          <span class="pp-more">Ler matéria completa →</span>
-        </a>
-        <a class="pp-card" href="https://karolbang.com.br/soul-experience-o-evento-que-provou-que-bem-estar-vai-muito-alem-da-academia" target="_blank" rel="noopener">
-          <span class="pp-source">Karol Bang</span>
-          <span class="pp-title">"Um evento que provou que bem-estar vai muito além da academia"</span>
-          <span class="pp-more">Ler matéria completa →</span>
-        </a>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1857,52 +1857,81 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
 <section id="midia" style="padding-block:48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel-lav);">
   <div class="wrap">
     <div class="saimos">
-      <span class="eyebrow">Imprensa · 2ª edição</span>
+      <span class="eyebrow">Imprensa</span>
       <h2 class="section-title" style="font-size:clamp(24px,3vw,32px);margin-top:8px;">Saímos em</h2>
-      <p class="saimos-sub">Sites, colunas e perfis de Fortaleza que divulgaram o Circuito das Estações.</p>
+      <p class="saimos-sub">Sites, colunas e perfis de Fortaleza que já falaram do Soul Experience, de todas as edições.</p>
       <div class="saimos-grid">
-        <a class="saimos-card" href="https://karolbang.com.br/soul-experience-leva-circuito-de-wellness-ao-iguatemi-fortaleza/" target="_blank" rel="noopener">
+        <div class="saimos-card">
+          <a class="saimos-main" href="https://karolbang.com.br/soul-experience-leva-circuito-de-wellness-ao-iguatemi-fortaleza/" target="_blank" rel="noopener">
           <span class="saimos-logo"><img src="assets/midia/karol-bang.svg" alt="Karol Bang" loading="lazy"></span>
           <span class="saimos-name">Karol Bang</span>
           <span class="saimos-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>Site</span>
-          <span class="saimos-go">Ler matéria →</span>
-        </a>
-        <a class="saimos-card" href="https://paparazoom.com.br/bodytech-e-vivasso-unem-fitness-e-bem-estar-na-segunda-edicao-do-soul-experience-neste-sabado-28/" target="_blank" rel="noopener">
+          </a>
+          <div class="saimos-actions">
+            <a class="saimos-go" href="https://karolbang.com.br/soul-experience-leva-circuito-de-wellness-ao-iguatemi-fortaleza/" target="_blank" rel="noopener">Ler matéria →</a>
+            <button type="button" class="saimos-all" data-outlet="karol" aria-haspopup="dialog">Ver todas as matérias (3)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+        <div class="saimos-card">
+          <a class="saimos-main" href="https://paparazoom.com.br/bodytech-e-vivasso-unem-fitness-e-bem-estar-na-segunda-edicao-do-soul-experience-neste-sabado-28/" target="_blank" rel="noopener">
           <span class="saimos-logo"><img src="assets/midia/paparazoom.svg" alt="Paparazoom" loading="lazy"></span>
           <span class="saimos-name">Paparazoom</span>
           <span class="saimos-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>Site</span>
-          <span class="saimos-go">Ler matéria →</span>
-        </a>
-        <a class="saimos-card" href="https://lazaromedeiros.com.br/slideshow/bodytech-e-vivasso-unem-fitness-e-bem-estar-na-segunda-edicao-do-soul-experience-neste-sabado-28/" target="_blank" rel="noopener">
+          </a>
+          <div class="saimos-actions">
+            <a class="saimos-go" href="https://paparazoom.com.br/bodytech-e-vivasso-unem-fitness-e-bem-estar-na-segunda-edicao-do-soul-experience-neste-sabado-28/" target="_blank" rel="noopener">Ler matéria →</a>
+          </div>
+        </div>
+        <div class="saimos-card">
+          <a class="saimos-main" href="https://lazaromedeiros.com.br/slideshow/bodytech-e-vivasso-unem-fitness-e-bem-estar-na-segunda-edicao-do-soul-experience-neste-sabado-28/" target="_blank" rel="noopener">
           <span class="saimos-logo"><img src="assets/midia/lazaro-medeiros.png" alt="Lázaro Medeiros" loading="lazy"></span>
           <span class="saimos-name">Lázaro Medeiros</span>
           <span class="saimos-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>Site</span>
-          <span class="saimos-go">Ler matéria →</span>
-        </a>
-        <a class="saimos-card" href="https://www.instagram.com/sociedadeoestadoce/" target="_blank" rel="noopener">
+          </a>
+          <div class="saimos-actions">
+            <a class="saimos-go" href="https://lazaromedeiros.com.br/slideshow/bodytech-e-vivasso-unem-fitness-e-bem-estar-na-segunda-edicao-do-soul-experience-neste-sabado-28/" target="_blank" rel="noopener">Ler matéria →</a>
+          </div>
+        </div>
+        <div class="saimos-card">
+          <a class="saimos-main" href="https://www.instagram.com/sociedadeoestadoce/" target="_blank" rel="noopener">
           <span class="saimos-logo sq" style="background:#f7f7f7"><img src="assets/midia/sociedade-o-estado-ce.jpg" alt="Coluna Sociedade, O Estado CE" loading="lazy"></span>
           <span class="saimos-name">Coluna Sociedade, O Estado CE</span>
           <span class="saimos-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>Instagram</span>
-          <span class="saimos-go">Ver no Instagram →</span>
-        </a>
-        <a class="saimos-card" href="https://www.instagram.com/saudefortaleza/" target="_blank" rel="noopener">
+          </a>
+          <div class="saimos-actions">
+            <a class="saimos-go" href="https://www.instagram.com/sociedadeoestadoce/" target="_blank" rel="noopener">Ver no Instagram →</a>
+          </div>
+        </div>
+        <div class="saimos-card">
+          <a class="saimos-main" href="https://www.instagram.com/saudefortaleza/" target="_blank" rel="noopener">
           <span class="saimos-logo sq" style="background:#f12364"><img src="assets/midia/saude-fortaleza.jpg" alt="Saúde Fortaleza" loading="lazy"></span>
           <span class="saimos-name">Saúde Fortaleza</span>
           <span class="saimos-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>Instagram</span>
-          <span class="saimos-go">Ver no Instagram →</span>
-        </a>
-        <a class="saimos-card" href="https://www.instagram.com/portalistoae/" target="_blank" rel="noopener">
+          </a>
+          <div class="saimos-actions">
+            <a class="saimos-go" href="https://www.instagram.com/saudefortaleza/" target="_blank" rel="noopener">Ver no Instagram →</a>
+          </div>
+        </div>
+        <div class="saimos-card">
+          <a class="saimos-main" href="https://www.instagram.com/portalistoae/" target="_blank" rel="noopener">
           <span class="saimos-logo sq" style="background:#000247"><img src="assets/midia/isto-ae.jpg" alt="Isto Aê" loading="lazy"></span>
           <span class="saimos-name">Isto Aê</span>
           <span class="saimos-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>Instagram</span>
-          <span class="saimos-go">Ver no Instagram →</span>
-        </a>
-        <a class="saimos-card" href="https://www.instagram.com/p/DgQNbm1xDnI/" target="_blank" rel="noopener">
+          </a>
+          <div class="saimos-actions">
+            <a class="saimos-go" href="https://www.instagram.com/portalistoae/" target="_blank" rel="noopener">Ver no Instagram →</a>
+          </div>
+        </div>
+        <div class="saimos-card">
+          <a class="saimos-main" href="https://www.instagram.com/p/DgQNbm1xDnI/" target="_blank" rel="noopener">
           <span class="saimos-logo sq" style="background:#000000"><img src="assets/midia/indicomais.jpg" alt="IndicoMais Wellness &amp; Saúde" loading="lazy"></span>
           <span class="saimos-name">IndicoMais Wellness &amp; Saúde</span>
           <span class="saimos-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>Instagram</span>
-          <span class="saimos-go">Ver o post →</span>
-        </a>
+          </a>
+          <div class="saimos-actions">
+            <a class="saimos-go" href="https://www.instagram.com/p/DgQNbm1xDnI/" target="_blank" rel="noopener">Ver o post →</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -3320,6 +3349,78 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
   if('IntersectionObserver' in window){
     new IntersectionObserver(function(es){ es[0].isIntersecting?start():stop(); },{threshold:0.1}).observe(document.getElementById('heroSection'));
   } else { start(); }
+})();
+</script>
+
+<!-- Modal: todas as matérias de um veículo -->
+<div class="saimos-modal" id="saimosModal" hidden role="dialog" aria-modal="true" aria-labelledby="saimosModalTitle">
+  <div class="saimos-modal-box">
+    <button type="button" class="saimos-modal-close" id="saimosModalClose" aria-label="Fechar">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <div class="saimos-modal-head">
+      <span class="saimos-logo"><img id="saimosModalLogo" src="" alt=""></span>
+      <div><span class="saimos-modal-eyebrow">Todas as matérias</span><h3 id="saimosModalTitle"></h3></div>
+    </div>
+    <div id="saimosModalBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Para um veículo ganhar "Ver todas as matérias": liste as matérias aqui e coloque um botão com data-outlet no card.
+  var OUTLETS = {
+    karol:{
+      name:'Karol Bang', logo:'assets/midia/karol-bang.svg',
+      groups:[
+        {label:'2ª edição', sub:'Circuito das Estações · 28 nov 2026', items:[
+          {t:'Soul Experience leva circuito de wellness ao Iguatemi Fortaleza', u:'https://karolbang.com.br/soul-experience-leva-circuito-de-wellness-ao-iguatemi-fortaleza/'}
+        ]},
+        {label:'1ª edição', sub:'Pérola Tropical · 21 ago 2026', items:[
+          {t:'Soul Experience estreia em Fortaleza com uma proposta diferente', u:'https://karolbang.com.br/soul-experience-estreia-em-fortaleza-com-uma-proposta-de-bem-estar-que-ultrapassa-os-limites-da-atividade-fisica'},
+          {t:'Um evento que provou que bem-estar vai muito além da academia', u:'https://karolbang.com.br/soul-experience-o-evento-que-provou-que-bem-estar-vai-muito-alem-da-academia'}
+        ]}
+      ]
+    }
+  };
+  var modal = document.getElementById('saimosModal');
+  if(!modal) return;
+  var body = document.getElementById('saimosModalBody');
+  var title = document.getElementById('saimosModalTitle');
+  var logo = document.getElementById('saimosModalLogo');
+  var closeBtn = document.getElementById('saimosModalClose');
+  var lastFocus = null;
+  var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>';
+  function open(key, btn){
+    var o = OUTLETS[key]; if(!o) return;
+    lastFocus = btn || null;
+    title.textContent = o.name; logo.src = o.logo; logo.alt = o.name;
+    body.textContent = '';
+    o.groups.forEach(function(g){
+      var box = document.createElement('div'); box.className = 'saimos-group';
+      var h = document.createElement('div'); h.className = 'saimos-group-head';
+      var b = document.createElement('b'); b.textContent = g.label;
+      var sp = document.createElement('span'); sp.textContent = g.sub;
+      h.appendChild(b); h.appendChild(sp); box.appendChild(h);
+      g.items.forEach(function(it){
+        var a = document.createElement('a'); a.href = it.u; a.target = '_blank'; a.rel = 'noopener';
+        var t = document.createElement('span'); t.textContent = it.t;
+        a.appendChild(t); a.insertAdjacentHTML('beforeend', ARROW); box.appendChild(a);
+      });
+      body.appendChild(box);
+    });
+    modal.hidden = false; document.body.style.overflow = 'hidden'; closeBtn.focus();
+  }
+  function close(){
+    modal.hidden = true; document.body.style.overflow = '';
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.saimos-all');
+    if(btn){ open(btn.getAttribute('data-outlet'), btn); return; }
+    if(e.target === modal || e.target.closest('#saimosModalClose')) close();
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !modal.hidden) close(); });
 })();
 </script>
 </body>

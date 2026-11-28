@@ -761,6 +761,21 @@
   .midia-title{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.4;}
   .midia-readmore{margin-top:8px;font-size:12.5px;font-weight:700;color:var(--violet);}
 
+  /* ===== Saímos em (veículos) ===== */
+  .saimos{margin-top:48px;padding-top:36px;border-top:1px solid var(--line-strong);}
+  .saimos h3{margin:8px 0 0;font-family:'Unbounded',sans-serif;font-size:clamp(20px,2.6vw,28px);font-weight:800;color:var(--ink);line-height:1.15;}
+  .saimos .saimos-sub{margin-top:8px;font-size:14px;color:var(--ink-dim);max-width:560px;}
+  .saimos-grid{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;}
+  .saimos-card{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:16px;background:var(--bg-alt);border:1px solid var(--line);border-radius:18px;text-decoration:none;color:var(--ink);transition:transform .2s,border-color .2s,box-shadow .2s;}
+  .saimos-card:hover{transform:translateY(-3px);border-color:var(--violet);box-shadow:0 12px 28px rgba(42,27,20,.10);}
+  .saimos-logo{width:100%;height:84px;border-radius:12px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;border:1px solid var(--line);}
+  .saimos-logo img{max-width:78%;max-height:56px;width:auto;height:auto;object-fit:contain;}
+  .saimos-logo.sq img{max-width:none;max-height:none;height:84px;width:84px;}
+  .saimos-name{font-family:'Unbounded',sans-serif;font-size:14.5px;font-weight:700;line-height:1.25;max-width:100%;overflow-wrap:anywhere;}
+  .saimos-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--violet);}
+  .saimos-tag svg{width:13px;height:13px;}
+  .saimos-go{margin-top:auto;font-size:12.5px;font-weight:700;color:var(--violet);}
+
   /* ---------- CRONOGRAMA ---------- */
   .timeline{
     margin-top:10px;
@@ -1937,6 +1952,49 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
         <span class="midia-title">"Soul Experience leva circuito de wellness ao Iguatemi Fortaleza"</span>
         <span class="midia-readmore">Ler matéria completa →</span>
       </a>
+    </div>
+    <div class="saimos">
+      <span class="eyebrow">Também falaram da 2ª edição</span>
+      <h3>Saímos em</h3>
+      <p class="saimos-sub">Sites, colunas e perfis de Fortaleza que divulgaram o Circuito das Estações.</p>
+      <div class="saimos-grid">
+        <a class="saimos-card" href="https://paparazoom.com.br/bodytech-e-vivasso-unem-fitness-e-bem-estar-na-segunda-edicao-do-soul-experience-neste-sabado-28/" target="_blank" rel="noopener">
+          <span class="saimos-logo"><img src="assets/midia/paparazoom.svg" alt="Paparazoom" loading="lazy"></span>
+          <span class="saimos-name">Paparazoom</span>
+          <span class="saimos-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>Site</span>
+          <span class="saimos-go">Ler matéria →</span>
+        </a>
+        <a class="saimos-card" href="https://lazaromedeiros.com.br/slideshow/bodytech-e-vivasso-unem-fitness-e-bem-estar-na-segunda-edicao-do-soul-experience-neste-sabado-28/" target="_blank" rel="noopener">
+          <span class="saimos-logo"><img src="assets/midia/lazaro-medeiros.png" alt="Lázaro Medeiros" loading="lazy"></span>
+          <span class="saimos-name">Lázaro Medeiros</span>
+          <span class="saimos-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>Site</span>
+          <span class="saimos-go">Ler matéria →</span>
+        </a>
+        <a class="saimos-card" href="https://www.instagram.com/sociedadeoestadoce/" target="_blank" rel="noopener">
+          <span class="saimos-logo sq" style="background:#f7f7f7"><img src="assets/midia/sociedade-o-estado-ce.jpg" alt="Coluna Sociedade, O Estado CE" loading="lazy"></span>
+          <span class="saimos-name">Coluna Sociedade, O Estado CE</span>
+          <span class="saimos-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>Instagram</span>
+          <span class="saimos-go">Ver no Instagram →</span>
+        </a>
+        <a class="saimos-card" href="https://www.instagram.com/saudefortaleza/" target="_blank" rel="noopener">
+          <span class="saimos-logo sq" style="background:#f12364"><img src="assets/midia/saude-fortaleza.jpg" alt="Saúde Fortaleza" loading="lazy"></span>
+          <span class="saimos-name">Saúde Fortaleza</span>
+          <span class="saimos-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>Instagram</span>
+          <span class="saimos-go">Ver no Instagram →</span>
+        </a>
+        <a class="saimos-card" href="https://www.instagram.com/portalistoae/" target="_blank" rel="noopener">
+          <span class="saimos-logo sq" style="background:#000247"><img src="assets/midia/isto-ae.jpg" alt="Isto Aê" loading="lazy"></span>
+          <span class="saimos-name">Isto Aê</span>
+          <span class="saimos-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>Instagram</span>
+          <span class="saimos-go">Ver no Instagram →</span>
+        </a>
+        <a class="saimos-card" href="https://www.instagram.com/p/DgQNbm1xDnI/" target="_blank" rel="noopener">
+          <span class="saimos-logo sq" style="background:#000000"><img src="assets/midia/indicomais.jpg" alt="IndicoMais Wellness &amp; Saúde" loading="lazy"></span>
+          <span class="saimos-name">IndicoMais Wellness &amp; Saúde</span>
+          <span class="saimos-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>Instagram</span>
+          <span class="saimos-go">Ver o post →</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>

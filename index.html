@@ -2751,6 +2751,8 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
   var VIVI_API_URL = 'https://vivasso-vivi-chat.souvivasso.workers.dev/';
   var CHAT_IDENTITY = '[IDENTIDADE OBRIGATÓRIA: você é o João Victor Prado, atendente virtual do Soul Experience e da Vivasso. Apresente-se sempre como João Victor (fale no masculino) e nunca use o nome Vivi. Pergunta da pessoa:] ';
   var chatHistory = [];
+  // Uso do chat no Google Analytics: so contagens, nunca o texto digitado.
+  function chatTrack(name, params){ try{ if(window.gtag) gtag('event', name, params || {}); }catch(e){} }
 
   var CHAT_ACTIONS = {
     ingresso: { label: 'Entrar na lista de espera', href: '#terceira-edicao' },
@@ -2774,7 +2776,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
     a.href = action.href;
     a.textContent = action.label;
     if (action.target) { a.target = action.target; a.rel = 'noopener'; }
-    a.addEventListener('click', function(){ chatPanel.setAttribute('data-open', 'false'); });
+    a.addEventListener('click', function(){ chatTrack('chat_action_click', {chat_action:action.label}); chatPanel.setAttribute('data-open', 'false'); });
     chatBody.appendChild(a);
     chatBody.scrollTop = chatBody.scrollHeight;
   }
@@ -2806,6 +2808,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
       chatHistory.push({role:'assistant', content:data.reply});
     } catch(err){
       typing.remove();
+      chatTrack('chat_fallback');
       addChatMsg(linkifyChatReply(botAnswer(q)), 'bot');
     }
   }
@@ -2814,6 +2817,7 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
     chatFab.addEventListener('click', function(){
       var open = chatPanel.getAttribute('data-open') === 'true';
       chatPanel.setAttribute('data-open', open ? 'false' : 'true');
+      if(!open) chatTrack('chat_open');
     });
     chatClose.addEventListener('click', function(){ chatPanel.setAttribute('data-open','false'); });
     document.addEventListener('click', function(e){
@@ -2822,12 +2826,13 @@ fbq('track','ViewContent',{content_ids:['soul-2a-edicao-ingresso'],content_type:
       chatPanel.setAttribute('data-open', 'false');
     });
     chatQuick.querySelectorAll('button').forEach(function(b){
-      b.addEventListener('click', function(){ askBot(b.dataset.q); });
+      b.addEventListener('click', function(){ chatTrack('chat_message', {chat_source:'quick', chat_label:b.dataset.q}); askBot(b.dataset.q); });
     });
     chatForm.addEventListener('submit', function(e){
       e.preventDefault();
       var v = chatInput.value;
       chatInput.value = '';
+      if(v && v.trim()) chatTrack('chat_message', {chat_source:'typed'});
       askBot(v);
     });
   }
